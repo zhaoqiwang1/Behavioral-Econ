@@ -13,5 +13,11 @@ export const userAPI = {
   login: (loginData) => api.post('/users/login', loginData),
 };
 
+// Risk Attitudes Elict Game 相关API
+export const riskAttiAPI = {
+  submit: (userData) => api.post('/riskatti/submit', userData),
+};
+
+
 
 export default api; 
