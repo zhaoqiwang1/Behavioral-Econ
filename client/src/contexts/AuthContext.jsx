@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext, useEffect, useRef, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // 创建上下文
 const AuthContext = createContext();
@@ -10,6 +11,7 @@ export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true); // 新增：加载状态
   const inactivityTimerRef = useRef(null);   // 用于存储定时器的引用
+  const navigate = useNavigate();
 
   // ========== 2. 对外暴露的API函数（必须先定义） ==========
   // #region 登录函数
@@ -30,6 +32,10 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem('user');
     localStorage.removeItem('token');
     localStorage.removeItem('loginTime'); // ✅ 新增：清理登录时间
+    // 清除定时器
+    if (inactivityTimerRef.current) {
+      clearTimeout(inactivityTimerRef.current);
+    }
   };
   // #endregion
 
@@ -48,7 +54,7 @@ export const AuthProvider = ({ children }) => {
   
   // ========== 4. 核心业务函数 ==========
   // #region 自动登出函数
-  const autoLogout = () => {
+  const autoLogout = useCallback(()  => {
     console.log('自动登出触发');
     setUser(null);
     setIsAuthenticated(false);
@@ -60,7 +66,11 @@ export const AuthProvider = ({ children }) => {
     if (inactivityTimerRef.current) {
       clearTimeout(inactivityTimerRef.current);
     }
-  };
+    // 跳转到主页
+    setTimeout(() => {
+      navigate('/');
+    }, 0);
+  }, [navigate]);
   // #endregion
 
   // ========== 5. 使用useCallback包装的函数 ==========
@@ -76,8 +86,8 @@ export const AuthProvider = ({ children }) => {
     inactivityTimerRef.current = setTimeout(() => {
       autoLogout();
       alert('由于长时间无操作，已自动登出');
-    }, 15 * 60 * 1000); // 15分钟
-  }, [isAuthenticated]); // 依赖 isAuthenticated
+    }, 5 * 60 * 1000); // 15分钟
+  }, [isAuthenticated, autoLogout]); // 依赖 isAuthenticated
   // #endregion
 
   // ========== 6. useEffect（放在最后） ==========
@@ -113,7 +123,6 @@ export const AuthProvider = ({ children }) => {
 
       // 设置定期检查
       const expiryCheckInterval = setInterval(() => {
-        // 直接从 localStorage 检查，不依赖 isAuthenticated 状态
         const userData = localStorage.getItem('user');
         const loginTime = localStorage.getItem('loginTime');
         
@@ -128,7 +137,7 @@ export const AuthProvider = ({ children }) => {
       return () => {
         clearInterval(expiryCheckInterval);
       };
-    }, []); // 空依赖数组，只在组件挂载时执行一次
+    }, [autoLogout]); 
   // #endregion
 
   // #region 监听用户活动
@@ -145,6 +154,10 @@ export const AuthProvider = ({ children }) => {
     events.forEach(event => {
       document.addEventListener(event, handleUserActivity);
     });
+
+    // 初始化定时器
+    resetInactivityTimer();
+
     // 清理函数
     return () => {
       events.forEach(event => {

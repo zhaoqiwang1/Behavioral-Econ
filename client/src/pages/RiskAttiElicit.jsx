@@ -1,15 +1,15 @@
 // This .jsx is designed for Risk Attitudes Elicitation Game.
 
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { riskAttiAPI } from '../services/api'; 
 import { useAuth } from '../contexts/AuthContext';
-import './RiskAttiElicit.css'; // 导入外部样式
-import Navbar from '../components/Navbar.jsx';  // 导入 Navbar
+import './RiskAttiElicit.css'; 
+import Navbar from '../components/Navbar.jsx';  
 
 const RiskAttiElicit = () => {
   const { user } = useAuth();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [selectedOption, setSelectedOption] = useState("");
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -30,12 +30,12 @@ const RiskAttiElicit = () => {
     })
     .then((response) => {
       if (response.status === 201) {
-        alert('风险评估提交成功！感谢您的参与。');
+        alert('提交成功！感谢您的参与。');
         setHasSubmitted(true);
       }
 
       if (response.status === 200) {
-        alert('您已经提交过风险评估，无法重复提交');
+        alert('你已经提交过相关回答，无法重复提交。');
         setHasSubmitted(true);
       }
     })
@@ -101,19 +101,6 @@ const RiskAttiElicit = () => {
         <div style={{ textAlign: 'center', padding: '40px' }}>
           <h2>✅ 风险评估已完成</h2>
           <p>您已经成功提交风险评估问卷，感谢您的参与！</p>
-          <button 
-            onClick={() => navigate('/')}
-            style={{
-              padding: '10px 25px',
-              backgroundColor: '#007bff',
-              color: 'white',
-              border: 'none',
-              borderRadius: '5px',
-              cursor: 'pointer'
-            }}
-          >
-            返回首页
-          </button>
         </div>
       </div>
     );
