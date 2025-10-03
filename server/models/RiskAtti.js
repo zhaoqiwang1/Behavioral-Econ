@@ -20,7 +20,6 @@ const RiskAttiSurveySchema = new mongoose.Schema({
       message: '风险评分必须是整数'
     }
   },
-  
   // 提交时间
   submittedAt: {
     type: Date,
