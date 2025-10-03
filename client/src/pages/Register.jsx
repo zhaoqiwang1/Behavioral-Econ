@@ -12,6 +12,7 @@ const Register = () => {
     password: "",
     confirmPassword: "",
     demographic: {
+      studentid:"",
       age: "",
       gender: "",
       education: ""
@@ -71,6 +72,10 @@ const Register = () => {
     }
 
     // Demographic 信息验证（必填）
+    if (!formData.demographic.studentid) {
+      errors.studentid = "学号是必填的";
+    }
+
     if (!formData.demographic.age) {
       errors.age = "年龄是必填的";
     } else if (formData.demographic.age < 18) {
@@ -107,9 +112,10 @@ const Register = () => {
       username: formData.username,
       email: formData.email,
       password: formData.password,
-      age: parseInt(formData.demographic?.age) || 0, // 直接放在根级别
-      gender: formData.demographic?.gender || '',    // 直接放在根级别
-      education: formData.demographic?.education || '' // 直接放在根级别
+      studentid: Number(formData.demographic?.studentid) || 0,
+      age: parseInt(formData.demographic?.age) || 0, 
+      gender: formData.demographic?.gender || '',    
+      education: formData.demographic?.education || '' 
     };
     // console.log('发送的数据:', userData);
 
@@ -123,6 +129,7 @@ const Register = () => {
           password: "",
           confirmPassword: "",
           demographic: {
+            studentid: "",
             age: "",
             gender: "",
             education: ""
@@ -190,7 +197,16 @@ const Register = () => {
 
           {/* Demographic 信息 */}
           <h3>个人信息</h3>
-          
+          <div className="form-row">
+            <input 
+              type="number" 
+              placeholder="学号" 
+              value={formData.demographic.studentid}
+              onChange={(event) => handleDemographicChange('studentid', event.target.value)}
+              className="register-form-input"
+            />
+          </div>
+
           <div className="form-row">
             <input 
               type="number" 
@@ -219,10 +235,11 @@ const Register = () => {
               onChange={(event) => handleDemographicChange('education', event.target.value)}
               className="form-select"
             >
-              <option value="">选择学历</option>
-              <option value="本科">本科</option>
+              <option value="">我当下是</option>
+              <option value="本科生">本科生</option>
               <option value="研究生">研究生</option>
               <option value="博士生">博士生</option>
+              <option value="其他">其他</option>
             </select>
           </div>
         

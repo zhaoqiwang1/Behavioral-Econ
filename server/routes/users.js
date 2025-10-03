@@ -7,9 +7,10 @@ const router = express.Router();
 // #region 注册路由
 router.post("/register", async (req, res) => {
   try {
-    const { username, password, email, age, gender, education } = req.body;
+    const { username, password, email, studentid, age, gender, education } = req.body;
     // console.log('接收到的req.body:', req.body);
-
+    // console.log('解构后的 studentid:', studentid);
+    
     // 检查用户是否已存在
     const existingUser = await UserModel.findOne({ username });
     if (existingUser) {
@@ -31,6 +32,7 @@ router.post("/register", async (req, res) => {
       email,
       password: hashedPassword,
       demographic: {
+        studentid,
         age: parseInt(age), // 确保年龄是数字
         gender,
         education
