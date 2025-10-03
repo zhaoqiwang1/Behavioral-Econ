@@ -72,16 +72,27 @@ const Register = () => {
     }
 
     // Demographic 信息验证（必填）
-    if (!formData.demographic.studentid) {
-      errors.studentid = "学号是必填的";
+      // 学号验证
+    if (!formData.demographic.studentid?.trim()) {
+        errors.studentid = "请填写规范的学号";
+      } else {
+        const studentidValue = formData.demographic.studentid.trim();
+        if (!/^\d+$/.test(studentidValue)) {
+          errors.studentid = "学号只能包含数字";
+        } else if (Number(studentidValue) <= 0) {
+          errors.studentid = "学号必须是正数";
+        }
     }
 
+    // 年龄验证
     if (!formData.demographic.age) {
       errors.age = "年龄是必填的";
-    } else if (formData.demographic.age < 18) {
-      errors.age = "年龄必须大于18岁";
+    } else if (formData.demographic.age < 15) {
+      errors.age = "年龄必须大于15岁";
     } else if (formData.demographic.age > 100) {
       errors.age = "请输入有效的年龄";
+    } else if (isNaN(Number(formData.demographic.age))) {
+      errors.age = "年龄必须是数字";
     }
     
     if (!formData.demographic.gender) {
