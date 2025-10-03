@@ -14,13 +14,9 @@ const RiskAttiSurveySchema = new mongoose.Schema({
     type: Number,
     required: true,
     min: 1,
-    max: 10,
-    validate: {
-      validator: Number.isInteger,
-      message: '风险评分必须是整数'
-    }
+    max: 10
   },
-  // 提交时间
+  // 提交时间建立
   submittedAt: {
     type: Date,
     default: Date.now
