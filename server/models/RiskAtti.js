@@ -10,19 +10,15 @@ const RiskAttiSurveySchema = new mongoose.Schema({
   },
   
   // 风险评估答案
-  riskScore: {
+  riskAttitude: {
     type: Number,
-    required: true,
-    min: 1,
-    max: 10
+    required: true
   },
   // 提交时间建立
   submittedAt: {
     type: Date,
     default: Date.now
   }
-}, {
-  timestamps: true
 });
 
 export default mongoose.model('RiskAttiSurvey', RiskAttiSurveySchema);
