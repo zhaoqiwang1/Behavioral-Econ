@@ -11,8 +11,8 @@ import './App.css';
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
+    <Router>
+      <AuthProvider>
         <div className="App">
           <Toaster position="top-right" />
           <Routes>
@@ -21,9 +21,9 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/risk-attitude-elicit" element={<RiskAttiElicit />} />
           </Routes>
-        </div>
-      </Router>
-    </AuthProvider>
+        </div> 
+      </AuthProvider>
+    </Router>
   );
 }
 
