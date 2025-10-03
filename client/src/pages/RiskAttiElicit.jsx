@@ -98,7 +98,7 @@ const RiskAttiElicit = () => {
     return (
       <div>
         <Navbar />
-        <div style={{ textAlign: 'center', padding: '40px' }}>
+        <div className = "completed-info">
           <h2>✅ 风险评估已完成</h2>
           <p>您已经成功提交风险评估问卷，感谢您的参与！</p>
         </div>
@@ -110,8 +110,7 @@ const RiskAttiElicit = () => {
     <div>
       <Navbar />
       <h1>Risk Elicitation Game</h1>
-      
-      <div style={{ marginBottom: '20px' }}>
+      <div>
         <strong>您选择的选项: </strong>
         {selectedOption ? `选项 ${selectedOption}` : '尚未选择'}
       </div>
@@ -162,16 +161,9 @@ const RiskAttiElicit = () => {
       {/* 提交按钮 */}
       <div style={{ textAlign: 'center', marginTop: '20px' }}>
         <button 
+          className = "submit-button"
           onClick={handleSubmit}
           disabled={loading || !selectedOption}
-          style={{
-            padding: '10px 30px',
-            backgroundColor: !selectedOption ? '#ccc' : '#28a745',
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: !selectedOption ? 'not-allowed' : 'pointer'
-          }}
         >
           {loading ? '提交中...' : '提交评估'}
         </button>
