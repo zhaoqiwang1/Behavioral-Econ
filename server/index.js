@@ -2,6 +2,9 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import path from "path";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 // #region 导入数据模型
 import UserModel from './models/Users.js'; 
@@ -19,9 +22,13 @@ const app = express();
 app.use(express.json()); // this helps parse json into an object.
 app.use(cors());
 
-mongoose.connect(
-  "mongodb+srv://zwang:Extra02sulfide@cluster0.dx6owno.mongodb.net/MERN_Tutorial_20250929"
-);
+// mongoose.connect(
+//   "mongodb+srv://zwang:Extra02sulfide@cluster0.dx6owno.mongodb.net/MERN_Tutorial_20250929"
+// );
+
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log("MongoDB连接成功"))
+  .catch(err => console.error("MongoDB连接失败：", err));
 
 // #region 路由配置
 app.use('/api/users', usersRoutes); 
@@ -30,10 +37,14 @@ app.use('/api/riskatti', riskAttiRoutes);
 // #endregion
 
 
-app.listen(3001, () => {
-  console.log("server runs perfectly.")
-});
+// app.listen(3001, () => {
+//   console.log("server runs perfectly.")
+// });
 
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+  console.log(`server runs on port ${PORT}`);  // 输出端口，方便确认
+});
 
 
 
