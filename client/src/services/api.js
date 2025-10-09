@@ -13,7 +13,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 // });
 const api = axios.create({
   // 生产环境用空字符串（自动拼接当前域名/IP），开发环境用本地地址
-  baseURL: isProduction ? '/api' : 'http://localhost:3001/api',
+  baseURL: isProduction ? 'http://8.138.170.90:3001/api' : 'http://localhost:3001/api',
   // withCredentials: true,  // 如果需要跨域携带cookie，可开启
   timeout: 10000
 });
