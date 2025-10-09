@@ -4,7 +4,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext.jsx';  // 新增导入
 import Navbar from '../components/Navbar.jsx';  // 导入 Navbar
-
+import './HomePage.css';  
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -38,13 +38,26 @@ const HomePage = () => {
       <Navbar />
 
       <h1>HomePage</h1>
-      <p>主页主要展示一些行为经济，金融，心理学等等相关的内容。用以吸引用户。</p>
-      <p>用户有兴趣，需要玩具体的游戏了，就注册并登录。</p>
-      <button 
-        onClick={handleRiskAttiGame}
-      >
-        开始风险评估
-      </button>
+      <p>以下是我们的游戏列表</p>
+      <div className="buttons-container">
+          <button 
+          className="assessment-btn"
+          onClick={handleRiskAttiGame}
+          style={{
+            backgroundImage: "url('../assets/images/risk-assessment.jpg')"
+          }}
+          >
+          风险评估
+         </button>
+         <button 
+          className="assessment-btn"
+          style={{
+            backgroundImage: "url('../assets/images/ambiguity-assessment.jpg')"
+          }}
+         >
+          模糊偏好
+         </button>
+      </div>
     </div>
   );
 }

@@ -110,11 +110,7 @@ const RiskAttiElicit = () => {
     <div>
       <Navbar />
       <h1>Risk Elicitation Game</h1>
-      <div>
-        <strong>您选择的选项: </strong>
-        {selectedOption ? `选项 ${selectedOption}` : '尚未选择'}
-      </div>
-
+      <h2>请选择你想从A换到B的选项的数字。注意：你只能换一次，不能在A和B之前反复。</h2>
       <div className="table-container">
         <h2>选项对比表</h2>
         <table className="data-table">
@@ -122,8 +118,8 @@ const RiskAttiElicit = () => {
             <tr>
               <th>选择</th>
               <th>序号</th>
-              <th>Option A</th>
-              <th>Option B</th>
+              <th>选项A</th>
+              <th>选项B</th>
             </tr>
           </thead>
           <tbody>
@@ -156,6 +152,10 @@ const RiskAttiElicit = () => {
             ))}
           </tbody>
         </table>
+      </div>
+      <div>
+        <strong>您选择的选项: </strong>
+        {selectedOption ? `选项 ${selectedOption}` : '尚未选择'}
       </div>
 
       {/* 提交按钮 */}
