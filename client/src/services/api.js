@@ -1,9 +1,20 @@
 import axios from 'axios';
 
+// 判断当前环境（开发环境还是生产环境）
+// 开发环境：本地运行时，process.env.NODE_ENV 为 'development'
+// 生产环境：构建后部署到服务器时，process.env.NODE_ENV 为 'production'
+const isProduction = process.env.NODE_ENV === 'production';
+
 // 创建axios实例
+// const api = axios.create({
+//   baseURL: 'http://localhost:3001/api',
+//   // withCredentials: true,
+//   timeout: 10000
+// });
 const api = axios.create({
-  baseURL: 'http://localhost:3001/api',
-  // withCredentials: true,
+  // 生产环境用空字符串（自动拼接当前域名/IP），开发环境用本地地址
+  baseURL: isProduction ? '/api' : 'http://localhost:3001/api',
+  // withCredentials: true,  // 如果需要跨域携带cookie，可开启
   timeout: 10000
 });
 
