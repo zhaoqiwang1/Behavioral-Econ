@@ -45,9 +45,18 @@ const HomePage = () => {
         <div className="game-grid">
           <button 
             className="assessment-btn"
+            style={{
+              backgroundImage: "url('../assets/images/public_goods_game.jpg')"
+            }}
+          >
+            公共物品
+          </button>
+
+          <button 
+            className="assessment-btn"
             onClick={handleRiskAttiGame}
             style={{
-              backgroundImage: "url('../assets/images/risk-assessment.jpg')"
+              backgroundImage: "url('../assets/images/risk_assessment.jpg')"
             }}
           >
             风险评估
@@ -56,7 +65,7 @@ const HomePage = () => {
           <button 
             className="assessment-btn"
             style={{
-              backgroundImage: "url('../assets/images/ambiguity-assessment.jpg')"
+              backgroundImage: "url('../assets/images/ambiguity_assessment.jpg')"
             }}
           >
             模糊偏好
@@ -66,28 +75,27 @@ const HomePage = () => {
           <button 
             className="assessment-btn"
             style={{
-              backgroundImage: "url('../assets/images/game3.jpg')"
+              backgroundImage: "url('../assets/images/overconfidence_assessment.jpg')"
             }}
           >
-            游戏3
+            过度自信
           </button>
           
           <button 
             className="assessment-btn"
             style={{
-              backgroundImage: "url('../assets/images/game4.jpg')"
+              backgroundImage: "url('../assets/images/game_under_ambiguity.jpg')"
             }}
           >
-            游戏4
+            Game 5
           </button>
-          
-          <button 
+                    <button 
             className="assessment-btn"
             style={{
-              backgroundImage: "url('../assets/images/game5.jpg')"
+              backgroundImage: "url('../assets/images/game6.jpg')"
             }}
           >
-            游戏5
+           TBD
           </button>
         </div>
       </div>
