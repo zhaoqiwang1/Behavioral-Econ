@@ -34,29 +34,62 @@ const HomePage = () => {
   }
 
   return (
-    <div>
+    <div className="homepage-container">
       <Navbar />
 
-      <h1>HomePage</h1>
-      <p>以下是我们的游戏列表</p>
-      <div className="buttons-container">
+      <div className="homepage-content">
+        <h1>HomePage</h1>
+        <p>以下是我们的游戏列表</p>
+        
+        {/* 新的游戏按钮网格容器 */}
+        <div className="game-grid">
           <button 
-          className="assessment-btn"
-          onClick={handleRiskAttiGame}
-          style={{
-            backgroundImage: "url('../assets/images/risk-assessment.jpg')"
-          }}
+            className="assessment-btn"
+            onClick={handleRiskAttiGame}
+            style={{
+              backgroundImage: "url('../assets/images/risk-assessment.jpg')"
+            }}
           >
-          风险评估
-         </button>
-         <button 
-          className="assessment-btn"
-          style={{
-            backgroundImage: "url('../assets/images/ambiguity-assessment.jpg')"
-          }}
-         >
-          模糊偏好
-         </button>
+            风险评估
+          </button>
+          
+          <button 
+            className="assessment-btn"
+            style={{
+              backgroundImage: "url('../assets/images/ambiguity-assessment.jpg')"
+            }}
+          >
+            模糊偏好
+          </button>
+          
+          {/* 这里可以继续添加更多按钮，它们会自动排列 */}
+          <button 
+            className="assessment-btn"
+            style={{
+              backgroundImage: "url('../assets/images/game3.jpg')"
+            }}
+          >
+            游戏3
+          </button>
+          
+          <button 
+            className="assessment-btn"
+            style={{
+              backgroundImage: "url('../assets/images/game4.jpg')"
+            }}
+          >
+            游戏4
+          </button>
+          
+          <button 
+            className="assessment-btn"
+            style={{
+              backgroundImage: "url('../assets/images/game5.jpg')"
+            }}
+          >
+            游戏5
+          </button>
+        </div>
       </div>
     </div>
   );

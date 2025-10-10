@@ -1,37 +1,120 @@
+/* HomePage.css */
+
+.homepage-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.homepage-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.homepage-content h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 2.5rem;
+}
+
+.homepage-content p {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #666;
+  font-size: 1.2rem;
+}
+
+/* 游戏按钮网格布局 */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+/* 评估按钮样式 */
 .assessment-btn {
-  width: 300px;
-  height: 190px;
-  border: none;
-  border-radius: 12px;
+  width: 100%;
+  height: 250px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  border: none;
+  border-radius: 12px;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .assessment-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-15px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .assessment-btn:active {
-  transform: scale(0.98);
+  transform: translateY(-2px);
 }
 
-/* 添加按钮容器样式 */
-.buttons-container {
-  display: flex;
-  gap: 20px; /* 按钮之间的间距 */
-  justify-content: flex-start; /* 从左到右排列 */
-  flex-wrap: wrap; /* 如果空间不够可以换行 */
-  margin-top: 20px;
+/* .assessment-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+  z-index: 1;
+} */
+
+.assessment-btn span {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+  .game-grid {
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage-content {
+    padding: 1rem;
+  }
+  
+  .homepage-content h1 {
+    font-size: 2rem;
+  }
+  
+  .game-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .assessment-btn {
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .assessment-btn {
+    height: 180px;
+  }
+  
+  .assessment-btn span {
+    font-size: 1.2rem;
+  }
 }
