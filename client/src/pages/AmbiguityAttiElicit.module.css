@@ -1,49 +1,52 @@
-/* FuzzyPreferenceElicit.css */
-.table-container {
+/* AmbiguityAttiElicit.module.css */
+.tableContainer {
   margin: 20px auto;
-  max-width: 800px;
-  overflow-x: auto;
+  font-family: 'Arial, sans-serif';
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.data-table {
+.dataTable {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.data-table th,
-.data-table td {
+.dataTable th,
+.dataTable td {
   padding: 12px 15px;
   text-align: center;
   border: 1px solid #ddd;
 }
 
-.data-table th {
+.dataTable th {
   background-color: #f5f5f5;
   font-weight: bold;
   position: sticky;
   top: 0;
 }
 
-.data-table tr.even-row {
+.evenRow {
   background-color: #f9f9f9;
 }
 
-.data-table tr.odd-row {
+.oddRow {
   background-color: #ffffff;
 }
 
-.data-table tr:hover {
+.dataTable tr:hover {
   background-color: #f0f8ff;
   cursor: pointer;
 }
 
-.data-table input[type="radio"] {
+.dataTable input[type="radio"] {
   transform: scale(1.2);
 }
 
-.submit-button {
+.submitButton {
   background-color: #4CAF50;
   color: white;
   padding: 12px 24px;
@@ -54,23 +57,23 @@
   transition: background-color 0.3s;
 }
 
-.submit-button:hover:not(:disabled) {
+.submitButton:hover:not(:disabled) {
   background-color: #45a049;
 }
 
-.submit-button:disabled {
+.submitButton:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
 }
 
-.completed-info {
+.completedInfo {
   text-align: center;
   padding: 40px;
   max-width: 600px;
   margin: 0 auto;
 }
 
-.completed-info h2 {
+.completedInfo h2 {
   color: #4CAF50;
   margin-bottom: 20px;
 }
@@ -89,7 +92,7 @@
   color: #007bff;
 }
 
-.selection-info {
+.selectionInfo {
   text-align: center;
   padding: 15px;
   background-color: #e7f3ff;
@@ -99,6 +102,7 @@
   font-size: 16px;
 }
 
+/* 全局样式保持不变 */
 h1 {
   text-align: center;
   color: #333;

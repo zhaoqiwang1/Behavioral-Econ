@@ -1,6 +1,10 @@
 .table-container {
-  margin: 20px;
+  margin: 20px auto; /* 关键修改：上下20px，左右自动居中 */
   font-family: 'Arial, sans-serif';
+  max-width: 90%; /* 可选：限制最大宽度 */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 使内容居中 */
 }
 
 .data-table {
