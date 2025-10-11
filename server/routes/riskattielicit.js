@@ -29,7 +29,7 @@ router.post('/submit', async (req, res) => {
     // 检查是否已经提交过
     const existingSubmission = await RiskAttiSurvey.findOne({ userId: userObjectId });
     if (existingSubmission) {
-      return res.status(200).json({ 
+      return res.status(409).json({ 
         message: '您已经提交过评估，无法重复提交',
         alreadySubmitted: true,
         previousScore: existingSubmission.riskAttitude,
