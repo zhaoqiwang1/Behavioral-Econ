@@ -24,6 +24,11 @@ export const ambiguityAttiAPI = {
   submit: (userData) => api.post('/ambiguityatti/submit', userData),
 };
 
+// Public Goods Game 相关API
+export const publicGoodsAPI = {
+  submit: (userData) => api.post('/publicgoods/submit', userData),
+};
+
 export default api; 
 
 

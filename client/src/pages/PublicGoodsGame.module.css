@@ -1,0 +1,67 @@
+.gameContainer {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.instructions {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.instructions h3 {
+  margin-top: 0;
+  color: #007bff;
+}
+
+.inputSection {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.inputSection label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.contributionInput {
+  padding: 12px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 150px;
+  text-align: center;
+}
+
+.submitSection {
+  text-align: center;
+}
+
+.submitButton {
+  padding: 12px 30px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.submitButton:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.completedInfo {
+  text-align: center;
+  padding: 40px;
+}

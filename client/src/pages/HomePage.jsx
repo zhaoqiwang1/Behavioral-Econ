@@ -19,6 +19,15 @@ const HomePage = () => {
     }
   };
 
+  // #region 不同游戏的onClick设置
+  // 专门用于公共物品游戏的函数
+  const handlePublicGoodsGame = () => {
+    checkAuthAndNavigate(
+      '/public-goods',
+      '你需要先登录哦'
+    );
+  };
+
     // 专门用于风险评估的函数
   const handleRiskAttiGame = () => {
     checkAuthAndNavigate(
@@ -34,6 +43,7 @@ const HomePage = () => {
       '你需要先登录哦'
     );
   };
+  // #endregion
 
   // 新增：如果还在检查登录状态，显示加载中
   if (loading) {
@@ -52,6 +62,7 @@ const HomePage = () => {
         <div className={styles.gameGrid}>
           <button 
             className={styles.assessmentBtn}
+            onClick={handlePublicGoodsGame}
             style={{
               backgroundImage: "url('../assets/images/public_goods_game.jpg')"
             }}
