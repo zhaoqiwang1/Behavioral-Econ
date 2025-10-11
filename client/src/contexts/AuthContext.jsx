@@ -86,7 +86,7 @@ export const AuthProvider = ({ children }) => {
     inactivityTimerRef.current = setTimeout(() => {
       autoLogout();
       alert('由于长时间无操作，已自动登出');
-    }, 5 * 60 * 1000); // 15分钟
+    }, 30 * 60 * 1000); // 30分钟
   }, [isAuthenticated, autoLogout]); // 依赖 isAuthenticated
   // #endregion
 
