@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import AmbiguityAttiElicit from './pages/AmbiguityAttiElicit.jsx';
 import RiskAttiElicit from './pages/RiskAttiElicit.jsx';
 import Register from './pages/Register.jsx';
 import Login from './pages/Login.jsx';
@@ -20,6 +21,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/risk-attitude-elicit" element={<RiskAttiElicit />} />
+            <Route path="/ambiguity-attitude-elicit" element={<AmbiguityAttiElicit />} />
           </Routes>
         </div> 
       </AuthProvider>

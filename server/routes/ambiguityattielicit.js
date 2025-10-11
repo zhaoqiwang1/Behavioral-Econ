@@ -8,15 +8,17 @@ const router = express.Router();
 // 提交风险评估答案
 router.post('/submit', async (req, res) => {
   try {
-    const { userId, ambiguityAttitude } = req.body;
-    
-    console.log('收到的 userId:', userId);
+    // console.log('🔍 收到模糊偏好提交请求');
+    // console.log('请求体:', req.body);
+
+    const { userId, ambiguityAttitude } = req.body; 
+    // console.log('收到的 userId:', userId);
   
     // 转换 userId 为 ObjectId
     let userObjectId;
     try {
       userObjectId = new mongoose.Types.ObjectId(userId);
-      console.log('转换后的 userObjectId:', userObjectId);
+      // console.log('转换后的 userObjectId:', userObjectId);
     } catch (error) {
       console.error('ObjectId 转换错误:', error);
       return res.status(400).json({ 

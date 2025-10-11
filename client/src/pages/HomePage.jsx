@@ -27,6 +27,13 @@ const HomePage = () => {
     );
   };
 
+  // 专门用于模糊偏好评估的函数
+  const handleAmbiguityAttiGame = () => {
+    checkAuthAndNavigate(
+      '/ambiguity-attitude-elicit',
+      '你需要先登录哦'
+    );
+  };
 
   // 新增：如果还在检查登录状态，显示加载中
   if (loading) {
@@ -64,6 +71,7 @@ const HomePage = () => {
           
           <button 
             className="assessment-btn"
+            onClick={handleAmbiguityAttiGame}
             style={{
               backgroundImage: "url('../assets/images/ambiguity_assessment.jpg')"
             }}
