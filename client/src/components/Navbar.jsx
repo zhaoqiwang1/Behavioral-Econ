@@ -2,7 +2,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext.jsx';
-import './Navbar.css';
+import styles from './Navbar.module.css';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -15,27 +15,27 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
-      <div className="navbar-title" onClick={() => navigate('/')}>
+    <nav className={styles.navbar}>
+      <div className={styles.navbarTitle} onClick={() => navigate('/')}>
         首页
       </div>
 
-      <div className="navbar-right">
+      <div className={styles.navbarRight}>
         {isAuthenticated ? (
           // 已登录状态
-          <div className="user-info">
+          <div className={styles.userInfo}>
             <span>欢迎, {user?.username}</span>
-            <button onClick={handleLogout} className="nav-btn logout-btn">
+            <button onClick={handleLogout} className={`${styles.navBtn} ${styles.logoutBtn}`}>
               登出
             </button>
           </div>
         ) : (
           // 未登录状态
-          <div className="auth-buttons">
-            <button onClick={() => navigate('/login')} className="nav-btn login-btn">
+          <div className={styles.authButtons}>
+            <button onClick={() => navigate('/login')} className={`${styles.navBtn} ${styles.loginBtn}`}>
               登录
             </button>
-            <button onClick={() => navigate('/register')} className="nav-btn register-btn">
+            <button onClick={() => navigate('/register')} className={`${styles.navBtn} ${styles.registerBtn}`}>
               注册
             </button>
           </div>

@@ -1,4 +1,4 @@
-/* src/components/Navbar.css */
+/* src/components/Navbar.module.css */
 
 /* 导航栏基础样式 */
 .navbar {
@@ -12,32 +12,32 @@
 }
 
 /* 网站标题 */
-.navbar-title {
+.navbarTitle {
   font-size: 18px;
   font-weight: bold;
   color: #007bff;
   cursor: pointer;
 }
 
-.navbar-title:hover {
+.navbarTitle:hover {
   color: #0056b3;
 }
 
 /* 右侧区域 */
-.navbar-right {
+.navbarRight {
   display: flex;
   align-items: center;
 }
 
 /* 用户信息 */
-.user-info {
+.userInfo {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
 /* 基础按钮样式 */
-.nav-btn {
+.navBtn {
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -46,35 +46,35 @@
 }
 
 /* 登录按钮 */
-.login-btn {
+.loginBtn {
   background-color: #007bff;
   color: white;
   border-color: #007bff;
 }
 
-.login-btn:hover {
+.loginBtn:hover {
   background-color: #0056b3;
 }
 
 /* 注册按钮 */
-.register-btn {
+.registerBtn {
   background-color: #6c757d;
   color: white;
   border-color: #6c757d;
   margin-left: 10px;
 }
 
-.register-btn:hover {
+.registerBtn:hover {
   background-color: #545b62;
 }
 
 /* 退出按钮 */
-.logout-btn {
+.logoutBtn {
   background-color: #dc3545;
   color: white;
   border-color: #dc3545;
 }
 
-.logout-btn:hover {
+.logoutBtn:hover {
   background-color: #c82333;
 }
