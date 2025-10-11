@@ -39,6 +39,13 @@ export const AuthProvider = ({ children }) => {
   };
   // #endregion
 
+  // #region 更新用户信息函数 
+  const updateUser = (updatedUserData) => {
+    setUser(updatedUserData);
+    localStorage.setItem('user', JSON.stringify(updatedUserData));
+  };
+  // #endregion
+
   // ========== 3. 工具函数（依赖login保存的数据） ==========
   // #region 检查登录是否过期（超过2小时）
   // 这个函数只返回true or false这两个值中的一个，用来判断是否登录过期
@@ -176,7 +183,8 @@ export const AuthProvider = ({ children }) => {
     isAuthenticated,
     loading, 
     login,
-    logout
+    logout,
+    updateUser
   };
 
   return (
