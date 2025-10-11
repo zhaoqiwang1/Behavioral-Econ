@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ambiguityAttiAPI } from '../services/api'; 
 import { useAuth } from '../contexts/AuthContext';
-import './AmbiguityAttiElicit.css'; 
+import styles from './AmbiguityAttiElicit.module.css';
 import Navbar from '../components/Navbar.jsx';  
 
 const AmbiguityAttiElicit = () => {
@@ -26,8 +26,8 @@ const AmbiguityAttiElicit = () => {
       ambiguityAttitude: parseInt(selectedOption)
     };
 
-    console.log('准备提交的数据:', submitData);
-    console.log('API端点:', '/api/ambiguityatti/submit');
+    // console.log('准备提交的数据:', submitData);
+    // console.log('API端点:', '/api/ambiguityatti/submit');
 
     ambiguityAttiAPI.submit(submitData)
     .then((response) => {
@@ -74,7 +74,7 @@ const AmbiguityAttiElicit = () => {
     return (
       <div>
         <Navbar />
-        <div className="completed-info">
+        <div className={styles.completedInfo}>
           <h2>✅ 模糊偏好测试已完成</h2>
           <p>您已经成功提交问卷，感谢您的参与！</p>
         </div>
@@ -88,15 +88,15 @@ const AmbiguityAttiElicit = () => {
       <h1>模糊偏好测试</h1>
       <h2>请选择您偏好的选项。注意：您需要从Box K和Box U之间做出选择。</h2>
       
-      <div className="instructions">
+      <div className={styles.instructions}>
         <h3>测试说明：</h3>
         <p>在以下选项中，Box K包含确定的金额，Box U包含未知的金额。请选择您偏好的选项。</p>
         <p>您的选择将帮助我们了解您对确定性和不确定性的偏好程度。</p>
       </div>
 
-      <div className="table-container">
+      <div className={styles.tableContainer}>
         <h2>模糊偏好选择表</h2>
-        <table className="data-table">
+        <table className={styles.dataTable}>
           <thead>
             <tr>
               <th>选择</th>
@@ -109,7 +109,7 @@ const AmbiguityAttiElicit = () => {
             {ambiguityOptions.map((option, index) => (
               <tr 
                 key={option.id} 
-                className={index % 2 === 0 ? 'even-row' : 'odd-row'}
+                className={index % 2 === 0 ? styles.evenRow : styles.oddRow}
                 onClick={() => handleOptionChange(option.id)}
                 style={{ cursor: 'pointer' }}
               >
@@ -131,7 +131,7 @@ const AmbiguityAttiElicit = () => {
         </table>
       </div>
 
-      <div className="selection-info">
+      <div className={styles.selectionInfo}>
         <strong>您选择的选项: </strong>
         {selectedOption ? `选项 ${selectedOption} (Box K: $${ambiguityOptions.find(opt => opt.id === parseInt(selectedOption))?.boxK.toFixed(2)}, Box U: Unknown)` : '尚未选择'}
       </div>
@@ -139,7 +139,7 @@ const AmbiguityAttiElicit = () => {
       {/* 提交按钮 */}
       <div style={{ textAlign: 'center', marginTop: '20px' }}>
         <button 
-          className="submit-button"
+          className={styles.submitButton}
           onClick={handleSubmit}
           disabled={loading || !selectedOption}
         >
