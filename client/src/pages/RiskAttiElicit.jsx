@@ -33,15 +33,17 @@ const RiskAttiElicit = () => {
         alert('提交成功！感谢您的参与。');
         setHasSubmitted(true);
       }
-
-      if (response.status === 200) {
-        alert('你已经提交过相关回答，无法重复提交。');
-        setHasSubmitted(true);
-      }
     })
     .catch((error) => {
-      console.error('提交失败:', error);
-      alert(`${error.response?.data?.message || '提交失败，请重试'}`);
+      const { response } = error;
+      if (response?.status === 409) {
+        alert('你已经提交过相关回答，无法重复提交。');
+        setHasSubmitted(true);
+      } else {
+        // 其他错误
+        console.error('提交失败:', error);
+        alert(`${response?.data?.message || '提交失败，请重试'}`);
+      }
     })
     .finally(() => {
       setLoading(false);

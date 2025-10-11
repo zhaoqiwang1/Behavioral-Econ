@@ -8,12 +8,8 @@ const router = express.Router();
 // 提交风险评估答案
 router.post('/submit', async (req, res) => {
   try {
-    // console.log('🔍 收到模糊偏好提交请求');
-    // console.log('请求体:', req.body);
-
     const { userId, ambiguityAttitude } = req.body; 
-    // console.log('收到的 userId:', userId);
-  
+
     // 转换 userId 为 ObjectId
     let userObjectId;
     try {
@@ -31,7 +27,7 @@ router.post('/submit', async (req, res) => {
     // 检查是否已经提交过
     const existingSubmission = await AmbiguityAttiSurvey.findOne({ userId: userObjectId });
     if (existingSubmission) {
-      return res.status(200).json({ 
+      return res.status(409).json({ 
         message: '您已经提交过评估，无法重复提交',
         alreadySubmitted: true,
         previousScore: existingSubmission.ambiguityAttitude,

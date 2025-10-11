@@ -26,24 +26,34 @@ const AmbiguityAttiElicit = () => {
       ambiguityAttitude: parseInt(selectedOption)
     };
 
-    // console.log('准备提交的数据:', submitData);
-    // console.log('API端点:', '/api/ambiguityatti/submit');
-
     ambiguityAttiAPI.submit(submitData)
     .then((response) => {
+      // console.log('✅ 成功响应:', response);
+      // console.log('✅ 响应状态:', response.status);
+      // console.log('✅ 响应数据:', response.data);
+        
       if (response.status === 201) {
         alert('提交成功！感谢您的参与。');
         setHasSubmitted(true);
       }
-
-      if (response.status === 200) {
-        alert('你已经提交过相关回答，无法重复提交。');
-        setHasSubmitted(true);
-      }
     })
     .catch((error) => {
-      console.error('提交失败:', error);
-      alert(`${error.response?.data?.message || '提交失败，请重试'}`);
+
+      // console.log('🔍 完整错误对象:', error);
+      // console.log('🔍 错误响应:', error.response);
+      // console.log('🔍 错误状态:', error.response?.status);
+      // console.log('🔍 错误数据:', error.response?.data);
+      // console.log('🔍 错误消息:', error.message);
+
+      const { response } = error;
+      if (response?.status === 409) {
+        alert('你已经提交过相关回答，无法重复提交。');
+        setHasSubmitted(true);
+      } else {
+        // 其他错误
+        console.error('提交失败:', error);
+        alert(`${response?.data?.message || '提交失败，请重试'}`);
+      }
     })
     .finally(() => {
       setLoading(false);
