@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { userAPI } from '../services/api';
-import './Register.css'
+import styles from './Register.module.css';
 
 const Register = () => {
   // const [listOfUsers, setlistOfUsers] = useState([]);
@@ -157,82 +157,82 @@ const Register = () => {
   };
 
   return (
-    <div className="register-app-container">
-      <div className="register-container">
+    <div className={styles.registerAppContainer}>
+      <div className={styles.registerContainer}>
         {/* <h1>用户注册</h1> */}
         
         {/* 注册表单 */}
-        <div className="register-form">
+        <div className={styles.registerForm}>
           <h2>填写注册信息</h2>
           
           {/* 基础信息 */}
-          <div className="form-row">
+          <div className={styles.formRow}>
             <input 
               type="text" 
               placeholder="用户名" 
               value={formData.username}
               onChange={(event) => handleInputChange('username', event.target.value)}
-              className="register-form-input"
+              className={styles.registerFormInput}
             />
           </div>
           
-          <div className="form-row">
+          <div className={styles.formRow}>
             <input 
               type="email" 
               placeholder="邮箱地址" 
               value={formData.email}
               onChange={(event) => handleInputChange('email', event.target.value)}
-              className="register-form-input"
+              className={styles.registerFormInput}
             />
           </div>
           
-          <div className="form-row">
+          <div className={styles.formRow}>
             <input 
               type="password" 
               placeholder="密码" 
               value={formData.password}
               onChange={(event) => handleInputChange('password', event.target.value)}
-              className="register-form-input"
+              className={styles.registerFormInput}
             />
           </div>
           
-          <div className="form-row">
+          <div className={styles.formRow}>
             <input 
               type="password" 
               placeholder="请再次输入密码" 
               value={formData.confirmPassword}
               onChange={(event) => handleInputChange('confirmPassword', event.target.value)}
-              className="register-form-input"
+              className={styles.registerFormInput}
             />
           </div>
 
           {/* Demographic 信息 */}
           <h3>个人信息</h3>
-          <div className="form-row">
+          <div className={styles.formRow}>
             <input 
               type="number" 
               placeholder="学号" 
               value={formData.demographic.studentid}
               onChange={(event) => handleDemographicChange('studentid', event.target.value)}
-              className="register-form-input"
+              className={styles.registerFormInput}
             />
           </div>
 
-          <div className="form-row">
+          <div className={styles.formRow}>
             <input 
               type="number" 
               placeholder="年龄" 
               value={formData.demographic.age}
               onChange={(event) => handleDemographicChange('age', event.target.value)}
-              className="register-form-input"
+              className={styles.registerFormInput}
             />
           </div>
           
-          <div className="form-row">
+          <div className={styles.formRow}>
             <select 
               value={formData.demographic.gender}
               onChange={(event) => handleDemographicChange('gender', event.target.value)}
-              className="form-select"
+              className={styles.formSelect}
             >
               <option value="">选择性别</option>
               <option value="男">男</option>
@@ -240,11 +240,11 @@ const Register = () => {
             </select>
           </div>
           
-          <div className="form-row">
+          <div className={styles.formRow}>
             <select 
               value={formData.demographic.education}
               onChange={(event) => handleDemographicChange('education', event.target.value)}
-              className="form-select"
+              className={styles.formSelect}
             >
               <option value="">我当下是</option>
               <option value="本科生">本科生</option>
@@ -256,7 +256,7 @@ const Register = () => {
         
           <button 
           onClick={handleRegister}
-          className="register-button"
+          className={styles.registerButton}
         >
           注册
         </button>

@@ -1,12 +1,11 @@
-/* HomePage.css */
-
-.homepage-container {
+/* HomePage.module.css */
+.homepageContainer {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.homepage-content {
+.homepageContent {
   flex: 1;
   padding: 2rem;
   max-width: 1200px;
@@ -14,14 +13,14 @@
   width: 100%;
 }
 
-.homepage-content h1 {
+.homepageContent h1 {
   text-align: center;
   margin-bottom: 1rem;
   color: #333;
   font-size: 2.5rem;
 }
 
-.homepage-content p {
+.homepageContent p {
   text-align: center;
   margin-bottom: 2rem;
   color: #666;
@@ -29,7 +28,7 @@
 }
 
 /* 游戏按钮网格布局 */
-.game-grid {
+.gameGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
   gap: 1.5rem;
@@ -37,7 +36,7 @@
 }
 
 /* 评估按钮样式 */
-.assessment-btn {
+.assessmentBtn {
   width: 100%;
   height: 250px;
   background-size: cover;
@@ -52,16 +51,16 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.assessment-btn:hover {
+.assessmentBtn:hover {
   transform: translateY(-15px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
-.assessment-btn:active {
+.assessmentBtn:active {
   transform: translateY(-2px);
 }
 
-/* .assessment-btn::before {
+/* .assessmentBtn::before {
   content: '';
   position: absolute;
   top: 0;
@@ -72,7 +71,7 @@
   z-index: 1;
 } */
 
-.assessment-btn span {
+.assessmentBtn span {
   position: absolute;
   bottom: 1rem;
   left: 1rem;
@@ -85,36 +84,36 @@
 
 /* 响应式设计 */
 @media (max-width: 992px) {
-  .game-grid {
+  .gameGrid {
     grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
   }
 }
 
 @media (max-width: 768px) {
-  .homepage-content {
+  .homepageContent {
     padding: 1rem;
   }
   
-  .homepage-content h1 {
+  .homepageContent h1 {
     font-size: 2rem;
   }
   
-  .game-grid {
+  .gameGrid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
   
-  .assessment-btn {
+  .assessmentBtn {
     height: 200px;
   }
 }
 
 @media (max-width: 576px) {
-  .assessment-btn {
+  .assessmentBtn {
     height: 180px;
   }
   
-  .assessment-btn span {
+  .assessmentBtn span {
     font-size: 1.2rem;
   }
 }

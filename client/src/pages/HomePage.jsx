@@ -4,7 +4,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext.jsx';  // 新增导入
 import Navbar from '../components/Navbar.jsx';  // 导入 Navbar
-import './HomePage.css';  
+import styles from './HomePage.module.css';  
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -41,17 +41,17 @@ const HomePage = () => {
   }
 
   return (
-    <div className="homepage-container">
+    <div className={styles.homepageContainer}>
       <Navbar />
 
-      <div className="homepage-content">
+      <div className={styles.homepageContent}>
         <h1>HomePage</h1>
         <p>以下是我们的游戏列表</p>
         
         {/* 新的游戏按钮网格容器 */}
-        <div className="game-grid">
+        <div className={styles.gameGrid}>
           <button 
-            className="assessment-btn"
+            className={styles.assessmentBtn}
             style={{
               backgroundImage: "url('../assets/images/public_goods_game.jpg')"
             }}
@@ -60,7 +60,7 @@ const HomePage = () => {
           </button>
 
           <button 
-            className="assessment-btn"
+            className={styles.assessmentBtn}
             onClick={handleRiskAttiGame}
             style={{
               backgroundImage: "url('../assets/images/risk_assessment.jpg')"
@@ -70,7 +70,7 @@ const HomePage = () => {
           </button>
           
           <button 
-            className="assessment-btn"
+            className={styles.assessmentBtn}
             onClick={handleAmbiguityAttiGame}
             style={{
               backgroundImage: "url('../assets/images/ambiguity_assessment.jpg')"
@@ -81,7 +81,7 @@ const HomePage = () => {
           
           {/* 这里可以继续添加更多按钮，它们会自动排列 */}
           <button 
-            className="assessment-btn"
+            className={styles.assessmentBtn}
             style={{
               backgroundImage: "url('../assets/images/overconfidence_assessment.jpg')"
             }}
@@ -90,7 +90,7 @@ const HomePage = () => {
           </button>
           
           <button 
-            className="assessment-btn"
+            className={styles.assessmentBtn}
             style={{
               backgroundImage: "url('../assets/images/game_under_ambiguity.jpg')"
             }}
@@ -98,7 +98,7 @@ const HomePage = () => {
             Game 5
           </button>
                     <button 
-            className="assessment-btn"
+            className={styles.assessmentBtn}
             style={{
               backgroundImage: "url('../assets/images/game6.jpg')"
             }}

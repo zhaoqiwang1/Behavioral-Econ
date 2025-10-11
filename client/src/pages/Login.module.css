@@ -1,15 +1,15 @@
-/* login.css - 修复版本 */
-.login-app-container {
+/* Login.module.css */
+.loginAppContainer {
   padding: 20px;
   text-align: center;
 }
 
-.login-container h1 {
+.loginContainer h1 {
   color: #333;
   margin-bottom: 30px;
 }
 
-.login-form {
+.loginForm {
   margin-bottom: 30px;
   max-width: 400px;
   margin: 0 auto;
@@ -20,25 +20,25 @@
   background-color: white;
 }
 
-.login-form h2 {
+.loginForm h2 {
   color: #555;
   margin-bottom: 25px;
 }
 
-.form-group {
+.formGroup {
   margin-bottom: 20px;
   text-align: left;
 }
 
-.form-label {
+.formLabel {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
 }
 
 /* 修复这里 - 使用更高特异性的选择器 */
-.login-form .form-group .login-form-input {
-  width: 100%; /* 移除 !important */
+.loginFormInput {
+  width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -47,7 +47,7 @@
   display: block;
 }
 
-.login-button {
+.loginButton {
   width: 100%;
   padding: 12px;
   background-color: #007bff;
@@ -60,49 +60,48 @@
   transition: background-color 0.3s;
 }
 
-.login-button:hover {
+.loginButton:hover {
   background-color: #0056b3;
 }
 
-.navigation-section {
+.navigationSection {
   margin-top: 30px;
 }
 
-.navigation-text {
+.navigationText {
   color: #666;
   margin-bottom: 15px;
 }
 
-.button-group {
-  /* display: flex; */
+.buttonGroup {
   justify-content: center;
   gap: 10px;
 }
 
-.nav-button {
+.navButton {
   padding: 10px 20px;
   color: white;
   border: none;
   border-radius: 10px;
   cursor: pointer;
   font-size: 14px;
-  width: 120px; /* 添加固定宽度 */
+  width: 120px;
   height: 40px;
   text-align: center;
 }
 
-.register-button {
+.registerButton {
   background-color: #28a745;
 }
 
-.home-button {
+.homeButton {
   background-color: #6c757d;
 }
 
-.register-button:hover {
+.registerButton:hover {
   background-color: #218838;
 }
 
-.home-button:hover {
+.homeButton:hover {
   background-color: #5a6268;
 }

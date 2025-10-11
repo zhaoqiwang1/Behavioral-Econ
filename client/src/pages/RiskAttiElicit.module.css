@@ -1,20 +1,21 @@
-.table-container {
-  margin: 20px auto; /* 关键修改：上下20px，左右自动居中 */
+/* RiskAttiElicit.module.css */
+.tableContainer {
+  margin: 20px auto;
   font-family: 'Arial, sans-serif';
-  max-width: 90%; /* 可选：限制最大宽度 */
+  max-width: 90%;
   display: flex;
   flex-direction: column;
-  align-items: center; /* 使内容居中 */
+  align-items: center;
 }
 
-.data-table {
+.dataTable {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 
-.data-table th {
+.dataTable th {
   padding: 12px;
   border: 1px solid #ddd;
   text-align: center;
@@ -22,42 +23,43 @@
   font-weight: bold;
 }
 
-.data-table td {
+.dataTable td {
   padding: 12px;
   border: 1px solid #ddd;
+  text-align: center;
 }
 
-.even-row {
+.evenRow {
   background-color: #fff;
 }
 
-.odd-row {
+.oddRow {
   background-color: #f9f9f9;
 }
 
-.data-table tr {
+.dataTable tr {
   transition: background-color 0.2s;
 }
 
-.data-table tr:hover {
+.dataTable tr:hover {
   background-color: #f0f0f0;
 }
 
-.completed-info {
+.completedInfo {
   text-align: center;
   padding: 40px;
 }
 
-.submit-button {
+.submitButton {
   padding: 10px 30px;
-  background-color: #ccc; /* 默认颜色 */
+  background-color: #ccc;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: not-allowed;
 }
 
-.submit-button:enabled {
+.submitButton:enabled {
   background-color: #28a745;
   cursor: pointer;
 }

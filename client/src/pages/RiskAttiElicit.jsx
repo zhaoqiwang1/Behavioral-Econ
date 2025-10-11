@@ -4,7 +4,7 @@ import React, { useState } from "react";
 // import { useNavigate } from 'react-router-dom';
 import { riskAttiAPI } from '../services/api'; 
 import { useAuth } from '../contexts/AuthContext';
-import './RiskAttiElicit.css'; 
+import styles from './RiskAttiElicit.module.css'; 
 import Navbar from '../components/Navbar.jsx';  
 
 const RiskAttiElicit = () => {
@@ -98,7 +98,7 @@ const RiskAttiElicit = () => {
     return (
       <div>
         <Navbar />
-        <div className = "completed-info">
+        <div className={styles.completedInfo}>
           <h2>✅ 风险评估已完成</h2>
           <p>您已经成功提交风险评估问卷，感谢您的参与！</p>
         </div>
@@ -111,9 +111,9 @@ const RiskAttiElicit = () => {
       <Navbar />
       <h1>Risk Elicitation Game</h1>
       <h2>请选择你想从A换到B的选项的数字。注意：你只能换一次，不能在A和B之前反复。</h2>
-      <div className="table-container">
+      <div className={styles.tableContainer}>
         <h2>选项对比表</h2>
-        <table className="data-table">
+        <table className={styles.dataTable}>
           <thead>
             <tr>
               <th>选择</th>
@@ -126,7 +126,7 @@ const RiskAttiElicit = () => {
             {optionAData.map((item, index) => (
               <tr 
                 key={index} 
-                className={index % 2 === 0 ? 'even-row' : 'odd-row'}
+                className={index % 2 === 0 ? styles.evenRow : styles.oddRow}
                 onClick={() => handleOptionChange(index + 1)}
                 style={{ cursor: 'pointer' }}
               >
@@ -161,7 +161,7 @@ const RiskAttiElicit = () => {
       {/* 提交按钮 */}
       <div style={{ textAlign: 'center', marginTop: '20px' }}>
         <button 
-          className = "submit-button"
+          className={styles.submitButton}
           onClick={handleSubmit}
           disabled={loading || !selectedOption}
         >

@@ -1,15 +1,15 @@
-/* Register.css */
-.register-app-container {
+/* Register.module.css */
+.registerAppContainer {
   padding: 20px;
 }
 
-.register-container h1 {
+.registerContainer h1 {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.register-form {
+.registerForm {
   margin-bottom: 30px;
   max-width: 500px;
   margin: 0 auto;
@@ -20,25 +20,24 @@
   background-color: white;
 }
 
-.register-form h2 {
+.registerForm h2 {
   text-align: center;
   color: #555;
   margin-bottom: 20px;
 }
 
-.register-form h3 {
+.registerForm h3 {
   color: #666;
   margin: 20px 0 15px 0;
-  /* border-bottom: 1px solid #eee; */
   padding-bottom: 8px;
 }
 
-.form-row {
+.formRow {
   margin-bottom: 15px;
   text-align: center;
 }
 
-.register-form-input {
+.registerFormInput {
   width: 66%;
   padding: 8px;
   margin: 5px;
@@ -47,7 +46,7 @@
   font-size: 14px;
 }
 
-.form-select {
+.formSelect {
   width: 70%;
   padding: 8px;
   margin: 5px;
@@ -57,9 +56,9 @@
   background-color: white;
 }
 
-.register-button {
+.registerButton {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #28a745;
   color: white;
   border: none;
   border-radius: 10px;
@@ -69,6 +68,6 @@
   transition: background-color 0.3s;
 }
 
-.register-button:hover {
-  background-color: #0056b3;
+.registerButton:hover {
+  background-color: #218838;
 }
