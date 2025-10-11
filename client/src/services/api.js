@@ -12,6 +12,8 @@ const api = axios.create({
 export const userAPI = {
   register: (userData) => api.post('/users/register', userData),
   login: (loginData) => api.post('/users/login', loginData),
+  updateProfile: (userId, userData) => api.put(`/users/${userId}`, userData),
+  getUserProfile: (userId) => api.get(`/users/${userId}`),
 };
 
 // Risk Attitudes Elict Game 相关API

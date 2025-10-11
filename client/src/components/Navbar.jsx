@@ -14,6 +14,10 @@ const Navbar = () => {
     navigate('/');
   };
 
+  const handleProfileClick = () => {
+    navigate('/settings'); // 跳转到用户设置页面
+  };
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbarTitle} onClick={() => navigate('/')}>
@@ -24,7 +28,13 @@ const Navbar = () => {
         {isAuthenticated ? (
           // 已登录状态
           <div className={styles.userInfo}>
-            <span>欢迎, {user?.username}</span>
+            <span 
+              className={styles.username} 
+              onClick={handleProfileClick}
+              style={{ cursor: 'pointer' }}
+            >
+              欢迎, {user?.username}
+            </span>
             <button onClick={handleLogout} className={`${styles.navBtn} ${styles.logoutBtn}`}>
               登出
             </button>
