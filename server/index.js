@@ -6,15 +6,10 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-// #region 导入数据模型
-import UserModel from './models/Users.js'; 
-// #endregion
-
-
-
 // #region 导入路由
 import usersRoutes from './routes/users.js';
 import riskAttiRoutes from './routes/riskattielicit.js';
+import ambiguityAttiRoutes from './routes/ambiguityattielicit.js';
 // #endregion
 
 const app = express();
@@ -34,6 +29,7 @@ mongoose.connect(process.env.MONGODB_URI)
 app.use('/api/users', usersRoutes); 
     // 上面的代码在基础路由http://localhost:3001的基础上，这里加了对应的路由前缀，得到http://localhost:3001/api/users/. 等调用了后端routes/users.js里面的具体路由后，得到完整的api接口路由路径： http://localhost:3001/api/users/register
 app.use('/api/riskatti', riskAttiRoutes); 
+app.use('/api/ambiguityatti', ambiguityAttiRoutes);
 // #endregion
 
 

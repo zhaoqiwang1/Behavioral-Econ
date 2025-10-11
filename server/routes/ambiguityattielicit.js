@@ -1,6 +1,6 @@
 import express from 'express';
 import UserModel from '../models/Users.js';
-import RiskAttiSurvey from '../models/RiskAtti.js';
+import AmbiguityAttiSurvey from '../models/AmbiguityAtti.js';
 import mongoose from 'mongoose';
 
 const router = express.Router();
@@ -8,11 +8,11 @@ const router = express.Router();
 // 提交风险评估答案
 router.post('/submit', async (req, res) => {
   try {
-    const { userId, riskAttitude } = req.body;
+    const { userId, ambiguityAttitude } = req.body;
     
     console.log('收到的 userId:', userId);
   
-    // #region 转换 userId 为 ObjectId
+    // 转换 userId 为 ObjectId
     let userObjectId;
     try {
       userObjectId = new mongoose.Types.ObjectId(userId);
@@ -24,23 +24,23 @@ router.post('/submit', async (req, res) => {
         receivedUserId: userId
       });
     }
-    // #endregion
+    
 
     // 检查是否已经提交过
-    const existingSubmission = await RiskAttiSurvey.findOne({ userId: userObjectId });
+    const existingSubmission = await AmbiguityAttiSurvey.findOne({ userId: userObjectId });
     if (existingSubmission) {
       return res.status(200).json({ 
         message: '您已经提交过评估，无法重复提交',
         alreadySubmitted: true,
-        previousScore: existingSubmission.riskAttitude,
+        previousScore: existingSubmission.ambiguityAttitude,
         submittedAt: existingSubmission.submittedAt
       });
     }
 
     // 创建新的提交
-    const surveySubmission = new RiskAttiSurvey({
+    const surveySubmission = new AmbiguityAttiSurvey({
       userId: userObjectId,
-      riskAttitude,
+      ambiguityAttitude,
       submittedAt: new Date()
     });
 
@@ -49,7 +49,7 @@ router.post('/submit', async (req, res) => {
     res.status(201).json({
       message: '提交成功！',
       submittedAt: surveySubmission.submittedAt,
-      riskAttitude: surveySubmission.riskAttitude
+      ambiguityAttitude: surveySubmission.ambiguityAttitude
     });
 
   } catch (error) {
