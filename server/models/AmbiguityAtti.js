@@ -21,4 +21,4 @@ const AmbiguityAttiSurveySchema = new mongoose.Schema({
   }
 });
 
-export default mongoose.model('AmbiguityAttiSurvey', AmbiguityAttiSurvey);
+export default mongoose.model('AmbiguityAttiSurvey', AmbiguityAttiSurveySchema);

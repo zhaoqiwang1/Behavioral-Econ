@@ -19,7 +19,10 @@ export const riskAttiAPI = {
   submit: (userData) => api.post('/riskatti/submit', userData),
 };
 
-
+// Ambiguity Attitudes Elict Game 相关API
+export const ambiguityAttiAPI = {
+  submit: (userData) => api.post('/ambiguityatti/submit', userData),
+};
 
 export default api; 
 
