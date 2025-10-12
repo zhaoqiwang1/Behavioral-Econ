@@ -12,6 +12,7 @@ import riskAttiRoutes from './routes/riskattielicit.js';
 import ambiguityAttiRoutes from './routes/ambiguityattielicit.js';
 import publicGoodsRoutes from './routes/publicgoods.js';
 import overconfidenceGameRoutes from './routes/overconfidencegame.js';
+import GameUnderAmbigRoutes from './routes/gameunderambiguity.js';
 // #endregion
 
 const app = express();
@@ -34,6 +35,7 @@ app.use('/api/riskatti', riskAttiRoutes);
 app.use('/api/ambiguityatti', ambiguityAttiRoutes);
 app.use('/api/publicgoods', publicGoodsRoutes);
 app.use('/api/overconfidencegame', overconfidenceGameRoutes);
+app.use('/api/gameunderambiguity', GameUnderAmbigRoutes);
 // #endregion
 
 
