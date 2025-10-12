@@ -9,7 +9,6 @@ const OverconfidenceGame = () => {
   const [answers, setAnswers] = useState(Array(10).fill({ lowerBound: '', upperBound: '' }));
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [hasSubmitted, setHasSubmitted] = useState(false);
-  const [message, setMessage] = useState('');
 
   // 预定义的10个问题
   const questions = [
@@ -40,11 +39,11 @@ const OverconfidenceGame = () => {
     for (let i = 0; i < answers.length; i++) {
       const answer = answers[i];
       if (!answer.lowerBound || !answer.upperBound) {
-        setMessage(`请填写第 ${i + 1} 个问题的上下限值`);
+        alert(`请填写第 ${i + 1} 个问题的上下限值`);
         return false;
       }
       if (parseFloat(answer.lowerBound) >= parseFloat(answer.upperBound)) {
-        setMessage(`第 ${i + 1} 个问题：最低值必须小于最高值`);
+        alert(`第 ${i + 1} 个问题：最低值必须小于最高值`);
         return false;
       }
     }
@@ -104,97 +103,94 @@ const OverconfidenceGame = () => {
   // 重置表单
   const handleReset = () => {
     setAnswers(Array(10).fill({ lowerBound: '', upperBound: '' }));
-    setMessage('');
   };
 
   if (hasSubmitted) {
     return (
-      <div className={styles.container}>
+      <div>
         <Navbar />
-        <div className={styles.completedMessage}>
-          <h2>感谢参与！</h2>
-          <p>您已经完成过过度自信游戏，无法重复参与。</p>
-          <button 
-            className={styles.backButton}
-            onClick={() => window.history.back()}
-          >
-            返回
-          </button>
+        <div className={styles.container}>
+          <div className={styles.completedMessage}>
+            <h2>感谢参与！</h2>
+            <p>您已经完成过过度自信游戏，无法重复参与。</p>
+            <button 
+              className={styles.backButton}
+              onClick={() => window.history.back()}
+            >
+              返回
+            </button>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className={styles.container}>
+    <div>
       <Navbar />
-      <div className={styles.header}>
-        <h1>过度自信测试</h1>
-        <p>请为以下每个问题提供您认为的合理范围（最低值和最高值）</p>
-      </div>
-
-      {message && (
-        <div className={styles.message}>
-          {message}
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <h1>过度自信测试</h1>
+          <p>请为以下每个问题提供您认为的合理范围（最低值和最高值）</p>
         </div>
-      )}
 
-      <form onSubmit={handleSubmit} className={styles.form}>
-        {questions.map((question, index) => (
-          <div key={index} className={styles.questionCard}>
-            <div className={styles.questionHeader}>
-              <span className={styles.questionNumber}>第 {index + 1} 题</span>
-              <h3 className={styles.questionText}>{question}</h3>
-            </div>
-            
-            <div className={styles.inputGroup}>
-              <div className={styles.inputField}>
-                <label htmlFor={`lower-${index}`}>最低值：</label>
-                <input
-                  id={`lower-${index}`}
-                  type="number"
-                  step="any"
-                  value={answers[index].lowerBound}
-                  onChange={(e) => handleInputChange(index, 'lowerBound', e.target.value)}
-                  placeholder="请输入最低值"
-                  disabled={isSubmitting}
-                />
+        <form onSubmit={handleSubmit} className={styles.form}>
+          {questions.map((question, index) => (
+            <div key={index} className={styles.questionCard}>
+              <div className={styles.questionHeader}>
+                <span className={styles.questionNumber}>第 {index + 1} 题</span>
+                <h3 className={styles.questionText}>{question}</h3>
               </div>
               
-              <div className={styles.inputField}>
-                <label htmlFor={`upper-${index}`}>最高值：</label>
-                <input
-                  id={`upper-${index}`}
-                  type="number"
-                  step="any"
-                  value={answers[index].upperBound}
-                  onChange={(e) => handleInputChange(index, 'upperBound', e.target.value)}
-                  placeholder="请输入最高值"
-                  disabled={isSubmitting}
-                />
+              <div className={styles.inputGroup}>
+                <div className={styles.inputField}>
+                  <label htmlFor={`lower-${index}`}>最低值：</label>
+                  <input
+                    id={`lower-${index}`}
+                    type="number"
+                    step="any"
+                    value={answers[index].lowerBound}
+                    onChange={(e) => handleInputChange(index, 'lowerBound', e.target.value)}
+                    placeholder="请输入最低值"
+                    disabled={isSubmitting}
+                  />
+                </div>
+                
+                <div className={styles.inputField}>
+                  <label htmlFor={`upper-${index}`}>最高值：</label>
+                  <input
+                    id={`upper-${index}`}
+                    type="number"
+                    step="any"
+                    value={answers[index].upperBound}
+                    onChange={(e) => handleInputChange(index, 'upperBound', e.target.value)}
+                    placeholder="请输入最高值"
+                    disabled={isSubmitting}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
 
-        <div className={styles.actions}>
-          <button
-            type="button"
-            onClick={handleReset}
-            className={styles.resetButton}
-            disabled={isSubmitting}
-          >
-            重置
-          </button>
-          <button
-            type="submit"
-            className={styles.submitButton}
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? '提交中...' : '提交答案'}
-          </button>
-        </div>
-      </form>
+          <div className={styles.actions}>
+            <button
+              type="button"
+              onClick={handleReset}
+              className={styles.resetButton}
+              disabled={isSubmitting}
+            >
+              重置
+            </button>
+            <button
+              type="submit"
+              className={styles.submitButton}
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? '提交中...' : '提交答案'}
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
