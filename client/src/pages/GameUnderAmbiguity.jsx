@@ -9,23 +9,70 @@ const GameUnderAmbiguity = () => {
   const [answers, setAnswers] = useState(Array(8).fill(null));
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [currentRound, setCurrentRound] = useState(0);
+  const [tempSelections, setTempSelections] = useState(Array(8).fill(null)); // 临时选择
 
-  // 处理选择变化
-  const handleChoiceChange = (roundIndex, choice) => {
+  const roundDetails = [
+    { round: 1, optionA: { self: 6.6, other: 5.8 }, optionB: { self: 10, other: 2, probability: "50%的概率" } },
+    { round: 2, optionA: { self: 5, other: 3.3 }, optionB: { self: 7.5, other: 2, probability: "未知概率" } },
+    { round: 3, optionA: { self: 6.6, other: 5 }, optionB: { self: 7.5, other: 3.3, probability: "50%的概率" } },
+    { round: 4, optionA: { self: 3.3, other: 2.5 }, optionB: { self: 5, other: 2, probability: "50%的概率" } },
+    { round: 5, optionA: { self: 6.6, other: 5 }, optionB: { self: 7.5, other: 3.3, probability: "未知概率" } },
+    { round: 6, optionA: { self: 5, other: 3.3 }, optionB: { self: 7.5, other: 2, probability: "50%的概率" } },
+    { round: 7, optionA: { self: 3.3, other: 2.5 }, optionB: { self: 5, other: 2, probability: "未知概率" } },
+    { round: 8, optionA: { self: 6.6, other: 5.8 }, optionB: { self: 10, other: 2, probability: "未知概率" } }
+  ];
+
+  // 处理临时选择变化
+  const handleTempChoiceChange = (roundIndex, choice) => {
+    const newTempSelections = [...tempSelections];
+    newTempSelections[roundIndex] = choice;
+    setTempSelections(newTempSelections);
+  };
+
+  // 确认当前回合的选择
+  const handleConfirmChoice = (roundIndex) => {
+    if (tempSelections[roundIndex]) {
+      const newAnswers = [...answers];
+      newAnswers[roundIndex] = tempSelections[roundIndex];
+      setAnswers(newAnswers);
+      
+      // 清空临时选择
+      const newTempSelections = [...tempSelections];
+      newTempSelections[roundIndex] = null;
+      setTempSelections(newTempSelections);
+      
+      // 自动进入下一回合
+      if (roundIndex < roundDetails.length - 1) {
+        setCurrentRound(roundIndex + 1);
+      }
+    }
+  };
+
+  // 修改选择（如果用户想重新选择）
+  const handleModifyChoice = (roundIndex) => {
+    const newTempSelections = [...tempSelections];
+    newTempSelections[roundIndex] = null;
+    setTempSelections(newTempSelections);
+    
     const newAnswers = [...answers];
-    newAnswers[roundIndex] = choice;
+    newAnswers[roundIndex] = null;
     setAnswers(newAnswers);
   };
 
-  // 验证所有回合是否已选择
   const validateAnswers = () => {
     for (let i = 0; i < answers.length; i++) {
       if (answers[i] === null) {
         alert(`请完成第 ${i + 1} 回合的选择`);
+        setCurrentRound(i);
         return false;
       }
     }
     return true;
+  };
+
+  const goToRound = (roundIndex) => {
+    setCurrentRound(roundIndex);
   };
 
   const handleSubmit = async (e) => {
@@ -42,7 +89,6 @@ const GameUnderAmbiguity = () => {
 
     setIsSubmitting(true);
 
-    // 格式化答案数据
     const formattedAnswers = answers.map((choice, index) => ({
       roundNumber: index + 1,
       choice: choice
@@ -75,9 +121,10 @@ const GameUnderAmbiguity = () => {
       });
   };
 
-  // 重置表单
   const handleReset = () => {
     setAnswers(Array(8).fill(null));
+    setTempSelections(Array(8).fill(null));
+    setCurrentRound(0);
   };
 
   if (hasSubmitted) {
@@ -88,10 +135,7 @@ const GameUnderAmbiguity = () => {
           <div className={styles.completedMessage}>
             <h2>感谢参与！</h2>
             <p>您已经完成过模糊性游戏实验，无法重复参与。</p>
-            <button 
-              className={styles.backButton}
-              onClick={() => window.history.back()}
-            >
+            <button className={styles.backButton} onClick={() => window.history.back()}>
               返回
             </button>
           </div>
@@ -140,67 +184,135 @@ const GameUnderAmbiguity = () => {
               <li>你不知道哪一回合在B选项中是已知概率，哪一回合是未知概率；两者的顺序是随机的。</li>
             </ul>
           </div>
-
-          <div className={styles.note}>
-            <p><strong>注意：</strong>介于我们课堂实验有不方便的地方，难以做到实时随机分配。因此，每一回合的两两配对，以及每对里的两位同学的角色由老师课后按实到学生的身份和游戏规则随机决定。</p>
-          </div>
         </div>
 
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.roundsSection}>
             <h2>请完成以下8个回合的决策</h2>
             <p>在每个回合中，请选择您偏好的选项（A 或 B）</p>
+            
+            <div className={styles.legend}>
+              <div><strong>选项A:</strong> 您得 X 分，另一位同学得 Y 分</div>
+              <div><strong>选项B:</strong> 您得 X 分，另一位同学有 P 概率得 0 分，有 (1-P) 概率得 Y 分</div>
+            </div>
 
-            <div className={styles.roundsGrid}>
-              {answers.map((choice, index) => (
-                <div key={index} className={styles.roundCard}>
+            <div className={styles.roundsNavigation}>
+              {roundDetails.map((round, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  className={`${styles.navButton} ${
+                    index === currentRound ? styles.active : ''
+                  } ${answers[index] ? styles.completed : ''}`}
+                  onClick={() => goToRound(index)}
+                  disabled={index > 0 && !answers[index - 1] && index !== currentRound}
+                >
+                  {index + 1}
+                  {answers[index] && <span className={styles.checkmark}>✓</span>}
+                </button>
+              ))}
+            </div>
+
+            <div className={styles.currentRound}>
+              {roundDetails.slice(0, currentRound + 1).map((round, index) => (
+                <div 
+                  key={index} 
+                  className={`${styles.roundCard} ${index === currentRound ? styles.active : ''}`}
+                >
                   <div className={styles.roundHeader}>
-                    <h3>第 {index + 1} 回合</h3>
+                    <h3>第 {round.round} 回合</h3>
+                    {index < currentRound && <span className={styles.completedBadge}>已完成</span>}
                   </div>
                   
                   <div className={styles.choices}>
                     <button
                       type="button"
-                      className={`${styles.choiceButton} ${choice === 'A' ? styles.selected : ''}`}
-                      onClick={() => handleChoiceChange(index, 'A')}
-                      disabled={isSubmitting}
+                      className={`${styles.choiceButton} ${
+                        tempSelections[index] === 'A' ? styles.selectedTemp : ''} ${
+                        answers[index] === 'A' ? styles.selectedConfirmed : ''}`
+                      }
+                      onClick={() => handleTempChoiceChange(index, 'A')}
+                      disabled={isSubmitting || answers[index] !== null}
                     >
-                      <span className={styles.choiceLabel}>选项 A</span>
+                      <div className={styles.choiceContent}>
+                        <span className={styles.choiceLabel}>选项 A</span>
+                        <div className={styles.payoffDetails}>
+                          <div>你得 <strong>{round.optionA.self}</strong> 分;</div>
+                          <div>另一位同学得 <strong>{round.optionA.other}</strong> 分</div>
+                        </div>
+                      </div>
                     </button>
                     
                     <button
                       type="button"
-                      className={`${styles.choiceButton} ${choice === 'B' ? styles.selected : ''}`}
-                      onClick={() => handleChoiceChange(index, 'B')}
-                      disabled={isSubmitting}
+                      className={`${styles.choiceButton} ${
+                        tempSelections[index] === 'B' ? styles.selectedTemp : ''} ${
+                        answers[index] === 'B' ? styles.selectedConfirmed : ''}`
+                      }
+                      onClick={() => handleTempChoiceChange(index, 'B')}
+                      disabled={isSubmitting || answers[index] !== null}
                     >
-                      <span className={styles.choiceLabel}>选项 B</span>
+                      <div className={styles.choiceContent}>
+                        <span className={styles.choiceLabel}>选项 B</span>
+                        <div className={styles.payoffDetails}>
+                          <div>你得 <strong>{round.optionB.self}</strong> 分；</div>
+                          <div>另一位同学有{round.optionB.probability}得 <strong>{round.optionB.other}</strong> 分</div>
+                          {/* <div>有 {round.optionB.probability}</div>
+                          <div>得 <strong>{round.optionB.other}</strong> 分</div> */}
+                        </div>
+                      </div>
                     </button>
                   </div>
                   
                   <div className={styles.choiceIndicator}>
-                    {choice && <span>已选择: <strong>{choice}</strong></span>}
-                    {!choice && <span className={styles.notSelected}>尚未选择</span>}
+                    {answers[index] ? (
+                      <div className={styles.confirmedChoice}>
+                        <span>已确认选择: <strong>{answers[index]}</strong></span>
+                        <button 
+                          type="button" 
+                          className={styles.modifyButton}
+                          onClick={() => handleModifyChoice(index)}
+                        >
+                          修改选择
+                        </button>
+                      </div>
+                    ) : tempSelections[index] ? (
+                      <div className={styles.tempChoice}>
+                        <span>临时选择: <strong>{tempSelections[index]}</strong></span>
+                        <button 
+                          type="button" 
+                          className={styles.confirmButton}
+                          onClick={() => handleConfirmChoice(index)}
+                        >
+                          确认选择
+                        </button>
+                      </div>
+                    ) : (
+                      <span className={styles.notSelected}>请选择你的决策</span>
+                    )}
                   </div>
                 </div>
               ))}
             </div>
+
+            <div className={styles.progressSection}>
+              <div className={styles.progressBar}>
+                <div 
+                  className={styles.progressFill} 
+                  style={{ width: `${((currentRound + 1) / roundDetails.length) * 100}%` }}
+                ></div>
+              </div>
+              <div className={styles.progressText}>
+                已完成 {answers.filter(answer => answer !== null).length} / {roundDetails.length} 回合
+              </div>
+            </div>
           </div>
 
           <div className={styles.actions}>
-            <button
-              type="button"
-              onClick={handleReset}
-              className={styles.resetButton}
-              disabled={isSubmitting}
-            >
+            <button type="button" onClick={handleReset} className={styles.resetButton} disabled={isSubmitting}>
               重置所有选择
             </button>
-            <button
-              type="submit"
-              className={styles.submitButton}
-              disabled={isSubmitting}
-            >
+            <button type="submit" className={styles.submitButton} disabled={isSubmitting || answers.filter(answer => answer !== null).length < roundDetails.length}>
               {isSubmitting ? '提交中...' : '提交答案'}
             </button>
           </div>
