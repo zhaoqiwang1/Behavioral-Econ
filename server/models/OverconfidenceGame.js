@@ -32,6 +32,6 @@ const OverconfidenceGameSchema = new mongoose.Schema({
 });
 
 // 添加索引以便快速查询
-OverconfidenceGameSchema.index({ userId: 1 });
+// OverconfidenceGameSchema.index({ userId: 1 });
 
 export default mongoose.model('OverconfidenceGame', OverconfidenceGameSchema);
