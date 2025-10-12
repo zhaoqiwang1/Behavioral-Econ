@@ -43,6 +43,14 @@ const HomePage = () => {
       '你需要先登录哦'
     );
   };
+
+  // 专门用于过度自信的函数
+  const handleOverconfidenceGame = () => {
+    checkAuthAndNavigate(
+      '/overconfidence-game',
+      '你需要先登录哦'
+    );
+  };
   // #endregion
 
   // 新增：如果还在检查登录状态，显示加载中
@@ -93,6 +101,7 @@ const HomePage = () => {
           {/* 这里可以继续添加更多按钮，它们会自动排列 */}
           <button 
             className={styles.assessmentBtn}
+            onClick={handleOverconfidenceGame}
             style={{
               backgroundImage: "url('../assets/images/overconfidence_assessment.jpg')"
             }}

@@ -8,6 +8,7 @@ import Register from './pages/Register.jsx';
 import Login from './pages/Login.jsx';
 import HomePage from './pages/HomePage.jsx';
 import UserSettings from './pages/UserSettings.jsx';
+import OverconfidenceGame from './pages/OverconfidenceGame.jsx';
 import { AuthProvider } from './contexts/AuthContext.jsx';  // 导入
 import './App.css';
 
@@ -26,6 +27,7 @@ function App() {
             <Route path="/ambiguity-attitude-elicit" element={<AmbiguityAttiElicit />} />
             <Route path="/public-goods" element={<PublicGoodsGame />} />
             <Route path="/settings" element={<UserSettings />} />
+            <Route path="/overconfidence-game" element={<OverconfidenceGame />} />
           </Routes>
         </div> 
       </AuthProvider>

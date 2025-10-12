@@ -37,6 +37,11 @@ export const publicGoodsAPI = {
   submit: (userData) => api.post('/publicgoods/submit', userData),
 };
 
+// Overconfidence Game 相关API
+export const overconfidenceGameAPI = {
+  submit: (userData) => api.post('/overconfidencegame/submit', userData),
+};
+
 export default api; 
 
 
