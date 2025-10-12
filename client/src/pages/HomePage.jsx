@@ -51,6 +51,14 @@ const HomePage = () => {
       '你需要先登录哦'
     );
   };
+
+  // 专门用于game under ambiguity 的函数
+  const handleGameUnderAmbig = () => {
+    checkAuthAndNavigate(
+      '/game-under-ambiguity',
+      '你需要先登录哦'
+    );
+  };
   // #endregion
 
   // 新增：如果还在检查登录状态，显示加载中
@@ -111,11 +119,12 @@ const HomePage = () => {
           
           <button 
             className={styles.assessmentBtn}
+            onClick={handleGameUnderAmbig}
             style={{
               backgroundImage: "url('../assets/images/game_under_ambiguity.jpg')"
             }}
           >
-            Game 5
+            Game Under Ambiguity
           </button>
                     <button 
             className={styles.assessmentBtn}
