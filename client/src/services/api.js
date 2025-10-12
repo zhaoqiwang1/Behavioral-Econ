@@ -42,6 +42,12 @@ export const overconfidenceGameAPI = {
   submit: (userData) => api.post('/overconfidencegame/submit', userData),
 };
 
+// Game Under Ambiguity 相关API
+export const gameUnderAmbiguityAPI = {
+  submit: (userData) => api.post('/gameunderambiguity/submit', userData),
+};
+
+
 export default api; 
 
 
