@@ -14,9 +14,6 @@ const api = axios.create({
   timeout: 10000
 });
 
-
-
-
 // Users相关API
 export const userAPI = {
   register: (userData) => api.post('/users/register', userData),
