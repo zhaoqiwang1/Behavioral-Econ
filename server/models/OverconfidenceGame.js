@@ -1,5 +1,4 @@
-// models/OverconfidenceGame.js
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const OverconfidenceGameSchema = new mongoose.Schema({
   userId: {
@@ -35,4 +34,4 @@ const OverconfidenceGameSchema = new mongoose.Schema({
 // 添加索引以便快速查询
 OverconfidenceGameSchema.index({ userId: 1 });
 
-module.exports = mongoose.model('OverconfidenceGame', OverconfidenceGameSchema);
+export default mongoose.model('OverconfidenceGame', OverconfidenceGameSchema);
