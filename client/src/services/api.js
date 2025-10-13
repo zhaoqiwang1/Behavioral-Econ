@@ -25,6 +25,7 @@ export const userAPI = {
 // Risk Attitudes Elict Game 相关API
 export const riskAttiAPI = {
   submit: (userData) => api.post('/riskatti/submit', userData),
+  getResults: () => api.get('/riskatti/results'),
 };
 
 // Ambiguity Attitudes Elict Game 相关API
