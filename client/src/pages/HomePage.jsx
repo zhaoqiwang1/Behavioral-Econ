@@ -61,6 +61,17 @@ const HomePage = () => {
   };
   // #endregion
 
+  // #region 展示行为数据
+    // 展示风险偏好函数
+  const handleShowRiskAtti = () => {
+    checkAuthAndNavigate(
+      '/show-risk-attitudes',
+      '你需要先登录哦'
+    );
+  };
+  // #endregion
+
+
   // 新增：如果还在检查登录状态，显示加载中
   if (loading) {
     return <div>加载中...</div>;
@@ -126,8 +137,10 @@ const HomePage = () => {
           >
             Game Under Ambiguity
           </button>
-                    <button 
+          
+          <button 
             className={styles.assessmentBtn}
+            onClick={handleShowRiskAtti}
             style={{
               backgroundImage: "url('../assets/images/game6.jpg')"
             }}

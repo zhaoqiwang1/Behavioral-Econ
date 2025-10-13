@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 
 const router = express.Router();
 
-// 提交风险评估答案
+// #region Post，提交风险评估答案
 router.post('/submit', async (req, res) => {
   try {
     const { userId, riskAttitude } = req.body;
@@ -60,5 +60,55 @@ router.post('/submit', async (req, res) => {
     });
   }
 });
+// #endregion
+
+
+// #region Get风险评估的答案
+router.get('/results', async (req, res) => {
+  try {
+    // 使用聚合查询来连接 RiskAttiSurvey 和 User 集合
+    const riskData = await RiskAttiSurvey.aggregate([
+      {
+        $lookup: {
+          from: 'users', // User 集合的名称
+          localField: 'userId',
+          foreignField: '_id',
+          as: 'userInfo'
+        }
+      },
+      {
+        $unwind: '$userInfo' // 将用户信息数组展开为对象
+      },
+      {
+        $project: {
+          _id: 0,
+          studentName: '$userInfo.username', // 使用 username 字段
+          studentId: '$userInfo.demographic.studentid', // 使用 demographic.studentid
+          riskAttitude: 1,
+          submittedAt: 1
+        }
+      },
+      {
+        $sort: { submittedAt: -1 } // 按提交时间倒序排列
+      }
+    ]);
+
+    res.status(200).json({
+      success: true,
+      data: riskData,
+      count: riskData.length
+    });
+
+  } catch (error) {
+    console.error('获取风险偏好数据错误:', error);
+    res.status(500).json({ 
+      success: false,
+      message: '获取数据失败，请重试',
+      error: error.message 
+    });
+  }
+});
+// #endregion
+
 
 export default router;
