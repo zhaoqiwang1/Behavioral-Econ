@@ -40,8 +40,8 @@ const PublicGoodsGame = () => {
         // 清空当前输入
         setUserContribution("");
         
-        // 如果是最后一轮，显示完成页面
-        if (currentRound === totalRounds) {
+        // 检查是否完成了所有回合
+        if (response.data.isCompleted) {
           alert('恭喜！您已完成所有20个回合！');
           setHasSubmitted(true);
         } else {
@@ -52,18 +52,29 @@ const PublicGoodsGame = () => {
       }
     })
     .catch((error) => {
-     const { response } = error;
+      const { response } = error;
   
-     if (response?.status === 409) {
-        // 专门处理重复提交的情况
-        console.warn('重复提交被阻止:', response.data?.message || '已完成所有回合');
-        alert('你已经完成所有回合的提交，无法重复提交数据！');
-        setHasSubmitted(true);
+      if (response?.status === 409) {
+        if (response.data.alreadyCompleted) {
+          // 已经完成所有回合
+          alert('您已经完成所有20个回合，不能重复参与');
+          setHasSubmitted(true);
+        } else {
+          // 当前回合已提交
+          alert(response.data.message);
+          // 进入下一回合
+          if (currentRound < totalRounds) {
+            setCurrentRound(currentRound + 1);
+            setUserContribution("");
+          } else {
+            setHasSubmitted(true);
+          }
+        }
       } else {
-      // 其他错误使用通用处理
-      console.error('提交失败:', error);
-      alert(response?.data?.message || '提交失败，请重试');
-  }
+        // 其他错误
+        console.error('提交失败:', error);
+        alert(response?.data?.message || '提交失败，请重试');
+      }
     })
     .finally(() => {
       setLoading(false);
@@ -99,7 +110,7 @@ const PublicGoodsGame = () => {
       
       <div className={styles.instructions}>
         <h3>游戏说明</h3>
-        <p>您有100个代币可以分配。请选择您想要贡献到公共池的代币数量（0-100）。</p>
+        <p>您有20个代币可以分配。请选择您想要贡献到公共池的代币数量（0-20）。</p>
         <p>当前进度：第 {currentRound} / {totalRounds} 回合</p>
       </div>
 
