@@ -49,17 +49,6 @@ const GameUnderAmbiguity = () => {
     }
   };
 
-  // 修改选择（如果用户想重新选择）
-  const handleModifyChoice = (roundIndex) => {
-    const newTempSelections = [...tempSelections];
-    newTempSelections[roundIndex] = null;
-    setTempSelections(newTempSelections);
-    
-    const newAnswers = [...answers];
-    newAnswers[roundIndex] = null;
-    setAnswers(newAnswers);
-  };
-
   const validateAnswers = () => {
     for (let i = 0; i < answers.length; i++) {
       if (answers[i] === null) {
@@ -121,11 +110,11 @@ const GameUnderAmbiguity = () => {
       });
   };
 
-  const handleReset = () => {
-    setAnswers(Array(8).fill(null));
-    setTempSelections(Array(8).fill(null));
-    setCurrentRound(0);
-  };
+  // const handleReset = () => {
+  //   setAnswers(Array(8).fill(null));
+  //   setTempSelections(Array(8).fill(null));
+  //   setCurrentRound(0);
+  // };
 
   if (hasSubmitted) {
     return (
@@ -257,8 +246,6 @@ const GameUnderAmbiguity = () => {
                         <div className={styles.payoffDetails}>
                           <div>你得 <strong>{round.optionB.self}</strong> 分；</div>
                           <div>另一位同学有{round.optionB.probability}得 <strong>{round.optionB.other}</strong> 分</div>
-                          {/* <div>有 {round.optionB.probability}</div>
-                          <div>得 <strong>{round.optionB.other}</strong> 分</div> */}
                         </div>
                       </div>
                     </button>
@@ -268,13 +255,6 @@ const GameUnderAmbiguity = () => {
                     {answers[index] ? (
                       <div className={styles.confirmedChoice}>
                         <span>已确认选择: <strong>{answers[index]}</strong></span>
-                        <button 
-                          type="button" 
-                          className={styles.modifyButton}
-                          onClick={() => handleModifyChoice(index)}
-                        >
-                          修改选择
-                        </button>
                       </div>
                     ) : tempSelections[index] ? (
                       <div className={styles.tempChoice}>
@@ -309,9 +289,9 @@ const GameUnderAmbiguity = () => {
           </div>
 
           <div className={styles.actions}>
-            <button type="button" onClick={handleReset} className={styles.resetButton} disabled={isSubmitting}>
+            {/* <button type="button" onClick={handleReset} className={styles.resetButton} disabled={isSubmitting}>
               重置所有选择
-            </button>
+            </button> */}
             <button type="submit" className={styles.submitButton} disabled={isSubmitting || answers.filter(answer => answer !== null).length < roundDetails.length}>
               {isSubmitting ? '提交中...' : '提交答案'}
             </button>
