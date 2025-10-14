@@ -1,7 +1,7 @@
 // Register.jsx - 注册页面
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import { userAPI } from '../services/api';
+import { userAPI } from '../../services/api';
 import styles from './Register.module.css';
 
 const Register = () => {
@@ -148,7 +148,7 @@ const Register = () => {
         });
 
         // 跳转到登录页面或首页
-        navigate('/login');
+        navigate('/auth/login');
         
       }).catch((error) => {
         console.error('注册失败:', error);

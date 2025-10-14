@@ -1,8 +1,8 @@
 // Login.jsx - 登录页面
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import { userAPI } from '../services/api';
-import { useAuth } from '../contexts/AuthContext.jsx';  // 新增导入
+import { userAPI } from '../../services/api.js';
+import { useAuth } from '../../contexts/AuthContext.jsx';  // 新增导入
 import styles from './Login.module.css';  
 
 const Login = () => {
@@ -137,7 +137,7 @@ const Login = () => {
           {/* <p className={styles.navigationText}>还没有账号？</p> */}
           <div className={styles.buttonGroup}>
             <button 
-              onClick={() => navigate('/register')}
+              onClick={() => navigate('/auth/register')}
               className={`${styles.navButton} ${styles.registerButton}`}
             >
               注册账号

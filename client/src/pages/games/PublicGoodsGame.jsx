@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { publicGoodsAPI } from '../services/api'; 
-import { useAuth } from '../contexts/AuthContext';
+import { publicGoodsAPI } from '../../services/api.js'; 
+import { useAuth } from '../../contexts/AuthContext.jsx';
 import styles from './PublicGoodsGame.module.css'; 
-import Navbar from '../components/Navbar.jsx';  
+import Navbar from '../../components/Navbar.jsx';  
 
 const PublicGoodsGame = () => {
   const { user } = useAuth();
