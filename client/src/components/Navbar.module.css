@@ -17,12 +17,35 @@
   font-weight: bold;
   color: #007bff;
   cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .navbarTitle:hover {
   color: #0056b3;
+  background-color: #e9ecef;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
 }
 
+/* 添加下划线动画效果 */
+.navbarTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #007bff;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbarTitle:hover::after {
+  width: 80%;
+}
 /* 右侧区域 */
 .navbarRight {
   display: flex;

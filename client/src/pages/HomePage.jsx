@@ -82,72 +82,111 @@ const HomePage = () => {
       <Navbar />
 
       <div className={styles.homepageContent}>
-        <h1>HomePage</h1>
-        <p>以下是我们的游戏列表</p>
+        <h1 className={styles.mainTitle}>行为科学实验平台</h1>
+        <p className={styles.subtitle}>参与实验，探索行为科学奥秘</p>
         
-        {/* 新的游戏按钮网格容器 */}
-        <div className={styles.gameGrid}>
-          <button 
-            className={styles.assessmentBtn}
-            onClick={handlePublicGoodsGame}
-            style={{
-              backgroundImage: "url('../assets/images/public_goods_game.jpg')"
-            }}
-          >
-            公共物品
-          </button>
+        {/* 游戏区域 */}
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>实验游戏</h2>
+          <p className={styles.sectionDescription}>点击下方按钮开始参与不同的行为科学实验</p>
+          
+          <div className={styles.gameGrid}>
+            <button 
+              className={styles.gameBtn}
+              onClick={handlePublicGoodsGame}
+              style={{
+                backgroundImage: "url('../assets/images/public_goods_game.jpg')"
+              }}
+            >
+              <span>公共物品游戏</span>
+            </button>
 
-          <button 
-            className={styles.assessmentBtn}
-            onClick={handleRiskAttiGame}
-            style={{
-              backgroundImage: "url('../assets/images/risk_assessment.jpg')"
-            }}
-          >
-            风险评估
-          </button>
+            <button 
+              className={styles.gameBtn}
+              onClick={handleRiskAttiGame}
+              style={{
+                backgroundImage: "url('../assets/images/risk_assessment.jpg')"
+              }}
+            >
+              <span>风险评估游戏</span>
+            </button>
+            
+            <button 
+              className={styles.gameBtn}
+              onClick={handleAmbiguityAttiGame}
+              style={{
+                backgroundImage: "url('../assets/images/ambiguity_assessment.jpg')"
+              }}
+            >
+              <span>模糊偏好评估</span>
+            </button>
+            
+            <button 
+              className={styles.gameBtn}
+              onClick={handleOverconfidenceGame}
+              style={{
+                backgroundImage: "url('../assets/images/overconfidence_assessment.jpg')"
+              }}
+            >
+              <span>过度自信实验</span>
+            </button>
+            
+            <button 
+              className={styles.gameBtn}
+              onClick={handleGameUnderAmbig}
+              style={{
+                backgroundImage: "url('../assets/images/game_under_ambiguity.jpg')"
+              }}
+            >
+              <span>模糊情境博弈</span>
+            </button>
+
+            <button 
+              className={`${styles.resultBtn} ${styles.comingSoon}`}
+              onClick={() => alert('功能开发中...')}
+            >
+              <span>更多游戏</span>
+              <div className={styles.resultBadge}>即将开放</div>
+            </button>
+
+          </div>
+        </section>
+
+        {/* 结果统计区域 */}
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>实验结果查看</h2>
+          <p className={styles.sectionDescription}>查看和分析已完成的实验数据结果</p>
           
-          <button 
-            className={styles.assessmentBtn}
-            onClick={handleAmbiguityAttiGame}
-            style={{
-              backgroundImage: "url('../assets/images/ambiguity_assessment.jpg')"
-            }}
-          >
-            模糊偏好
-          </button>
-          
-          {/* 这里可以继续添加更多按钮，它们会自动排列 */}
-          <button 
-            className={styles.assessmentBtn}
-            onClick={handleOverconfidenceGame}
-            style={{
-              backgroundImage: "url('../assets/images/overconfidence_assessment.jpg')"
-            }}
-          >
-            过度自信
-          </button>
-          
-          <button 
-            className={styles.assessmentBtn}
-            onClick={handleGameUnderAmbig}
-            style={{
-              backgroundImage: "url('../assets/images/game_under_ambiguity.jpg')"
-            }}
-          >
-            Game Under Ambiguity
-          </button>
-          
-          <button 
-            className={styles.assessmentBtn}
-            onClick={handleShowRiskAtti}
-            style={{
-              backgroundImage: "url('../assets/images/game6.jpg')"
-            }}
-          >
-           TBD
-          </button>
-        </div>
+          <div className={styles.resultsGrid}>
+            <button 
+              className={styles.resultBtn}
+              onClick={handleShowRiskAtti}
+              style={{
+                backgroundImage: "url('../assets/images/risk_assessment.jpg')"
+              }}
+            >
+              <span>风险偏好分析</span>
+              <div className={styles.resultBadge}>数据可视化</div>
+            </button>
+            
+            {/* 可以继续添加更多结果分析按钮 */}
+            <button 
+              className={`${styles.resultBtn} ${styles.comingSoon}`}
+              onClick={() => alert('功能开发中...')}
+            >
+              <span>更多分析</span>
+              <div className={styles.resultBadge}>即将开放</div>
+            </button>
+
+            <button 
+              className={`${styles.resultBtn} ${styles.comingSoon}`}
+              onClick={() => alert('功能开发中...')}
+            >
+              <span>更多分析</span>
+              <div className={styles.resultBadge}>即将开放</div>
+            </button>
+          </div>
+        </section>
       </div>
     </div>
   );
