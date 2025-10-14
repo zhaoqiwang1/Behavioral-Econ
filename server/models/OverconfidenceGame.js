@@ -27,8 +27,16 @@ const OverconfidenceGameSchema = new mongoose.Schema({
     upperBound: {
       type: Number,
       required: true
+    },
+    submittedAt: {
+      type: Date,
+      default: Date.now
     }
-  }]
+  }],
+  gameSubmittedAt: {
+    type: Date,
+    default: Date.now
+  }
 });
 
 // 添加索引以便快速查询
