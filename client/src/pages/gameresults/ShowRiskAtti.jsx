@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { riskAttiAPI } from '../services/api';
+import { riskAttiAPI } from '../../services/api';
 
 const ShowRiskAttituides = () => {
   const [riskData, setRiskData] = useState([]);

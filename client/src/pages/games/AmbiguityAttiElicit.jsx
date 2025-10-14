@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { ambiguityAttiAPI } from '../services/api'; 
-import { useAuth } from '../contexts/AuthContext';
+import { ambiguityAttiAPI } from '../../services/api.js'; 
+import { useAuth } from '../../contexts/AuthContext.jsx';
 import styles from './AmbiguityAttiElicit.module.css';
-import Navbar from '../components/Navbar.jsx';  
+import Navbar from '../../components/Navbar.jsx';  
 
 const AmbiguityAttiElicit = () => {
   const { user } = useAuth();

@@ -23,7 +23,7 @@ const HomePage = () => {
   // 专门用于公共物品游戏的函数
   const handlePublicGoodsGame = () => {
     checkAuthAndNavigate(
-      '/public-goods',
+      '/games/public-goods',
       '你需要先登录哦'
     );
   };
@@ -31,7 +31,7 @@ const HomePage = () => {
     // 专门用于风险评估的函数
   const handleRiskAttiGame = () => {
     checkAuthAndNavigate(
-      '/risk-attitude-elicit',
+      '/games/risk-attitude-elicit',
       '你需要先登录哦'
     );
   };
@@ -39,7 +39,7 @@ const HomePage = () => {
   // 专门用于模糊偏好评估的函数
   const handleAmbiguityAttiGame = () => {
     checkAuthAndNavigate(
-      '/ambiguity-attitude-elicit',
+      '/games/ambiguity-attitude-elicit',
       '你需要先登录哦'
     );
   };
@@ -47,7 +47,7 @@ const HomePage = () => {
   // 专门用于过度自信的函数
   const handleOverconfidenceGame = () => {
     checkAuthAndNavigate(
-      '/overconfidence-game',
+      '/games/overconfidence-game',
       '你需要先登录哦'
     );
   };
@@ -55,7 +55,7 @@ const HomePage = () => {
   // 专门用于game under ambiguity 的函数
   const handleGameUnderAmbig = () => {
     checkAuthAndNavigate(
-      '/game-under-ambiguity',
+      '/games/game-under-ambiguity',
       '你需要先登录哦'
     );
   };
@@ -65,7 +65,7 @@ const HomePage = () => {
     // 展示风险偏好函数
   const handleShowRiskAtti = () => {
     checkAuthAndNavigate(
-      '/show-risk-attitudes',
+      '/gameresults/show-risk-attitudes',
       '你需要先登录哦'
     );
   };

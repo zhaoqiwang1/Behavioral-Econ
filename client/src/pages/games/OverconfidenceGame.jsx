@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { overconfidenceGameAPI } from '../services/api';
-import { useAuth } from '../contexts/AuthContext';
+import { overconfidenceGameAPI } from '../../services/api.js';
+import { useAuth } from '../../contexts/AuthContext.jsx';
 import styles from './OverconfidenceGame.module.css';
-import Navbar from '../components/Navbar.jsx'; 
+import Navbar from '../../components/Navbar.jsx'; 
 
 const OverconfidenceGame = () => {
   const { user } = useAuth();

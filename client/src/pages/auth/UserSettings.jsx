@@ -1,9 +1,9 @@
 // src/pages/UserSettings.jsx
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../contexts/AuthContext';
-import { userAPI } from '../services/api';
+import { useAuth } from '../../contexts/AuthContext';
+import { userAPI } from '../../services/api';
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../components/Navbar';
+import Navbar from '../../components/Navbar';
 import styles from './UserSettings.module.css';
 
 const UserSettings = () => {

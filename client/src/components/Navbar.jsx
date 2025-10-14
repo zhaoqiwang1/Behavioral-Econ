@@ -15,7 +15,7 @@ const Navbar = () => {
   };
 
   const handleProfileClick = () => {
-    navigate('/settings'); // 跳转到用户设置页面
+    navigate('/auth/settings'); // 跳转到用户设置页面
   };
 
   return (
@@ -42,10 +42,10 @@ const Navbar = () => {
         ) : (
           // 未登录状态
           <div className={styles.authButtons}>
-            <button onClick={() => navigate('/login')} className={`${styles.navBtn} ${styles.loginBtn}`}>
+            <button onClick={() => navigate('/auth/login')} className={`${styles.navBtn} ${styles.loginBtn}`}>
               登录
             </button>
-            <button onClick={() => navigate('/register')} className={`${styles.navBtn} ${styles.registerBtn}`}>
+            <button onClick={() => navigate('/auth/register')} className={`${styles.navBtn} ${styles.registerBtn}`}>
               注册
             </button>
           </div>

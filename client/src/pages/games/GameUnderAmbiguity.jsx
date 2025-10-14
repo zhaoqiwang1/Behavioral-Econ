@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { gameUnderAmbiguityAPI } from '../services/api';
-import { useAuth } from '../contexts/AuthContext';
+import { gameUnderAmbiguityAPI } from '../../services/api.js';
+import { useAuth } from '../../contexts/AuthContext.jsx';
 import styles from './GameUnderAmbiguity.module.css';
-import Navbar from '../components/Navbar.jsx';
+import Navbar from '../../components/Navbar.jsx';
 
 const GameUnderAmbiguity = () => {
   const { user } = useAuth();
