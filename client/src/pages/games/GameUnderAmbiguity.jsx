@@ -129,7 +129,7 @@ const GameUnderAmbiguity = () => {
         <div className={styles.container}>
           <div className={styles.completedMessage}>
             <h2>感谢参与！</h2>
-            <p>你已经完成过模糊性游戏实验，无法重复参与。</p>
+            <p>你已经完成过本次游戏，无法重复参与。</p>
             <button className={styles.backButton} onClick={() => window.history.back()}>
               返回
             </button>
@@ -143,24 +143,18 @@ const GameUnderAmbiguity = () => {
     <div>
       <Navbar />
       <div className={styles.container}>
-        <div className={styles.header}>
-          <h1>课堂实验 - 模糊性游戏</h1>
-          <p>这门课一共100分满分，按照教学大纲的计划，我们拿出其中10分来做实验。</p>
-        </div>
-
+        <h1>游戏说明</h1>
         <div className={styles.instructions}>
-          <h2>实验规则</h2>
           <div className={styles.ruleSection}>
             <h3>基本规则</h3>
             <ul>
               <li>今天，我们一共玩8个回合的游戏。</li>
-              <li>每个回合大家都需要在下面的A,B中选择一个作为自己的决策。</li>
+              <li>每个回合大家都需要在下面的选项A, 选项B中选择一个作为自己的决策。</li>
               <li>我们有两个角色，一个是"决策者"，另一个是"接受者"。</li>
               <li>每一回合，我都会随机把大家两两配对。每一对里面，有一位同学会被随机选择作为"决策者"，另一位同学就作为"接受者"。</li>
               <li>两位同学在每一回合的得分由"决策者"决定，"接受者"只能接受"决策者"所做出的决定。</li>
             </ul>
           </div>
-
           <div className={styles.ruleSection}>
             <h3>角色分配</h3>
             <ul>
@@ -169,7 +163,37 @@ const GameUnderAmbiguity = () => {
               <li>因为你不知道另一位同学是"决策者"还是"接受者"，因此你不需要在意TA所做的决定，请大家认真思考自己需要做哪个决策。</li>
             </ul>
           </div>
+          <div>
+            <table className={styles.scoreTable}>
+              <thead>
+                <tr>
+                  <th colSpan={2} className={styles.optionHeader}>选项A</th>
+                  <th colSpan={2} className={styles.optionHeader}>选项B</th>
+                </tr>
+                <tr>
+                  <th>你得5.3分；</th>
+                  <th>另一位同学得3.5分</th>
+                  <th>你的得7.7分；</th>
+                  <th>另一位同学有50%概率得2.2分</th>
+                </tr>
+              </thead>
+            </table>
 
+            <table className={styles.scoreTable}>
+              <thead>
+                <tr>
+                  <th colSpan={2} className={styles.optionHeader}>选项A</th>
+                  <th colSpan={2} className={styles.optionHeader}>选项B</th>
+                </tr>
+                <tr>
+                  <th>你得5.3分；</th>
+                  <th>另一位同学得3.5分</th>
+                  <th>你的得7.7分；</th>
+                  <th>另一位同学有未知概率得2.2分</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
           <div className={styles.ruleSection}>
             <h3>概率说明</h3>
             <ul>
@@ -183,13 +207,11 @@ const GameUnderAmbiguity = () => {
 
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.roundsSection}>
-            <h2>请完成以下8个回合的决策</h2>
-            <p>在每个回合中，请选择您偏好的选项（A 或 B）</p>
-            
-            <div className={styles.legend}>
+            <h2>请完成以下8个回合的决策</h2>            
+            {/* <div className={styles.legend}>
               <div><strong>选项A:</strong> 您得 X 分，另一位同学得 Y 分</div>
               <div><strong>选项B:</strong> 您得 X 分，另一位同学有 P 概率得 0 分，有 (1-P) 概率得 Y 分</div>
-            </div>
+            </div> */}
 
             <div className={styles.roundsNavigation}>
               {roundDetails.map((round, index) => (
