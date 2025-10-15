@@ -107,7 +107,7 @@ const RiskAttiElicit = () => {
         <Navbar />
         <div className={styles.completedInfo}>
           <h2>✅ 风险评估已完成</h2>
-          <p>你已经成功提交风险评估问卷，感谢您的参与！</p>
+          <p>你已经成功提交风险评估问卷，感谢你的参与！</p>
         </div>
       </div>
     );
@@ -180,7 +180,7 @@ const RiskAttiElicit = () => {
           onClick={handleSubmit}
           disabled={loading || !selectedOption}
         >
-          {loading ? '提交中...' : '提交评估'}
+          {loading ? '提交中...' : '提交'}
         </button>
       </div>
     </div>

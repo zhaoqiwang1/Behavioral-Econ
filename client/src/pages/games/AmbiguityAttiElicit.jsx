@@ -91,7 +91,7 @@ const AmbiguityAttiElicit = () => {
         <Navbar />
         <div className={styles.completedInfo}>
           <h2>✅ 模糊偏好测试已完成</h2>
-          <p>您已经成功提交问卷，感谢您的参与！</p>
+          <p>你已经成功提交问卷，感谢你的参与！</p>
         </div>
       </div>
     );
@@ -100,24 +100,25 @@ const AmbiguityAttiElicit = () => {
   return (
     <div>
       <Navbar />
-      <h1>模糊偏好测试</h1>
-      <h2>请选择您偏好的选项。注意：您需要从Box K和Box U之间做出选择。</h2>
-      
+      <h1>游戏说明</h1>
       <div className={styles.instructions}>
-        <h3>测试说明：</h3>
-        <p>在以下选项中，Box K包含确定的金额，Box U包含未知的金额。请选择您偏好的选项。</p>
-        <p>您的选择将帮助我们了解您对确定性和不确定性的偏好程度。</p>
+        <ul>
+          <li>有两个盒子，一个盒子叫K，一个盒子叫U。</li>
+          <li>每个盒子里面都有100个球，这些球的颜色要么是黑色，要么是白色。</li>
+          <li>盒子K里的黑球白球相对数量是已知的。</li>
+          <li>盒子U里的黑球白球相对数量是未知的。</li>
+          <li>我们随机从你所选择的那个盒子里抽出一个球，如果那个球的颜色是黑色的话，你就会得到20元人民币。</li>
+          <li><span style={{color: 'red'}}>你需要在下面的11个选项里面，选择其中一个序号；表明这个序号及其以后所有的序号的选项中，盒子U都是比盒子K更加有吸引力的选项。</span></li>
+        </ul>
       </div>
-
       <div className={styles.tableContainer}>
-        <h2>模糊偏好选择表</h2>
         <table className={styles.dataTable}>
           <thead>
             <tr>
               <th>选择</th>
               <th>序号</th>
-              <th>Box K (确定金额)</th>
-              <th>Box U (未知金额)</th>
+              <th>盒子 K (确定黑球数)</th>
+              <th>盒子 U (未知黑球数)</th>
             </tr>
           </thead>
           <tbody>
@@ -138,7 +139,7 @@ const AmbiguityAttiElicit = () => {
                   />
                 </td>
                 <td>{option.id}</td>
-                <td>${option.boxK.toFixed(2)}</td>
+                <td>{option.boxK}</td>
                 <td>{option.boxU}</td>
               </tr>
             ))}
@@ -147,8 +148,8 @@ const AmbiguityAttiElicit = () => {
       </div>
 
       <div className={styles.selectionInfo}>
-        <strong>您选择的选项: </strong>
-        {selectedOption ? `选项 ${selectedOption} (Box K: $${ambiguityOptions.find(opt => opt.id === parseInt(selectedOption))?.boxK.toFixed(2)}, Box U: Unknown)` : '尚未选择'}
+        <strong>你选择的选项: </strong>
+        {selectedOption ? `选项 ${selectedOption} (盒子 K: ${ambiguityOptions.find(opt => opt.id === parseInt(selectedOption))?.boxK}个黑球,  盒子 U: 未知黑球数)` : '尚未选择'}
       </div>
 
       {/* 提交按钮 */}
@@ -158,7 +159,7 @@ const AmbiguityAttiElicit = () => {
           onClick={handleSubmit}
           disabled={loading || !selectedOption}
         >
-          {loading ? '提交中...' : '提交测试'}
+          {loading ? '提交中...' : '提交'}
         </button>
       </div>
     </div>

@@ -119,7 +119,7 @@ const OverconfidenceGame = () => {
         <div className={styles.container}>
           <div className={styles.completedMessage}>
             <h2>感谢参与！</h2>
-            <p>你已经完成过过度自信游戏，无法重复参与。</p>
+            <p>你已经完成本次游戏！感谢你的参与！</p>
             <button 
               className={styles.backButton}
               onClick={() => window.history.back()}

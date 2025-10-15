@@ -85,6 +85,8 @@
   margin: 20px auto;
   max-width: 800px;
   border-left: 4px solid #007bff;
+  text-align: left;
+  font-size: 1.2rem;
 }
 
 .instructions h3 {
