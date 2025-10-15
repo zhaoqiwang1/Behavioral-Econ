@@ -46,6 +46,21 @@ const ShowRiskAttituides = () => {
 
   // 准备图表数据
   const prepareChartData = () => {
+
+    // 风险偏好程度说明
+    const riskLevels = {
+      1: '极度风险偏好',
+      2: '很强风险偏好',
+      3: '较强风险偏好',
+      4: '中性',
+      5: '较弱风险规避',
+      6: '风险规避',
+      7: '较强风险规避',
+      8: '极度风险规避',
+      9: '待家里吧你...',
+      10: '待家里吧你...'
+    };
+    
     // 统计每种风险偏好的数量
     const riskCounts = {};
     
@@ -54,14 +69,19 @@ const ShowRiskAttituides = () => {
       riskCounts[attitude] = (riskCounts[attitude] || 0) + 1;
     });
 
-    const labels = Object.keys(riskCounts);
+    // 创建带说明的标签
+    const labels = Object.keys(riskCounts).map(key => {
+      const level = parseInt(key);
+      return isNaN(level) ? key : `${key} - ${riskLevels[level] || '未知'}`;
+    });
+    // const labels = Object.keys(riskCounts);
     const data = Object.values(riskCounts);
 
     return {
       labels,
       datasets: [
         {
-          label: '学生数量',
+          label: '数量',
           data: data,
           backgroundColor: [
             'rgba(255, 99, 132, 0.6)',
@@ -94,7 +114,11 @@ const ShowRiskAttituides = () => {
       },
       title: {
         display: true,
-        text: '学生风险偏好分布',
+        text: '风险偏好分布',
+        font: {
+          size: 20, // 标题文字大小
+          weight: 'bold'
+          }, 
       },
     },
     scales: {
@@ -102,13 +126,23 @@ const ShowRiskAttituides = () => {
         beginAtZero: true,
         title: {
           display: true,
-          text: '学生数量'
+          text: '观测值数量',
+          font: {
+            size: 16, // y轴标题文字大小
+            weight: 'bold'
+          }, 
+          padding: { top: 15, bottom: 15 } // y轴标题间距
         }
       },
       x: {
         title: {
           display: true,
-          text: '风险偏好类型'
+          text: '风险偏好类型',
+          font: {
+            size: 16, // 调大文字大小
+            weight: 'bold' // 可选：加粗
+          },
+          padding: { top: 25, bottom: 0 } // 增加与x轴的间距
         }
       }
     },
@@ -129,10 +163,9 @@ const ShowRiskAttituides = () => {
       <Navbar />
         <div className={styles.container}>
             
-            <h1 className={styles.title}>学生风险偏好数据</h1>
-            
+            <h1 className={styles.title}>风险偏好数据</h1>
             <div className={styles.summary}>
-              <p>共收集到 {riskData.length} 名学生的数据</p>
+              <p>共收集到 {riskData.length} 个观测值</p>
             </div>
             
             {/* 柱状图部分 */}
