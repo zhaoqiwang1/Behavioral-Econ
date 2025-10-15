@@ -108,9 +108,9 @@ const OverconfidenceGame = () => {
   };
 
   // 重置表单
-  const handleReset = () => {
-    setAnswers(Array(10).fill({ lowerBound: '', upperBound: '' }));
-  };
+  // const handleReset = () => {
+  //   setAnswers(Array(10).fill({ lowerBound: '', upperBound: '' }));
+  // };
 
   if (hasSubmitted) {
     return (
@@ -190,14 +190,14 @@ const OverconfidenceGame = () => {
           ))}
 
           <div className={styles.actions}>
-            <button
+            {/* <button
               type="button"
               onClick={handleReset}
               className={styles.resetButton}
               disabled={isSubmitting}
             >
               重置
-            </button>
+            </button> */}
             <button
               type="submit"
               className={styles.submitButton}
