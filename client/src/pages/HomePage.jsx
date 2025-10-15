@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 import { useAuth } from '../contexts/AuthContext.jsx';  // 新增导入
 import Navbar from '../components/Navbar.jsx';  // 导入 Navbar
 import styles from './HomePage.module.css';  
@@ -15,7 +16,8 @@ const HomePage = () => {
     if (isAuthenticated) {
       navigate(path);
     } else {
-      alert(message);
+     // alert(message);
+      toast.error(message);
     }
   };
 
@@ -143,7 +145,7 @@ const HomePage = () => {
 
             <button 
               className={`${styles.resultBtn} ${styles.comingSoon}`}
-              onClick={() => alert('功能开发中...')}
+              onClick={() => toast.error('功能开发中...')}
             >
               <span>更多游戏</span>
               <div className={styles.resultBadge}>即将开放</div>
@@ -172,7 +174,7 @@ const HomePage = () => {
             {/* 可以继续添加更多结果分析按钮 */}
             <button 
               className={`${styles.resultBtn} ${styles.comingSoon}`}
-              onClick={() => alert('功能开发中...')}
+              onClick={() => toast.error('功能开发中...')}
             >
               <span>更多分析</span>
               <div className={styles.resultBadge}>即将开放</div>
@@ -180,7 +182,7 @@ const HomePage = () => {
 
             <button 
               className={`${styles.resultBtn} ${styles.comingSoon}`}
-              onClick={() => alert('功能开发中...')}
+              onClick={() => toast.error('功能开发中...')}
             >
               <span>更多分析</span>
               <div className={styles.resultBadge}>即将开放</div>

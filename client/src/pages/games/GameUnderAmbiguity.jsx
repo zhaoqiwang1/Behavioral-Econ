@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 import { gameUnderAmbiguityAPI } from '../../services/api.js';
 import { useAuth } from '../../contexts/AuthContext.jsx';
 import styles from './GameUnderAmbiguity.module.css';
@@ -52,7 +53,8 @@ const GameUnderAmbiguity = () => {
   const validateAnswers = () => {
     for (let i = 0; i < answers.length; i++) {
       if (answers[i] === null) {
-        alert(`请完成第 ${i + 1} 回合的选择`);
+        // alert(`请完成第 ${i + 1} 回合的选择`);
+        toast.error(`请完成第 ${i + 1} 回合的选择`);
         setCurrentRound(i);
         return false;
       }
@@ -68,7 +70,8 @@ const GameUnderAmbiguity = () => {
     e.preventDefault();
 
     if (!user?._id) {
-      alert('用户信息错误，请重新登录');
+      // alert('用户信息错误，请重新登录');
+      toast.error('用户信息错误，请重新登录');
       return;
     }
 
@@ -91,18 +94,21 @@ const GameUnderAmbiguity = () => {
     gameUnderAmbiguityAPI.submit(submitData)
       .then((response) => {
         if (response.status === 201) {
-          alert('提交成功！感谢您的参与。');
+          // alert('提交成功！感谢您的参与。');
+          toast.success('提交成功！感谢您的参与。');
           setHasSubmitted(true);
         }
       })
       .catch((error) => {
         const { response } = error;
         if (response?.status === 409) {
-          alert('您已经完成过这个实验，不能重复参与');
+          // alert('您已经完成过这个实验，不能重复参与');
+          toast.error('你已经完成过这个实验，不能重复参与。');
           setHasSubmitted(true);
         } else {
           console.error('提交失败:', error);
-          alert(`${response?.data?.message || '提交失败，请重试'}`);
+          // alert(`${response?.data?.message || '提交失败，请重试'}`);
+          toast.error(`${response?.data?.message || '提交失败，请重试'}`);
         }
       })
       .finally(() => {
@@ -123,7 +129,7 @@ const GameUnderAmbiguity = () => {
         <div className={styles.container}>
           <div className={styles.completedMessage}>
             <h2>感谢参与！</h2>
-            <p>您已经完成过模糊性游戏实验，无法重复参与。</p>
+            <p>你已经完成过模糊性游戏实验，无法重复参与。</p>
             <button className={styles.backButton} onClick={() => window.history.back()}>
               返回
             </button>

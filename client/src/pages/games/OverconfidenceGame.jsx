@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 import { overconfidenceGameAPI } from '../../services/api.js';
 import { useAuth } from '../../contexts/AuthContext.jsx';
 import styles from './OverconfidenceGame.module.css';
@@ -39,11 +40,13 @@ const OverconfidenceGame = () => {
     for (let i = 0; i < answers.length; i++) {
       const answer = answers[i];
       if (!answer.lowerBound || !answer.upperBound) {
-        alert(`请填写第 ${i + 1} 个问题的上下限值`);
+        // alert(`请填写第 ${i + 1} 个问题的上下限值`);
+        toast.error(`请填写第 ${i + 1} 个问题的上下限值`);
         return false;
       }
       if (parseFloat(answer.lowerBound) >= parseFloat(answer.upperBound)) {
-        alert(`第 ${i + 1} 个问题：最低值必须小于最高值`);
+        // alert(`第 ${i + 1} 个问题：最低值必须小于最高值`);
+        toast.error(`第 ${i + 1} 个问题：最低值必须小于最高值`);
         return false;
       }
     }
@@ -54,7 +57,8 @@ const OverconfidenceGame = () => {
     e.preventDefault();
 
     if (!user?._id) {
-      alert('用户信息错误，请重新登录');
+      // alert('用户信息错误，请重新登录');
+      toast.error('用户信息错误，请重新登录');
       return;
     }
 
@@ -79,7 +83,8 @@ const OverconfidenceGame = () => {
     overconfidenceGameAPI.submit(submitData)
       .then((response) => {
         if (response.status === 201) {
-          alert('提交成功！感谢您的参与。');
+          // alert('提交成功！感谢您的参与。');
+          toast.success('提交成功！感谢您的参与。');
           setHasSubmitted(true);
           // 提交成功后清空表单
           setAnswers(Array(10).fill({ lowerBound: '', upperBound: '' }));
@@ -88,11 +93,13 @@ const OverconfidenceGame = () => {
       .catch((error) => {
         const { response } = error;
         if (response?.status === 409) {
-          alert('您已经完成过这个游戏，不能重复参与');
+          // alert('您已经完成过这个游戏，不能重复参与');
+          toast.error('您已经完成过这个游戏，不能重复参与');
           setHasSubmitted(true);
         } else {
           console.error('提交失败:', error);
-          alert(`${response?.data?.message || '提交失败，请重试'}`);
+          // alert(`${response?.data?.message || '提交失败，请重试'}`);
+          toast.error(`${response?.data?.message || '提交失败，请重试'}`);
         }
       })
       .finally(() => {

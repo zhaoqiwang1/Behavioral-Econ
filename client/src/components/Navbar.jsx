@@ -1,6 +1,7 @@
 // src/components/Navbar.jsx
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 import { useAuth } from '../contexts/AuthContext.jsx';
 import styles from './Navbar.module.css';
 
@@ -10,7 +11,8 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout();
-    alert('已退出登录');
+    // alert('已退出登录');
+    toast.success('已退出登录');
     navigate('/');
   };
 

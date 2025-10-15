@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { publicGoodsAPI } from '../../services/api.js'; 
+import toast from 'react-hot-toast';
 import { useAuth } from '../../contexts/AuthContext.jsx';
 import styles from './PublicGoodsGame.module.css'; 
 import Navbar from '../../components/Navbar.jsx';  
@@ -17,12 +18,14 @@ const PublicGoodsGame = () => {
     e.preventDefault();
 
     if (!user?._id) {
-      alert('用户信息错误，请重新登录');
+      // alert('用户信息错误，请重新登录');
+      toast.error('用户信息错误，请重新登录');
       return;
     }
 
     if (!userContribution || userContribution < 0 || userContribution > 20) {
-      alert('请输入0-20之间的有效金额');
+      // alert('请输入0-20之间的有效金额');
+      toast.error('请输入0-20之间的有效金额');
       return;
     }
 
@@ -42,11 +45,13 @@ const PublicGoodsGame = () => {
         
         // 检查是否完成了所有回合
         if (response.data.isCompleted) {
-          alert('恭喜！您已完成所有20个回合！');
+          // alert('恭喜！您已完成所有20个回合！');
+          toast.success('恭喜！您已完成所有20个回合！');
           setHasSubmitted(true);
         } else {
           // 进入下一轮
-          alert('回答成功，请回答下一回合。');
+          // alert('回答成功，请回答下一回合。');
+          toast.success('回答成功，请回答下一回合。');
           setCurrentRound(currentRound + 1);
         }
       }
@@ -57,7 +62,8 @@ const PublicGoodsGame = () => {
       if (response?.status === 409) {
         if (response.data.alreadyCompleted) {
           // 已经完成所有回合
-          alert('您已经完成所有20个回合，不能重复参与');
+          // alert('你已经完成所有20个回合，不能重复参与');
+          toast.error('你已经完成所有20个回合，不能重复参与');
           setHasSubmitted(true);
         } else {
           // 当前回合已提交
@@ -73,7 +79,8 @@ const PublicGoodsGame = () => {
       } else {
         // 其他错误
         console.error('提交失败:', error);
-        alert(response?.data?.message || '提交失败，请重试');
+        // alert(response?.data?.message || '提交失败，请重试');
+        toast.error(response?.data?.message || '提交失败，请重试');
       }
     })
     .finally(() => {

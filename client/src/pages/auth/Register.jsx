@@ -1,5 +1,6 @@
 // Register.jsx - 注册页面
 import React, { useState } from "react";
+import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { userAPI } from '../../services/api';
 import styles from './Register.module.css';
@@ -113,7 +114,10 @@ const Register = () => {
     const errors = validateForm(); // ✅ 获取返回的 errors
       
     if (Object.keys(errors).length > 0) {
-        alert('当前错误状态: ' + JSON.stringify(errors, null, 2));
+       // alert('当前错误状态: ' + JSON.stringify(errors, null, 2));
+       Object.values(errors).forEach(error => {
+        toast.error(error);
+      });
         return;
     }
 
@@ -132,7 +136,8 @@ const Register = () => {
 
     userAPI.register(userData)
       .then((response) => {
-        alert("注册成功！");
+        // alert("注册成功！");
+        toast.success("注册成功！");
         // 清空表单
         setFormData({
           username: "",
@@ -152,7 +157,8 @@ const Register = () => {
         
       }).catch((error) => {
         console.error('注册失败:', error);
-        alert(`注册失败: ${error.response?.data?.message || error.message}`);
+        // alert(`注册失败: ${error.response?.data?.message || error.message}`);
+        toast.error(`注册失败: ${error.response?.data?.message || error.message}`);
       });
   };
 
