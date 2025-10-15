@@ -107,7 +107,7 @@ const RiskAttiElicit = () => {
         <Navbar />
         <div className={styles.completedInfo}>
           <h2>✅ 风险评估已完成</h2>
-          <p>您已经成功提交风险评估问卷，感谢您的参与！</p>
+          <p>你已经成功提交风险评估问卷，感谢您的参与！</p>
         </div>
       </div>
     );
@@ -116,10 +116,18 @@ const RiskAttiElicit = () => {
   return (
     <div>
       <Navbar />
-      <h1>Risk Elicitation Game</h1>
-      <h2>请选择你想从A换到B的选项的数字。注意：你只能换一次，不能在A和B之前反复。</h2>
+      <h1>游戏说明</h1>
+      <div className={styles.instructions}>
+        <ul>
+          <li>我们以序号1的选项A为例，</li>
+          <li>“1/10 of $2.00，  9/10 of $1.60” 的意思是选择这个选项有十分之一的概率能拿到2美元，十分之九的概率能够拿到1.6美元。</li>
+          <li>同理，序号1所对应的选项B的意思是：选择这个选项有十分之一的概率能拿到3.85美元，十分之九的概率能够拿到0.10美元。</li>
+          <li>你需要思考：从哪个序号开始，对于你来说，这个序号及其之后的所有序号中，选项B都是比选项A更有吸引力的；也即在那个序号之前，选项A比选项B更有吸引力。</li>
+          <li><strong>因此，请选择你从哪个序号开始，自那以后你将一直选择选项B。</strong></li>
+        </ul>
+      </div>
       <div className={styles.tableContainer}>
-        <h2>选项对比表</h2>
+        {/* <h2>选项对比表</h2> */}
         <table className={styles.dataTable}>
           <thead>
             <tr>
@@ -161,8 +169,8 @@ const RiskAttiElicit = () => {
         </table>
       </div>
       <div>
-        <strong>您选择的选项: </strong>
-        {selectedOption ? `选项 ${selectedOption}` : '尚未选择'}
+        <strong>你选择的序号: </strong>
+        {selectedOption ? `序号 ${selectedOption}` : '尚未选择'}
       </div>
 
       {/* 提交按钮 */}

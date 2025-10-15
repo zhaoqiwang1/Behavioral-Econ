@@ -63,3 +63,11 @@
   background-color: #28a745;
   cursor: pointer;
 }
+
+.instructions {
+  text-align: left;   /* 内部instructions左对齐 */
+  display: inline-block; /* 重要：让左对齐在居中容器内生效 */
+  margin: 0 auto;     /* 水平居中 */
+  width: 80%;         /* 控制宽度 */
+  font-size: 1.2rem;
+}
