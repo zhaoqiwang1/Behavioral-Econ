@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 // import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 import { riskAttiAPI } from '../../services/api.js'; 
 import { useAuth } from '../../contexts/AuthContext.jsx';
 import styles from './RiskAttiElicit.module.css'; 
@@ -18,7 +19,8 @@ const RiskAttiElicit = () => {
     e.preventDefault();
 
     if (!user?._id) {
-      alert('用户信息错误，请重新登录');
+      // alert('用户信息错误，请重新登录');
+      toast.success('用户信息错误，请重新登录');
       return;
     }
 
@@ -30,19 +32,22 @@ const RiskAttiElicit = () => {
     })
     .then((response) => {
       if (response.status === 201) {
-        alert('提交成功！感谢您的参与。');
+        // alert('提交成功！感谢您的参与。');
+        toast.success('提交成功！感谢您的参与。');
         setHasSubmitted(true);
       }
     })
     .catch((error) => {
       const { response } = error;
       if (response?.status === 409) {
-        alert('你已经提交过相关回答，无法重复提交。');
+        // alert('你已经提交过相关回答，无法重复提交。');
+        toast.error('你已经提交过相关回答，无法重复提交。');
         setHasSubmitted(true);
       } else {
         // 其他错误
         console.error('提交失败:', error);
-        alert(`${response?.data?.message || '提交失败，请重试'}`);
+        // alert(`${response?.data?.message || '提交失败，请重试'}`);
+        toast.error(`${response?.data?.message || '提交失败，请重试'}`);
       }
     })
     .finally(() => {

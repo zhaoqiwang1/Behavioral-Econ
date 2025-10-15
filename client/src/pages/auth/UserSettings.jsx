@@ -1,5 +1,6 @@
 // src/pages/UserSettings.jsx
 import React, { useState, useEffect } from 'react';
+import toast from 'react-hot-toast';
 import { useAuth } from '../../contexts/AuthContext';
 import { userAPI } from '../../services/api';
 import { useNavigate } from 'react-router-dom';
@@ -49,7 +50,8 @@ const UserSettings = () => {
         }
       } catch (error) {
         console.error('获取用户数据失败:', error);
-        alert('获取用户信息失败，请刷新页面重试');
+        // alert('获取用户信息失败，请刷新页面重试');
+        toast.error('获取用户信息失败，请刷新页面重试');
       } finally {
         setFetching(false);
       }
@@ -99,11 +101,13 @@ const UserSettings = () => {
         updateUser(response.data.user);
         setDbUser(response.data.user);
         setIsEditing(false);
-        alert('资料更新成功！');
+        // alert('资料更新成功！');
+        toast.success('资料更新成功！');
       }
     } catch (error) {
       console.error('更新失败:', error);
-      alert(error.response?.data?.message || '更新失败，请重试');
+      // alert(error.response?.data?.message || '更新失败，请重试');
+      toast.error(error.response?.data?.message || '更新失败，请重试');
     } finally {
       setLoading(false);
     }

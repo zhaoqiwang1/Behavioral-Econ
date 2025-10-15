@@ -1,6 +1,7 @@
 // Login.jsx - 登录页面
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 import { userAPI } from '../../services/api.js';
 import { useAuth } from '../../contexts/AuthContext.jsx';  // 新增导入
 import styles from './Login.module.css';  
@@ -48,17 +49,19 @@ const Login = () => {
     const errors = validateLogin();
     
     if (Object.keys(errors).length > 0) {
-      let errorMessage = "请修正以下错误：\n\n";
+      let errorMessage = "";
       if (errors.username) errorMessage += `• ${errors.username}\n`;
       if (errors.password) errorMessage += `• ${errors.password}\n`;
-      alert(errorMessage);
+      // alert(errorMessage);
+      toast.error(errorMessage);
       return;
     }
 
     // 调用登录API
     userAPI.login(loginData)
       .then((response) => {
-        alert("登录成功！");
+        //alert("登录成功！");
+        toast.success("登录成功！");
         // 保存登录状态
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('user', JSON.stringify(response.data.user));
@@ -74,11 +77,14 @@ const Login = () => {
       .catch((error) => {
         console.error('登录详细错误:', error);
         if (error.response?.status === 500) {
-          alert('服务器内部错误，请检查后端服务是否正常运行');
+          // alert('服务器内部错误，请检查后端服务是否正常运行');
+          toast.error('服务器内部错误，请检查后端服务是否正常运行');
         } else if (error.response?.status === 401) {
-          alert('用户名或密码错误');
+          // alert('用户名或密码错误');
+          toast.error('用户名或密码错误');
         } else {
-          alert('登录失败，请稍后重试');
+          // alert('登录失败，请稍后重试');
+          toast.error('登录失败，请稍后重试');
         }
       });
   };

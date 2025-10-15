@@ -25,7 +25,7 @@ function App() {
     <Router>
       <AuthProvider>
         <div className="App">
-          <Toaster position="top-right" />
+          <Toaster position="top-center" />
           <Routes>
             {/* HomePage path */}
             <Route path="/" element={<HomePage />} />
