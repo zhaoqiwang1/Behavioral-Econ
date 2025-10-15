@@ -119,7 +119,7 @@ const OverconfidenceGame = () => {
         <div className={styles.container}>
           <div className={styles.completedMessage}>
             <h2>感谢参与！</h2>
-            <p>您已经完成过过度自信游戏，无法重复参与。</p>
+            <p>你已经完成过过度自信游戏，无法重复参与。</p>
             <button 
               className={styles.backButton}
               onClick={() => window.history.back()}
@@ -136,11 +136,21 @@ const OverconfidenceGame = () => {
     <div>
       <Navbar />
       <div className={styles.container}>
-        <div className={styles.header}>
+        <h1>游戏说明</h1>
+        {/* <div className={styles.header}>
           <h1>过度自信测试</h1>
           <p>请为以下每个问题提供您认为的合理范围（最低值和最高值）</p>
+        </div> */}
+        <div className={styles.instructions}>
+          <ul>
+            <li>对于以下问题，请给出一个高和低的估计值来确保正确的值有90%的机会落在你给出的范围内。</li>
+            <li>例如：请给出下个月上证综合指数上涨幅度的90%置信区间。如果你有90%的信心相信上证综合指数将在下个月上涨3% - 10%，那么你的90%置信区间就是3% - 10%。所以下限(low)应该填3，上限(high)应该填写10。</li>
+            <li>请注意，如果给出的范围间隔太宽，则正确值落在该范围内的可能性超过90%。相反，如果范围间隔太窄，则正确值落在该范围内的可能性小于90%。你给出的置信区间与对或错无关，请务必根据你的真实认知给出答案。</li>
+            <li><strong>我们一共十道题。因为对错不是最重要的，所以请大家不要在网上搜索。</strong></li>
+            <li><span style={{color: 'red'}}>只需要填数字（整数或者小数）即可，不用把单位（%，个，年，等等）填进去。</span></li>
+            <li><span style={{color: 'red'}}>如果是百分比的题，可以精确到小数点后两位，比如，75.43%，就填75.43，其他的题填整数即可。</span></li>
+          </ul>
         </div>
-
         <form onSubmit={handleSubmit} className={styles.form}>
           {questions.map((question, index) => (
             <div key={index} className={styles.questionCard}>
