@@ -104,7 +104,7 @@ const PublicGoodsGame = () => {
         <Navbar />
         <div className={styles.completedInfo}>
           <h2>✅ 公共物品游戏已完成</h2>
-          <p>你已经成功完成所有{totalRounds}个回合！感谢您的参与！</p>
+          <p>你已经成功完成所有{totalRounds}个回合！感谢你的参与！</p>
         </div>
       </div>
     );
