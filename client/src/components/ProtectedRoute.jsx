@@ -40,24 +40,27 @@
  * 因为路由保护会在进入页面时自动检查，更加安全和简洁！
  */
 
-import { useAuth } from '../contexts/AuthContext';
+import React from 'react';
 import { Navigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext'; // 注意路径可能不同
+import styles from './ProtectedRoute.module.css';
 
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, loading } = useAuth();
 
-  // 如果还在检查登录状态，显示加载中
   if (loading) {
-    return <div>加载中...</div>;
+    return (
+      <div className={styles.loadingContainer}>
+        <div className={styles.spinner}></div>
+        <p className={styles.loadingText}>验证中...</p>
+      </div>
+    );
   }
 
-  // 如果未登录，自动跳转到登录页面
   if (!isAuthenticated) {
-    // replace: true 表示替换当前历史记录，避免用户点击返回按钮又回到受保护页面
-    return <Navigate to="/login" replace />;
+    return <Navigate to="/auth/login" replace />;
   }
 
-  // 如果已登录，正常显示受保护的页面内容
   return children;
 };
 
