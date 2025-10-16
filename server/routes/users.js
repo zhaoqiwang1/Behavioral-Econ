@@ -238,14 +238,36 @@ router.put("/:userId", async (req, res) => {
 });
 // #endregion
 
-// #region 一个简单的browser-close路由
+// #region 一个简单的Browser-close路由
   // 就记录个日志，其他什么都不做;
   // 暂时不知道这里写什么好，后面学习到更多内容了再来具体看看用户在离开浏览器界面和关闭浏览器后需要后端在这里做什么。现在先暂时不做太多。
-router.post('/browser-close', (req, res) => {
-  if (req.session.user) {
-    console.log(`用户 ${req.session.user.username} 关闭浏览器`);
+router.post('/browser-close', async (req, res) => {
+  try {
+    console.log('🔔 收到浏览器关闭信号');
+    // 从请求体中获取用户信息
+    const { userId, username } = req.body;
+
+    if (userId && username) {
+      console.log(`🧹 用户 ${username} (ID: ${userId}) 离开，执行清理`);
+      
+      // 这里可以添加清理逻辑，比如更新用户最后活动时间
+      // await User.findByIdAndUpdate(userId, { lastActivity: new Date() });
+      
+      console.log('✅ 用户清理完成');
+    } else {
+      console.log('未登录用户关闭浏览器');
+    }
+    
+    res.json({ success: true });
+  } catch (error) {
+   // 静默处理 "request aborted" 错误
+    if (error.message.includes('aborted') || error.code === 'ECONNABORTED') {
+      console.log('用户快速关闭浏览器，请求被中断（正常现象）');
+    } else {
+      console.log('其他错误:', error.message);
+    }
+    // 不返回任何响应，因为连接已经中断
   }
-  res.json({ success: true });
 });
 // #endregion
 
