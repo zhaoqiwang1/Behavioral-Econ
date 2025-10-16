@@ -17,6 +17,7 @@ import UserSettings from './pages/auth/UserSettings.jsx';
 import ShowRiskAtti from './pages/gameresults/ShowRiskAtti.jsx';
 // import other things
 import { AuthProvider } from './contexts/AuthContext.jsx';  
+import ProtectedRoute from './components/ProtectedRoute.jsx';
 import './App.css';
 
 
@@ -32,15 +33,43 @@ function App() {
             {/* Auth Page path */}
             <Route path="/auth/login" element={<Login />} />
             <Route path="/auth/register" element={<Register />} />
-            <Route path="/auth/settings" element={<UserSettings />} />
+            <Route path="/auth/settings" element={
+              <ProtectedRoute>
+                <UserSettings />
+              </ProtectedRoute>
+              } />
             {/* Games Page path */}
-            <Route path="/games/risk-attitude-elicit" element={<RiskAttiElicit />} />
-            <Route path="/games/ambiguity-attitude-elicit" element={<AmbiguityAttiElicit />} />
-            <Route path="/games/public-goods" element={<PublicGoodsGame />} />
-            <Route path="/games/overconfidence-game" element={<OverconfidenceGame />} />
-            <Route path="/games/game-under-ambiguity" element={<GameUnderAmbiguity />} />
+            <Route path="/games/risk-attitude-elicit" element={
+              <ProtectedRoute>
+                <RiskAttiElicit />
+              </ProtectedRoute>
+              } />
+            <Route path="/games/ambiguity-attitude-elicit" element={
+              <ProtectedRoute>
+                <AmbiguityAttiElicit />
+              </ProtectedRoute>
+              } />
+            <Route path="/games/public-goods" element={
+              <ProtectedRoute>
+                <PublicGoodsGame />
+              </ProtectedRoute>
+              } />
+            <Route path="/games/overconfidence-game" element={
+              <ProtectedRoute>
+                <OverconfidenceGame />
+              </ProtectedRoute>
+              } />
+            <Route path="/games/game-under-ambiguity" element={
+              <ProtectedRoute>
+                <GameUnderAmbiguity />
+              </ProtectedRoute>
+              } />
             {/* Game Results Page path */}
-            <Route path="/gameresults/show-risk-attitudes" element={<ShowRiskAtti />} />
+            <Route path="/gameresults/show-risk-attitudes" element={
+              <ProtectedRoute>
+                <ShowRiskAtti />
+              </ProtectedRoute>
+              } />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div> 
