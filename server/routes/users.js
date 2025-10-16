@@ -238,4 +238,15 @@ router.put("/:userId", async (req, res) => {
 });
 // #endregion
 
+// #region 一个简单的browser-close路由
+  // 就记录个日志，其他什么都不做;
+  // 暂时不知道这里写什么好，后面学习到更多内容了再来具体看看用户在离开浏览器界面和关闭浏览器后需要后端在这里做什么。现在先暂时不做太多。
+router.post('/browser-close', (req, res) => {
+  if (req.session.user) {
+    console.log(`用户 ${req.session.user.username} 关闭浏览器`);
+  }
+  res.json({ success: true });
+});
+// #endregion
+
 export default router; 
