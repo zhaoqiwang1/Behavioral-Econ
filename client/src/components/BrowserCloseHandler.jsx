@@ -11,6 +11,7 @@ const BrowserCloseHandler = () => {
       
       if (user && token) {
         try {
+          const userData = JSON.parse(user); // 解析用户信息
           // 使用与你的api.js相同的环境判断逻辑
           const isProduction = process.env.NODE_ENV === 'production';
           const baseURL = isProduction 
@@ -24,6 +25,10 @@ const BrowserCloseHandler = () => {
             headers: {
               'Content-Type': 'application/json',
             },
+            body: JSON.stringify({
+            userId: userData._id,     // 传递用户ID
+            username: userData.username // 传递用户名
+           })
           });
         } catch (error) {
           console.log('浏览器关闭信号已发送');

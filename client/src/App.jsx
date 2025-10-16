@@ -18,6 +18,7 @@ import ShowRiskAtti from './pages/gameresults/ShowRiskAtti.jsx';
 // import other things
 import { AuthProvider } from './contexts/AuthContext.jsx';  
 import ProtectedRoute from './components/ProtectedRoute.jsx';
+import BrowserCloseHandler from './components/BrowserCloseHandler.jsx'; // 导入
 import './App.css';
 
 
@@ -26,6 +27,7 @@ function App() {
     <Router>
       <AuthProvider>
         <div className="App">
+          <BrowserCloseHandler />
           <Toaster position="top-center" />
           <Routes>
             {/* HomePage path */}
