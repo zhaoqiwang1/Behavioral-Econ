@@ -115,22 +115,22 @@ const HomePage = () => {
             
             <button 
               className={styles.gameBtn}
-              // onClick={handleAmbiguityAttiGame}
+              onClick={handleAmbiguityAttiGame}
               style={{
                 backgroundImage: "url('../assets/images/ambiguity_assessment.jpg')"
               }}
             >
-              {/* <span>模糊偏好评估</span> */}
+              <span>模糊偏好评估</span>
             </button>
             
             <button 
               className={styles.gameBtn}
-              // onClick={handleOverconfidenceGame}
+              onClick={handleOverconfidenceGame}
               style={{
                 backgroundImage: "url('../assets/images/overconfidence_assessment.jpg')"
               }}
             >
-              {/* <span>过度自信实验</span> */}
+              <span>过度自信实验</span>
             </button>
             
             <button 
