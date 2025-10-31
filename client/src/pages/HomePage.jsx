@@ -135,7 +135,7 @@ const HomePage = () => {
             
             <button 
               className={styles.gameBtn}
-              // onClick={handleGameUnderAmbig}
+              onClick={handleGameUnderAmbig}
               style={{
                 backgroundImage: "url('../assets/images/game_under_ambiguity.jpg')"
               }}
