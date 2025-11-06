@@ -1,0 +1,44 @@
+.completedInfo h2 {
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+.MBTIAnswers {
+  border-radius: 15px;
+  font-size: 1.5rem;
+  text-align: center;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 0 auto;
+  width: 600px;
+}
+
+.MBTIAnswers input {
+  border: 1px solid #ccc; /* 明确设置所有边框 */
+  border-radius: 4px; /* 或者你想要的任何圆角值 */
+  width: 400px;
+  height: 40px;
+  font-size: 20px;
+}
+
+.submitButton {
+  background-color: #4CAF50;
+  color: white;
+  margin-top: 10px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: #45a049;
+}
+
+.submitButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}

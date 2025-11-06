@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import { mbtiElicitAPI } from '../../services/api.js';
 import { useAuth } from '../../contexts/AuthContext.jsx';
-import styles from './RiskAttiElicit.module.css'; 
+import styles from './MbtiElicit.module.css'; 
 import Navbar from '../../components/Navbar.jsx';  
 
 const MBTIElicit = () => {
@@ -62,21 +62,22 @@ const MBTIElicit = () => {
   return (
     <div>
       <Navbar />
-      <h2>请输入您的MBTI测试结果</h2>
+      <h1>请输入你的MBTI ~ </h1>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className={styles.MBTIAnswers}>
           <label>MBTI结果：</label>
           <input
             type="text"
             value={mbtiResult}
             onChange={(e) => setMbtiResult(e.target.value)}
-            placeholder="例如：INTJ、ENFP等"
+            placeholder=" 请输入大写英文，例如：INTJ、ENFP等等"
             required
             disabled={loading}
           />
         </div>
         <button 
           type="submit" 
+          className={styles.submitButton}
           disabled={loading || !mbtiResult.trim()}
         >
           {loading ? '提交中...' : '提交'}
