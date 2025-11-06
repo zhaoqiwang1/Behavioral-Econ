@@ -89,11 +89,11 @@ export const AuthProvider = ({ children }) => {
     if (inactivityTimerRef.current) {
       clearTimeout(inactivityTimerRef.current);
     }
-    // 设置新的15分钟定时器（测试时可改为更短时间）
+    // 设置新的60分钟定时器（测试时可改为更短时间）
     inactivityTimerRef.current = setTimeout(() => {
       autoLogout();
       alert('由于长时间无操作，已自动登出');
-    }, 30 * 60 * 1000); // 30分钟
+    }, 60 * 60 * 1000); // 60分钟
   }, [isAuthenticated, autoLogout]); // 依赖 isAuthenticated
   // #endregion
 
