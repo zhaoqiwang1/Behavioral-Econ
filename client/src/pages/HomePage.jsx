@@ -155,6 +155,9 @@ const HomePage = () => {
             <button 
               className={styles.gameBtn}
               onClick={handleMBTIElicit}
+              style={{
+                backgroundImage: "url('../assets/images/mbti_game.jpg')"
+              }}
             >
               <span>MBTI</span>
             </button>
