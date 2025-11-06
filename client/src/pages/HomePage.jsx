@@ -61,6 +61,15 @@ const HomePage = () => {
       '你需要先登录哦'
     );
   };
+
+  // 专门用于 MBTI Elicit 的函数
+  const handleMBTIElicit = () => {
+    checkAuthAndNavigate(
+      '/games/mbti-elicit-game',
+      '你需要先登录哦'
+    );
+  };
+
   // #endregion
 
   // #region 展示行为数据
@@ -144,13 +153,19 @@ const HomePage = () => {
             </button>
 
             <button 
+              className={styles.gameBtn}
+              onClick={handleMBTIElicit}
+            >
+              <span>MBTI</span>
+            </button>
+
+            <button 
               className={`${styles.resultBtn} ${styles.comingSoon}`}
               onClick={() => toast.error('功能开发中...')}
             >
               <span>更多游戏</span>
               <div className={styles.resultBadge}>即将开放</div>
             </button>
-
           </div>
         </section>
 

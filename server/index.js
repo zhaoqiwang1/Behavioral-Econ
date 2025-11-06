@@ -13,7 +13,7 @@ import ambiguityAttiRoutes from './routes/ambiguityattielicit.js';
 import publicGoodsRoutes from './routes/publicgoods.js';
 import overconfidenceGameRoutes from './routes/overconfidencegame.js';
 import GameUnderAmbigRoutes from './routes/gameunderambiguity.js';
-import MbtiElicitRoutes from './routes/mbtielicit.js'
+import MbtiElicitRoutes from './routes/mbtielicit.js';
 // #endregion
 
 const app = express();

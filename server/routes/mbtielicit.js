@@ -1,6 +1,6 @@
 import express from 'express';
 import UserModel from '../models/Users.js';
-import RiskAttiSurvey from '../models/RiskAtti.js';
+import MBTISurvey from '../models/MBTI.js';
 import mongoose from 'mongoose';
 
 const router = express.Router();

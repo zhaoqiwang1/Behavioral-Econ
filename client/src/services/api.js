@@ -48,6 +48,11 @@ export const gameUnderAmbiguityAPI = {
   submit: (userData) => api.post('/gameunderambiguity/submit', userData),
 };
 
+// MBTI 相关API
+export const mbtiElicitAPI = {
+  submit: (userData) => api.post('/mbtielicit/submit', userData),
+};
+
 
 export default api; 
 
