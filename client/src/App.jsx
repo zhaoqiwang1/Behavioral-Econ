@@ -9,6 +9,7 @@ import AmbiguityAttiElicit from './pages/games/AmbiguityAttiElicit.jsx';
 import RiskAttiElicit from './pages/games/RiskAttiElicit.jsx';
 import OverconfidenceGame from './pages/games/OverconfidenceGame.jsx';
 import GameUnderAmbiguity from './pages/games/GameUnderAmbiguity.jsx';
+import MBTIElicit from './pages/games/MbtiElicit.jsx'
 // import auth pages
 import Register from './pages/auth/Register.jsx';
 import Login from './pages/auth/Login.jsx';
@@ -59,6 +60,11 @@ function App() {
             <Route path="/games/overconfidence-game" element={
               <ProtectedRoute>
                 <OverconfidenceGame />
+              </ProtectedRoute>
+              } />
+            <Route path="/games/mbti-elicit-game" element={
+              <ProtectedRoute>
+                <MBTIElicit />
               </ProtectedRoute>
               } />
             <Route path="/games/game-under-ambiguity" element={
