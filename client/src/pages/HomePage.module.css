@@ -187,12 +187,12 @@
 }
 
 /* 即将开放样式 */
-.comingSoon {
+/* .comingSoon {
   background: linear-gradient(135deg, #95a5a6 0%, #bdc3c7 100%) !important;
-}
+} */
 
 .comingSoon::before {
-  background: linear-gradient(135deg, rgba(149, 165, 166, 0.8) 0%, rgba(189, 195, 199, 0.8) 100%) !important;
+  background: linear-gradient(135deg, rgba(120, 127, 128, 0.8) 0%, rgba(189, 195, 199, 0.3) 100%) !important;
 }
 
 /* 响应式设计 */
@@ -255,11 +255,11 @@
   }
   
   .resultBtn span {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
   
   .resultBadge {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     padding: 0.4rem 0.8rem;
   }
 }

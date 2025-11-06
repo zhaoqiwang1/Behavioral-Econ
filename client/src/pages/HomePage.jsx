@@ -165,6 +165,20 @@ const HomePage = () => {
             <button 
               className={`${styles.resultBtn} ${styles.comingSoon}`}
               onClick={() => toast.error('功能开发中...')}
+              style={{
+                backgroundImage: "url('../assets/images/question_dice.jpg')"
+              }}
+            >
+              <span>更多游戏</span>
+              <div className={styles.resultBadge}>即将开放</div>
+            </button>
+
+            <button 
+              className={`${styles.resultBtn} ${styles.comingSoon}`}
+              onClick={() => toast.error('功能开发中...')}
+              style={{
+                backgroundImage: "url('../assets/images/question_dice.jpg')"
+              }}
             >
               <span>更多游戏</span>
               <div className={styles.resultBadge}>即将开放</div>
@@ -193,6 +207,9 @@ const HomePage = () => {
             <button 
               className={`${styles.resultBtn} ${styles.comingSoon}`}
               onClick={() => toast.error('功能开发中...')}
+              style={{
+                backgroundImage: "url('../assets/images/question_barchart.jpg')"
+              }}
             >
               <span>更多分析</span>
               <div className={styles.resultBadge}>即将开放</div>
@@ -201,6 +218,9 @@ const HomePage = () => {
             <button 
               className={`${styles.resultBtn} ${styles.comingSoon}`}
               onClick={() => toast.error('功能开发中...')}
+              style={{
+                backgroundImage: "url('../assets/images/question_barchart.jpg')"
+              }}
             >
               <span>更多分析</span>
               <div className={styles.resultBadge}>即将开放</div>
