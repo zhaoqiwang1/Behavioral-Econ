@@ -70,6 +70,14 @@ const HomePage = () => {
     );
   };
 
+  // 专门用于 Confirmation Bias Game 的函数
+  const handleConfirmationBiasGame = () => {
+    checkAuthAndNavigate(
+      '/games/confirmation-bias-game',
+      '你需要先登录哦'
+    );
+  };
+
   // #endregion
 
   // #region 展示行为数据
@@ -160,6 +168,16 @@ const HomePage = () => {
               }}
             >
               <span>MBTI</span>
+            </button>
+
+            <button 
+              className={styles.gameBtn}
+              onClick={handleConfirmationBiasGame}
+              style={{
+                backgroundImage: "url('../assets/images/confirmation_bias_game.jpg')"
+              }}
+            >
+              <span>Confirmation Bias Game</span>
             </button>
 
             <button 
