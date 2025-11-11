@@ -53,6 +53,11 @@ export const mbtiElicitAPI = {
   submit: (userData) => api.post('/mbtielicit/submit', userData),
 };
 
+// Confirmation Bias Game 相关API
+export const confirmationBiasGameAPI = {
+  submit: (userData) => api.post('/confirmationbiasgame/submit', userData),
+};
+
 
 export default api; 
 

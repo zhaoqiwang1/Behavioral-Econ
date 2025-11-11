@@ -9,7 +9,8 @@ import AmbiguityAttiElicit from './pages/games/AmbiguityAttiElicit.jsx';
 import RiskAttiElicit from './pages/games/RiskAttiElicit.jsx';
 import OverconfidenceGame from './pages/games/OverconfidenceGame.jsx';
 import GameUnderAmbiguity from './pages/games/GameUnderAmbiguity.jsx';
-import MBTIElicit from './pages/games/MbtiElicit.jsx'
+import MBTIElicit from './pages/games/MbtiElicit.jsx';
+import ConfirmationBiasGame from './pages/games/ConfirmationBiasGame.jsx';
 // import auth pages
 import Register from './pages/auth/Register.jsx';
 import Login from './pages/auth/Login.jsx';
@@ -70,6 +71,11 @@ function App() {
             <Route path="/games/game-under-ambiguity" element={
               <ProtectedRoute>
                 <GameUnderAmbiguity />
+              </ProtectedRoute>
+              } />
+            <Route path="/games/confirmation-bias-game" element={
+              <ProtectedRoute>
+                <ConfirmationBiasGame />
               </ProtectedRoute>
               } />
             {/* Game Results Page path */}
