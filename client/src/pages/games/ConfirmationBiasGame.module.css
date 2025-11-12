@@ -1,0 +1,98 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 创建两个等宽的列 */
+  grid-template-rows: auto auto;
+  row-gap: 5px; 
+  column-gap: 20px;
+  padding: 10px;
+  background-color: white;
+}
+
+.singleTopic {
+  font-size: 1.2rem;
+  text-align: left;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+  height: auto; /* 改为自动高度 */
+  min-height: 100px; /* 设置最小高度 */
+  max-height: 700px; /* 设置最大高度 */
+  overflow: auto; 
+}
+
+.evalBiasGridContainer {
+  align-items: center;
+  width: 60%;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 创建两个等宽的列 */
+  gap: 40px; /* 列之间的间距 */
+  padding: 10px;
+  padding-bottom: 10px;
+  margin: 0 auto;
+}
+
+.customDivider {
+  border: none; 
+  height: 3px; 
+  background-color: #ccc; 
+  margin: 20px 0;
+  width: 100%; 
+}
+
+.formSection {
+  background-color: #fff;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+  height: auto; /* 自动高度 */
+  max-height: 150px; /* 限制最大高度 */
+  overflow: hidden; /* 隐藏超出部分 */
+  box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.reportStanceSection {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+}
+
+.biasesElicitationSection {
+  margin-top: 0px;
+  margin-bottom: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+}
+
+.submitButton {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px 30px;
+  background-color: #ccc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: not-allowed;
+}
+
+.submitButton:enabled {
+  background-color: #28a745;
+  cursor: pointer;
+}
+
+.phase1Intro {
+  align-items: left;
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+.phase2Intro {
+  align-items: left;
+  text-align: left;
+  font-size: 1.2rem;
+}
