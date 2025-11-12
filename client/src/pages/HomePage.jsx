@@ -117,7 +117,7 @@ const HomePage = () => {
                 backgroundImage: "url('../assets/images/public_goods_game.jpg')"
               }}
             >
-              <span>公共物品游戏</span>
+              <span>游戏1</span>
             </button>
 
             <button 
@@ -127,7 +127,7 @@ const HomePage = () => {
                 backgroundImage: "url('../assets/images/risk_assessment.jpg')"
               }}
             >
-              <span>风险评估游戏</span>
+              <span>游戏2</span>
             </button>
             
             <button 
@@ -137,7 +137,7 @@ const HomePage = () => {
                 backgroundImage: "url('../assets/images/ambiguity_assessment.jpg')"
               }}
             >
-              <span>模糊偏好评估</span>
+              <span>游戏3</span>
             </button>
             
             <button 
@@ -147,7 +147,7 @@ const HomePage = () => {
                 backgroundImage: "url('../assets/images/overconfidence_assessment.jpg')"
               }}
             >
-              <span>过度自信实验</span>
+              <span>游戏4</span>
             </button>
             
             <button 
@@ -157,7 +157,7 @@ const HomePage = () => {
                 backgroundImage: "url('../assets/images/game_under_ambiguity.jpg')"
               }}
             >
-              {/* <span>模糊情境博弈</span> */}
+              <span>游戏5</span>
             </button>
 
             <button 
@@ -167,7 +167,7 @@ const HomePage = () => {
                 backgroundImage: "url('../assets/images/mbti_game.jpg')"
               }}
             >
-              <span>MBTI</span>
+              <span>游戏6</span>
             </button>
 
             <button 
@@ -177,7 +177,7 @@ const HomePage = () => {
                 backgroundImage: "url('../assets/images/confirmation_bias_game.jpg')"
               }}
             >
-              <span>Confirmation Bias Game</span>
+              <span>游戏7</span>
             </button>
 
             <button 
@@ -217,7 +217,7 @@ const HomePage = () => {
                 backgroundImage: "url('../assets/images/risk_assessment.jpg')"
               }}
             >
-              <span>风险偏好分析</span>
+              <span>游戏1分析</span>
               <div className={styles.resultBadge}>数据可视化</div>
             </button>
             
