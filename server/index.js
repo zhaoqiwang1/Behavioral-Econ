@@ -15,6 +15,7 @@ import overconfidenceGameRoutes from './routes/overconfidencegame.js';
 import GameUnderAmbigRoutes from './routes/gameunderambiguity.js';
 import MbtiElicitRoutes from './routes/mbtielicit.js';
 import confirmationBiasGameRoutes from './routes/confirmationbiasgame.js';
+import ousSurveyRoutes from './routes/oussurvey.js';
 // #endregion
 
 const app = express();
@@ -40,6 +41,7 @@ app.use('/api/overconfidencegame', overconfidenceGameRoutes);
 app.use('/api/gameunderambiguity', GameUnderAmbigRoutes);
 app.use('/api/mbtielicit', MbtiElicitRoutes);
 app.use('/api/confirmationbiasgame', confirmationBiasGameRoutes);
+app.use('/api/oussurvey', ousSurveyRoutes);
 // #endregion
 
 
