@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 const GameUnderAmbiguitySchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
+    ref: 'users',
     required: true,
     unique: true  // 每个用户只能提交一次
   },

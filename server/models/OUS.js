@@ -1,6 +1,7 @@
+// Oxford Utilitarianism Scale Survey
 import mongoose from 'mongoose';
 
-const OverconfidenceGameSchema = new mongoose.Schema({
+const OUSSurveySchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'users',
@@ -8,25 +9,23 @@ const OverconfidenceGameSchema = new mongoose.Schema({
     unique: true  // 确保每个用户只能回答一次
   },
   
-  // 10个问题的答案
+  // 9个问题的答案
   answers: [{
     questionNumber: {
       type: Number,
       required: true,
       min: 1,
-      max: 10
+      max: 9
     },
     questionText: {
       type: String,
       required: true
     },
-    lowerBound: {
+    score: {
       type: Number,
-      required: true
-    },
-    upperBound: {
-      type: Number,
-      required: true
+      required: true,
+      min: 1,
+      max: 7
     },
     submittedAt: {
       type: Date,
@@ -39,4 +38,4 @@ const OverconfidenceGameSchema = new mongoose.Schema({
   }
 });
 
-export default mongoose.model('OverconfidenceGame', OverconfidenceGameSchema);
+export default mongoose.model('OUSSurvey', OUSSurveySchema);
