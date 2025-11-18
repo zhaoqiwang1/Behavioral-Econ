@@ -3,6 +3,7 @@ import toast from 'react-hot-toast';
 import { ousSurveyAPI } from '../../services/api.js';
 import { useAuth } from '../../contexts/AuthContext.jsx';
 import Navbar from '../../components/Navbar.jsx';
+import styles from './OUSSurvey.module.css';
 
 const OUSSurvey = () => {
   const { user } = useAuth();
@@ -11,6 +12,16 @@ const OUSSurvey = () => {
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [questionsLoading, setQuestionsLoading] = useState(true);
+
+  const SCORE_LABELS = {
+    1: "非常不同意",
+    2: "不同意",
+    3: "稍微不同意",
+    4: "既不同意也不反对",
+    5: "稍微同意",
+    6: "同意",
+    7: "非常同意"
+  };
 
   // 加载问题列表
   useEffect(() => {
@@ -85,7 +96,7 @@ const OUSSurvey = () => {
     return (
       <div>
         <Navbar />
-        <div style={{ padding: '20px', textAlign: 'center' }}>
+        <div className={styles.completedContainer}>
           <h2>✅ 调查已完成</h2>
           <p>你已经成功提交调查结果，感谢你的参与！</p>
         </div>
@@ -97,7 +108,7 @@ const OUSSurvey = () => {
     return (
       <div>
         <Navbar />
-        <div style={{ padding: '20px', textAlign: 'center' }}>
+        <div className={styles.loadingContainer}>
           <p>加载中...</p>
         </div>
       </div>
@@ -107,15 +118,15 @@ const OUSSurvey = () => {
   return (
     <div>
       <Navbar />
-      <div style={{ padding: '20px' }}>
-        <h1>牛津功利主义量表调查</h1>
+      <div className={styles.container}>
+        <h1>请如实回答下面几个问题</h1>
         <form onSubmit={handleSubmit}>
           {questions.map((question, index) => (
-            <div key={question.questionNumber} style={{ marginBottom: '20px' }}>
+            <div key={question.questionNumber} className={styles.question}>
               <p>{question.questionNumber}. {question.questionText}</p>
-              <div>
+              <div className={styles.radioGroup}>
                 {[1, 2, 3, 4, 5, 6, 7].map(score => (
-                  <label key={score} style={{ marginRight: '15px' }}>
+                  <label key={score} className={styles.radioLabel}>
                     <input
                       type="radio"
                       name={`question-${index}`}
@@ -124,7 +135,7 @@ const OUSSurvey = () => {
                       onChange={(e) => handleAnswerChange(index, parseInt(e.target.value))}
                       disabled={loading}
                     />
-                    {score}
+                    {SCORE_LABELS[score]}
                   </label>
                 ))}
               </div>
@@ -133,15 +144,7 @@ const OUSSurvey = () => {
           <button 
             type="submit" 
             disabled={loading}
-            style={{ 
-              padding: '10px 20px', 
-              fontSize: '16px',
-              backgroundColor: loading ? '#ccc' : '#007bff',
-              color: 'white',
-              border: 'none',
-              borderRadius: '4px',
-              cursor: loading ? 'not-allowed' : 'pointer'
-            }}
+            className={styles.submitButton}
           >
             {loading ? '提交中...' : '提交'}
           </button>

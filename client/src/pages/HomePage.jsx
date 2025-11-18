@@ -108,7 +108,6 @@ const HomePage = () => {
   return (
     <div className={styles.homepageContainer}>
       <Navbar />
-
       <div className={styles.homepageContent}>
         <h1 className={styles.mainTitle}>行为科学实验平台</h1>
         <p className={styles.subtitle}>参与实验，探索行为科学奥秘</p>

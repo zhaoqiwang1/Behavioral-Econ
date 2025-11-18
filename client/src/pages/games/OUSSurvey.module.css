@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.completedContainer {
+  padding: 20px;
+  text-align: center;
+}
+
+.loadingContainer {
+  padding: 20px;
+  text-align: center;
+}
+
+.question {
+  width: 100%; /* 或者设置一个固定宽度，如 600px */
+  max-width: 1200px; /* 最大宽度限制 */
+  margin-bottom: 20px;
+  text-align: left;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #bebebe;
+}
+
+.radioGroup {
+  margin-top: 15px;
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.radioLabel {
+  display: inline-block;
+  margin-right: 15px;
+  transition: all 0.3s ease;
+}
+
+.radioLabel input[type="radio"] {
+  margin-right: 8px; /* 添加右边距，在单选按钮和文本之间创建空间 */
+}
+
+.radioLabel:hover {
+  color: #8f8d8d;
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+/* 为除最后一个选项外的所有选项添加右边框（竖线） */
+.radioLabel:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 25%;
+  height: 50%;
+  width: 1px;
+  background-color: #e0e0e0;
+}
+
+.submitButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submitButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

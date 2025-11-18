@@ -1,7 +1,7 @@
 /* 全局重置和字体设置 */
 * {
   margin: 0;
-  padding: 0;
+  padding-top: 0;
   box-sizing: border-box;
 }
 
@@ -11,6 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
 }
+
 
 /* 原有的 App 样式 */
 .App {
