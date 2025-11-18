@@ -78,6 +78,15 @@ const HomePage = () => {
     );
   };
 
+
+  // 专门用于 OUS Survey 的函数
+  const handleOUSSurvey = () => {
+    checkAuthAndNavigate(
+      '/games/ous-survey',
+      '你需要先登录哦'
+    );
+  };
+
   // #endregion
 
   // #region 展示行为数据
@@ -178,6 +187,16 @@ const HomePage = () => {
               }}
             >
               <span>游戏7</span>
+            </button>
+
+            <button 
+              className={`${styles.resultBtn} ${styles.comingSoon}`}
+              onClick={handleOUSSurvey}
+              style={{
+                backgroundImage: "url('../assets/images/question_dice.jpg')"
+              }}
+            >
+              <span>游戏8</span>
             </button>
 
             <button 
