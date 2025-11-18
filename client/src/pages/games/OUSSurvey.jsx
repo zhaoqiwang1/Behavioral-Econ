@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import { ousSurveyAPI } from '../../services/api.js';
 import { useAuth } from '../../contexts/AuthContext.jsx';
@@ -6,21 +6,28 @@ import Navbar from '../../components/Navbar.jsx';
 
 const OUSSurvey = () => {
   const { user } = useAuth();
-  const [answers, setAnswers] = useState(Array(9).fill(0));
+  const [questions, setQuestions] = useState([]);
+  const [answers, setAnswers] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [questionsLoading, setQuestionsLoading] = useState(true);
 
-  const questions = [
-    "从道德角度看，每个人的福祉应被同等重视。",
-    "如果伤害无辜者是帮助其他多名无辜者的必要手段，那么伤害无辜者在道德上是可以接受的。",
-    "在决定做什么时，我们应当始终同等地考虑所有人的福祉（即便是陌生人）。",
-    "当出于必要必须伤害一些人以实现更大利益时，这是道德上可以接受的。",
-    "我会支持一项能为更多人带来更大幸福的政策，即使该政策会伤害一个人。",
-    "有时，为了阻止对更多人的更大伤害，伤害某个人在道德上是合理的。",
-    "我致力于不偏不倚地促进每个人的福祉。",
-    "有时为了更大的总体利益，以伤害个体作为手段是可接受的。",
-    "当牺牲少数人的利益可以最大化整体福祉时，我认为这种牺牲是合理的。"
-  ];
+  // 加载问题列表
+  useEffect(() => {
+    ousSurveyAPI.getQuestions()
+      .then(response => {
+        setQuestions(response.data.questions);
+        // 初始化答案数组
+        setAnswers(Array(response.data.questions.length).fill(0));
+      })
+      .catch(error => {
+        console.error('获取问题失败:', error);
+        toast.error('获取调查问题失败，请刷新页面重试');
+      })
+      .finally(() => {
+        setQuestionsLoading(false);
+      });
+  }, []);
 
   const handleAnswerChange = (index, value) => {
     const newAnswers = [...answers];
@@ -86,6 +93,17 @@ const OUSSurvey = () => {
     );
   }
 
+  if (questionsLoading) {
+    return (
+      <div>
+        <Navbar />
+        <div style={{ padding: '20px', textAlign: 'center' }}>
+          <p>加载中...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div>
       <Navbar />
@@ -93,8 +111,8 @@ const OUSSurvey = () => {
         <h1>牛津功利主义量表调查</h1>
         <form onSubmit={handleSubmit}>
           {questions.map((question, index) => (
-            <div key={index} style={{ marginBottom: '20px' }}>
-              <p>{index + 1}. {question}</p>
+            <div key={question.questionNumber} style={{ marginBottom: '20px' }}>
+              <p>{question.questionNumber}. {question.questionText}</p>
               <div>
                 {[1, 2, 3, 4, 5, 6, 7].map(score => (
                   <label key={score} style={{ marginRight: '15px' }}>

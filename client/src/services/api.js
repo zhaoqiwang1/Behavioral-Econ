@@ -61,6 +61,7 @@ export const confirmationBiasGameAPI = {
 // OUS Survey 相关API
 export const ousSurveyAPI = {
   submit: (userData) => api.post('/oussurvey/submit', userData),
+  getQuestions: () => api.get('/oussurvey/questions'),
 };
 
 export default api; 
