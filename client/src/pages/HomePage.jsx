@@ -126,7 +126,7 @@ const HomePage = () => {
                 backgroundImage: "url('../assets/images/public_goods_game.jpg')"
               }}
             >
-              <span>游戏1</span>
+              <span>实验1</span>
             </button>
 
             <button 
@@ -136,7 +136,7 @@ const HomePage = () => {
                 backgroundImage: "url('../assets/images/risk_assessment.jpg')"
               }}
             >
-              <span>游戏2</span>
+              <span>实验2</span>
             </button>
             
             <button 
@@ -146,7 +146,7 @@ const HomePage = () => {
                 backgroundImage: "url('../assets/images/ambiguity_assessment.jpg')"
               }}
             >
-              <span>游戏3</span>
+              <span>实验3</span>
             </button>
             
             <button 
@@ -156,7 +156,7 @@ const HomePage = () => {
                 backgroundImage: "url('../assets/images/overconfidence_assessment.jpg')"
               }}
             >
-              <span>游戏4</span>
+              <span>实验4</span>
             </button>
             
             <button 
@@ -166,7 +166,7 @@ const HomePage = () => {
                 backgroundImage: "url('../assets/images/game_under_ambiguity.jpg')"
               }}
             >
-              <span>游戏5</span>
+              <span>实验5</span>
             </button>
 
             <button 
@@ -176,7 +176,7 @@ const HomePage = () => {
                 backgroundImage: "url('../assets/images/mbti_game.jpg')"
               }}
             >
-              <span>游戏6</span>
+              <span>实验6</span>
             </button>
 
             <button 
@@ -186,27 +186,49 @@ const HomePage = () => {
                 backgroundImage: "url('../assets/images/confirmation_bias_game.jpg')"
               }}
             >
-              <span>游戏7</span>
+              <span>实验7</span>
             </button>
 
             <button 
-              className={`${styles.resultBtn} ${styles.comingSoon}`}
+              className={styles.gameBtn}
               onClick={handleOUSSurvey}
               style={{
-                backgroundImage: "url('../assets/images/question_dice.jpg')"
+                backgroundImage: "url('../assets/images/ous_survey.jpg')"
               }}
             >
-              <span>游戏8</span>
+              <span>实验8</span>
             </button>
 
             <button 
               className={`${styles.resultBtn} ${styles.comingSoon}`}
               onClick={() => toast.error('功能开发中...')}
               style={{
-                backgroundImage: "url('../assets/images/question_dice.jpg')"
+                backgroundImage: "url('../assets/images/mfq_survey.jpg')"
               }}
             >
-              <span>更多游戏</span>
+              <span>实验9</span>
+              <div className={styles.resultBadge}>即将开放</div>
+            </button>
+
+            <button 
+              className={`${styles.resultBtn} ${styles.comingSoon}`}
+              onClick={() => toast.error('功能开发中...')}
+              style={{
+                backgroundImage: "url('../assets/images/svo_survey.jpg')"
+              }}
+            >
+              <span>实验10</span>
+              <div className={styles.resultBadge}>即将开放</div>
+            </button>
+            
+            <button 
+              className={`${styles.resultBtn} ${styles.comingSoon}`}
+              onClick={() => toast.error('功能开发中...')}
+              style={{
+                backgroundImage: "url('../assets/images/pvq_survey.jpg')"
+              }}
+            >
+              <span>实验11</span>
               <div className={styles.resultBadge}>即将开放</div>
             </button>
 
@@ -217,7 +239,7 @@ const HomePage = () => {
                 backgroundImage: "url('../assets/images/question_dice.jpg')"
               }}
             >
-              <span>更多游戏</span>
+              <span>更多实验</span>
               <div className={styles.resultBadge}>即将开放</div>
             </button>
           </div>
