@@ -4,6 +4,7 @@ import { ambiguityAttiAPI } from '../../services/api.js';
 import { useAuth } from '../../contexts/AuthContext.jsx';
 import styles from './AmbiguityAttiElicit.module.css';
 import Navbar from '../../components/Navbar.jsx';  
+import SubmitButton from '../../components/Buttons/SubmitButton.jsx';
 
 const AmbiguityAttiElicit = () => {
   const { user } = useAuth();
@@ -101,66 +102,62 @@ const AmbiguityAttiElicit = () => {
     <div>
       <Navbar />
       <h1>游戏说明</h1>
-      <div className={styles.instructions}>
-        <ul>
-          <li>有两个盒子，一个盒子叫K，一个盒子叫U。</li>
-          <li>每个盒子里面都有100个球，这些球的颜色要么是黑色，要么是白色。</li>
-          <li>盒子K里的黑球白球相对数量是已知的。</li>
-          <li>盒子U里的黑球白球相对数量是未知的。</li>
-          <li>我们随机从你所选择的那个盒子里抽出一个球，如果那个球的颜色是黑色的话，你就会得到20元人民币。</li>
-          <li><span style={{color: 'red'}}>你需要在下面的11个选项里面，选择其中一个序号；表明这个序号及其以后所有的序号的选项中，盒子U都是比盒子K更加有吸引力的选项。</span></li>
-        </ul>
-      </div>
-      <div className={styles.tableContainer}>
-        <table className={styles.dataTable}>
-          <thead>
-            <tr>
-              <th>选择</th>
-              <th>序号</th>
-              <th>盒子 K (确定黑球数)</th>
-              <th>盒子 U (未知黑球数)</th>
-            </tr>
-          </thead>
-          <tbody>
-            {ambiguityOptions.map((option, index) => (
-              <tr 
-                key={option.id} 
-                className={index % 2 === 0 ? styles.evenRow : styles.oddRow}
-                onClick={() => handleOptionChange(option.id)}
-                style={{ cursor: 'pointer' }}
-              >
-                <td>
-                  <input
-                    type="radio"
-                    name="ambiguityOption"
-                    value={option.id}
-                    checked={selectedOption === option.id.toString()}
-                    onChange={() => handleOptionChange(option.id)}
-                  />
-                </td>
-                <td>{option.id}</td>
-                <td>{option.boxK}</td>
-                <td>{option.boxU}</td>
+      <div className={styles.gameContainer}>
+        <div className={styles.instructions}>
+          <ul>
+            <li>有两个盒子，一个盒子叫K，一个盒子叫U。</li>
+            <li>每个盒子里面都有100个球，这些球的颜色要么是黑色，要么是白色。</li>
+            <li>盒子K里的黑球白球相对数量是已知的。</li>
+            <li>盒子U里的黑球白球相对数量是未知的。</li>
+            <li>我们随机从你所选择的那个盒子里抽出一个球，如果那个球的颜色是黑色的话，你就会得到20元人民币。</li>
+            <li><span style={{color: 'red'}}>你需要在下面的11个选项里面，选择其中一个序号；表明这个序号及其以后所有的序号的选项中，盒子U都是比盒子K更加有吸引力的选项。</span></li>
+          </ul>
+        </div>
+        <div className={styles.tableContainer}>
+          <table className={styles.dataTable}>
+            <thead>
+              <tr>
+                <th>选择</th>
+                <th>序号</th>
+                <th>盒子 K (确定黑球数)</th>
+                <th>盒子 U (未知黑球数)</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      <div className={styles.selectionInfo}>
-        <strong>你选择的选项: </strong>
-        {selectedOption ? `选项 ${selectedOption} (盒子 K: ${ambiguityOptions.find(opt => opt.id === parseInt(selectedOption))?.boxK}个黑球,  盒子 U: 未知黑球数)` : '尚未选择'}
-      </div>
-
-      {/* 提交按钮 */}
-      <div style={{ textAlign: 'center', marginTop: '20px' }}>
-        <button 
-          className={styles.submitButton}
-          onClick={handleSubmit}
-          disabled={loading || !selectedOption}
-        >
-          {loading ? '提交中...' : '提交'}
-        </button>
+            </thead>
+            <tbody>
+              {ambiguityOptions.map((option, index) => (
+                <tr 
+                  key={option.id} 
+                  className={index % 2 === 0 ? styles.evenRow : styles.oddRow}
+                  onClick={() => handleOptionChange(option.id)}
+                  style={{ cursor: 'pointer' }}
+                >
+                  <td>
+                    <input
+                      type="radio"
+                      name="ambiguityOption"
+                      value={option.id}
+                      checked={selectedOption === option.id.toString()}
+                      onChange={() => handleOptionChange(option.id)}
+                    />
+                  </td>
+                  <td>{option.id}</td>
+                  <td>{option.boxK}</td>
+                  <td>{option.boxU}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className={styles.selectionInfo}>
+          <strong>你选择的选项: </strong>
+          {selectedOption ? `选项 ${selectedOption} (盒子 K: ${ambiguityOptions.find(opt => opt.id === parseInt(selectedOption))?.boxK}个黑球,  盒子 U: 未知黑球数)` : '尚未选择'}
+        </div>
+        {/* 提交按钮 */}
+        <div style={{ textAlign: 'center', marginTop: '20px' }}>
+          <SubmitButton onClick={handleSubmit} type="submit" disabled={loading || !selectedOption}>
+                {loading ? '提交中...' : '提交'}
+          </SubmitButton>
+        </div>
       </div>
     </div>
   );

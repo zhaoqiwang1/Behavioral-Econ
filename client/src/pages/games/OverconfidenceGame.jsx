@@ -4,6 +4,7 @@ import { overconfidenceGameAPI } from '../../services/api.js';
 import { useAuth } from '../../contexts/AuthContext.jsx';
 import styles from './OverconfidenceGame.module.css';
 import Navbar from '../../components/Navbar.jsx'; 
+import SubmitButton from '../../components/Buttons/SubmitButton.jsx';
 
 const OverconfidenceGame = () => {
   const { user } = useAuth();
@@ -120,12 +121,6 @@ const OverconfidenceGame = () => {
           <div className={styles.completedMessage}>
             <h2>感谢参与！</h2>
             <p>你已经完成本次游戏！感谢你的参与！</p>
-            <button 
-              className={styles.backButton}
-              onClick={() => window.history.back()}
-            >
-              返回
-            </button>
           </div>
         </div>
       </div>
@@ -190,21 +185,16 @@ const OverconfidenceGame = () => {
           ))}
 
           <div className={styles.actions}>
+            <SubmitButton type="submit" disabled={isSubmitting}>
+              {isSubmitting ? '提交中...' : '提交'}
+            </SubmitButton>
             {/* <button
-              type="button"
-              onClick={handleReset}
-              className={styles.resetButton}
-              disabled={isSubmitting}
-            >
-              重置
-            </button> */}
-            <button
               type="submit"
               className={styles.submitButton}
               disabled={isSubmitting}
             >
               {isSubmitting ? '提交中...' : '提交答案'}
-            </button>
+            </button> */}
           </div>
         </form>
       </div>

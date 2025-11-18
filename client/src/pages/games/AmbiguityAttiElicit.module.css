@@ -1,4 +1,8 @@
 /* AmbiguityAttiElicit.module.css */
+.gameContainer {
+ margin-bottom: 100px;
+}
+
 .tableContainer {
   margin: 20px auto;
   font-family: 'Arial, sans-serif';
@@ -45,7 +49,7 @@
 .dataTable input[type="radio"] {
   transform: scale(1.2);
 }
-
+/* 
 .submitButton {
   background-color: #4CAF50;
   color: white;
@@ -64,7 +68,7 @@
 .submitButton:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
-}
+} */
 
 .completedInfo {
   text-align: center;

@@ -137,54 +137,6 @@
   border-top: 1px solid #e0e0e0;
 }
 
-.submitButton, .resetButton, .backButton {
-  padding: 12px 30px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.submitButton {
-  background: linear-gradient(135deg, #4caf50, #45a049);
-  color: white;
-}
-
-.submitButton:hover:not(:disabled) {
-  background: linear-gradient(135deg, #45a049, #4caf50);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
-}
-
-.submitButton:disabled {
-  background: #cccccc;
-  cursor: not-allowed;
-  transform: none;
-}
-
-.resetButton {
-  background: #f44336;
-  color: white;
-}
-
-.resetButton:hover:not(:disabled) {
-  background: #da190b;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(244, 67, 54, 0.3);
-}
-
-.backButton {
-  background: #2196f3;
-  color: white;
-}
-
-.backButton:hover {
-  background: #1976d2;
-  transform: translateY(-2px);
-}
-
 .completedMessage {
   text-align: center;
   padding: 40px;
@@ -222,9 +174,5 @@
   .actions {
     flex-direction: column;
     gap: 10px;
-  }
-  
-  .submitButton, .resetButton, .backButton {
-    width: 100%;
   }
 }

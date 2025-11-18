@@ -69,7 +69,7 @@
   width: 85%;
 }
 
-.submitButton {
+.confirmButton {
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 10px 30px;
@@ -80,8 +80,8 @@
   cursor: not-allowed;
 }
 
-.submitButton:enabled {
-  background-color: #28a745;
+.confirmButton:enabled {
+  background-color: #007bff;
   cursor: pointer;
 }
 
