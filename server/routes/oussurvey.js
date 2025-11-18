@@ -1,6 +1,6 @@
 // Oxford Utilitarianism Scale Survey
 import express from 'express';
-import OUSSurvey from '../models/OUSSurvey.js';
+import OUSSurvey from '../models/OUS.js';
 import mongoose from 'mongoose';
 
 const router = express.Router();

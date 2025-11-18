@@ -58,6 +58,10 @@ export const confirmationBiasGameAPI = {
   submit: (userData) => api.post('/confirmationbiasgame/submit', userData),
 };
 
+// OUS Survey 相关API
+export const ousSurveyAPI = {
+  submit: (userData) => api.post('/oussurvey/submit', userData),
+};
 
 export default api; 
 

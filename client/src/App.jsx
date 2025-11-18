@@ -11,6 +11,7 @@ import OverconfidenceGame from './pages/games/OverconfidenceGame.jsx';
 import GameUnderAmbiguity from './pages/games/GameUnderAmbiguity.jsx';
 import MBTIElicit from './pages/games/MbtiElicit.jsx';
 import ConfirmationBiasGame from './pages/games/ConfirmationBiasGame.jsx';
+import OUSSurvey from './pages/games/OUSSurvey.jsx';
 // import auth pages
 import Register from './pages/auth/Register.jsx';
 import Login from './pages/auth/Login.jsx';
@@ -76,6 +77,11 @@ function App() {
             <Route path="/games/confirmation-bias-game" element={
               <ProtectedRoute>
                 <ConfirmationBiasGame />
+              </ProtectedRoute>
+              } />
+            <Route path="/games/ous-survey" element={
+              <ProtectedRoute>
+                <OUSSurvey />
               </ProtectedRoute>
               } />
             {/* Game Results Page path */}
