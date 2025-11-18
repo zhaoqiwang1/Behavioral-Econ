@@ -257,7 +257,7 @@ const HomePage = () => {
                 backgroundImage: "url('../assets/images/risk_assessment.jpg')"
               }}
             >
-              <span>游戏1分析</span>
+              <span>实验2</span>
               <div className={styles.resultBadge}>数据可视化</div>
             </button>
             
