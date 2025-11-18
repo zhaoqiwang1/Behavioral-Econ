@@ -4,6 +4,7 @@ import { ousSurveyAPI } from '../../services/api.js';
 import { useAuth } from '../../contexts/AuthContext.jsx';
 import Navbar from '../../components/Navbar.jsx';
 import styles from './OUSSurvey.module.css';
+import SubmitButton from '../../components/Buttons/SubmitButton.jsx';
 
 const OUSSurvey = () => {
   const { user } = useAuth();
@@ -141,13 +142,16 @@ const OUSSurvey = () => {
               </div>
             </div>
           ))}
-          <button 
+          <SubmitButton type="submit" disabled={loading}>
+            {loading ? '提交中...' : '提交'}
+          </SubmitButton>
+          {/* <button 
             type="submit" 
             disabled={loading}
             className={styles.submitButton}
           >
             {loading ? '提交中...' : '提交'}
-          </button>
+          </button> */}
         </form>
       </div>
     </div>

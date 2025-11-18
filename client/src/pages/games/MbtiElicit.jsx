@@ -4,6 +4,7 @@ import { mbtiElicitAPI } from '../../services/api.js';
 import { useAuth } from '../../contexts/AuthContext.jsx';
 import styles from './MbtiElicit.module.css'; 
 import Navbar from '../../components/Navbar.jsx';  
+import SubmitButton from '../../components/Buttons/SubmitButton.jsx';
 
 const MBTIElicit = () => {
   const { user } = useAuth();
@@ -75,13 +76,16 @@ const MBTIElicit = () => {
             disabled={loading}
           />
         </div>
-        <button 
+        <SubmitButton type="submit" disabled={loading || !mbtiResult.trim()}>
+          {loading ? '提交中...' : '提交'}
+        </SubmitButton>
+        {/* <button 
           type="submit" 
           className={styles.submitButton}
           disabled={loading || !mbtiResult.trim()}
         >
           {loading ? '提交中...' : '提交'}
-        </button>
+        </button> */}
       </form>
     </div>
   );

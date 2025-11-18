@@ -1,7 +1,11 @@
+@import '../../App.css';
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 0;
+  padding-bottom: 100px;
 }
 
 .completedContainer {
@@ -55,19 +59,4 @@
   height: 50%;
   width: 1px;
   background-color: #e0e0e0;
-}
-
-.submitButton {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.submitButton:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
 }

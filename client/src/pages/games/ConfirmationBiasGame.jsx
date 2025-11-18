@@ -4,6 +4,7 @@ import { confirmationBiasGameAPI } from '../../services/api.js';
 import { useAuth } from '../../contexts/AuthContext.jsx';
 import Navbar from '../../components/Navbar.jsx';  
 import styles from './ConfirmationBiasGame.module.css'; 
+import SubmitButton from '../../components/Buttons/SubmitButton.jsx';
 
 const ConfirmationBiasGame = () => {
   const { user } = useAuth();
@@ -172,7 +173,7 @@ const ConfirmationBiasGame = () => {
           </div>
           <p><strong>请认真对待，并如实回答每一个问题。</strong></p>
           <button 
-            className={styles.submitButton}
+            className={styles.confirmButton}
             type="button"
             onClick={() => setShowSecondSection(true)}
             disabled={!isFirstSectionComplete}
@@ -329,13 +330,16 @@ const ConfirmationBiasGame = () => {
             {/* 提交按钮 */}
             <div>
               <p><strong>请认真对待，并如实回答每一个问题。</strong></p>
-              <button 
+              <SubmitButton type="submit" disabled={loading}>
+                {loading ? '提交中...' : '提交'}
+              </SubmitButton>
+              {/* <button 
                 className={styles.submitButton}
                 type="submit"
                 disabled={loading}
               >
                 {loading ? '提交中...' : '提交答案'}
-              </button>
+              </button> */}
             </div>
          </div>
         )}

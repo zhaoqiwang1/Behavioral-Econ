@@ -7,6 +7,7 @@ import { riskAttiAPI } from '../../services/api.js';
 import { useAuth } from '../../contexts/AuthContext.jsx';
 import styles from './RiskAttiElicit.module.css'; 
 import Navbar from '../../components/Navbar.jsx';  
+import SubmitButton from '../../components/Buttons/SubmitButton.jsx';
 
 const RiskAttiElicit = () => {
   const { user } = useAuth();
@@ -117,72 +118,78 @@ const RiskAttiElicit = () => {
     <div>
       <Navbar />
       <h1>游戏说明</h1>
-      <div className={styles.instructions}>
-        <ul>
-          <li>我们以序号1的选项A为例，</li>
-          <li>“1/10 of $2.00，  9/10 of $1.60” 的意思是选择这个选项有十分之一的概率能拿到2美元，十分之九的概率能够拿到1.6美元。</li>
-          <li>同理，序号1所对应的选项B的意思是：选择这个选项有十分之一的概率能拿到3.85美元，十分之九的概率能够拿到0.10美元。</li>
-          <li>你需要思考：从哪个序号开始，对于你来说，这个序号及其之后的所有序号中，选项B都是比选项A更有吸引力的；也即在那个序号之前，选项A比选项B更有吸引力。</li>
-          <li><strong>因此，请选择你从哪个序号开始，自那以后你将一直选择选项B。</strong></li>
-        </ul>
-      </div>
-      <div className={styles.tableContainer}>
-        {/* <h2>选项对比表</h2> */}
-        <table className={styles.dataTable}>
-          <thead>
-            <tr>
-              <th>选择</th>
-              <th>序号</th>
-              <th>选项A</th>
-              <th>选项B</th>
-            </tr>
-          </thead>
-          <tbody>
-            {optionAData.map((item, index) => (
-              <tr 
-                key={index} 
-                className={index % 2 === 0 ? styles.evenRow : styles.oddRow}
-                onClick={() => handleOptionChange(index + 1)}
-                style={{ cursor: 'pointer' }}
-              >
-                <td>
-                  <input
-                    type="radio"
-                    name="riskOption"
-                    value={index + 1}
-                    checked={selectedOption === (index + 1).toString()}
-                    onChange={() => handleOptionChange(index + 1)}
-                  />
-                </td>
-                <td>{seqNumber[index].order}</td>
-                <td>
-                  {item.part1} of {item.value1},&nbsp;&nbsp;&nbsp;&nbsp;
-                  {item.part2} of {item.value2}
-                </td>
-                <td>
-                  {optionBData[index].part1} of {optionBData[index].value1},&nbsp;&nbsp;&nbsp;&nbsp;
-                  {optionBData[index].part2} of {optionBData[index].value2}
-                </td>
+      <div className={styles.gameContainer}>
+        <div className={styles.instructions}>
+          <ul>
+            <li>我们以序号1的选项A为例，</li>
+            <li>“1/10 of $2.00，  9/10 of $1.60” 的意思是选择这个选项有十分之一的概率能拿到2美元，十分之九的概率能够拿到1.6美元。</li>
+            <li>同理，序号1所对应的选项B的意思是：选择这个选项有十分之一的概率能拿到3.85美元，十分之九的概率能够拿到0.10美元。</li>
+            <li>你需要思考：从哪个序号开始，对于你来说，这个序号及其之后的所有序号中，选项B都是比选项A更有吸引力的；也即在那个序号之前，选项A比选项B更有吸引力。</li>
+            <li><strong>因此，请选择你从哪个序号开始，自那以后你将一直选择选项B。</strong></li>
+          </ul>
+        </div>
+        <div className={styles.tableContainer}>
+          {/* <h2>选项对比表</h2> */}
+          <table className={styles.dataTable}>
+            <thead>
+              <tr>
+                <th>选择</th>
+                <th>序号</th>
+                <th>选项A</th>
+                <th>选项B</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <div>
-        <strong>你选择的序号: </strong>
-        {selectedOption ? `序号 ${selectedOption}` : '尚未选择'}
-      </div>
+            </thead>
+            <tbody>
+              {optionAData.map((item, index) => (
+                <tr 
+                  key={index} 
+                  className={index % 2 === 0 ? styles.evenRow : styles.oddRow}
+                  onClick={() => handleOptionChange(index + 1)}
+                  style={{ cursor: 'pointer' }}
+                >
+                  <td>
+                    <input
+                      type="radio"
+                      name="riskOption"
+                      value={index + 1}
+                      checked={selectedOption === (index + 1).toString()}
+                      onChange={() => handleOptionChange(index + 1)}
+                    />
+                  </td>
+                  <td>{seqNumber[index].order}</td>
+                  <td>
+                    {item.part1} of {item.value1},&nbsp;&nbsp;&nbsp;&nbsp;
+                    {item.part2} of {item.value2}
+                  </td>
+                  <td>
+                    {optionBData[index].part1} of {optionBData[index].value1},&nbsp;&nbsp;&nbsp;&nbsp;
+                    {optionBData[index].part2} of {optionBData[index].value2}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <strong>你选择的序号: </strong>
+          {selectedOption ? `序号 ${selectedOption}` : '尚未选择'}
+        </div>
 
-      {/* 提交按钮 */}
-      <div style={{ textAlign: 'center', marginTop: '20px' }}>
-        <button 
-          className={styles.submitButton}
-          onClick={handleSubmit}
-          disabled={loading || !selectedOption}
-        >
-          {loading ? '提交中...' : '提交'}
-        </button>
+        {/* 提交按钮 */}
+        <div style={{ textAlign: 'center', marginTop: '20px' }}>
+            <SubmitButton onClick={handleSubmit} type="submit" disabled={loading || !selectedOption}>
+              {loading ? '提交中...' : '提交'}
+            </SubmitButton>
+          {/* <button 
+            className={styles.submitButton}
+            onClick={handleSubmit}
+            disabled={loading || !selectedOption}
+          >
+            {loading ? '提交中...' : '提交'}
+          </button> */}
+        </div>
       </div>
+      
     </div>
   );
 }
