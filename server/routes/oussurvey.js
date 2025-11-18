@@ -18,6 +18,13 @@ const QUESTIONS = [
   { questionNumber: 9, questionText: "当牺牲少数人的利益可以最大化整体福祉时，我认为这种牺牲是合理的。" }
 ];
 
+// 获取调查问题
+router.get('/questions', (req, res) => {
+  res.json({
+    questions: QUESTIONS
+  });
+});
+
 // 提交牛津功利主义量表调查
 router.post('/submit', async (req, res) => {
   try {
