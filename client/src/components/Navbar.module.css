@@ -1,21 +1,33 @@
 /* src/components/Navbar.module.css */
 
+body {
+  margin: 0;
+  margin-top: 0;
+  padding-top: 100px;
+}
+
 /* 导航栏基础样式 */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed; /* 添加这行 */
+  top: 0; /* 添加这行 */
+  left: 0; /* 添加这行 */
+  right: 0; /* 添加这行 */
+  z-index: 1000; /* 添加这行，确保导航栏在最上层 */
+  margin: 0;
   padding: 10px 20px;
-  border-radius: 10px;
-  background-color: #f5f5f5;
+  border-radius: 0px;
+  background-color: rgba(255, 255, 255, 0.7); /* 90% 不透明度 */
+  backdrop-filter: blur(10px); /* 添加毛玻璃效果，更科技感 */
   border-bottom: 1px solid #ddd;
 }
 
 /* 网站标题 */
 .navbarTitle {
-  font-size: 18px;
-  font-weight: bold;
-  color: #007bff;
+  font-size: 15px;
+  color: black;
   cursor: pointer;
   padding: 6px 12px;
   border-radius: 8px;
@@ -23,29 +35,7 @@
   position: relative;
 }
 
-.navbarTitle:hover {
-  color: #0056b3;
-  background-color: #e9ecef;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
-}
 
-/* 添加下划线动画效果 */
-.navbarTitle::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background-color: #007bff;
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-}
-
-.navbarTitle:hover::after {
-  width: 80%;
-}
 /* 右侧区域 */
 .navbarRight {
   display: flex;
@@ -61,8 +51,9 @@
 
 /* 用户名样式 - 只修改这部分 */
 .username {
-  color: #007bff;
-  font-weight: 500;
+  color: black;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
   padding: 6px 12px;
   border-radius: 8px;
@@ -71,68 +62,50 @@
 }
 
 .username:hover {
-  color: #0056b3;
-  background-color: #e9ecef;
+  color: #8f8d8d;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
 }
 
-/* 添加下划线动画效果 */
-.username::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background-color: #007bff;
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-}
-
-.username:hover::after {
-  width: 80%;
-}
 
 /* 基础按钮样式 */
 .navBtn {
-  padding: 6px 12px;
+  padding: 10px 15px;
   border: 1px solid #ccc;
-  border-radius: 10px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 15px;
+  font-family: inherit; /* 继承父级字体 */
+  font-weight: 500; /* 与username保持一致 */
 }
 
 /* 登录按钮 */
 .loginBtn {
-  background-color: #007bff;
-  color: white;
-  border-color: #007bff;
+  background-color: white;
+  color: black;
+  border-color: white;
 }
 
-.loginBtn:hover {
-  background-color: #0056b3;
-}
 
 /* 注册按钮 */
 .registerBtn {
-  background-color: #6c757d;
-  color: white;
-  border-color: #6c757d;
+  background-color: white;
+  color: black;
+  border-color: white;
   margin-left: 10px;
 }
 
-.registerBtn:hover {
-  background-color: #545b62;
-}
 
 /* 退出按钮 */
 .logoutBtn {
-  background-color: #dc3545;
-  color: white;
-  border-color: #dc3545;
+  background-color: white;
+  color: black;
+  border-color: white;
+  cursor: pointer;
 }
 
-.logoutBtn:hover {
-  background-color: #c82333;
+
+.logoutBtn:hover,
+.loginBtn:hover,
+.registerBtn:hover {
+  color: #8f8d8d;
+  transform: translateY(-2px);
 }
