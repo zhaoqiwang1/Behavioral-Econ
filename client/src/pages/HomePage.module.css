@@ -21,7 +21,7 @@
     url('/public/assets/images/gameSectionBackground.jpg');
   background-size: cover;
   background-position: center;
-  background-color: rgba(0,0,0,0.55);
+  background-color: rgba(0,0,0,0.4);
   background-blend-mode: overlay;
   margin: 0 auto;
   margin-bottom: 100px;
@@ -51,9 +51,11 @@
 
 /* #region gameSectionTitle */
 .gameSectionTitle {
-  text-align: left;
-  margin-left: 5rem;
+  max-width: 1400px; /* 与 .gameGridContainer 的 max-width 保持一致 */
+  margin: 0 auto; /* 居中对齐，与游戏网格容器一致 */
   margin-bottom: 1rem;
+  padding: 0 1rem; /* 添加内边距确保在小屏幕上也有适当间距 */
+  text-align: left;
 }
 .gameSectionTitle h1 {
   text-align: left;
