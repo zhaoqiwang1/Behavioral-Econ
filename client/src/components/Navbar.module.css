@@ -16,7 +16,7 @@
   left: 0; /* 添加这行 */
   right: 0; /* 添加这行 */
   z-index: 1000; /* 添加这行，确保导航栏在最上层 */
-  margin: 0 0 30px 0;
+  margin: 0 0 0px 0;
   padding: 10px 20px;
   border-radius: 0px;
   background-color: rgba(255, 255, 255, 0.7); /* 90% 不透明度 */
@@ -79,26 +79,26 @@
 
 /* 登录按钮 */
 .loginBtn {
-  background-color: white;
+  background-color: transparent;
   color: black;
-  border-color: white;
+  border: none;
 }
 
 
 /* 注册按钮 */
 .registerBtn {
-  background-color: white;
+  background-color: transparent;
   color: black;
-  border-color: white;
+  border: none;
   margin-left: 10px;
 }
 
 
 /* 退出按钮 */
 .logoutBtn {
-  background-color: white;
+  background-color: transparent;
   color: black;
-  border-color: white;
+  border: none; /* 移除边框 */
   cursor: pointer;
 }
 
