@@ -1,0 +1,22 @@
+.footer {
+  background-color: #f8f9fa;
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 1px solid #e9ecef;
+  margin-top: auto; /* 确保 footer 在页面底部 */
+}
+
+.footer p {
+  margin: 0;
+  color: #6c757d;
+}
+
+.footer a {
+  color: inherit; /* 继承父元素颜色 */
+  text-decoration: none; /* 去掉下划线 */
+}
+
+.footer a:hover {
+  color: inherit; /* 悬停时也保持相同颜色 */
+  text-decoration: none; /* 悬停时也不显示下划线 */
+}
