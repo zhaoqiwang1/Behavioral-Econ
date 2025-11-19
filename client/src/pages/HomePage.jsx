@@ -12,6 +12,7 @@ const HomePage = () => {
   const navigate = useNavigate();
   const { isAuthenticated, loading } = useAuth();  // 新增这行
   const gameGridRef = useRef(null);
+  const resultGridRef = useRef(null); // 新增
 
   // 通用的权限检查函数
   const checkAuthAndNavigate = (path, message) => {
@@ -24,15 +25,29 @@ const HomePage = () => {
   };
 
   // #region 游戏区域左右滚动功能
-  const scrollLeft = () => {
+  const scrollGameLeft = () => {
     if (gameGridRef.current) {
       gameGridRef.current.scrollBy({ left: -300, behavior: 'smooth' });
     }
   };
 
-  const scrollRight = () => {
+  const scrollGameRight = () => {
     if (gameGridRef.current) {
       gameGridRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+    }
+  };
+  // #endregion
+
+  // #region 统计结果区域的滚动函数
+  const scrollResultLeft = () => {
+    if (resultGridRef.current) {
+      resultGridRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+  };
+
+  const scrollResultRight = () => {
+    if (resultGridRef.current) {
+      resultGridRef.current.scrollBy({ left: 300, behavior: 'smooth' });
     }
   };
   // #endregion
@@ -140,7 +155,7 @@ const HomePage = () => {
         {/* 游戏区域 */}
         <section className={styles.gameSection}>
           <div className={styles.gameGridContainer}>
-              <button className={`${styles.scrollButton} ${styles.left}`} onClick={scrollLeft}>
+              <button className={`${styles.scrollButton} ${styles.left}`} onClick={scrollGameLeft}>
                 ‹
               </button>
               <div className={styles.gameGrid} ref={gameGridRef}>
@@ -269,7 +284,7 @@ const HomePage = () => {
                     <div className={styles.resultBadge}>即将开放</div>
                   </button>
               </div>
-              <button className={`${styles.scrollButton} ${styles.right}`} onClick={scrollRight}>
+              <button className={`${styles.scrollButton} ${styles.right}`} onClick={scrollGameRight}>
                 ›
               </button>
           </div>  
@@ -284,10 +299,10 @@ const HomePage = () => {
           </div>
            <section className={styles.gameSection}>
               <div className={styles.gameGridContainer}>     
-                  <button className={`${styles.scrollButton} ${styles.left}`} onClick={scrollLeft}>
+                  <button className={`${styles.scrollButton} ${styles.left}`} onClick={scrollResultLeft}>
                     ‹
                   </button>
-                  <div className={styles.gameGrid} ref={gameGridRef}>
+                  <div className={styles.gameGrid} ref={resultGridRef}>
                       <div className={styles.resultsItem}>
                         <img src="../assets/images/public_goods_game.jpg"   alt="Risk assessment visualization" />
                         <button 
@@ -409,7 +424,7 @@ const HomePage = () => {
                       </div>
 
                   </div>
-                  <button className={`${styles.scrollButton} ${styles.right}`} onClick={scrollRight}>
+                  <button className={`${styles.scrollButton} ${styles.right}`} onClick={scrollResultRight}>
                     ›
                   </button>
               </div>
