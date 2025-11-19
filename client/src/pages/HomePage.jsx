@@ -109,14 +109,11 @@ const HomePage = () => {
     <div className={styles.homepageContainer}>
       <Navbar />
       <div className={styles.homepageContent}>
-        <h1 className={styles.mainTitle}>行为科学实验平台</h1>
-        <p className={styles.subtitle}>参与实验，探索行为科学奥秘</p>
+        <h1>行为科学实验平台</h1>
+        <p>点击下方按钮开始参与不同的行为科学实验</p>
         
         {/* 游戏区域 */}
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>实验游戏</h2>
-          <p className={styles.sectionDescription}>点击下方按钮开始参与不同的行为科学实验</p>
-          
           <div className={styles.gameGrid}>
             <button 
               className={styles.gameBtn}
@@ -199,7 +196,7 @@ const HomePage = () => {
             </button>
 
             <button 
-              className={`${styles.resultBtn} ${styles.comingSoon}`}
+              className={`${styles.gameBtn} ${styles.comingSoon}`}
               onClick={() => toast.error('功能开发中...')}
               style={{
                 backgroundImage: "url('../assets/images/mfq_survey.jpg')"
@@ -210,7 +207,7 @@ const HomePage = () => {
             </button>
 
             <button 
-              className={`${styles.resultBtn} ${styles.comingSoon}`}
+              className={`${styles.gameBtn} ${styles.comingSoon}`}
               onClick={() => toast.error('功能开发中...')}
               style={{
                 backgroundImage: "url('../assets/images/svo_survey.jpg')"
@@ -221,7 +218,7 @@ const HomePage = () => {
             </button>
             
             <button 
-              className={`${styles.resultBtn} ${styles.comingSoon}`}
+              className={`${styles.gameBtn} ${styles.comingSoon}`}
               onClick={() => toast.error('功能开发中...')}
               style={{
                 backgroundImage: "url('../assets/images/pvq_survey.jpg')"
@@ -232,7 +229,7 @@ const HomePage = () => {
             </button>
 
             <button 
-              className={`${styles.resultBtn} ${styles.comingSoon}`}
+              className={`${styles.gameBtn} ${styles.comingSoon}`}
               onClick={() => toast.error('功能开发中...')}
               style={{
                 backgroundImage: "url('../assets/images/question_dice.jpg')"
@@ -245,10 +242,8 @@ const HomePage = () => {
         </section>
 
         {/* 结果统计区域 */}
-        <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>实验结果查看</h2>
-          <p className={styles.sectionDescription}>查看和分析已完成的实验数据结果</p>
-          
+        <section className={styles.resultSection}>
+          <h1 className={styles.resultSectionTitle}>统计结果一览</h1>
           <div className={styles.resultsGrid}>
             <button 
               className={styles.resultBtn}
@@ -262,6 +257,17 @@ const HomePage = () => {
             </button>
             
             {/* 可以继续添加更多结果分析按钮 */}
+            <button 
+              className={`${styles.resultBtn} ${styles.comingSoon}`}
+              onClick={() => toast.error('功能开发中...')}
+              style={{
+                backgroundImage: "url('../assets/images/question_barchart.jpg')"
+              }}
+            >
+              <span>更多分析</span>
+              <div className={styles.resultBadge}>即将开放</div>
+            </button>
+
             <button 
               className={`${styles.resultBtn} ${styles.comingSoon}`}
               onClick={() => toast.error('功能开发中...')}

@@ -9,70 +9,70 @@
 .homepageContent {
   flex: 1;
   padding-top: 10px;
-  /* padding: 2rem; */
-  max-width: 1200px;
   margin: 0 auto;
   width: 100%;
 }
 
-.mainTitle {
-  text-align: center;
-  margin-bottom: 0.5rem;
-  color: #2c3e50; /* 回退颜色 */
-  font-size: 2.8rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent; /* 标准属性 */
-}
-
-.subtitle {
-  text-align: center;
-  margin-bottom: 3rem;
-  color: #7f8c8d;
-  font-size: 1.3rem;
-  font-weight: 300;
-}
-
 /* 区域样式 */
 .section {
+  margin: 0 auto;
   margin-bottom: 4rem;
   padding: 2rem;
   background: white;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e1e8ed;
 }
 
-.sectionTitle {
-  font-size: 1.8rem;
-  color: #2c3e50;
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 3px solid #3498db;
-  display: inline-block;
+/* .resultSection {
+  color: white;
+  background-color: #1d1d1d;
+  margin: 0 auto;
+  text-align: left;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 60px;
+  padding-bottom: 100px;
+} */
+
+.resultSection {
+  color: white;
+  background-image: 
+    url('/public/assets/images/resultSectionBackground.jpg');
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0,0,0,0.55);
+  background-blend-mode: overlay;
+  margin: 0 auto;
+  text-align: left;
+  position: relative;
+  min-height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 垂直居中 */
+  align-items: center; /* 水平居中 */
+  gap: 1rem; /* 控制子元素之间的间距 */
 }
 
-.sectionDescription {
-  color: #7f8c8d;
-  margin-bottom: 2rem;
-  font-size: 1.1rem;
-}
 
+.resultSectionTitle {
+  color: white;
+  padding-bottom: 0rem;
+}
 /* 游戏按钮网格布局 */
 .gameGrid {
+  max-width: 1400px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  justify-items: center;
+  gap: 1rem;
+  justify-items: center; 
 }
 
 .resultsGrid {
+  max-width: 1500px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  gap: 1rem;
   justify-items: center;
 }
 
@@ -84,7 +84,7 @@
   background-position: center;
   background-repeat: no-repeat;
   border: none;
-  border-radius: 12px;
+  border-radius: 4px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -108,7 +108,6 @@
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
-
 .gameBtn:active {
   transform: translateY(-2px);
 }
@@ -127,18 +126,17 @@
 /* 结果按钮样式 */
 .resultBtn {
   width: 100%;
-  height: 200px;
+  height: 350px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border: none;
-  border-radius: 12px;
+  border-radius: 4px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  /* background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); */
 }
 
 .resultBtn::before {
