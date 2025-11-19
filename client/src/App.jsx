@@ -21,7 +21,8 @@ import ShowRiskAtti from './pages/gameresults/ShowRiskAtti.jsx';
 // import other things
 import { AuthProvider } from './contexts/AuthContext.jsx';  
 import ProtectedRoute from './components/ProtectedRoute.jsx';
-import BrowserCloseHandler from './components/BrowserCloseHandler.jsx'; // 导入
+import BrowserCloseHandler from './components/BrowserCloseHandler.jsx';
+import Footer from './components/Footer.jsx';
 import './App.css';
 
 
@@ -92,6 +93,7 @@ function App() {
               } />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
+          <Footer />
         </div> 
       </AuthProvider>
     </Router>
