@@ -126,7 +126,7 @@ const HomePage = () => {
       <Navbar />
       <div className={styles.homepageContent}>
         <div className={styles.welcomeMessage}>
-          <h1 className={styles.welcomeMessageTitle}>EMPOWER YOUNG MINDS</h1>
+          <h1 className={styles.welcomeMessageTitle}>EMPOWER YOUR MIND</h1>
           <p className={styles.welcomeMessageDescription}>
             Discover a world of learning possibilities with 
             <span id={styles.welcomeMessageHightlight}> innovative </span>
@@ -134,8 +134,8 @@ const HomePage = () => {
           </p>
         </div>
         <div className={styles.gameSectionTitle}>
-          <h1>行为科学实验平台</h1>
-          <p>点击下方按钮开始参与不同的行为科学实验</p>
+          <h1>行为科学实验</h1>
+          <p>点击下方按钮参与不同的行为科学实验</p>
         </div>
         {/* 游戏区域 */}
         <section className={styles.gameSection}>
@@ -277,54 +277,44 @@ const HomePage = () => {
 
         {/* 结果统计区域 */}
         <section className={styles.resultSection}>
-          <h1 className={styles.resultSectionTitle}>统计结果一览</h1>
-          <div className={styles.resultsGrid}>
-            <button 
-              className={styles.resultBtn}
-              onClick={handleShowRiskAtti}
-              style={{
-                backgroundImage: "url('../assets/images/risk_assessment.jpg')"
-              }}
-            >
-              <span>实验2</span>
-              <div className={styles.resultBadge}>数据可视化</div>
-            </button>
-            
-            {/* 可以继续添加更多结果分析按钮 */}
-            <button 
-              className={`${styles.resultBtn} ${styles.comingSoon}`}
-              onClick={() => toast.error('功能开发中...')}
-              style={{
-                backgroundImage: "url('../assets/images/question_barchart.jpg')"
-              }}
-            >
-              <span>更多分析</span>
-              <div className={styles.resultBadge}>即将开放</div>
-            </button>
-
-            <button 
-              className={`${styles.resultBtn} ${styles.comingSoon}`}
-              onClick={() => toast.error('功能开发中...')}
-              style={{
-                backgroundImage: "url('../assets/images/question_barchart.jpg')"
-              }}
-            >
-              <span>更多分析</span>
-              <div className={styles.resultBadge}>即将开放</div>
-            </button>
-
-            <button 
-              className={`${styles.resultBtn} ${styles.comingSoon}`}
-              onClick={() => toast.error('功能开发中...')}
-              style={{
-                backgroundImage: "url('../assets/images/question_barchart.jpg')"
-              }}
-            >
-              <span>更多分析</span>
-              <div className={styles.resultBadge}>即将开放</div>
-            </button>
-          </div>
         </section>
+          <div className={styles.resultSectionTitle}>
+            <h1>统计结果</h1>
+            <h2>点击下方按钮查看不同游戏的统计结果</h2>
+          </div>
+           <section className={styles.gameSection}>
+              <div className={styles.gameGridContainer}>     
+                  <button className={`${styles.scrollButton} ${styles.left}`} onClick={scrollLeft}>
+                    ‹
+                  </button>
+                  <div className={styles.gameGrid} ref={gameGridRef}>
+                      <div className={styles.resultsItem}>
+                        <img src="../assets/images/risk_assessment.jpg"   alt="Risk assessment visualization" />
+                        <button 
+                          className={styles.resultButton}
+                          onClick={handleShowRiskAtti}
+                        >
+                          实验2
+                        </button>
+                      </div>
+
+                      <div className={styles.resultsItem}>
+                        <img src="../assets/images/question_barchart.jpg" alt="TBD" />
+                      </div>
+                      
+                      <div className={styles.resultsItem}>
+                        <img src="../assets/images/question_barchart.jpg" alt="TBD" />
+                      </div>
+
+                      <div className={styles.resultsItem}>
+                        <img src="../assets/images/question_barchart.jpg" alt="TBD" />
+                      </div>
+                  </div>
+                  <button className={`${styles.scrollButton} ${styles.right}`} onClick={scrollRight}>
+                    ›
+                  </button>
+              </div>
+           </section>
       </div>
     </div>
   );

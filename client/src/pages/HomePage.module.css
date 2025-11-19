@@ -51,10 +51,9 @@
 
 /* #region gameSectionTitle */
 .gameSectionTitle {
-  max-width: 1400px; /* 与 .gameGridContainer 的 max-width 保持一致 */
-  margin: 0 auto; /* 居中对齐，与游戏网格容器一致 */
+  max-width: 1400px; 
+  margin: 0 auto; 
   margin-bottom: 1rem;
-  padding: 0 1rem; /* 添加内边距确保在小屏幕上也有适当间距 */
   text-align: left;
 }
 .gameSectionTitle h1 {
@@ -76,25 +75,21 @@
 .resultSection {
   color: white;
   background-image: 
-    url('/public/assets/images/resultSectionBackground.jpg');
-  background-size: cover;
+    url('/public/assets/images/resultSectionBackground2.jpg');
+  background-size: 100% 100%;
   background-position: center;
-  background-color: rgba(0,0,0,0.55);
+  background-color: rgba(57, 57, 57, 0.1);
   background-blend-mode: overlay;
   margin: 0 auto;
   text-align: left;
   position: relative;
-  min-height: 800px;
+  min-height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center; /* 垂直居中 */
   align-items: center; /* 水平居中 */
   gap: 1rem; /* 控制子元素之间的间距 */
-}
-
-.resultSectionTitle {
-  color: white;
-  padding-bottom: 0rem;
+  background-repeat: no-repeat;
 }
 /* #endregion */
 
@@ -130,24 +125,6 @@
 }
 
 /* 导航按钮样式 */
-/* .scrollButton {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-} */
-
 .scrollButton {
   position: absolute;
   top: 50%;
@@ -182,21 +159,12 @@
   background: rgba(0, 0, 0, 0.9);
 }
 /* #endregion */
-/* #region 结果网格布局 */
-.resultsGrid {
-  max-width: 1500px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
-  justify-items: center;
-}
-/* #endregion */
+
 
 /* #region 游戏按钮样式 */
 .gameBtn {
-  width: 400px;
-  height: 300px;
+  width: 430px;
+  height: 400px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -242,87 +210,64 @@
 /* #endregion */
 
 /* #region 结果按钮样式 */
-.resultBtn {
-  width: 100%;
-  height: 350px;
+.resultsItem {
+  width: 430px;
+  height: 400px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border: none;
   border-radius: 4px;
-  cursor: pointer;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-.resultBtn::before {
-  content: '';
+.resultsItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+ 
+.resultButton {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  transition: all 0.3s ease;
+  font-size: 1rem;
+  top: 80%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  padding: 15px 30px;
+  background-color: rgba(255, 255, 255, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.resultBtn:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+.resultButton:hover {
+  background-color: rgba(255, 255, 255, 1);
 }
 
 
-.resultBtn span {
-  position: absolute;
-  bottom: 3rem;
-  left: 1.5rem;
-  color: white;
-  font-size: 1.3rem;
-  font-weight: 600;
-  z-index: 2;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+.resultSectionTitle {
+  max-width: 1400px; 
+  margin: 0 auto; 
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  text-align: left;
 }
 
-.resultBadge {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  color: white;
-  font-size: 0.9rem;
-  font-weight: 500;
-  z-index: 2;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+.resultSectionTitle h1,
+.resultSectionTitle h2 {
+  text-align: left;
+  margin-bottom: 1rem;
 }
 /* #endregion */
 
-/* 即将开放样式 */
-/* .comingSoon {
-  background: linear-gradient(135deg, #95a5a6 0%, #bdc3c7 100%) !important;
-} */
-
-.comingSoon::before {
-  background: linear-gradient(135deg, rgba(120, 127, 128, 0.8) 0%, rgba(189, 195, 199, 0.3) 100%) !important;
-}
 
 /* 响应式设计 */
-@media (max-width: 992px) {
-  .gameGrid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
-  
-  .resultsGrid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
-}
-
 @media (max-width: 768px) {
   .homepageContent {
     padding: 1rem;
@@ -337,23 +282,10 @@
     margin-bottom: 2rem;
   }
   
-  .gameGrid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  .resultsGrid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
   .gameBtn {
     height: 160px;
   }
   
-  .resultBtn {
-    height: 140px;
-  }
 }
 
 @media (max-width: 576px) {
@@ -367,14 +299,5 @@
   
   .gameBtn span {
     font-size: 1.2rem;
-  }
-  
-  .resultBtn span {
-    font-size: 1.2rem;
-  }
-  
-  .resultBadge {
-    font-size: 1.2rem;
-    padding: 0.4rem 0.8rem;
   }
 }
