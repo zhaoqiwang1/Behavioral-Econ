@@ -280,7 +280,7 @@ const HomePage = () => {
         </section>
           <div className={styles.resultSectionTitle}>
             <h1>统计结果</h1>
-            <h2>点击下方按钮查看不同游戏的统计结果</h2>
+            <p>点击下方按钮查看不同游戏的统计结果</p>
           </div>
            <section className={styles.gameSection}>
               <div className={styles.gameGridContainer}>     
@@ -288,6 +288,16 @@ const HomePage = () => {
                     ‹
                   </button>
                   <div className={styles.gameGrid} ref={gameGridRef}>
+                      <div className={styles.resultsItem}>
+                        <img src="../assets/images/public_goods_game.jpg"   alt="Risk assessment visualization" />
+                        <button 
+                          className={styles.resultButton}
+                          onClick={() => toast.error('功能开发中...')}
+                        >
+                          实验1
+                        </button>
+                      </div>
+
                       <div className={styles.resultsItem}>
                         <img src="../assets/images/risk_assessment.jpg"   alt="Risk assessment visualization" />
                         <button 
@@ -299,16 +309,105 @@ const HomePage = () => {
                       </div>
 
                       <div className={styles.resultsItem}>
-                        <img src="../assets/images/question_barchart.jpg" alt="TBD" />
-                      </div>
-                      
-                      <div className={styles.resultsItem}>
-                        <img src="../assets/images/question_barchart.jpg" alt="TBD" />
+                        <img src="../assets/images/ambiguity_assessment.jpg"   alt="Risk assessment visualization" />
+                        <button 
+                          className={styles.resultButton}
+                          onClick={() => toast.error('功能开发中...')}
+                        >
+                          实验3
+                        </button>
                       </div>
 
                       <div className={styles.resultsItem}>
-                        <img src="../assets/images/question_barchart.jpg" alt="TBD" />
+                        <img src="../assets/images/overconfidence_assessment.jpg"   alt="Risk assessment visualization" />
+                        <button 
+                          className={styles.resultButton}
+                          onClick={() => toast.error('功能开发中...')}
+                        >
+                          实验4
+                        </button>
                       </div>
+
+                      <div className={styles.resultsItem}>
+                        <img src="../assets/images/game_under_ambiguity.jpg"   alt="Risk assessment visualization" />
+                        <button 
+                          className={styles.resultButton}
+                          onClick={() => toast.error('功能开发中...')}
+                        >
+                          实验5
+                        </button>
+                      </div>
+
+                      <div className={styles.resultsItem}>
+                        <img src="../assets/images/mbti_game.jpg"   alt="Risk assessment visualization" />
+                        <button 
+                          className={styles.resultButton}
+                          onClick={() => toast.error('功能开发中...')}
+                        >
+                          实验6
+                        </button>
+                      </div>
+
+                      <div className={styles.resultsItem}>
+                        <img src="../assets/images/confirmation_bias_game.jpg"   alt="Risk assessment visualization" />
+                        <button 
+                          className={styles.resultButton}
+                          onClick={() => toast.error('功能开发中...')}
+                        >
+                          实验7
+                        </button>
+                      </div>
+                    
+                      <div className={styles.resultsItem}>
+                        <img src="../assets/images/ous_survey.jpg"   alt="Risk assessment visualization" />
+                        <button 
+                          className={styles.resultButton}
+                          onClick={() => toast.error('功能开发中...')}
+                        >
+                          实验8
+                        </button>
+                      </div>
+
+                      <div className={styles.resultsItem}>
+                        <img src="../assets/images/mfq_survey.jpg"   alt="Risk assessment visualization" />
+                        <button 
+                          className={styles.resultButton}
+                          onClick={() => toast.error('功能开发中...')}
+                        >
+                          实验9
+                        </button>
+                      </div>
+
+                      <div className={styles.resultsItem}>
+                        <img src="../assets/images/svo_survey.jpg"   alt="Risk assessment visualization" />
+                        <button 
+                          className={styles.resultButton}
+                          onClick={() => toast.error('功能开发中...')}
+                        >
+                          实验10
+                        </button>
+                      </div>
+
+                      <div className={styles.resultsItem}>
+                        <img src="../assets/images/pvq_survey.jpg"   alt="Risk assessment visualization" />
+                        <button 
+                          className={styles.resultButton}
+                          onClick={() => toast.error('功能开发中...')}
+                        >
+                          实验11
+                        </button>
+                      </div>
+
+                      <div className={styles.resultsItem}>
+                        <img src="../assets/images/more_analysis.jpg"   alt="Risk assessment visualization" />
+                        <button 
+                          className={styles.resultButton}
+                          onClick={() => toast.error('功能开发中...')}
+                        >
+                          更多分析
+                        </button>
+                      </div>
+
                   </div>
                   <button className={`${styles.scrollButton} ${styles.right}`} onClick={scrollRight}>
                     ›

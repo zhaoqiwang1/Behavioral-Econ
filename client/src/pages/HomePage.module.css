@@ -207,11 +207,30 @@
   z-index: 2;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
+
+.resultBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.comingSoon::before {
+  background: linear-gradient(135deg, rgba(120, 127, 128, 0.8) 0%, rgba(189, 195, 199, 0.3) 100%) !important;
+}
 /* #endregion */
 
 /* #region 结果按钮样式 */
 .resultsItem {
-  width: 430px;
+  width: 230px;
   height: 400px;
   background-size: cover;
   background-position: center;
@@ -235,10 +254,10 @@
   position: absolute;
   font-size: 1rem;
   top: 80%;
-  left: 15%;
+  left: 25%;
   transform: translate(-50%, -50%);
   z-index: 10;
-  padding: 15px 30px;
+  padding: 15px 20px;
   background-color: rgba(255, 255, 255, 1);
   border: none;
   border-radius: 50px;
