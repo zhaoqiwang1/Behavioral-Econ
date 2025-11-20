@@ -4,6 +4,9 @@ import { Toaster } from 'react-hot-toast';
 // import HomePages
 import BehavioralScienceHomePage from './pages/BehavioralScienceHomePage.jsx';
 import MainPortalPage from './pages/MainPortalPage.jsx';
+import RProgrammingHomePage from './pages/RProgrammingHomePage.jsx';
+import LogicHomePage from './pages/LogicHomePage.jsx';
+
 // import game pages
 import PublicGoodsGame from './pages/games/PublicGoodsGame.jsx';
 import AmbiguityAttiElicit from './pages/games/AmbiguityAttiElicit.jsx';
@@ -38,6 +41,8 @@ function App() {
             {/* HomePages path */}
             <Route path="/" element={<MainPortalPage />} />
             <Route path="/courses/behavioral-science" element={<BehavioralScienceHomePage />} />
+            <Route path="/courses/r-programming" element={<RProgrammingHomePage />} />
+            <Route path="/courses/logic" element={<LogicHomePage />} />
             {/* Auth Page path */}
             <Route path="/auth/login" element={<Login />} />
             <Route path="/auth/register" element={<Register />} />
