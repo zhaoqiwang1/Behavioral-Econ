@@ -52,9 +52,6 @@ const Navbar = () => {
             <span onClick={() => navigate('/auth/login')} className={styles.navBtn}>
               登录
             </span>
-            <span onClick={() => navigate('/auth/register')} className={styles.navBtn}>
-              注册
-            </span>
           </div>
         )}
       </div>
