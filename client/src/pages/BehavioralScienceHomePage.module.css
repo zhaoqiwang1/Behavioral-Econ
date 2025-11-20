@@ -75,7 +75,7 @@
 .resultSection {
   color: white;
   background-image: 
-    url('/public/assets/images/resultSectionBackground2.jpg');
+    url('/public/assets/images/resultSectionBackground5.jpg');
   background-size: 100% 100%;
   background-position: center;
   background-color: rgba(57, 57, 57, 0.1);
@@ -83,7 +83,7 @@
   margin: 0 auto;
   text-align: left;
   position: relative;
-  min-height: 600px;
+  min-height: 900px;
   display: flex;
   flex-direction: column;
   justify-content: center; /* 垂直居中 */
