@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-// import HomePage
-import HomePage from './pages/HomePage.jsx';
+// import HomePages
+import BehavioralScienceHomePage from './pages/BehavioralScienceHomePage.jsx';
+import MainPortalPage from './pages/MainPortalPage.jsx';
 // import game pages
 import PublicGoodsGame from './pages/games/PublicGoodsGame.jsx';
 import AmbiguityAttiElicit from './pages/games/AmbiguityAttiElicit.jsx';
@@ -34,8 +35,9 @@ function App() {
           <BrowserCloseHandler />
           <Toaster position="top-center" />
           <Routes>
-            {/* HomePage path */}
-            <Route path="/" element={<HomePage />} />
+            {/* HomePages path */}
+            <Route path="/" element={<MainPortalPage />} />
+            <Route path="/courses/behavioral-science" element={<BehavioralScienceHomePage />} />
             {/* Auth Page path */}
             <Route path="/auth/login" element={<Login />} />
             <Route path="/auth/register" element={<Register />} />
