@@ -4,6 +4,7 @@ import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { userAPI } from '../../services/api';
 import styles from './Register.module.css';
+import Navbar from '../../components/Navbar.jsx';
 
 const Register = () => {
   // const [listOfUsers, setlistOfUsers] = useState([]);
@@ -163,113 +164,117 @@ const Register = () => {
   };
 
   return (
-    <div className={styles.registerAppContainer}>
-      <div className={styles.registerContainer}>
-        {/* <h1>用户注册</h1> */}
-        
-        {/* 注册表单 */}
-        <div className={styles.registerForm}>
-          <h2>填写注册信息</h2>
+    <div>
+      <Navbar />
+      <div className={styles.registerAppContainer}>
+        <div className={styles.registerContainer}>
+          {/* <h1>用户注册</h1> */}
           
-          {/* 基础信息 */}
-          <div className={styles.formRow}>
-            <input 
-              type="text" 
-              placeholder="用户名" 
-              value={formData.username}
-              onChange={(event) => handleInputChange('username', event.target.value)}
-              className={styles.registerFormInput}
-            />
-          </div>
-          
-          <div className={styles.formRow}>
-            <input 
-              type="email" 
-              placeholder="邮箱地址" 
-              value={formData.email}
-              onChange={(event) => handleInputChange('email', event.target.value)}
-              className={styles.registerFormInput}
-            />
-          </div>
-          
-          <div className={styles.formRow}>
-            <input 
-              type="password" 
-              placeholder="密码" 
-              value={formData.password}
-              onChange={(event) => handleInputChange('password', event.target.value)}
-              className={styles.registerFormInput}
-            />
-          </div>
-          
-          <div className={styles.formRow}>
-            <input 
-              type="password" 
-              placeholder="请再次输入密码" 
-              value={formData.confirmPassword}
-              onChange={(event) => handleInputChange('confirmPassword', event.target.value)}
-              className={styles.registerFormInput}
-            />
-          </div>
+          {/* 注册表单 */}
+          <div className={styles.registerForm}>
+            <h2>填写注册信息</h2>
+            
+            {/* 基础信息 */}
+            <div className={styles.formRow}>
+              <input 
+                type="text" 
+                placeholder="用户名" 
+                value={formData.username}
+                onChange={(event) => handleInputChange('username', event.target.value)}
+                className={styles.registerFormInput}
+              />
+            </div>
+            
+            <div className={styles.formRow}>
+              <input 
+                type="email" 
+                placeholder="邮箱地址" 
+                value={formData.email}
+                onChange={(event) => handleInputChange('email', event.target.value)}
+                className={styles.registerFormInput}
+              />
+            </div>
+            
+            <div className={styles.formRow}>
+              <input 
+                type="password" 
+                placeholder="密码" 
+                value={formData.password}
+                onChange={(event) => handleInputChange('password', event.target.value)}
+                className={styles.registerFormInput}
+              />
+            </div>
+            
+            <div className={styles.formRow}>
+              <input 
+                type="password" 
+                placeholder="请再次输入密码" 
+                value={formData.confirmPassword}
+                onChange={(event) => handleInputChange('confirmPassword', event.target.value)}
+                className={styles.registerFormInput}
+              />
+            </div>
 
-          {/* Demographic 信息 */}
-          <h3>个人信息</h3>
-          <div className={styles.formRow}>
-            <input 
-              type="number" 
-              placeholder="学号" 
-              value={formData.demographic.studentid}
-              onChange={(event) => handleDemographicChange('studentid', event.target.value)}
-              className={styles.registerFormInput}
-            />
-          </div>
+            {/* Demographic 信息 */}
+            <h3>个人信息</h3>
+            <div className={styles.formRow}>
+              <input 
+                type="number" 
+                placeholder="学号" 
+                value={formData.demographic.studentid}
+                onChange={(event) => handleDemographicChange('studentid', event.target.value)}
+                className={styles.registerFormInput}
+              />
+            </div>
 
-          <div className={styles.formRow}>
-            <input 
-              type="number" 
-              placeholder="年龄" 
-              value={formData.demographic.age}
-              onChange={(event) => handleDemographicChange('age', event.target.value)}
-              className={styles.registerFormInput}
-            />
-          </div>
+            <div className={styles.formRow}>
+              <input 
+                type="number" 
+                placeholder="年龄" 
+                value={formData.demographic.age}
+                onChange={(event) => handleDemographicChange('age', event.target.value)}
+                className={styles.registerFormInput}
+              />
+            </div>
+            
+            <div className={styles.formRow}>
+              <select 
+                value={formData.demographic.gender}
+                onChange={(event) => handleDemographicChange('gender', event.target.value)}
+                className={styles.formSelect}
+              >
+                <option value="">选择性别</option>
+                <option value="男">男</option>
+                <option value="女">女</option>
+              </select>
+            </div>
+            
+            <div className={styles.formRow}>
+              <select 
+                value={formData.demographic.education}
+                onChange={(event) => handleDemographicChange('education', event.target.value)}
+                className={styles.formSelect}
+              >
+                <option value="">我当下是</option>
+                <option value="本科生">本科生</option>
+                <option value="研究生">研究生</option>
+                <option value="博士生">博士生</option>
+                <option value="其他">其他</option>
+              </select>
+            </div>
           
-          <div className={styles.formRow}>
-            <select 
-              value={formData.demographic.gender}
-              onChange={(event) => handleDemographicChange('gender', event.target.value)}
-              className={styles.formSelect}
-            >
-              <option value="">选择性别</option>
-              <option value="男">男</option>
-              <option value="女">女</option>
-            </select>
-          </div>
-          
-          <div className={styles.formRow}>
-            <select 
-              value={formData.demographic.education}
-              onChange={(event) => handleDemographicChange('education', event.target.value)}
-              className={styles.formSelect}
-            >
-              <option value="">我当下是</option>
-              <option value="本科生">本科生</option>
-              <option value="研究生">研究生</option>
-              <option value="博士生">博士生</option>
-              <option value="其他">其他</option>
-            </select>
-          </div>
-        
-          <button 
-          onClick={handleRegister}
-          className={styles.registerButton}
-        >
-          注册
-        </button>
+            <button 
+            onClick={handleRegister}
+            className={styles.registerButton}
+          >
+            注册
+          </button>
 
+          </div>
         </div>
       </div>
     </div>
+
   );
 }
 

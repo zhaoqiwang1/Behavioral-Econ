@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import { userAPI } from '../../services/api.js';
 import { useAuth } from '../../contexts/AuthContext.jsx';  // 新增导入
 import styles from './Login.module.css';  
+import Navbar from '../../components/Navbar.jsx';
 
 const Login = () => {
   const { login } = useAuth();
@@ -97,67 +98,71 @@ const Login = () => {
   };
 
   return (
-    <div className={styles.loginAppContainer}>
-      <div className={styles.loginContainer}>
-        <h1>请登录</h1>
-        {/* 登录表单 */}
-        <div className={styles.loginForm}>
-          {/* 用户名输入 */}
-          <div className={styles.formGroup}>
-            <label className={styles.formLabel}>
-              用户名 *
-            </label>
-            <input 
-              type="text" 
-              placeholder="请输入用户名" 
-              value={loginData.username}
-              onChange={(event) => handleInputChange('username', event.target.value)}
-              onKeyPress={handleKeyPress}
-              className={styles.loginFormInput}
-            />
-          </div>
-          
-          {/* 密码输入 */}
-          <div className={styles.formGroup}>
-            <label className={styles.formLabel}>
-              密码 *
-            </label>
-            <input 
-              type="password" 
-              placeholder="请输入密码" 
-              value={loginData.password}
-              onChange={(event) => handleInputChange('password', event.target.value)}
-              onKeyPress={handleKeyPress}
-              className={styles.loginFormInput}
+    <div>
+       <Navbar />
+       <div className={styles.loginAppContainer}>
+        <div className={styles.loginContainer}>
+          <h1>请登录</h1>
+          {/* 登录表单 */}
+          <div className={styles.loginForm}>
+            {/* 用户名输入 */}
+            <div className={styles.formGroup}>
+              <label className={styles.formLabel}>
+                用户名 *
+              </label>
+              <input 
+                type="text" 
+                placeholder="请输入用户名" 
+                value={loginData.username}
+                onChange={(event) => handleInputChange('username', event.target.value)}
+                onKeyPress={handleKeyPress}
+                className={styles.loginFormInput}
               />
-          </div>
-          
-          {/* 登录按钮 */}
-          <button onClick={handleLogin} className={styles.loginButton}>
-            登录
-          </button>
-        </div>
-
-        {/* 导航区域 */}
-        <div className={styles.navigationSection}>
-          {/* <p className={styles.navigationText}>还没有账号？</p> */}
-          <div className={styles.buttonGroup}>
-            <button 
-              onClick={() => navigate('/auth/register')}
-              className={`${styles.navButton} ${styles.registerButton}`}
-            >
-              注册账号
+            </div>
+            
+            {/* 密码输入 */}
+            <div className={styles.formGroup}>
+              <label className={styles.formLabel}>
+                密码 *
+              </label>
+              <input 
+                type="password" 
+                placeholder="请输入密码" 
+                value={loginData.password}
+                onChange={(event) => handleInputChange('password', event.target.value)}
+                onKeyPress={handleKeyPress}
+                className={styles.loginFormInput}
+                />
+            </div>
+            
+            {/* 登录按钮 */}
+            <button onClick={handleLogin} className={styles.loginButton}>
+              登录
             </button>
-            {/* <button 
-              onClick={() => navigate('/')}
-              className={`${styles.navButton} ${styles.homeButton}`}
-            >
-              回到主页
-            </button> */}
+          </div>
+
+          {/* 导航区域 */}
+          <div className={styles.navigationSection}>
+            {/* <p className={styles.navigationText}>还没有账号？</p> */}
+            <div className={styles.buttonGroup}>
+              <button 
+                onClick={() => navigate('/auth/register')}
+                className={`${styles.navButton} ${styles.registerButton}`}
+              >
+                注册账号
+              </button>
+              {/* <button 
+                onClick={() => navigate('/')}
+                className={`${styles.navButton} ${styles.homeButton}`}
+              >
+                回到主页
+              </button> */}
+            </div>
           </div>
         </div>
       </div>
     </div>
+
   );
 }
 
