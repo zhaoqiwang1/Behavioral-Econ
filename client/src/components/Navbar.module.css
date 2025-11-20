@@ -11,16 +11,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky; /* 添加这行 */
-  top: 0; /* 添加这行 */
-  left: 0; /* 添加这行 */
-  right: 0; /* 添加这行 */
-  z-index: 1000; /* 添加这行，确保导航栏在最上层 */
+  position: sticky;
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  z-index: 1000;
   margin: 0 0 0px 0;
   padding: 10px 20px;
   border-radius: 0px;
-  background-color: rgba(255, 255, 255, 0.7); /* 90% 不透明度 */
-  backdrop-filter: blur(10px); /* 添加毛玻璃效果，更科技感 */
+  background-color: rgba(255, 255, 255, 0.7); 
+  backdrop-filter: blur(10px); 
   border-bottom: 1px solid #ddd;
 }
 
@@ -53,7 +53,6 @@
 .username {
   color: black;
   font-size: 15px;
-  font-weight: 600;
   cursor: pointer;
   padding: 6px 12px;
   border-radius: 8px;
@@ -70,11 +69,9 @@
 /* 基础按钮样式 */
 .navBtn {
   padding: 10px 15px;
-  border: 1px solid #ccc;
   cursor: pointer;
   font-size: 15px;
-  font-family: inherit; /* 继承父级字体 */
-  font-weight: 500; /* 与username保持一致 */
+  font-family: inherit; 
 }
 
 /* 登录按钮 */
@@ -98,7 +95,7 @@
 .logoutBtn {
   background-color: transparent;
   color: black;
-  border: none; /* 移除边框 */
+  border: none; 
   cursor: pointer;
 }
 
@@ -109,3 +106,29 @@
   color: #8f8d8d;
   transform: translateY(-2px);
 }
+
+/* #region 导航栏中间样式 */
+/* 课程导航 */
+.courseNav {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.courseNav span {
+  color: black;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.courseNav span:hover {
+  color: #8f8d8d;
+  transform: translateY(-2px);
+}
+/* #endregion */
