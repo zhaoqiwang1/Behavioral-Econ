@@ -7,7 +7,7 @@ const LogicHomePage = () => {
     <div>
       <Navbar />
       <div>
-        <h1>Logic 课程</h1>
+        <h1>课程正在开发中...</h1>
       </div>
     </div>
   );
