@@ -1,4 +1,4 @@
-// This is the HomePage for the whole Website.
+// This is the HomePage for Behavioral Science Course.
 
 import React from 'react';
 import { useRef } from 'react';
@@ -6,9 +6,9 @@ import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { useAuth } from '../contexts/AuthContext.jsx';  // 新增导入
 import Navbar from '../components/Navbar.jsx';  // 导入 Navbar
-import styles from './HomePage.module.css';  
+import styles from './BehavioralScienceHomePage.module.css';  
 
-const HomePage = () => {
+const BehavioralScienceHomePage = () => {
   const navigate = useNavigate();
   const { isAuthenticated, loading } = useAuth();  // 新增这行
   const gameGridRef = useRef(null);
@@ -434,4 +434,4 @@ const HomePage = () => {
   );
 }
 
-export default HomePage;
+export default BehavioralScienceHomePage;

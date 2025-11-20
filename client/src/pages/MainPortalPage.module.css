@@ -1,0 +1,102 @@
+.portalContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.portalContent {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.portalHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+}
+
+.portalHeader h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.portalHeader p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.coursesSection {
+  margin-top: 2rem;
+}
+
+.courseGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.courseCard {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.courseCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border-color: #007bff;
+}
+
+.courseCard h2 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.courseCard p {
+  color: #666;
+  line-height: 1.5;
+}
+
+.comingSoonCard {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 2rem;
+  border: 2px dashed #dee2e6;
+  text-align: center;
+}
+
+.comingSoonCard h2 {
+  color: #6c757d;
+  margin-bottom: 1rem;
+}
+
+.comingSoonCard p {
+  color: #adb5bd;
+  font-style: italic;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .portalContent {
+    padding: 1rem;
+  }
+  
+  .portalHeader h1 {
+    font-size: 2rem;
+  }
+  
+  .courseGrid {
+    grid-template-columns: 1fr;
+  }
+}
