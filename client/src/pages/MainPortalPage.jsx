@@ -25,10 +25,20 @@ const MainPortalPage = () => {
               <p>参与各种行为科学实验，了解人类决策模式</p>
             </div>
             
-            {/* 可以继续添加更多课程卡片 */}
-            <div className={styles.comingSoonCard}>
-              <h2>更多课程</h2>
-              <p>即将推出...</p>
+            <div 
+              className={styles.courseCard}
+              onClick={() => navigate('/courses/r-programming')}
+            >
+              <h2>R Programming</h2>
+              <p>学习R语言编程和数据分析</p>
+            </div>
+
+            <div 
+              className={styles.courseCard}
+              onClick={() => navigate('/courses/logic')}
+            >
+              <h2>逻辑学</h2>
+              <p>掌握逻辑思维和推理方法</p>
             </div>
           </div>
         </main>
