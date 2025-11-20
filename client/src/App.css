@@ -12,9 +12,15 @@ body {
   line-height: 1.6;
 }
 
+.RoutesClass {
+  flex: 1; 
+}
 /* 原有的 App 样式 */
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .App-logo {
