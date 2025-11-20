@@ -22,8 +22,14 @@ const Navbar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <div className={styles.navbarTitle} onClick={() => navigate('/')}>
+       <span className={styles.navbarTitle} onClick={() => navigate('/')}>
         首页
+      </span>
+
+      <div className={styles.courseNav}>
+        <span onClick={() => navigate('/courses/logic')}>逻辑学</span>
+        <span onClick={() => navigate('/courses/behavioral-science')}>行为经济学</span>
+        <span onClick={() => navigate('/courses/r-programming')}>R语言</span>
       </div>
 
       <div className={styles.navbarRight}>
@@ -33,23 +39,22 @@ const Navbar = () => {
             <span 
               className={styles.username} 
               onClick={handleProfileClick}
-              style={{ cursor: 'pointer' }}
             >
               欢迎, {user?.username}
             </span>
-            <button onClick={handleLogout} className={`${styles.navBtn} ${styles.logoutBtn}`}>
+            <span onClick={handleLogout} className={styles.navBtn}>
               登出
-            </button>
+            </span>
           </div>
         ) : (
           // 未登录状态
           <div className={styles.authButtons}>
-            <button onClick={() => navigate('/auth/login')} className={`${styles.navBtn} ${styles.loginBtn}`}>
+            <span onClick={() => navigate('/auth/login')} className={styles.navBtn}>
               登录
-            </button>
-            <button onClick={() => navigate('/auth/register')} className={`${styles.navBtn} ${styles.registerBtn}`}>
+            </span>
+            <span onClick={() => navigate('/auth/register')} className={styles.navBtn}>
               注册
-            </button>
+            </span>
           </div>
         )}
       </div>
