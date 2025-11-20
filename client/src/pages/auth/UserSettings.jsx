@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 import { useAuth } from '../../contexts/AuthContext';
 import { userAPI } from '../../services/api';
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../../components/Navbar';
+import Navbar from '../../components/Navbar.jsx';
 import styles from './UserSettings.module.css';
 
 const UserSettings = () => {
