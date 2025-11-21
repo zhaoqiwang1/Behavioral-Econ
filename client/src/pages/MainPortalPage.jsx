@@ -69,11 +69,19 @@ const MainPortalPage = () => {
             <div className={styles.behavSciCourseIntroTitle}>
               <h1>主要内容</h1>
               <p>
-                了解行为和实验经济金融领域的核心研究内容、研究方法及关键结论，建立对该领域的整体认知。通过文献品读，学习学术论文中的实验设计逻辑、数据收集方式与结论推导思路。认识行为经济学理论在实际生活中的应用价值。
+                了解行为和实验经济金融领域的核心研究内容、研究方法及关键结论，建立对该领域的整体认知。通过文献品读，学习学术论文中的实验设计逻辑、数据收集方式与结论推导思路。认识行为经济学的研究发现在实际生活中的应用价值。
               </p>
             </div>
             <div className={styles.behavSciCourseItems}>
               <div className={styles.behavSciCourseIntroItem1}>
+                <h1 className={styles.behavSciCourseItemTitle}>
+                  讨论课题
+                </h1>
+                <p className={styles.behavSciCourseItemDescription}>
+                  本课程讨论的课题涵盖行为经济学的经典与前沿研究，包括博弈论、非理性决策、社会偏好等内容。
+                </p>
+              </div>
+              <div className={styles.behavSciCourseIntroItem2}>
                 <h1 className={styles.behavSciCourseItemTitle}>
                   实验设计
                 </h1>
@@ -81,7 +89,7 @@ const MainPortalPage = () => {
                   掌握严谨的实验室实验设计方法，学会针对经济金融中的决策问题设计实验，科学收集所需数据。
                 </p>
               </div>
-              <div className={styles.behavSciCourseIntroItem2}>
+              <div className={styles.behavSciCourseIntroItem3}>
                 <h1 className={styles.behavSciCourseItemTitle}>
                   数据分析
                 </h1>
@@ -89,12 +97,12 @@ const MainPortalPage = () => {
                   学习基础 R 语言编程。包括数据可视化、数据清理、回归分析及 R Markdown 应用等实操技能。
                 </p>
               </div>
-              <div className={styles.behavSciCourseIntroItem3}>
+              <div className={styles.behavSciCourseIntroItem4}>
                 <h1 className={styles.behavSciCourseItemTitle}>
-                  课堂实验
+                  课堂游戏
                 </h1>
                 <p className={styles.behavSciCourseItemDescription}>
-                  每次课程均安排课堂实验，通过亲身参与积累数据，同时将理论知识落地到实践中。
+                  每次课程均安排课堂游戏，通过亲身参与积累数据，同时将理论知识落地到实践中。
                 </p>
               </div>
             </div>
