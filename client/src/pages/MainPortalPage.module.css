@@ -103,8 +103,22 @@
 /* 第二个图片 */
 .logicCourseImages img:last-child {
   width: 600px;
-  height: 550px;
+  height: auto;
 }
+
+/* #region 逻辑学课程图片四周设置一个渐变过程 */
+.logicCourseImages img:first-child,
+.logicCourseImages img:last-child {
+  mask-image: 
+    linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%),
+    linear-gradient(to left, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: 
+    linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%),
+    linear-gradient(to left, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+}
+/* #endregion */
 
 .logicCourseBtnPosition {
   margin-top: 40px;
