@@ -164,7 +164,7 @@ const BehavioralScienceHomePage = () => {
                     className={styles.gameBtn}
                     onClick={handlePublicGoodsGame}
                     style={{
-                      backgroundImage: "url('../assets/images/public_goods_game.jpg')"
+                      backgroundImage: "url('../assets/images/behavSciPage/public_goods_game.jpg')"
                     }}
                   >
                     <span>实验1</span>
@@ -174,7 +174,7 @@ const BehavioralScienceHomePage = () => {
                     className={styles.gameBtn}
                     onClick={handleRiskAttiGame}
                     style={{
-                      backgroundImage: "url('../assets/images/risk_assessment.jpg')"
+                      backgroundImage: "url('../assets/images/behavSciPage/risk_assessment.jpg')"
                     }}
                   >
                     <span>实验2</span>
@@ -184,7 +184,7 @@ const BehavioralScienceHomePage = () => {
                     className={styles.gameBtn}
                     onClick={handleAmbiguityAttiGame}
                     style={{
-                      backgroundImage: "url('../assets/images/ambiguity_assessment.jpg')"
+                      backgroundImage: "url('../assets/images/behavSciPage/ambiguity_assessment.jpg')"
                     }}
                   >
                     <span>实验3</span>
@@ -194,7 +194,7 @@ const BehavioralScienceHomePage = () => {
                     className={styles.gameBtn}
                     onClick={handleOverconfidenceGame}
                     style={{
-                      backgroundImage: "url('../assets/images/overconfidence_assessment.jpg')"
+                      backgroundImage: "url('../assets/images/behavSciPage/overconfidence_assessment.jpg')"
                     }}
                   >
                     <span>实验4</span>
@@ -204,7 +204,7 @@ const BehavioralScienceHomePage = () => {
                     className={styles.gameBtn}
                     onClick={handleGameUnderAmbig}
                     style={{
-                      backgroundImage: "url('../assets/images/game_under_ambiguity.jpg')"
+                      backgroundImage: "url('../assets/images/behavSciPage/game_under_ambiguity.jpg')"
                     }}
                   >
                     <span>实验5</span>
@@ -214,7 +214,7 @@ const BehavioralScienceHomePage = () => {
                     className={styles.gameBtn}
                     onClick={handleMBTIElicit}
                     style={{
-                      backgroundImage: "url('../assets/images/mbti_game.jpg')"
+                      backgroundImage: "url('../assets/images/behavSciPage/mbti_game.jpg')"
                     }}
                   >
                     <span>实验6</span>
@@ -224,7 +224,7 @@ const BehavioralScienceHomePage = () => {
                     className={styles.gameBtn}
                     onClick={handleConfirmationBiasGame}
                     style={{
-                      backgroundImage: "url('../assets/images/confirmation_bias_game.jpg')"
+                      backgroundImage: "url('../assets/images/behavSciPage/confirmation_bias_game.jpg')"
                     }}
                   >
                     <span>实验7</span>
@@ -234,7 +234,7 @@ const BehavioralScienceHomePage = () => {
                     className={styles.gameBtn}
                     onClick={handleOUSSurvey}
                     style={{
-                      backgroundImage: "url('../assets/images/ous_survey.jpg')"
+                      backgroundImage: "url('../assets/images/behavSciPage/ous_survey.jpg')"
                     }}
                   >
                     <span>实验8</span>
@@ -244,7 +244,7 @@ const BehavioralScienceHomePage = () => {
                     className={`${styles.gameBtn} ${styles.comingSoon}`}
                     onClick={() => toast.error('功能开发中...')}
                     style={{
-                      backgroundImage: "url('../assets/images/mfq_survey.jpg')"
+                      backgroundImage: "url('../assets/images/behavSciPage/mfq_survey.jpg')"
                     }}
                   >
                     <span>实验9</span>
@@ -255,7 +255,7 @@ const BehavioralScienceHomePage = () => {
                     className={`${styles.gameBtn} ${styles.comingSoon}`}
                     onClick={() => toast.error('功能开发中...')}
                     style={{
-                      backgroundImage: "url('../assets/images/svo_survey.jpg')"
+                      backgroundImage: "url('../assets/images/behavSciPage/svo_survey.jpg')"
                     }}
                   >
                     <span>实验10</span>
@@ -266,7 +266,7 @@ const BehavioralScienceHomePage = () => {
                     className={`${styles.gameBtn} ${styles.comingSoon}`}
                     onClick={() => toast.error('功能开发中...')}
                     style={{
-                      backgroundImage: "url('../assets/images/pvq_survey.jpg')"
+                      backgroundImage: "url('../assets/images/behavSciPage/pvq_survey.jpg')"
                     }}
                   >
                     <span>实验11</span>
@@ -277,7 +277,7 @@ const BehavioralScienceHomePage = () => {
                     className={`${styles.gameBtn} ${styles.comingSoon}`}
                     onClick={() => toast.error('功能开发中...')}
                     style={{
-                      backgroundImage: "url('../assets/images/question_dice.jpg')"
+                      backgroundImage: "url('../assets/images/behavSciPage/question_dice.jpg')"
                     }}
                   >
                     <span>更多实验</span>
@@ -304,7 +304,7 @@ const BehavioralScienceHomePage = () => {
                   </button>
                   <div className={styles.gameGrid} ref={resultGridRef}>
                       <div className={styles.resultsItem}>
-                        <img src="../assets/images/public_goods_game.jpg"   alt="Risk assessment visualization" />
+                        <img src="../assets/images/behavSciPage/public_goods_game.jpg"   alt="Risk assessment visualization" />
                         <button 
                           className={styles.resultButton}
                           onClick={() => toast.error('功能开发中...')}
@@ -314,7 +314,7 @@ const BehavioralScienceHomePage = () => {
                       </div>
 
                       <div className={styles.resultsItem}>
-                        <img src="../assets/images/risk_assessment.jpg"   alt="Risk assessment visualization" />
+                        <img src="../assets/images/behavSciPage/risk_assessment.jpg"   alt="Risk assessment visualization" />
                         <button 
                           className={styles.resultButton}
                           onClick={handleShowRiskAtti}
@@ -324,7 +324,7 @@ const BehavioralScienceHomePage = () => {
                       </div>
 
                       <div className={styles.resultsItem}>
-                        <img src="../assets/images/ambiguity_assessment.jpg"   alt="Risk assessment visualization" />
+                        <img src="../assets/images/behavSciPage/ambiguity_assessment.jpg"   alt="Risk assessment visualization" />
                         <button 
                           className={styles.resultButton}
                           onClick={() => toast.error('功能开发中...')}
@@ -334,7 +334,7 @@ const BehavioralScienceHomePage = () => {
                       </div>
 
                       <div className={styles.resultsItem}>
-                        <img src="../assets/images/overconfidence_assessment.jpg"   alt="Risk assessment visualization" />
+                        <img src="../assets/images/behavSciPage/overconfidence_assessment.jpg"   alt="Risk assessment visualization" />
                         <button 
                           className={styles.resultButton}
                           onClick={() => toast.error('功能开发中...')}
@@ -344,7 +344,7 @@ const BehavioralScienceHomePage = () => {
                       </div>
 
                       <div className={styles.resultsItem}>
-                        <img src="../assets/images/game_under_ambiguity.jpg"   alt="Risk assessment visualization" />
+                        <img src="../assets/images/behavSciPage/game_under_ambiguity.jpg"   alt="Risk assessment visualization" />
                         <button 
                           className={styles.resultButton}
                           onClick={() => toast.error('功能开发中...')}
@@ -354,7 +354,7 @@ const BehavioralScienceHomePage = () => {
                       </div>
 
                       <div className={styles.resultsItem}>
-                        <img src="../assets/images/mbti_game.jpg"   alt="Risk assessment visualization" />
+                        <img src="../assets/images/behavSciPage/mbti_game.jpg"   alt="Risk assessment visualization" />
                         <button 
                           className={styles.resultButton}
                           onClick={() => toast.error('功能开发中...')}
@@ -364,7 +364,7 @@ const BehavioralScienceHomePage = () => {
                       </div>
 
                       <div className={styles.resultsItem}>
-                        <img src="../assets/images/confirmation_bias_game.jpg"   alt="Risk assessment visualization" />
+                        <img src="../assets/images/behavSciPage/confirmation_bias_game.jpg"   alt="Risk assessment visualization" />
                         <button 
                           className={styles.resultButton}
                           onClick={() => toast.error('功能开发中...')}
@@ -374,7 +374,7 @@ const BehavioralScienceHomePage = () => {
                       </div>
                     
                       <div className={styles.resultsItem}>
-                        <img src="../assets/images/ous_survey.jpg"   alt="Risk assessment visualization" />
+                        <img src="../assets/images/behavSciPage/ous_survey.jpg"   alt="Risk assessment visualization" />
                         <button 
                           className={styles.resultButton}
                           onClick={() => toast.error('功能开发中...')}
@@ -384,7 +384,7 @@ const BehavioralScienceHomePage = () => {
                       </div>
 
                       <div className={styles.resultsItem}>
-                        <img src="../assets/images/mfq_survey.jpg"   alt="Risk assessment visualization" />
+                        <img src="../assets/images/behavSciPage/mfq_survey.jpg"   alt="Risk assessment visualization" />
                         <button 
                           className={styles.resultButton}
                           onClick={() => toast.error('功能开发中...')}
@@ -394,7 +394,7 @@ const BehavioralScienceHomePage = () => {
                       </div>
 
                       <div className={styles.resultsItem}>
-                        <img src="../assets/images/svo_survey.jpg"   alt="Risk assessment visualization" />
+                        <img src="../assets/images/behavSciPage/svo_survey.jpg"   alt="Risk assessment visualization" />
                         <button 
                           className={styles.resultButton}
                           onClick={() => toast.error('功能开发中...')}
@@ -404,7 +404,7 @@ const BehavioralScienceHomePage = () => {
                       </div>
 
                       <div className={styles.resultsItem}>
-                        <img src="../assets/images/pvq_survey.jpg"   alt="Risk assessment visualization" />
+                        <img src="../assets/images/behavSciPage/pvq_survey.jpg"   alt="Risk assessment visualization" />
                         <button 
                           className={styles.resultButton}
                           onClick={() => toast.error('功能开发中...')}
@@ -414,7 +414,7 @@ const BehavioralScienceHomePage = () => {
                       </div>
 
                       <div className={styles.resultsItem}>
-                        <img src="../assets/images/more_analysis.jpg"   alt="Risk assessment visualization" />
+                        <img src="../assets/images/behavSciPage/more_analysis.jpg"   alt="Risk assessment visualization" />
                         <button 
                           className={styles.resultButton}
                           onClick={() => toast.error('功能开发中...')}
