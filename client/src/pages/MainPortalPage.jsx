@@ -116,6 +116,31 @@ const MainPortalPage = () => {
       </section>
       {/* R语言界面 */}
       <section className={styles.rProgramCourseSection}>
+        <div className={styles.rProgrammingCourseImage}>
+            <img src="/assets/images/portalPage/codingwithme7.jpg" alt="behavioral-science-image"/>
+        </div>
+        <div className={styles.rProgrammingCourseIntro}>
+          <div className={styles.rProgrammingCourseIntroItem1}>
+            <img src="/assets/images/portalPage/codingwithme7.jpg" alt="behavioral-science-image"/>
+            <h1>basic</h1>
+            Tailor your curriculum to meet the unique needs of your students. Our flexible platform allows educators to create personalized learning paths.  Our flexible platform allows educators to create personalized learning paths.
+          </div>
+           <div className={styles.rProgrammingCourseIntroItem2}>
+            plot,
+          </div>
+          <div className={styles.rProgrammingCourseIntroItem2}>
+            data cleaning,
+          </div>
+          <div className={styles.rProgrammingCourseIntroItem2}>
+            regression,
+          </div>
+          <div className={styles.rProgrammingCourseIntroItem2}>
+            R markdown,
+          </div>
+          <div className={styles.rProgrammingCourseIntroItem2}>
+            git
+          </div>
+        </div>
         <button onClick={() => navigate('/courses/r-programming')}>
           <h1>R语言</h1>
         </button>
