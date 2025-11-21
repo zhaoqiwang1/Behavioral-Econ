@@ -1,102 +1,174 @@
-.portalContainer {
-  min-height: 100vh;
+/* #region Welcome Message Header */
+.welcomeMessage {
+  color: white;
+  background-image: 
+    url('/public/assets/images/gameSectionBackground.jpg');
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0,0,0,0.4);
+  background-blend-mode: overlay;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  text-align: left;
+  position: relative;
+  min-height: 800px;
   display: flex;
   flex-direction: column;
+  justify-content: center; /* 垂直居中 */
+  align-items: center; /* 水平居中 */
+  gap: 1rem; /* 控制子元素之间的间距 */
 }
 
-.portalContent {
-  flex: 1;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
+.welcomeMessageTitle {
+  color: #f5f5f5;
 }
 
-.portalHeader {
-  text-align: center;
-  margin-bottom: 3rem;
-  padding: 2rem 0;
+
+.welcomeMessageDescription {
+  color: #81da76;
 }
 
-.portalHeader h1 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 1rem;
+#welcomeMessageHightlight {
+  color: #dbfbe0;
+}
+/* #endregion */
+
+
+
+
+/* #region 逻辑学课程Section */
+/* logicCourseSection */
+.logicCourseSection {
+  background-color: #000000;
+  display: flex;
+  justify-content: space-between;
+  gap: 0px;
 }
 
-.portalHeader p {
+.logicCourseIntro {
+  background-color: #000000;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  padding-left: 70px;
+}
+
+.logicCourseIntroItem {
+  background-color: black;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: left;
+}
+
+.logicCourseIntroTitle {
+  font-size: 2rem;
+  text-align: left;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+
+
+.logicCourseIntroDescription {
+  color: #a1a1a1;
+  font-size: 1.3rem;
+  text-align: left;
+  line-height: 2.0rem;
+}
+
+.logicCourseImages {
+  display: flex;
+  flex-direction: column; 
+  gap: 0px; 
+}
+
+/* 第一个图片 */
+.logicCourseImages img:first-child {
+  width: 600px;
+  height: auto;
+}
+
+/* 第二个图片 */
+.logicCourseImages img:last-child {
+  width: 600px;
+  height: 550px;
+}
+
+.logicCourseBtnPosition {
+  margin-top: 40px;
+  text-align: left;
+}
+/* #endregion */
+
+
+
+/* #region 行为经济学课程Section */
+.behavSciCourseSection {
+  background-color: yellowgreen;
+}
+
+/* #endregion */
+
+
+
+/* #region R语言课程Section */
+.rProgramCourseSection {
+  background-color: rgb(58, 63, 87);
+}
+
+
+/* #endregion */
+
+
+/* #region Portal Page Buttons */
+/* .portalPageBtn {
   font-size: 1.2rem;
-  color: #666;
-}
-
-.coursesSection {
-  margin-top: 2rem;
-}
-
-.courseGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.courseCard {
-  background: white;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 15px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-}
+  background-color: rgba(255, 255, 255, 0.9);
+} */
 
-.courseCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-  border-color: #007bff;
-}
-
-.courseCard h2 {
-  color: #333;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-}
-
-.courseCard p {
-  color: #666;
-  line-height: 1.5;
-}
-
-.comingSoonCard {
-  background: #f8f9fa;
-  border-radius: 12px;
-  padding: 2rem;
-  border: 2px dashed #dee2e6;
-  text-align: center;
-}
-
-.comingSoonCard h2 {
-  color: #6c757d;
-  margin-bottom: 1rem;
-}
-
-.comingSoonCard p {
-  color: #adb5bd;
-  font-style: italic;
-}
-
-/* 响应式设计 */
-@media (max-width: 768px) {
-  .portalContent {
-    padding: 1rem;
-  }
+.portalPageBtnLogic {
+  font-size: 1.2rem;
+  padding: 12px 25px; 
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500; 
   
-  .portalHeader h1 {
-    font-size: 2rem;
-  }
+  /* --- 核心玻璃拟态样式 --- */
+  background-color: rgba(255, 255, 255, 0.05); /* 几乎透明的白色背景 */
+  backdrop-filter: blur(10px); /* 关键：毛玻璃模糊效果 */
   
-  .courseGrid {
-    grid-template-columns: 1fr;
-  }
+  /* 用细微的边框来勾勒轮廓，而不是填充颜色 */
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  
+  /* 文字颜色为浅灰色，确保可读性的同时不刺眼 */
+  color: rgba(255, 255, 255, 0.85);
+  
+  /* 极其 subtle 的辉光，模拟屏幕边缘的微弱光线 */
+  box-shadow: 0 0 15px rgba(100, 181, 246, 0.1);
+  
+  /* 平滑过渡，让交互更优雅 */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* --- 交互效果 --- */
+.portalPageBtnLogic:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 1);
+  /* 辉光稍微增强，且颜色向科技蓝偏移 */
+  box-shadow: 0 0 20px rgba(100, 181, 246, 0.2);
+  /* 轻微上浮，增强立体感 */
+  transform: translateY(-2px);
+}
+
+.portalPageBtnLogic:active {
+  transform: translateY(0);
+  box-shadow: 0 0 10px rgba(100, 181, 246, 0.15);
+}
+/* #endregion */

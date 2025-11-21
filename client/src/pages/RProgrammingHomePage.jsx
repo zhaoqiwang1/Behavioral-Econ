@@ -7,7 +7,7 @@ const RProgrammingHomePage = () => {
     <div>
        <Navbar />
        <div>
-        <h1>课程正在开发中...</h1>
+        <h1>R语言课程正在开发中...</h1>
        </div>
     </div>
   );
