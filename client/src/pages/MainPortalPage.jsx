@@ -9,40 +9,69 @@ const MainPortalPage = () => {
   return (
     <div className={styles.portalContainer}>
       <Navbar />
-      <div className={styles.portalContent}>
-        <header className={styles.portalHeader}>
-          <h1>欢迎来到教学平台</h1>
-          <p>选择你要访问的课程</p>
-        </header>
-        
-        <main className={styles.coursesSection}>
-          <div className={styles.courseGrid}>
-            <div 
-              className={styles.courseCard}
-              onClick={() => navigate('/courses/behavioral-science')}
-            >
-              <h2>行为科学实验课程</h2>
-              <p>参与各种行为科学实验，了解人类决策模式</p>
-            </div>
-            
-            <div 
-              className={styles.courseCard}
-              onClick={() => navigate('/courses/r-programming')}
-            >
-              <h2>R Programming</h2>
-              <p>学习R语言编程和数据分析</p>
-            </div>
+      <header className={styles.welcomeMessage}>
+        <h1 className={styles.welcomeMessageTitle}>EMPOWER YOUR MIND</h1>
+        <p className={styles.welcomeMessageDescription}>
+          Discover a world of learning possibilities with 
+          <span id={styles.welcomeMessageHightlight}> innovative </span>
+          educational platform.
+        </p>
+      </header>
 
-            <div 
-              className={styles.courseCard}
-              onClick={() => navigate('/courses/logic')}
-            >
-              <h2>逻辑学</h2>
-              <p>掌握逻辑思维和推理方法</p>
-            </div>
+      <section className={styles.logicCourseSection}>
+        <div className={styles.logicCourseIntro}>
+          <div className={styles.logicCourseIntroItem}>
+            <h1 className={styles.logicCourseIntroTitle}>
+              形式逻辑
+            </h1>
+            <p className={styles.logicCourseIntroDescription}>
+              研究严格的推理结构和符号化规则，帮助我们判断一个结论是否必然由前提推出。<br />
+              通过学习形式逻辑，让你掌握思考中最精确、最可靠的工具。
+            </p>
           </div>
-        </main>
-      </div>
+          <div className={styles.logicCourseIntroItem}>
+            <h1 className={styles.logicCourseIntroTitle}>
+              非形式逻辑
+            </h1>
+            <p className={styles.logicCourseIntroDescription}>
+              非形式逻辑研究日常语言与实际论证中的逻辑，关注论证的合理性、证据的有效性以及谬误。<br />
+              它能够提高分析与判断能力，使读者在学术、社会和职业环境中更善于识别和构建有效论证。
+            </p>
+          </div>
+          <div className={styles.logicCourseIntroItem}>
+            <h1 className={styles.logicCourseIntroTitle}>
+              辩证逻辑
+            </h1>
+            <p className={styles.logicCourseIntroDescription}>
+              辩证逻辑关注事物发展中的矛盾、联系和变化规律，强调整体性和动态过程。<br />
+              通过理解辩证逻辑，可以培养系统思维能力，更深入地分析复杂问题及其发展趋势。
+            </p>
+          </div>
+          <div className={styles.logicCourseBtnPosition}>
+            <button className={styles.portalPageBtnLogic} onClick={() => navigate('/courses/logic')}>
+             进入课程
+            </button>
+          </div>
+        </div>
+
+        <div className={styles.logicCourseImages}>
+          <img src="/assets/images/portalPage/aristotle.jpg" alt="logic-image"/>
+          <img src="/assets/images/portalPage/hegel.jpg" alt="logic-image"/>
+        </div>
+
+      </section>
+
+      <section className={styles.behavSciCourseSection}>
+        <button onClick={() => navigate('/courses/behavioral-science')}>
+          <h1>行为经济学</h1>
+        </button>
+      </section>
+
+      <section className={styles.rProgramCourseSection}>
+        <button onClick={() => navigate('/courses/r-programming')}>
+          <h1>R语言</h1>
+        </button>
+      </section>
     </div>
   );
 };
