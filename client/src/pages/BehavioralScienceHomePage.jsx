@@ -146,11 +146,11 @@ const BehavioralScienceHomePage = () => {
       <Navbar />
       <div className={styles.homepageContent}>
         <div className={styles.welcomeMessage}>
-          <h1 className={styles.welcomeMessageTitle}>EMPOWER YOUR MIND</h1>
+          <h1 className={styles.welcomeMessageTitle}>BEYOND ECONOMIC MAN</h1>
           <p className={styles.welcomeMessageDescription}>
-            Discover a world of learning possibilities with 
-            <span id={styles.welcomeMessageHightlight}> innovative </span>
-            educational platform.
+            Challenge traditional assumptions and uncover the 
+            <span id={styles.welcomeMessageHightlight}> cognitive biases </span>
+            that shape real-world economic behavior.
           </p>
         </div>
         <div className={styles.gameSectionTitle}>
