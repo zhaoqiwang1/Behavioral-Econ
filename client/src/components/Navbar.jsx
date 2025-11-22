@@ -27,8 +27,8 @@ const Navbar = () => {
       </span>
 
       <div className={styles.courseNav}>
-        <span onClick={() => navigate('/courses/logic')}>逻辑学</span>
         <span onClick={() => navigate('/courses/behavioral-science')}>行为经济学</span>
+        <span onClick={() => navigate('/courses/logic')}>逻辑学</span>
         <span onClick={() => navigate('/courses/r-programming')}>R语言</span>
       </div>
 
