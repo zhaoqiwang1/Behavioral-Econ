@@ -178,7 +178,7 @@ const MFQSurvey = () => {
           {/* 第二部分标题 */}
           <div className={styles.sectionTitle}>
             <h2>第二部分</h2>
-            <p>请阅读以下句子，并表明你的同意或不同意程度。</p>
+            <p>请阅读以下内容，并表明你的同意或不同意程度。</p>
           </div>
           {questions.slice(16).map((question, index) => {
             const scoreLabels = getScoreLabels(question.questionNumber);

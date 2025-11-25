@@ -20,6 +20,7 @@
 
 .sectionTitle {
   font-size: 1.2rem;
+  font-weight: 600;
   width: 100%;
   max-width: 1200px;
   margin: 30px 0 20px 0;
@@ -32,6 +33,7 @@
 .sectionTitle h2 {
   color: black;
   font-size: 1.8rem;
+  font-weight: 600;
   text-align: left;
   margin: 30px 0 20px 0;
 }

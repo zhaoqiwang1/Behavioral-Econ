@@ -120,8 +120,10 @@ const OUSSurvey = () => {
     <div>
       <Navbar />
       <div className={styles.container}>
-        <h1>请如实回答下面几个问题</h1>
-        <h2>请阅读以下句子，并表明你的同意或不同意程度。</h2>
+        <div className={styles.sectionTitle}>
+          <h1>请如实回答下面几个问题</h1>
+          <h2>请阅读以下内容，并表明你的同意或不同意程度。</h2>
+        </div>
         <form onSubmit={handleSubmit}>
           {questions.map((question, index) => (
             <div key={question.questionNumber} className={styles.question}>
