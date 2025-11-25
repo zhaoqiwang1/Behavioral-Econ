@@ -123,6 +123,14 @@ const BehavioralScienceHomePage = () => {
     );
   };
 
+
+  // 专门用于 MFQ Survey 的函数
+  const handleMFQSurvey = () => {
+    checkAuthAndNavigate(
+      '/games/mfq-survey',
+      '你需要先登录哦'
+    );
+  };
   // #endregion
 
   // #region 展示行为数据
@@ -246,14 +254,13 @@ const BehavioralScienceHomePage = () => {
                   </button>
 
                   <button 
-                    className={`${styles.gameBtn} ${styles.comingSoon}`}
-                    onClick={() => toast.error('功能开发中...')}
+                    className={styles.gameBtn}
+                    onClick={handleMFQSurvey}
                     style={{
                       backgroundImage: "url('../assets/images/behavSciPage/mfq_survey.jpg')"
                     }}
                   >
                     <span>实验9</span>
-                    <div className={styles.resultBadge}>即将开放</div>
                   </button>
 
                   <button 

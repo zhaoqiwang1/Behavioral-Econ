@@ -24,10 +24,6 @@ const app = express();
 app.use(express.json()); // this helps parse json into an object.
 app.use(cors());
 
-// mongoose.connect(
-//   "mongodb+srv://zwang:Extra02sulfide@cluster0.dx6owno.mongodb.net/MERN_Tutorial_20250929"
-// );
-
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log("MongoDB连接成功"))
   .catch(err => console.error("MongoDB连接失败：", err));

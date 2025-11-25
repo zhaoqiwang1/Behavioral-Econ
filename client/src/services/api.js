@@ -64,6 +64,12 @@ export const ousSurveyAPI = {
   getQuestions: () => api.get('/oussurvey/questions'),
 };
 
+// MFQ Survey 相关API
+export const mfqSurveyAPI = {
+  submit: (userData) => api.post('/mfqsurvey/submit', userData),
+  getQuestions: () => api.get('/mfqsurvey/questions'),
+};
+
 export default api; 
 
 
