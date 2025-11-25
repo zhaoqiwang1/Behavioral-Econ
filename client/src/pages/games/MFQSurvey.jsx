@@ -135,10 +135,22 @@ const MFQSurvey = () => {
     <div>
       <Navbar />
       <div className={styles.container}>
-        <h1>请如实回答下面几个问题</h1>
+        <h1>请如实回答下面的问题</h1>
         <form onSubmit={handleSubmit}>
           {/* 第一部分标题 */}
-          <h2 className={styles.sectionTitle}>第一部分</h2>
+          <div className={styles.sectionTitle}>
+            <h2>第一部分</h2>
+            <p>当你判断某件事是对是错时，以下各项考量对你的思考影响程度如何？</p>
+            <p>请使用以下量表对每个陈述进行评分：</p>
+            <ul>
+              <li>完全不相关（该考量与我对是非的判断毫无关联）</li>
+              <li>不太相关</li>
+              <li>略微相关</li>
+              <li>一定程度相关</li>
+              <li>非常相关</li>
+              <li>极度相关（这是我判断是非时最重要的因素之一）</li>
+            </ul>
+          </div>
           {questions.slice(0, 16).map((question, index) => {
             const scoreLabels = getScoreLabels(question.questionNumber);
             return (
@@ -164,7 +176,10 @@ const MFQSurvey = () => {
           })}
           
           {/* 第二部分标题 */}
-          <h2 className={styles.sectionTitle}>第二部分</h2>
+          <div className={styles.sectionTitle}>
+            <h2>第二部分</h2>
+            <p>请阅读以下句子，并表明你的同意或不同意程度。</p>
+          </div>
           {questions.slice(16).map((question, index) => {
             const scoreLabels = getScoreLabels(question.questionNumber);
             const actualIndex = index + 16; // 保持正确的答案索引
