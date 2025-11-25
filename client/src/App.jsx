@@ -16,6 +16,7 @@ import GameUnderAmbiguity from './pages/games/GameUnderAmbiguity.jsx';
 import MBTIElicit from './pages/games/MbtiElicit.jsx';
 import ConfirmationBiasGame from './pages/games/ConfirmationBiasGame.jsx';
 import OUSSurvey from './pages/games/OUSSurvey.jsx';
+import MFQSurvey from './pages/games/MFQSurvey.jsx';
 // import auth pages
 import Register from './pages/auth/Register.jsx';
 import Login from './pages/auth/Login.jsx';
@@ -93,6 +94,12 @@ function App() {
                   <OUSSurvey />
                 </ProtectedRoute>
                 } />
+              <Route path="/games/mfq-survey" element={
+                <ProtectedRoute>
+                  < MFQSurvey />
+                </ProtectedRoute>
+                } />
+               
               {/* Game Results Page path */}
               <Route path="/gameresults/show-risk-attitudes" element={
                 <ProtectedRoute>
