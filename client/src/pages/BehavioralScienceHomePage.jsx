@@ -131,6 +131,14 @@ const BehavioralScienceHomePage = () => {
       '你需要先登录哦'
     );
   };
+
+  // 专门用于 SVO Survey 的函数
+  const handleSVOSurvey = () => {
+    checkAuthAndNavigate(
+      '/games/svo-survey',
+      '你需要先登录哦'
+    );
+  }
   // #endregion
 
   // #region 展示行为数据
@@ -264,14 +272,13 @@ const BehavioralScienceHomePage = () => {
                   </button>
 
                   <button 
-                    className={`${styles.gameBtn} ${styles.comingSoon}`}
-                    onClick={() => toast.error('功能开发中...')}
+                    className={styles.gameBtn}
+                    onClick={handleSVOSurvey}
                     style={{
                       backgroundImage: "url('../assets/images/behavSciPage/svo_survey.jpg')"
                     }}
                   >
                     <span>实验10</span>
-                    <div className={styles.resultBadge}>即将开放</div>
                   </button>
                   
                   <button 
