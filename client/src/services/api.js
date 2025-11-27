@@ -70,6 +70,12 @@ export const mfqSurveyAPI = {
   getQuestions: () => api.get('/mfqsurvey/questions'),
 };
 
+// SVO Survey 相关API
+export const svoSurveyAPI = {
+  submit: (userData) => api.post('/svosurvey/submit', userData),
+  getQuestions: () => api.get('/svosurvey/questions'),
+};
+
 export default api; 
 
 

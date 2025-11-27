@@ -99,6 +99,15 @@ const QUESTIONS = [
   }
 ];
 
+
+// 获取调查问题
+router.get('/questions', (req, res) => {
+  res.json({
+    questions: QUESTIONS
+  });
+});
+
+
 // 提交SVO问卷调查
 router.post('/submit', async (req, res) => {
   try {

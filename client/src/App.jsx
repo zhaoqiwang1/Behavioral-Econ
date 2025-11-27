@@ -17,6 +17,8 @@ import MBTIElicit from './pages/games/MbtiElicit.jsx';
 import ConfirmationBiasGame from './pages/games/ConfirmationBiasGame.jsx';
 import OUSSurvey from './pages/games/OUSSurvey.jsx';
 import MFQSurvey from './pages/games/MFQSurvey.jsx';
+import SVOSurvey from './pages/games/SVOSurvey.jsx';
+
 // import auth pages
 import Register from './pages/auth/Register.jsx';
 import Login from './pages/auth/Login.jsx';
@@ -97,6 +99,11 @@ function App() {
               <Route path="/games/mfq-survey" element={
                 <ProtectedRoute>
                   < MFQSurvey />
+                </ProtectedRoute>
+                } />
+              <Route path="/games/svo-survey" element={
+                <ProtectedRoute>
+                  < SVOSurvey />
                 </ProtectedRoute>
                 } />
                
