@@ -1,0 +1,179 @@
+/* SVOSurvey.module.css */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+.instructionBox {
+  font-size: 1.2rem;
+  text-align: left;
+  margin-bottom: 50px;
+}
+
+.title {
+  text-align: center;
+  color: #2d3748;
+  margin-bottom: 2.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.questionCard {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.questionNumber {
+  color: #4a5568;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* 横轴选项容器 - 核心样式 */
+.optionAxis {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  padding: 2rem 0;
+}
+
+/* 横轴线条 */
+.axisLine {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #e2e8f0;
+  z-index: 1;
+}
+
+/* 单个选项点容器 */
+.optionPoint {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* 选中状态的点 */
+.optionInput:checked + .pointIndicator {
+  background-color: #4299e1;
+  border-color: #4299e1;
+  transform: scale(1.2);
+}
+
+/* 点的样式 */
+.pointIndicator {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #cbd5e0;
+  background-color: #ffffff;
+  margin: 0.5rem 0;
+  transition: all 0.2s ease;
+}
+
+/* 分数文本样式 */
+.selfScore {
+  color: #2d3748;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.otherScore {
+  color: #2d3748;
+  font-size: 0.85rem;
+}
+
+/* 隐藏原生radio按钮 */
+.optionInput {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 悬停效果 */
+.optionPoint:hover .pointIndicator {
+  border-color: #4299e1;
+}
+
+.submitContainer {
+  margin-top: 2rem;
+  /* text-align: center; */
+}
+
+/* 已提交和加载状态样式 */
+.completedContainer,
+.loadingContainer {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.completedTitle {
+  color: #48bb78;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.completedDesc {
+  color: #4a5568;
+  font-size: 1.1rem;
+}
+
+.loadingText {
+  color: #4a5568;
+  font-size: 1.1rem;
+}
+
+/* 增强选中状态的视觉反馈 */
+.optionInput:checked ~ .pointIndicator {
+  background-color: #4299e1;
+  border-color: #4299e1;
+  transform: scale(1.2);
+  box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.2);
+}
+
+/* 确保 label 可点击区域完整 */
+.optionLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* 轴标签容器 - 控制标签位置 */
+.axisLabelContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  padding: 0 0.5rem;
+}
+
+/* 轴两端的文字标签样式 */
+.axisLabel {
+  color: #4a5568;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* 确保选项轴和标签对齐 */
+.optionSection {
+  margin-bottom: 1rem;
+}

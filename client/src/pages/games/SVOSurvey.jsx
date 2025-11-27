@@ -4,6 +4,7 @@ import { svoSurveyAPI } from '../../services/api.js';
 import { useAuth } from '../../contexts/AuthContext.jsx';
 import Navbar from '../../components/Navbar.jsx';
 import SubmitButton from '../../components/Buttons/SubmitButton.jsx';
+import styles from './SVOSurvey.module.css'; // 引入 CSS Module
 
 const SVOSurvey = () => {
   const { user } = useAuth();
@@ -86,9 +87,9 @@ const SVOSurvey = () => {
     return (
       <div>
         <Navbar />
-        <div>
-          <h2>✅ 调查已完成</h2>
-          <p>你已经成功提交调查结果，感谢你的参与！</p>
+        <div className={styles.completedContainer}>
+          <h2 className={styles.completedTitle}>✅ 调查已完成</h2>
+          <p className={styles.completedDesc}>你已经成功提交调查结果，感谢你的参与！</p>
         </div>
       </div>
     );
@@ -98,8 +99,8 @@ const SVOSurvey = () => {
     return (
       <div>
         <Navbar />
-        <div>
-          <p>加载中...</p>
+        <div className={styles.loadingContainer}>
+          <p className={styles.loadingText}>加载中...</p>
         </div>
       </div>
     );
@@ -108,32 +109,69 @@ const SVOSurvey = () => {
   return (
     <div>
       <Navbar />
-      <div>
-        <h1>社会价值取向调查</h1>
+      <div className={styles.container}>
+        <div className={styles.instructionBox}>
+          <h1 className={styles.title}>请如实回答下面的问题</h1>
+          <ul>
+            <li>在本游戏中，系统会随机将你与另一位同学配对。</li>
+            <li>你将通过 6 组（选项1 到 选项6）分配方案，逐一决定自己与对方在每组中的实验得分。</li>
+            <li>每组方案均提供 9 种可选的得分组合，请选出你最偏好的那一个。</li>
+            <li>每组方案的 9 种得分组合中，横轴上方（下方）的数字对应的是你自己的（另一个同学）的收益。</li>
+            <li>实验结束后，我们将随机抽取其中 1 组方案，并按照你当时的选择，为你和配对同学结算真实的实验得分。</li>
+            <li>你的每一个选择都有可能成为最终兑现的方案，请认真考虑。</li>
+          </ul> 
+        </div>
         <form onSubmit={handleSubmit}>
           {questions.map((question, questionIndex) => (
-            <div key={question.questionNumber}>
-              <p>{question.questionNumber}. {question.questionText}</p>
-              <div>
+            <div key={question.questionNumber} className={styles.questionCard}>
+              <p className={styles.questionNumber}>
+                {/* {question.questionNumber}.  */}
+                {question.questionText}
+              </p>
+                {/* 新增：横轴上方的左右标签 */}
+              <div className={styles.axisLabelContainer}>
+                <span className={styles.axisLabel}>自我收益</span>
+                <span className={styles.axisLabel}>自我收益</span>
+              </div>
+              <div className={styles.optionAxis}>
+                <div className={styles.axisLine}></div>
                 {question.options.map((option, optionIndex) => (
-                  <label key={optionIndex}>
-                    <input
-                      type="radio"
-                      name={`question-${questionIndex}`}
-                      value={optionIndex}
-                      checked={answers[questionIndex] === optionIndex}
-                      onChange={() => handleAnswerChange(questionIndex, optionIndex)}
-                      disabled={loading}
-                    />
-                    自己: {option.selfAmount} | 他人: {option.otherAmount}
-                  </label>
+                  // 关键：用 div 包裹，确保点击事件不冒泡，label 仅负责关联 radio
+                  <div key={optionIndex} className={styles.optionPoint}>
+                    <label className={styles.optionLabel}>
+                      <input
+                        type="radio"
+                        name={`question-${questionIndex}`}
+                        value={optionIndex}
+                        // 关键：用 === 严格判断，避免类型问题
+                        checked={answers[questionIndex] === optionIndex}
+                        // 强制触发状态更新
+                        onChange={(e) => {
+                          e.stopPropagation(); // 阻止冒泡
+                          handleAnswerChange(questionIndex, optionIndex);
+                        }}
+                        disabled={loading}
+                        className={styles.optionInput}
+                      />
+                      <span className={styles.selfScore}>{option.selfAmount}</span>
+                      <span className={styles.pointIndicator}></span>
+                      <span className={styles.otherScore}>{option.otherAmount}</span>
+                    </label>
+                  </div>
                 ))}
+              </div>
+                {/* 新增：横轴下方标签（和上方完全一致） */}
+              <div className={styles.axisLabelContainer}>
+                <span className={styles.axisLabel} style={{ color: '#2d3748' }}>他人收益</span>
+                <span className={styles.axisLabel} style={{ color: '#2d3748' }}>他人收益</span>
               </div>
             </div>
           ))}
-          <SubmitButton type="submit" disabled={loading}>
-            {loading ? '提交中...' : '提交'}
-          </SubmitButton>
+          <div className={styles.submitContainer}>
+            <SubmitButton type="submit" disabled={loading}>
+              {loading ? '提交中...' : '提交'}
+            </SubmitButton>
+          </div>
         </form>
       </div>
     </div>

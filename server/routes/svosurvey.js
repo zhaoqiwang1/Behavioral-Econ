@@ -9,7 +9,7 @@ const router = express.Router();
 const QUESTIONS = [
   {
     questionNumber: 1,
-    questionText: "资源分配决策 1",
+    questionText: "选项 1",
     options: [
       { selfAmount: 85, otherAmount: 85 },
       { selfAmount: 85, otherAmount: 76 },
@@ -24,7 +24,7 @@ const QUESTIONS = [
   },
   {
     questionNumber: 2,
-    questionText: "资源分配决策 2",
+    questionText: "选项 2",
     options: [
       { selfAmount: 85, otherAmount: 15 },
       { selfAmount: 87, otherAmount: 19 },
@@ -39,7 +39,7 @@ const QUESTIONS = [
   },
   {
     questionNumber: 3,
-    questionText: "资源分配决策 3",
+    questionText: "选项 3",
     options: [
       { selfAmount: 50, otherAmount: 100 },
       { selfAmount: 54, otherAmount: 98 },
@@ -54,7 +54,7 @@ const QUESTIONS = [
   },
   {
     questionNumber: 4,
-    questionText: "资源分配决策 4",
+    questionText: "选项 4",
     options: [
       { selfAmount: 50, otherAmount: 100 },
       { selfAmount: 54, otherAmount: 89 },
@@ -69,7 +69,7 @@ const QUESTIONS = [
   },
   {
     questionNumber: 5,
-    questionText: "资源分配决策 5",
+    questionText: "选项 5",
     options: [
       { selfAmount: 100, otherAmount: 50 },
       { selfAmount: 94, otherAmount: 56 },
@@ -84,7 +84,7 @@ const QUESTIONS = [
   },
   {
     questionNumber: 6,
-    questionText: "资源分配决策 6",
+    questionText: "选项 6",
     options: [
       { selfAmount: 100, otherAmount: 50 },
       { selfAmount: 98, otherAmount: 54 },
