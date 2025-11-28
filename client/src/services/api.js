@@ -76,6 +76,14 @@ export const svoSurveyAPI = {
   getQuestions: () => api.get('/svosurvey/questions'),
 };
 
+
+// PVQ Survey 相关API
+export const pvqSurveyAPI = {
+  submit: (userData) => api.post('/pvqsurvey/submit', userData),
+  getQuestions: () => api.get('/pvqsurvey/questions'),
+};
+
+
 export default api; 
 
 
