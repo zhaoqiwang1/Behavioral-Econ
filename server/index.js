@@ -18,6 +18,7 @@ import confirmationBiasGameRoutes from './routes/confirmationbiasgame.js';
 import ousSurveyRoutes from './routes/oussurvey.js';
 import mfqSurveyRoutes from './routes/mfqsurvey.js';
 import svoSurveyRoutes from './routes/svosurvey.js';
+import pvqSurveyRoutes from './routes/pvqsurvey.js';
 // #endregion
 
 const app = express();
@@ -42,6 +43,7 @@ app.use('/api/confirmationbiasgame', confirmationBiasGameRoutes);
 app.use('/api/oussurvey', ousSurveyRoutes);
 app.use('/api/mfqsurvey', mfqSurveyRoutes);
 app.use('/api/svosurvey', svoSurveyRoutes);
+app.use('/api/pvqsurvey', pvqSurveyRoutes);
 // #endregion
 
 
