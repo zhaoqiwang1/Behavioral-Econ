@@ -18,7 +18,7 @@ import ConfirmationBiasGame from './pages/games/ConfirmationBiasGame.jsx';
 import OUSSurvey from './pages/games/OUSSurvey.jsx';
 import MFQSurvey from './pages/games/MFQSurvey.jsx';
 import SVOSurvey from './pages/games/SVOSurvey.jsx';
-
+import PVQSurvey from './pages/games/PVQSurvey.jsx';
 // import auth pages
 import Register from './pages/auth/Register.jsx';
 import Login from './pages/auth/Login.jsx';
@@ -106,7 +106,12 @@ function App() {
                   < SVOSurvey />
                 </ProtectedRoute>
                 } />
-               
+              <Route path="/games/pvq-survey" element={
+                <ProtectedRoute>
+                  < PVQSurvey />
+                </ProtectedRoute>
+                } />
+
               {/* Game Results Page path */}
               <Route path="/gameresults/show-risk-attitudes" element={
                 <ProtectedRoute>
