@@ -1,0 +1,81 @@
+@import '../../App.css';
+
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 1500px;  /* 或者更大的值 */
+  margin: 0 auto;  /* 水平居中 */
+  flex-direction: column;
+  /* align-items: center; */
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+.sectionTitle {
+  font-weight: 600;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 20px auto;
+  text-align: left;
+  padding-bottom: 10px;
+  color: #333;
+}
+
+.sectionTitle h2 {
+  font-weight: 600;
+}
+
+.completedContainer {
+  padding: 20px;
+  text-align: center;
+}
+
+.loadingContainer {
+  padding: 20px;
+  text-align: center;
+}
+
+.question {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 20px auto;
+  margin-bottom: 20px;
+  text-align: left;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #bebebe;
+}
+
+.radioGroup {
+  margin-top: 15px;
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.radioLabel {
+  display: inline-block;
+  margin-right: 15px;
+  position: relative;
+  padding-right: 15px;
+  transition: all 0.3s ease;
+}
+
+.radioLabel input[type="radio"] {
+  margin-right: 8px;
+}
+
+.radioLabel:hover {
+  color: #8f8d8d;
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+.radioLabel:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 25%;
+  height: 50%;
+  width: 1px;
+  background-color: #e0e0e0;
+}
