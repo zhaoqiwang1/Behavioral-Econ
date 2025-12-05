@@ -280,8 +280,10 @@ const BehavioralScienceHomePage = () => {
                   </button>
 
                   <button 
-                    className={styles.gameBtn}
-                    onClick={handleSVOSurvey}
+                    // className={styles.gameBtn}
+                    // onClick={handleSVOSurvey}
+                    className={`${styles.gameBtn} ${styles.comingSoon}`}
+                    onClick={() => toast.error('功能开发中...')}
                     style={{
                       backgroundImage: "url('../assets/images/behavSciPage/svo_survey.jpg')"
                     }}
@@ -290,8 +292,10 @@ const BehavioralScienceHomePage = () => {
                   </button>
                   
                   <button 
-                    className={styles.gameBtn}
-                    onClick={handlePVQSurvey}
+                    // className={styles.gameBtn}
+                    // onClick={handlePVQSurvey}
+                    className={`${styles.gameBtn} ${styles.comingSoon}`}
+                    onClick={() => toast.error('功能开发中...')}
                     style={{
                       backgroundImage: "url('../assets/images/behavSciPage/pvq_survey.jpg')"
                     }}
