@@ -25,8 +25,6 @@ import Login from './pages/auth/Login.jsx';
 import UserSettings from './pages/auth/UserSettings.jsx';
 // import game results pags
 import ShowRiskAtti from './pages/gameresults/ShowRiskAtti.jsx';
-// import R Class pages
-import HtmlViewer from './pages/RClass/htmlViewer.jsx';
 // import other things
 import { AuthProvider } from './contexts/AuthContext.jsx';  
 import ProtectedRoute from './components/ProtectedRoute.jsx';
@@ -118,13 +116,6 @@ function App() {
               <Route path="/gameresults/show-risk-attitudes" element={
                 <ProtectedRoute>
                   <ShowRiskAtti />
-                </ProtectedRoute>
-                } />
-              
-              {/* R Class Pages path */}
-              <Route path="/rclass/html-viewer" element={
-                <ProtectedRoute>
-                  <HtmlViewer />
                 </ProtectedRoute>
                 } />
               <Route path="*" element={<Navigate to="/" replace />} />
