@@ -148,6 +148,10 @@ const MainPortalPage = () => {
           <h1>R语言课程</h1>
         </button>
       </section>
+
+      {/* 结束界面 */}
+      <div className={styles.endMessage}>
+      </div>
     </div>
   );
 };

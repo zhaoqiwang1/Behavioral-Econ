@@ -247,6 +247,30 @@
 /* #endregion */
 
 
+/* #region End Message div */
+
+.endMessage {
+  color: white;
+  background-image: 
+    url('/public/assets/images/portalPage/gangzhuaobridge.jpg');
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0,0,0,0.2);
+  background-blend-mode: overlay;
+  margin: 0 auto;
+  margin-bottom: 0px;
+  text-align: left;
+  position: relative;
+  min-height: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 垂直居中 */
+  align-items: center; /* 水平居中 */
+  gap: 1rem; /* 控制子元素之间的间距 */
+}
+
+/* #endregion */
+
 /* #region Portal Page Buttons */
 /* #region 1. Logic Course Buttons */
 .BtnLogic {
