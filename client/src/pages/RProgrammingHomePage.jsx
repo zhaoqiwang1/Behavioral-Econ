@@ -1,11 +1,15 @@
 // RProgrammingHomePage.jsx
 import React from 'react';
 import Navbar from '../components/Navbar.jsx';
+import styles from './RProgrammingHomePage.module.css';
 
 const RProgrammingHomePage = () => {
   return (
     <div>
        <Navbar />
+      {/* 欢迎界面 */}
+      <header className={styles.welcomeMessage}>
+      </header>
        <div>
         <h1>R语言课程正在开发中...</h1>
        </div>
