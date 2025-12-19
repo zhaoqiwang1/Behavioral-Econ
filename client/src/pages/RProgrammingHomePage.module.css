@@ -1,3 +1,4 @@
+/* #region welcome page div */
 .welcomeMessage {
   color: white;
   background-image: 
@@ -17,3 +18,74 @@
   align-items: center; /* 水平居中 */
   gap: 1rem; /* 控制子元素之间的间距 */
 }
+/* #endregion */
+
+/* #region schedule container div */
+.classSchedules {
+  color: white;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0,0,0,0.2);
+  background-blend-mode: overlay;
+  margin: 0 auto;
+  margin-bottom: 0px;
+  text-align: left;
+  position: relative;
+  min-height: 1000px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+.classSchedules h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: aliceblue;
+}
+
+
+.scheduleContainer {
+  width: 90%;
+  max-width: 1400px;
+  display: flex;
+  gap: 10rem;
+  align-items: center;
+}
+
+.scheduleLeft {
+  flex: 1;
+  font-size: 1.3rem;
+}
+
+.scheduleRight {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.linkBox {
+  display: flex;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  height: 200px;
+  padding: 2rem;
+  align-items: center; 
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.linkBox:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+/* #endregion */
+
