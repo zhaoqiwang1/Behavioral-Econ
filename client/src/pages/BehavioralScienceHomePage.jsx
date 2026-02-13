@@ -60,92 +60,147 @@ const BehavioralScienceHomePage = () => {
   // #region 不同游戏的onClick设置
   // 专门用于公共物品游戏的函数
   const handlePublicGoodsGame = () => {
-    checkAuthAndNavigate(
-      '/games/public-goods',
-      '你需要先登录哦'
-    );
+    const password = prompt('请输入密码:');
+    if (password === '123') {
+      checkAuthAndNavigate(
+        '/games/public-goods',
+        '你需要先登录哦'
+      );
+    } else if (password !== null) {
+      toast.error('密码错误');
+    }
   };
 
     // 专门用于风险评估的函数
   const handleRiskAttiGame = () => {
-    checkAuthAndNavigate(
-      '/games/risk-attitude-elicit',
-      '你需要先登录哦'
-    );
+    const password = prompt('请输入密码:');
+    if (password === '123') {
+      checkAuthAndNavigate(
+        '/games/risk-attitude-elicit',
+        '你需要先登录哦'
+      );
+    } else if (password !== null) {
+      toast.error('密码错误');
+    }
   };
 
   // 专门用于模糊偏好评估的函数
   const handleAmbiguityAttiGame = () => {
-    checkAuthAndNavigate(
-      '/games/ambiguity-attitude-elicit',
-      '你需要先登录哦'
-    );
+    const password = prompt('请输入密码:');
+    if (password === '123') {
+      checkAuthAndNavigate(
+        '/games/ambiguity-attitude-elicit',
+        '你需要先登录哦'
+      );
+    } else if (password !== null) {
+      toast.error('密码错误');
+    }
   };
 
   // 专门用于过度自信的函数
   const handleOverconfidenceGame = () => {
-    checkAuthAndNavigate(
-      '/games/overconfidence-game',
-      '你需要先登录哦'
-    );
+    const password = prompt('请输入密码:');
+    if (password === '123') {
+      checkAuthAndNavigate(
+        '/games/overconfidence-game',
+        '你需要先登录哦'
+      );
+    } else if (password !== null) {
+      toast.error('密码错误');
+    }
   };
 
   // 专门用于game under ambiguity 的函数
   const handleGameUnderAmbig = () => {
-    checkAuthAndNavigate(
-      '/games/game-under-ambiguity',
-      '你需要先登录哦'
-    );
+    const password = prompt('请输入密码:');
+    if (password === '123') {
+      checkAuthAndNavigate(
+        '/games/game-under-ambiguity',
+        '你需要先登录哦'
+      );
+    } else if (password !== null) {
+      toast.error('密码错误');
+    }
   };
 
   // 专门用于 MBTI Elicit 的函数
   const handleMBTIElicit = () => {
-    checkAuthAndNavigate(
-      '/games/mbti-elicit-game',
-      '你需要先登录哦'
-    );
+    const password = prompt('请输入密码:');
+    if (password === '123') {
+      checkAuthAndNavigate(
+        '/games/mbti-elicit-game',
+        '你需要先登录哦'
+      );
+    } else if (password !== null) {
+      toast.error('密码错误');
+    }
   };
 
   // 专门用于 Confirmation Bias Game 的函数
   const handleConfirmationBiasGame = () => {
-    checkAuthAndNavigate(
-      '/games/confirmation-bias-game',
-      '你需要先登录哦'
-    );
+    const password = prompt('请输入密码:');
+    if (password === '123') {
+      checkAuthAndNavigate(
+        '/games/confirmation-bias-game',
+        '你需要先登录哦'
+      );
+    } else if (password !== null) {
+      toast.error('密码错误');
+    }
   };
 
 
   // 专门用于 OUS Survey 的函数
   const handleOUSSurvey = () => {
-    checkAuthAndNavigate(
-      '/games/ous-survey',
-      '你需要先登录哦'
-    );
+    const password = prompt('请输入密码:');
+    if (password === '123') {
+      checkAuthAndNavigate(
+        '/games/ous-survey',
+        '你需要先登录哦'
+      );
+    } else if (password !== null) {
+      toast.error('密码错误');
+    }
   };
 
 
   // 专门用于 MFQ Survey 的函数
   const handleMFQSurvey = () => {
-    checkAuthAndNavigate(
-      '/games/mfq-survey',
-      '你需要先登录哦'
-    );
+    const password = prompt('请输入密码:');
+    if (password === '123') {
+      checkAuthAndNavigate(
+        '/games/mfq-survey',
+        '你需要先登录哦'
+      );
+    } else if (password !== null) {
+      toast.error('密码错误');
+    }
   };
 
   // 专门用于 SVO Survey 的函数
   const handleSVOSurvey = () => {
-    checkAuthAndNavigate(
-      '/games/svo-survey',
-      '你需要先登录哦'
-    );
+    const password = prompt('请输入密码:');
+    if (password === '123') {
+      checkAuthAndNavigate(
+        '/games/svo-survey',
+        '你需要先登录哦'
+      );
+    } else if (password !== null) {
+      toast.error('密码错误');
+    }
   }
 
   // 专门用于 PVQ Survey 的函数
   const handlePVQSurvey = () => {
-    checkAuthAndNavigate(
-      '/games/pvq-survey',
-      '你需要先登录哦'
-    );
+    const password = prompt('请输入密码:');
+    if (password === '123') {
+      checkAuthAndNavigate(
+        '/games/pvq-survey',
+        '你需要先登录哦'
+      );
+    } else if (password !== null) {
+      toast.error('密码错误');
+    }
   }
   // #endregion
 
