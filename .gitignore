@@ -22,3 +22,11 @@ server/build
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# 微信小程序（weapp）
+/weapp/node_modules/
+/weapp/miniprogram_npm/
+/weapp/project.private.config.json
+/weapp/*.log
+/weapp/.DS_Store
+# /weapp/package-lock.json   # 如需锁定依赖版本，请删除这一行或注释掉
