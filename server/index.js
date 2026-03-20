@@ -51,7 +51,7 @@ app.use('/api/pvqsurvey', pvqSurveyRoutes);
 //   console.log("server runs perfectly.")
 // });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`server runs on port ${PORT}`);  // 输出端口，方便确认
 });
