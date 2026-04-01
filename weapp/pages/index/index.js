@@ -2,14 +2,18 @@ Page({
     data: {},
   
     // 去行为经济学
-    goBehav() {
-      this.checkLogin('/pages/course/course?type=behav')
-    },
+    goToBehavioralScience() {
+        wx.navigateTo({
+          url: '/pages/courses/behavioral-science/index', // 路径按你自己的改
+        })
+      },
   
     // 去逻辑学
-    goLogic() {
-      this.checkLogin('/pages/course/course?type=logic')
-    },
+    goToLogic() {
+        wx.navigateTo({
+          url: '/pages/courses/logic/index', // 按你实际路径修改
+        })
+      },
   
     // 去R语言
     goR() {

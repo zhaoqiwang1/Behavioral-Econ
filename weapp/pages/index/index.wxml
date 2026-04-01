@@ -23,59 +23,102 @@
   </view>
 </view>
 <!-- 行为经济学 -->
-<view class="section behav">
-  <view class="left">
-    <image 
-    src="/assets/images/portalPage/welcome_picture.jpg"
-    mode="widthFix"  
-    lazy-load  
-    ></image>
+<view class="behavSciCourseSection">
+  <!-- 图片区域 -->
+  <view class="behavSciCourseImage">
+    <image src="/assets/images/portalPage/behavSciImage.jpg" mode="widthFix" class="course-img"></image>
   </view>
-  <view class="right">
-    <text class="courseTitle">行为经济学</text>
-    <text class="sectionTitle">主要内容</text>
-    <text class="text">
-      了解行为和实验经济金融领域的核心研究内容、研究方法及关键结论，建立对该领域的整体认知。
-    </text>
 
-    <view class="item">
-      <text class="itemTitle">讨论课题</text>
-      <text class="itemText">涵盖博弈论、非理性决策、社会偏好等内容。</text>
-    </view>
-    <view class="item">
-      <text class="itemTitle">实验设计</text>
-      <text class="itemText">学习严谨实验设计、数据收集方法。</text>
-    </view>
-    <view class="item">
-      <text class="itemTitle">数据分析</text>
-      <text class="itemText">学习 R 语言、可视化、回归分析。</text>
-    </view>
-    <view class="item">
-      <text class="itemTitle">课堂游戏</text>
-      <text class="itemText">亲身参与实验，理论落地实践。</text>
+  <!-- 课程介绍 -->
+  <view class="behavSciCourseIntro">
+    <view class="courseBehavSciTitle">行为经济学</view>
+
+    <view class="behavSciCourseIntroTitle">
+      <view class="title">主要内容</view>
+      <view class="desc">
+        了解行为和实验经济金融领域的核心研究内容、研究方法及关键结论，建立对该领域的整体认知。通过文献品读，学习学术论文中的实验设计逻辑、数据收集方式与结论推导思路。认识行为经济学的研究发现在实际生活中的应用价值。
+      </view>
     </view>
 
-    <button class="btn" bindtap="goBehav">进入课程</button>
+    <!-- 四个课程模块 -->
+    <view class="behavSciCourseItems">
+      <view class="behavSciCourseIntroItem">
+        <view class="behavSciCourseItemTitle">讨论课题</view>
+        <view class="behavSciCourseItemDescription">
+          本课程讨论的课题涵盖行为经济学的经典与前沿研究，包括博弈论、非理性决策、社会偏好等内容。
+        </view>
+      </view>
+
+      <view class="behavSciCourseIntroItem">
+        <view class="behavSciCourseItemTitle">实验设计</view>
+        <view class="behavSciCourseItemDescription">
+          掌握严谨的实验室实验设计方法，学会针对经济金融中的决策问题设计实验，科学收集所需数据。
+        </view>
+      </view>
+
+      <view class="behavSciCourseIntroItem">
+        <view class="behavSciCourseItemTitle">数据分析</view>
+        <view class="behavSciCourseItemDescription">
+          学习基础 R 语言编程。包括数据可视化、数据清理、回归分析及 R Markdown 应用等实操技能。
+        </view>
+      </view>
+
+      <view class="behavSciCourseIntroItem">
+        <view class="behavSciCourseItemTitle">课堂游戏</view>
+        <view class="behavSciCourseItemDescription">
+          每次课程均安排课堂游戏，通过亲身参与积累数据，同时将理论知识落地到实践中。
+        </view>
+      </view>
+    </view>
+
+    <!-- 按钮 -->
+    <view class="behavSciCourseBtnPosition">
+      <button class="BtnBehavSci" bindtap="goToBehavioralScience">进入课程</button>
+    </view>
   </view>
 </view>
 
 <!-- 逻辑学 -->
-<view class="section logic">
-  <view class="left">
-    <text class="courseTitle">逻辑学</text>
-    <view class="item">
-      <text class="itemTitle">形式逻辑</text>
-      <text class="itemText">研究严格推理结构，判断结论是否必然成立。</text>
+<view class="logicCourseSection">
+  <!-- 标题：整个页面正中间 -->
+  <view class="courseLogicTitle">逻辑学</view>
+
+  <!-- 内容区：文字 + 图片 -->
+  <view class="logicContentWrapper">
+    <!-- 左侧文字 -->
+    <view class="logicCourseIntro">
+      <view class="logicCourseIntroItem">
+        <view class="logicCourseIntroTitle">形式逻辑</view>
+        <view class="logicCourseIntroDescription">
+          研究严格的推理结构和符号化规则，帮助我们判断一个结论是否必然由前提推出。通过学习形式逻辑，让你掌握思考中最精确、最可靠的工具。
+        </view>
+      </view>
+
+      <view class="logicCourseIntroItem">
+        <view class="logicCourseIntroTitle">非形式逻辑</view>
+        <view class="logicCourseIntroDescription">
+          非形式逻辑研究日常语言与实际论证中的逻辑，关注论证的合理性、证据的有效性以及谬误。它能够提高分析与判断能力，使读者在学术、社会和职业环境中更善于识别和构建有效论证。
+        </view>
+      </view>
+
+      <view class="logicCourseIntroItem">
+        <view class="logicCourseIntroTitle">辩证逻辑</view>
+        <view class="logicCourseIntroDescription">
+          辩证逻辑关注事物发展中的矛盾、联系和变化规律，强调整体性和动态过程。通过理解辩证逻辑，可以培养系统思维能力，更深入地分析复杂问题及其发展趋势。
+        </view>
+      </view>
     </view>
-    <view class="item">
-      <text class="itemTitle">非形式逻辑</text>
-      <text class="itemText">研究日常语言论证，提高分析判断能力。</text>
+
+    <!-- 右侧两张图片 -->
+    <view class="logicCourseImages">
+      <image src="/assets/images/portalPage/aristotle.jpg" mode="widthFix" class="logic-img"></image>
+      <image src="/assets/images/portalPage/hegel.jpg" mode="widthFix" class="logic-img"></image>
     </view>
-    <view class="item">
-      <text class="itemTitle">辩证逻辑</text>
-      <text class="itemText">关注矛盾、联系、发展规律，训练系统思维。</text>
-    </view>
-    <button class="btn" bindtap="goLogic">进入课程</button>
+  </view>
+
+  <!-- 按钮：整个页面正中间 -->
+  <view class="logicCourseBtnPosition">
+    <button class="BtnLogic" bindtap="goToLogic">进入课程</button>
   </view>
 </view>
 
@@ -84,6 +127,15 @@
   <button class="btn rbtn" bindtap="goR">
     <text class="rTitle">R语言课程</text>
   </button>
+</view>
+
+<!-- ====================== 底部结束界面 ====================== -->
+<view class="endContainer">
+  <image 
+    src="/assets/images/portalPage/gangzhuaobridge.jpg"
+    mode="aspectFill"
+    class="endBg"
+  ></image>
 </view>
 
 </view>
