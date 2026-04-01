@@ -23,6 +23,10 @@ const request = (url, method = 'GET', data = null) => {
         }
       },
       fail: (error) => {
+        wx.showToast({
+          title: '网络异常，请重试',
+          icon: 'none'
+        })
         reject(error);
       }
     });
