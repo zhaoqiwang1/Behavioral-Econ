@@ -30,3 +30,9 @@ yarn-error.log*
 /weapp/*.log
 /weapp/.DS_Store
 # /weapp/package-lock.json   # 如需锁定依赖版本，请删除这一行或注释掉
+
+# 编辑器配置
+.vscode/
+.idea/
+*.swp
+*~
