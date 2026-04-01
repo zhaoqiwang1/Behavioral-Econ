@@ -1,7 +1,7 @@
 .footer {
   background-color: #f8f9fa;
-  padding: 2rem 0;
-  text-align: center;
+  padding: 2rem 4rem;
+  text-align: left;
   border-top: 1px solid #e9ecef;
   margin-top: auto; /* 确保 footer 在页面底部 */
 }
