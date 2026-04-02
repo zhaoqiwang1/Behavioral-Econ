@@ -1,66 +1,64 @@
-// pages/mine/mine.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    user: {
+      username: '',
+      email: '',
+      studentid: '',
+      age: '',
+      gender: '',
+      education: '',
+      avatar: ''
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
+  onLoad() {
+    this.fetchUserData();
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
+  async fetchUserData() {
+    try {
+      const token = wx.getStorageSync('token'); // 从本地存储获取 token
+      if (!token) {
+        wx.showToast({
+          title: '请先登录',
+          icon: 'none'
+        });
+        return;
+      }
 
-  },
+      const userId = wx.getStorageSync('userId'); // 假设 userId 存储在本地
+      if (!userId) {
+        wx.showToast({
+          title: '用户信息缺失，请重新登录',
+          icon: 'none'
+        });
+        return;
+      }
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
+      const res = await wx.request({
+        url: `https://zhaoqiwangteaching.com/api/users/${userId}`, // 替换为实际的 API 地址
+        method: 'GET',
+        header: {
+          Authorization: `Bearer ${token}`
+        }
+      });
 
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+      if (res.statusCode === 200) {
+        this.setData({
+          user: res.data.user
+        });
+      } else {
+        wx.showToast({
+          title: '获取用户信息失败',
+          icon: 'none'
+        });
+      }
+    } catch (error) {
+      console.error('获取用户信息失败:', error);
+      wx.showToast({
+        title: '网络错误，请稍后重试',
+        icon: 'none'
+      });
+    }
   }
-})
+});

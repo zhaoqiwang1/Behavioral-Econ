@@ -4,16 +4,16 @@
     width: 100%;
     margin: 0;
     padding: 0;
-    /* 关键：向左拉满屏幕，去掉左右空白 */
-    margin-left: calc(-50vw + 50%);
-    margin-top: calc(-50vw + 50%);
-    width: 100vw;
+    left: 0;
+    right: 0;
   }
   
   /* 背景图：铺满、无空白 */
   .welcomeBg {
     width: 100%;
-    height: 500rpx;
+    height: 45vh;  /* vh = 屏幕高度百分比，所有手机自动适配 */
+    min-height: 320rpx;
+    max-height: 500rpx;
     object-fit: cover;
     display: block;
     margin: 0;
@@ -90,12 +90,8 @@
 .behavSciCourseImage .course-img {
     width: 100%;
     height: auto;
-    mask-image: 
-      linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%),
-      linear-gradient(to top, rgb(162, 162, 162,1) 70%, rgba(245,245,245,0) 100%);
-    -webkit-mask-image: 
-      linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%),
-      linear-gradient(to top, rgb(162, 162, 162,1) 70%, rgba(245,245,245,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
   }
   
   .behavSciCourseSection {
@@ -266,18 +262,14 @@
     width: 320rpx;
     display: flex;
     flex-direction: column;
-    gap: 6rem;
+    gap: 60rpx;
   }
   
   .logic-img {
     width: 100%;
     height: auto;
-    mask-image:
-      linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%),
-      linear-gradient(to left, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
-    -webkit-mask-image:
-      linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%),
-      linear-gradient(to left, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
     mask-composite: intersect;
     -webkit-mask-composite: source-in;
   }
@@ -306,14 +298,19 @@
     width: 100%;
     margin: 0;
     padding: 0;
-    margin-left: calc(-50vw + 50%);
-    width: 100vw;
-    min-height: 800rpx; /* 高度你可以自己调 */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* 新增：紧贴底部，消除默认边距 */
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
   }
   
   .endBg {
     width: 100%;
-    height: 800rpx; /* 跟上面高度保持一致 */
+    height: 70vh;
+    min-height: 600rpx;
+    max-height: 900rpx;
     object-fit: cover;
     display: block;
     margin: 0;
