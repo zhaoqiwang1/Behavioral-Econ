@@ -18,7 +18,7 @@
 .welcomeMessage {
   color: white;
   background-image: 
-    url('/public/assets/images/behavSciPage/hangzhou1.jpg');
+    url('https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/hangzhou1.jpg');
   background-size: cover;
   background-position: center;
   background-color: rgba(0,0,0,0.1);
@@ -78,7 +78,7 @@
 .resultSection {
   color: white;
   background-image: 
-    url('/public/assets/images/behavSciPage/resultSectionBackground5.jpg');
+    url('https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/resultSectionBackground5.jpg');
   background-size: 100% 100%;
   background-position: center;
   background-color: rgba(57, 57, 57, 0.1);

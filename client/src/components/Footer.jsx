@@ -15,7 +15,7 @@ const Footer = () => {
       </a>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <img
-        src="/assets/images/portalPage/police_logo.png"
+        src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/police_logo.png"
         width="17"
         style={{ position: "relative", top: "3px" }} 
         alt="公安备案"

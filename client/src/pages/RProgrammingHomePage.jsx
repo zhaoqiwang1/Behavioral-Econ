@@ -14,7 +14,7 @@ const RProgrammingHomePage = () => {
       <div 
         className={styles.classSchedules}
         style={{
-          backgroundImage: "url('../assets/images/portalPage/r4.jpg')"
+          backgroundImage: "url('https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/r4.jpg')"
         }}
       >
         <div className={styles.scheduleContainer}>
@@ -55,7 +55,7 @@ const RProgrammingHomePage = () => {
       <div 
         className={styles.classSchedules}
         style={{
-          backgroundImage: "url('../assets/images/portalPage/r4.jpg')"
+          backgroundImage: "url('https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/r4.jpg')"
         }}
       >
         <div className={styles.scheduleContainer}>

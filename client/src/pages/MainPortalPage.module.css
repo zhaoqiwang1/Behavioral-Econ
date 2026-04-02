@@ -252,7 +252,7 @@
 .endMessage {
   color: white;
   background-image: 
-    url('/public/assets/images/portalPage/gangzhuaobridge.jpg');
+    url('https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/gangzhuaobridge.jpg');
   background-size: cover;
   background-position: center;
   background-color: rgba(0,0,0,0.2);

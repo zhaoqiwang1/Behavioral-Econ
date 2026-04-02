@@ -2,7 +2,7 @@
 .welcomeMessage {
   color: white;
   background-image: 
-    url('/public/assets/images/rProgramming/hongkong.jpg');
+    url('https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/hongkong.jpg');
   background-size: cover;
   background-position: center;
   background-color: rgba(0,0,0,0.2);

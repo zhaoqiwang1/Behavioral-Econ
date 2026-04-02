@@ -22,7 +22,7 @@ const MainPortalPage = () => {
       {/* 行为经济学界面 */}
       <section className={styles.behavSciCourseSection}>
           <div className={styles.behavSciCourseImage}>
-            <img src="/assets/images/portalPage/behavSciImage.jpg" alt="behavioral-science-image"/>
+            <img src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/behavSciImage.jpg" alt="behavioral-science-image"/>
           </div>
           <div className={styles.behavSciCourseIntro}>
             <h1 className={styles.courseBehavSciTitle}>行为经济学</h1>
@@ -111,8 +111,8 @@ const MainPortalPage = () => {
         </div>
 
         <div className={styles.logicCourseImages}>
-          <img src="/assets/images/portalPage/aristotle.jpg" alt="logic-image"/>
-          <img src="/assets/images/portalPage/hegel.jpg" alt="logic-image"/>
+          <img src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/aristotle.jpg" alt="logic-image"/>
+          <img src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/hegel.jpg" alt="logic-image"/>
         </div>
       </section>
 
