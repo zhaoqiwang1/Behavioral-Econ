@@ -2,7 +2,7 @@
 .welcomeMessage {
   color: white;
   background-image: 
-    url('/public/assets/images/portalPage/welcome_picture.jpg');
+    url('https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/welcome_picture.jpg');
   background-size: cover;
   background-position: center;
   background-color: rgba(0,0,0,0.2);

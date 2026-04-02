@@ -6,7 +6,7 @@
 <view class="welcomeContainer">
   <!-- 1. 背景图层 -->
   <image 
-    src="/assets/images/portalPage/welcome_picture.jpg"
+    src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/welcome_picture.jpg"
     mode="aspectFill"
     class="welcomeBg"
     lazy-load
@@ -26,7 +26,7 @@
 <view class="behavSciCourseSection">
   <!-- 图片区域 -->
   <view class="behavSciCourseImage">
-    <image src="/assets/images/portalPage/behavSciImage.jpg" mode="widthFix" class="course-img"></image>
+    <image src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/behavSciImage.jpg" mode="widthFix" class="course-img"></image>
   </view>
 
   <!-- 课程介绍 -->
@@ -111,8 +111,8 @@
 
     <!-- 右侧两张图片 -->
     <view class="logicCourseImages">
-      <image src="/assets/images/portalPage/aristotle.jpg" mode="widthFix" class="logic-img"></image>
-      <image src="/assets/images/portalPage/hegel.jpg" mode="widthFix" class="logic-img"></image>
+      <image src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/aristotle.jpg" mode="widthFix" class="logic-img"></image>
+      <image src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/hegel.jpg" mode="widthFix" class="logic-img"></image>
     </view>
   </view>
 
@@ -132,7 +132,7 @@
 <!-- ====================== 底部结束界面 ====================== -->
 <view class="endContainer">
   <image 
-    src="/assets/images/portalPage/gangzhuaobridge.jpg"
+    src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/gangzhuaobridge2.jpg"
     mode="aspectFill"
     class="endBg"
   ></image>
