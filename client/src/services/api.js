@@ -87,20 +87,5 @@ export const pvqSurveyAPI = {
 export default api; 
 
 
-// #region Appendix
-
-// const api = axios.create({
-//   baseURL: process.env.REACT_APP_API_URL,
-//   timeout: 10000
-// });
-
-// #region 旧版 创建axios实例
-// const api = axios.create({
-//   baseURL: 'http://localhost:3001/api',
-//   // withCredentials: true,
-//   timeout: 10000
-// });
-// #endregion
-
   
 // #endregion

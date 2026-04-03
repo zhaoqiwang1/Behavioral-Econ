@@ -1,75 +1,12 @@
-<!-- 未登录状态 -->
-<view wx:if="{{!isLogin}}" class="login-prompt">
-  <view class="login-box">
-    <text class="title">登录后查看更多</text>
-    <text class="desc">登录后可查看我的课程、学习记录等专属内容</text>
-    <button bindtap="goToLogin" class="login-btn">去登录</button>
-  </view>
-</view>
-
-<!-- 已登录状态 -->
-<view wx:else class="mine-container">
-  <!-- 用户信息卡片 -->
-  <view class="user-card">
-    <image 
-      src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/default-avatar.png" 
-      mode="aspectFill" 
-      class="avatar"
-    ></image>
-    <view class="user-info">
-      <text class="username">{{user.username || '未登录'}}</text>
-      <text class="user-desc">行为经济学学习者</text>
-    </view>
+<view class="container">
+  <!-- 未登录状态 -->
+  <view wx:if="{{ !isLogged }}">
+    <button class="login-btn" bindtap="goToLogin">登录</button>
   </view>
 
-  <!-- 功能列表 -->
-  <view class="menu-list">
-    <view class="menu-item" bindtap="goToMyCourse">
-      <text class="menu-text">我的课程</text>
-      <text class="arrow">></text>
-    </view>
-    <view class="menu-item" bindtap="goToStudyRecord">
-      <text class="menu-text">学习记录</text>
-      <text class="arrow">></text>
-    </view>
-    <view class="menu-item" bindtap="goToSettings">
-      <text class="menu-text">设置</text>
-      <text class="arrow">></text>
-    </view>
-  </view>
-
-  <!-- 退出登录 -->
-  <view class="logout-box">
-    <button bindtap="handleLogout" class="logout-btn">退出登录</button>
-  </view>
-
-  <!-- 用户信息 -->
-  <view class="user-info">
-    <image class="avatar" src="{{user.avatar || '/assets/default-avatar.png'}}" mode="aspectFill"></image>
-    <text class="username">{{user.username || '未登录'}}</text>
-  </view>
-
-  <!-- 信息段 -->
-  <view class="info-section">
-    <view class="info-item">
-      <text class="label">邮箱：</text>
-      <text class="value">{{user.email || '未填写'}}</text>
-    </view>
-    <view class="info-item">
-      <text class="label">学号：</text>
-      <text class="value">{{user.studentid || '未填写'}}</text>
-    </view>
-    <view class="info-item">
-      <text class="label">年龄：</text>
-      <text class="value">{{user.age || '未填写'}}</text>
-    </view>
-    <view class="info-item">
-      <text class="label">性别：</text>
-      <text class="value">{{user.gender || '未填写'}}</text>
-    </view>
-    <view class="info-item">
-      <text class="label">教育背景：</text>
-      <text class="value">{{user.education || '未填写'}}</text>
-    </view>
+  <!-- 已登录状态 -->
+  <view wx:else class="welcome-section">
+    <text class="welcome-text">欢迎你，{{ userInfo.username }}</text>
+    <button class="logout-btn" bindtap="handleLogout">退出登录</button>
   </view>
 </view>

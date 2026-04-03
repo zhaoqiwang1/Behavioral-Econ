@@ -1,7 +1,7 @@
 // ==========================================
 // 🔥 生产环境正式配置（已用你的 HTTPS 域名）
 // ==========================================
-const BASE_URL = 'http://8.138.170.90:3001/api'; 
+const BASE_URL = 'https://zhaoqiwangteaching.com/api'; 
 
 // 通用请求（自动带 token、统一错误处理、401自动跳登录）
 const request = (url, method = 'GET', data = {}) => {
@@ -16,7 +16,7 @@ const request = (url, method = 'GET', data = {}) => {
       data,
       header: {
         'Content-Type': 'application/json',
-        'Authorization': wx.getStorageSync('token') || ''
+        'Authorization': wx.getStorageSync('token') ? `Bearer ${wx.getStorageSync('token')}` : '' 
       },
       success: (res) => {
         if (res.statusCode === 200) {

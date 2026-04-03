@@ -18,7 +18,7 @@ const BrowserCloseHandler = () => {
           // 使用与你的api.js相同的环境判断逻辑
           const isProduction = process.env.NODE_ENV === 'production';
           const baseURL = isProduction 
-            ? 'http://8.138.170.90:3001/api' 
+            ? 'https://zhaoqiwangteaching.com/api' 
             : 'http://localhost:3001/api';
           
           // 发送到 users 路由下的 browser-close 端点

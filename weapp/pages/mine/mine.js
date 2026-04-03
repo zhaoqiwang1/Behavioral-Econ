@@ -1,64 +1,86 @@
+import { userAPI } from '../../services/api.js'; 
+
 Page({
+  /**
+   * 页面的初始数据
+   */
   data: {
-    user: {
-      username: '',
-      email: '',
-      studentid: '',
-      age: '',
-      gender: '',
-      education: '',
-      avatar: ''
+    isLogged: false,
+    userInfo: {}
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    this.checkLoginStatus();
+  },
+
+  // 检查登录状态
+  checkLoginStatus: function() {
+    const token = wx.getStorageSync('token');
+    let userStr = wx.getStorageSync('user');
+    
+    // 确保 userStr 是字符串，如果不是则跳转到未登录状态
+    if (typeof userStr !== 'string' || !token) {
+      this.setData({
+        isLogged: false,
+        userInfo: {}
+      });
+      return;
     }
-  },
 
-  onLoad() {
-    this.fetchUserData();
-  },
-
-  async fetchUserData() {
     try {
-      const token = wx.getStorageSync('token'); // 从本地存储获取 token
-      if (!token) {
-        wx.showToast({
-          title: '请先登录',
-          icon: 'none'
-        });
-        return;
-      }
-
-      const userId = wx.getStorageSync('userId'); // 假设 userId 存储在本地
-      if (!userId) {
-        wx.showToast({
-          title: '用户信息缺失，请重新登录',
-          icon: 'none'
-        });
-        return;
-      }
-
-      const res = await wx.request({
-        url: `https://zhaoqiwangteaching.com/api/users/${userId}`, // 替换为实际的 API 地址
-        method: 'GET',
-        header: {
-          Authorization: `Bearer ${token}`
-        }
+      // 确保 userStr 是一个有效的 JSON 字符串
+      const userData = JSON.parse(userStr);
+      
+      this.setData({
+        isLogged: true,
+        userInfo: userData
       });
-
-      if (res.statusCode === 200) {
-        this.setData({
-          user: res.data.user
-        });
-      } else {
-        wx.showToast({
-          title: '获取用户信息失败',
-          icon: 'none'
-        });
-      }
     } catch (error) {
-      console.error('获取用户信息失败:', error);
-      wx.showToast({
-        title: '网络错误，请稍后重试',
-        icon: 'none'
+      console.error('用户数据解析失败:', error);
+      // 解析失败，清除无效数据
+      wx.removeStorageSync('token');
+      wx.removeStorageSync('user');
+      
+      this.setData({
+        isLogged: false,
+        userInfo: {}
       });
     }
+  },
+
+  // 跳转到登录页面
+  goToLogin: function() {
+    wx.navigateTo({
+      url: '../login/login'
+    });
+  },
+
+  // 退出登录
+  handleLogout: function() {
+    wx.showModal({
+      title: '确认退出',
+      content: '确定要退出登录吗？',
+      success: (res) => {
+        if (res.confirm) {
+          // 清除本地存储
+          wx.removeStorageSync('token');
+          wx.removeStorageSync('user');
+          
+          // 更新页面状态
+          this.setData({
+            isLogged: false,
+            userInfo: {}
+          });
+          
+          wx.showToast({
+            title: '已退出',
+            icon: 'success'
+          });
+        }
+      }
+    });
   }
-});
+})

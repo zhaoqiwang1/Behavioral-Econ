@@ -1,17 +1,18 @@
-<scroll-view scroll-y="true" style="height: 100vh;">
-  <view class="login-container">
+<view class="container">
+  <view class="form-container">
     <input 
-      class="login-input" 
-      placeholder="请输入用户名" 
-      bindinput="onUsernameInput" 
+      class="input-field" 
+      placeholder="请输入账户名" 
+      value="{{ formData.username }}"
+      bindinput="onUsernameInput"
     />
     <input 
-      class="login-input" 
+      class="input-field" 
+      type="password"
       placeholder="请输入密码" 
-      password="true" 
-      bindinput="onPasswordInput" 
+      value="{{ formData.password }}"
+      bindinput="onPasswordInput"
     />
-    <button bindtap="handleLogin" class="login-btn">登录</button>
-    <button bindtap="goRegister" class="register-btn">注册账号</button>
+    <button class="login-btn" bindtap="handleLogin">登录</button>
   </view>
-</scroll-view>
+</view>
