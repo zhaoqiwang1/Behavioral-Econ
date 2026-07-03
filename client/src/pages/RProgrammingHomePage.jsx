@@ -31,7 +31,7 @@ const RProgrammingHomePage = () => {
           {/* 右侧：链接按钮 */}
           <div className={styles.scheduleRight}>
             <a 
-              href="https://zhaoqiwang1.github.io/Basics_Part1/Basics_1.html" 
+              href="https://oss.zhaoqiwangteaching.com/RClass/Basics_1.html" 
               target="_blank" 
               rel="noopener noreferrer"
               className={styles.linkBox}
@@ -40,10 +40,10 @@ const RProgrammingHomePage = () => {
             </a>
             
             <a 
-              href="https://zhaoqiwang1.github.io/Basics_Part1/Basics_1.pdf" 
+              href="https://oss.zhaoqiwangteaching.com/RClass/Basics_1.pdf" 
               target="_blank" 
               rel="noopener noreferrer" 
-              download
+              // download
               className={styles.linkBox}
             >
               下载 PDF 版
@@ -73,19 +73,19 @@ const RProgrammingHomePage = () => {
           {/* 右侧：链接按钮 */}
           <div className={styles.scheduleRight}>
             <a 
-              href="https://zhaoqiwang1.github.io/Basics_Part1/Basics_1.html" 
+              href="https://oss.zhaoqiwangteaching.com/RClass/Basics_2.html" 
               target="_blank" 
               rel="noopener noreferrer"
               className={styles.linkBox}
             >
-              Basics_Part1（HTML版）
+              Basics_Part2（HTML版）
             </a>
             
             <a 
-              href="https://zhaoqiwang1.github.io/Basics_Part1/Basics_1.pdf" 
+              href="https://oss.zhaoqiwangteaching.com/RClass/Basics_2.pdf" 
               target="_blank" 
               rel="noopener noreferrer" 
-              download
+              // download
               className={styles.linkBox}
             >
               下载 PDF 版
