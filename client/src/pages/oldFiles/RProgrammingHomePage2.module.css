@@ -1,0 +1,94 @@
+/* #region welcome page div */
+.welcomeMessage {
+  color: white;
+  background-image: 
+    url('https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/hongkong1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0,0,0,0.2);
+  background-blend-mode: overlay;
+  margin: 0 auto;
+  margin-bottom: 0px;
+  text-align: left;
+  position: relative;
+  min-height: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 垂直居中 */
+  align-items: center; /* 水平居中 */
+  gap: 1rem; /* 控制子元素之间的间距 */
+}
+/* #endregion */
+
+/* #region schedule container div */
+.classSchedules {
+  color: white;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0,0,0,0.2);
+  background-blend-mode: overlay;
+  margin: 0 auto;
+  margin-bottom: 0px;
+  text-align: left;
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+.classSchedules h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: aliceblue;
+}
+
+
+.scheduleContainer {
+  width: 90%;
+  max-width: 1400px;
+  display: flex;
+  gap: 10rem;
+  align-items: center;
+}
+
+.scheduleLeft {
+  flex: 1;
+  font-size: 1.3rem;
+}
+
+.scheduleRight {
+  flex: 1;
+  display: flex;
+  flex-direction: row; /* 横向左右排列 */
+  flex-wrap: wrap; /* 手机屏幕自动换行，不会溢出 */
+  gap: 1.5rem;
+  align-items: center; /* 两个按钮垂直居中对齐 */
+}
+
+.linkBox {
+  display: flex;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  height: auto; /* 取消固定超大高度，自适应文字 */
+  padding: 2.0rem 2.5rem; /* 缩小上下内边距，左右保留一点宽度 */
+  align-items: center; 
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem; /* 字号从2rem缩小，不会笨重 */
+  font-weight: bold;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  min-width: 180px; /* 可选：限制最小宽度，两个按钮宽度接近 */
+}
+
+.linkBox:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+/* #endregion */
+

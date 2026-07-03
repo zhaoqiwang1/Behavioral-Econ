@@ -2,7 +2,7 @@
 .welcomeMessage {
   color: white;
   background-image: 
-    url('https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/hk.jpg');
+    url('https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/hongkong1.jpg');
   background-size: cover;
   background-position: center;
   background-color: rgba(0,0,0,0.2);
@@ -21,28 +21,151 @@
 /* #endregion */
 
 /* #region schedule container div */
+/* 外层背景容器 */
 .classSchedules {
   color: white;
+  /* 背景图统一放到css，不再写在行内JSX */
+  /* background-image: url('https://oss.zhaoqiwangteaching.com/quite_place1.jpg'); */
   background-size: cover;
   background-position: center;
-  background-color: rgba(0,0,0,0.2);
+  background-color: #ffffff;
   background-blend-mode: overlay;
   margin: 0 auto;
   margin-bottom: 0px;
   text-align: left;
   position: relative;
-  min-height: 1000px;
+  min-height: 600px;
   display: flex;
   justify-content: center; 
   align-items: center;
+  width: 100%;
 }
 
+/* 背景压暗遮罩（替代行内rgba黑色蒙版） */
+.bgMask {
+  position: absolute;
+  inset: 0;
+  background-color: #ffffff;
+  z-index: 1;
+}
+
+/* 所有内容上层容器，防止被遮罩遮挡 */
+.contentWrap {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 1600px;
+  padding: 6rem 0;
+}
+
+/* 顶部标题区域 */
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.sectionHeader h1 {
+  font-size: 3.2rem;
+  margin: 0 0 1rem;
+  color: black;
+}
+.sectionHeader p {
+  max-width: 1100px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: black;
+}
+
+/* 卡片外层自适应容器：2张居中 / 3张三列均分 */
+.cardsWrap {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+/* 单张课程卡片 */
+.courseCard {
+  width: min(420px, 100%);
+  background: #f8f8f8;
+  border-radius: 16px;
+  overflow: hidden;
+  color: #222;
+}
+
+/* 卡片顶部图片区域 */
+.cardImgBox {
+  width: 100%;
+  height: 260px;
+  background: #eee;
+}
+.cardImgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 卡片文字描述 */
+.cardText {
+  padding: 1.5rem 1.5rem 1rem;
+}
+.cardText h3 {
+  font-size: 1.4rem;
+  margin: 0 0 0.6rem;
+}
+.cardText p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* 卡片底部按钮组 */
+.cardBtns {
+  display: flex;
+  gap: 0.8rem;
+  padding: 0 1.5rem 1.8rem;
+}
+
+/* 黑色按钮 - HTML网页版 */
+.btnHtml {
+  flex: 1;
+  text-align: center;
+  padding: 0.75rem 0;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 99px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+.btnHtml:hover {
+  background: #333;
+}
+
+/* 白色边框按钮 - PDF版 */
+.btnPdf {
+  flex: 1;
+  text-align: center;
+  padding: 0.75rem 0;
+  background: #fff;
+  color: #111;
+  border: 1px solid #ddd;
+  text-decoration: none;
+  border-radius: 99px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+.btnPdf:hover {
+  background: #f0f0f0;
+}
+
+/* 你原有旧标题样式保留，兼容旧代码 */
 .classSchedules h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
   color: aliceblue;
 }
-
 
 .scheduleContainer {
   width: 90%;
@@ -52,40 +175,5 @@
   align-items: center;
 }
 
-.scheduleLeft {
-  flex: 1;
-  font-size: 1.3rem;
-}
-
-.scheduleRight {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.linkBox {
-  display: flex;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 12px;
-  height: 200px;
-  padding: 2rem;
-  align-items: center; 
-  justify-content: center;
-  text-decoration: none;
-  color: white;
-  font-size: 2rem;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
-}
-
-.linkBox:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
 /* #endregion */
 
