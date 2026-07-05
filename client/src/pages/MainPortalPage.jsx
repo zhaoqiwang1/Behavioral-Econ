@@ -7,6 +7,11 @@ import styles from './MainPortalPage.module.css';
 const MainPortalPage = () => {
   const navigate = useNavigate();
 
+  const goToCourse = (path) => {
+    navigate(path)
+    window.scrollTo(0,0)
+  };
+
   return (
     <div className={styles.portalContainer}>
       <Navbar />
@@ -121,34 +126,69 @@ const MainPortalPage = () => {
 
       {/* R语言界面 */}
       <section className={styles.rProgramCourseSection}>
-        {/* <div className={styles.rProgrammingCourseImage}>
-            <img src="/assets/images/portalPage/codingwithme7.jpg" alt="behavioral-science-image"/>
-        </div>
-        <div className={styles.rProgrammingCourseIntro}>
-          <div className={styles.rProgrammingCourseIntroItem1}>
-            <img src="/assets/images/portalPage/codingwithme7.jpg" alt="behavioral-science-image"/>
-            <h1>basic</h1>
-            Tailor your curriculum to meet the unique needs of your students. Our flexible platform allows educators to create personalized learning paths.  Our flexible platform allows educators to create personalized learning paths.
+       <div className={styles.welcomeRClassMessage}>
+            {/* <img src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/resultSectionBackground.png" alt="r-programming-course-image"/> */}
           </div>
-           <div className={styles.rProgrammingCourseIntroItem2}>
-            plot,
+          <div className={styles.behavSciCourseIntro}>
+            <h1 className={styles.courseBehavSciTitle}>R 语言</h1>
+            {/* <div className={styles.behavSciCourseIntroTitle}>
+              <h1>主要内容</h1>
+              <p>
+                了解行为和实验经济金融领域的核心研究内容、研究方法及关键结论，建立对该领域的整体认知。通过文献品读，学习学术论文中的实验设计逻辑、数据收集方式与结论推导思路。认识行为经济学的研究发现在实际生活中的应用价值。
+              </p>
+            </div> */}
+            <div className={styles.rCourseItems}>
+              <div className={styles.rCourseIntroItem1}>
+                <h1 className={styles.rCourseItemTitle}>
+                  Basics
+                </h1>
+                <p className={styles.rCourseItemDescription}>
+                  R基础操作与语法入门；聚焦核心数据结构操作及数据导入导出。
+                </p>
+              </div>
+              <div className={styles.rCourseIntroItem2}>
+                <h1 className={styles.rCourseItemTitle}>
+                  Plot
+                </h1>
+                <p className={styles.rCourseItemDescription}>
+                  聚焦 R 语言绘图知识，从基础绘图到 ggplot2 应用逐步深入。
+                </p>
+              </div>
+              <div className={styles.rCourseIntroItem3}>
+                <h1 className={styles.rCourseItemTitle}>
+                  Data Cleaning
+                </h1>
+                <p className={styles.rCourseItemDescription}>
+                  聚焦 R 语言数据清洗，从基础操作到 dplyr 包应用，再到时间与字符串处理逐步深入。
+                </p>
+              </div>
+              <div className={styles.rCourseIntroItem4}>
+                <h1 className={styles.rCourseItemTitle}>
+                  Regression 
+                </h1>
+                <p className={styles.rCourseItemDescription}>
+                  聚焦 R 语言回归分析，从线性模型到非线性建模，再到结果输出与排版逐步深入。
+                </p>
+              </div>
+              <div className={styles.rCourseIntroItem5}>
+                <h1 className={styles.rCourseItemTitle}>
+                  R Markdown
+                </h1>
+                <p className={styles.rCourseItemDescription}>
+                  聚焦 R Markdown 应用，从基础语法与排版到学术表格与公式，再到交互式可视化。
+                </p>
+              </div>
+            </div>
+
+            <div className={styles.behavSciCourseBtnPosition}>
+              <button className={styles.BtnBehavSci} onClick={() => goToCourse('/courses/r-programming')}>
+                进入课程
+              </button>
+            </div>
           </div>
-          <div className={styles.rProgrammingCourseIntroItem2}>
-            data cleaning,
-          </div>
-          <div className={styles.rProgrammingCourseIntroItem2}>
-            regression,
-          </div>
-          <div className={styles.rProgrammingCourseIntroItem2}>
-            R markdown,
-          </div>
-          <div className={styles.rProgrammingCourseIntroItem2}>
-            git
-          </div>
-        </div> */}
-        <button onClick={() => navigate('/courses/r-programming')}>
+        {/* <button onClick={() => navigate('/courses/r-programming')}>
           <h1>R语言课程</h1>
-        </button>
+        </button> */}
       </section>
 
       {/* 结束界面 */}

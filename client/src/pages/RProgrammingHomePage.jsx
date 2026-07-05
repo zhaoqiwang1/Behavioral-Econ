@@ -55,7 +55,7 @@ const RProgrammingHomePage = () => {
             {/* 顶部标题区域，对标产品页大标题 */}
             <div className={styles.sectionHeader}>
               <h1>R 编程基础 -- R Basics</h1>
-              <p>本部分内容围绕 R 语言基础展开。</p>
+              {/* <p>本部分内容围绕 R 语言基础展开。</p> */}
             </div>
 
             {/* 课程卡片容器，自适应2/3列布局 */}
@@ -137,7 +137,7 @@ const RProgrammingHomePage = () => {
             {/* 顶部标题区域，对标产品页大标题 */}
             <div className={styles.sectionHeader}>
               <h1>数据可视化 -- Data Visualization</h1>
-              <p>本部分内容聚焦 R 语言绘图知识，从基础绘图到 ggplot2 应用逐步深入。</p>
+              {/* <p>本部分内容聚焦 R 语言绘图知识，从基础绘图到 ggplot2 应用逐步深入。</p> */}
             </div>
 
             {/* 课程卡片容器，自适应2/3列布局 */}
@@ -250,7 +250,7 @@ const RProgrammingHomePage = () => {
             {/* 顶部标题区域，对标产品页大标题 */}
             <div className={styles.sectionHeader}>
               <h1>数据清理 -- Data Cleaning</h1>
-              <p>本部分内容聚焦 R 语言数据清洗，从基础操作到 dplyr 包应用，再到时间与字符串处理逐步深入。</p>
+              {/* <p>本部分内容聚焦 R 语言数据清洗，从基础操作到 dplyr 包应用，再到时间与字符串处理逐步深入。</p> */}
             </div>
 
             {/* 课程卡片容器，自适应2/3列布局 */}
@@ -363,7 +363,7 @@ const RProgrammingHomePage = () => {
             {/* 顶部标题区域，对标产品页大标题 */}
             <div className={styles.sectionHeader}>
               <h1>回归分析 -- Regression Analysis </h1>
-              <p>本部分内容聚焦 R 语言回归分析，从线性模型到非线性建模，再到结果输出与排版逐步深入。</p>
+              {/* <p>本部分内容聚焦 R 语言回归分析，从线性模型到非线性建模，再到结果输出与排版逐步深入。</p> */}
             </div>
 
             {/* 课程卡片容器，自适应2/3列布局 */}
@@ -476,7 +476,7 @@ const RProgrammingHomePage = () => {
             {/* 顶部标题区域，对标产品页大标题 */}
             <div className={styles.sectionHeader}>
               <h1>分析报告 -- R Markdown </h1>
-              <p>本部分内容聚焦 R Markdown 应用，从基础语法与排版到学术表格与公式，再到交互式可视化逐步深入。</p>
+              {/* <p>本部分内容聚焦 R Markdown 应用，从基础语法与排版到学术表格与公式，再到交互式可视化逐步深入。</p> */}
             </div>
 
             {/* 课程卡片容器，自适应2/3列布局 */}

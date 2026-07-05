@@ -38,8 +38,6 @@
 /* #endregion */
 
 
-
-
 /* #region 逻辑学课程Section */
 /* logicCourseSection */
 .logicCourseSection {
@@ -215,6 +213,25 @@
 
 
 /* #region R语言课程Section */
+.welcomeRClassMessage {
+  color: white;
+  background-image: 
+    url('https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/resultSectionBackground.png');
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0,0,0,0.2);
+  background-blend-mode: overlay;
+  margin: 0 auto;
+  margin-bottom: 0px;
+  text-align: left;
+  position: relative;
+  min-height: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 垂直居中 */
+  align-items: center; /* 水平居中 */
+  gap: 1rem; /* 控制子元素之间的间距 */
+}
 .rProgramCourseSection {
   background-color: rgb(58, 63, 87);
 }
@@ -243,6 +260,57 @@
   background-color: #f5f5f5; /* 卡片的背景色 */
   text-align: left;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 轻微的阴影效果 */
+}
+
+/* 外层容器：横向自动均分卡片，一行5个 */
+.rCourseItems {
+  width: 100%;
+  padding: 60px 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* 统一所有卡片样式，不用分别写 item1~item5，全部共用一套 */
+.rCourseIntroItem1,
+.rCourseIntroItem2,
+.rCourseIntroItem3,
+.rCourseIntroItem4,
+.rCourseIntroItem5 {
+  background: #ccc5c548;
+  border-radius: 12px;
+  padding: 40px 28px;
+}
+
+/* 标题样式 */
+.rCourseItemTitle {
+  font-size: 34px;
+  margin: 0 0 20px;
+  color: #111;
+  font-weight: 600;
+  text-align: left;
+}
+
+/* 描述文字 */
+.rCourseItemDescription {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #585858;
+  margin: 0;
+  text-align: left;
+}
+
+/* 响应式适配，屏幕变窄自动减少列数 */
+@media (max-width: 1400px) {
+  .rCourseItems { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 800px) {
+  .rCourseItems { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 500px) {
+  .rCourseItems { grid-template-columns: 1fr; }
 }
 /* #endregion */
 
