@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar.jsx';
+import BackToTop from '../components/BackToTop.jsx';
 import styles from './MainPortalPage.module.css';
 
 const MainPortalPage = () => {
@@ -9,6 +10,7 @@ const MainPortalPage = () => {
   return (
     <div className={styles.portalContainer}>
       <Navbar />
+      <BackToTop />
       {/* 欢迎界面 */}
       <header className={styles.welcomeMessage}>
         <h1 className={styles.welcomeMessageTitle}>EMPOWER YOUR MIND</h1>

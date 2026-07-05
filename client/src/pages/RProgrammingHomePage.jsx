@@ -13,11 +13,19 @@ const RProgrammingHomePage = () => {
   const openHomeworkPdf = (pdfUrl, cardPwd) => {
     const inputPwd = prompt('请输入查看密码:');
     if (inputPwd === cardPwd) {
-      // 密码正确，新开PDF
-      window.open(pdfUrl, '_blank');
+      // 密码正确，直接访问OSS压缩包链接触发下载
+      window.location.href = pdfUrl;
     } else if (inputPwd !== null) {
-      // 输入了但不对，报错（复用你的toast）
       toast.error('密码错误');
+    }
+  };
+
+  const openExam = (downloadUrl, examPwd) => {
+    const inputPwd = prompt('请输入试题下载密码：');
+    if (inputPwd === examPwd) {
+      window.open(downloadUrl, '_blank');
+    } else if (inputPwd !== null) {
+      toast.error('密码错误，无法下载');
     }
   };
 
@@ -579,7 +587,7 @@ const RProgrammingHomePage = () => {
           {/* Part 1 卡片 */}
           <div  className={styles.homeworkCard}
                 onClick={() => openHomeworkPdf(
-                  "https://oss.zhaoqiwangteaching.com/RClass/Plot_Part1.pdf",
+                  "https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/RClass/Homework1.zip",
                   "hw1password" // 这张卡片独立密码，每张卡自己改
                 )}>
             <div className={styles.HwCardImgBox}>
@@ -596,7 +604,7 @@ const RProgrammingHomePage = () => {
           {/* Part 2 卡片 */}
           <div  className={styles.homeworkCard}
                 onClick={() => openHomeworkPdf(
-                  "https://oss.zhaoqiwangteaching.com/RClass/Plot_Part1.pdf",
+                  "https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/RClass/Homework2.zip",
                   "hw2password" // 这张卡片独立密码，每张卡自己改
                 )}>
             <div className={styles.HwCardImgBox}>
@@ -613,7 +621,7 @@ const RProgrammingHomePage = () => {
           {/* Part 3 卡片 */}
           <div  className={styles.homeworkCard}
                 onClick={() => openHomeworkPdf(
-                  "https://oss.zhaoqiwangteaching.com/RClass/Plot_Part1.pdf",
+                  "https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/RClass/Homework3.zip",
                   "hw3password" // 这张卡片独立密码，每张卡自己改
                 )}>
             <div className={styles.HwCardImgBox}>
@@ -630,7 +638,7 @@ const RProgrammingHomePage = () => {
           {/* Part 4 卡片 */}
           <div  className={styles.homeworkCard}
                 onClick={() => openHomeworkPdf(
-                  "https://oss.zhaoqiwangteaching.com/RClass/Plot_Part1.pdf",
+                  "https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/RClass/Homework4.zip",
                   "hw4password" // 这张卡片独立密码，每张卡自己改
                 )}>
             <div className={styles.HwCardImgBox}>
@@ -647,7 +655,7 @@ const RProgrammingHomePage = () => {
           {/* Part 5 卡片 */}
           <div  className={styles.homeworkCard}
                 onClick={() => openHomeworkPdf(
-                  "https://oss.zhaoqiwangteaching.com/RClass/Plot_Part1.pdf",
+                  "https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/RClass/Homework5.zip",
                   "hw5password" // 这张卡片独立密码，每张卡自己改
                 )}>
             <div className={styles.HwCardImgBox}>
@@ -660,6 +668,41 @@ const RProgrammingHomePage = () => {
               <h3>作业 5</h3>
               <h3>Homework 5</h3>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.examsSection}>
+        {/* 第一块：Practice Midterm */}
+        <div className={styles.examRow}>
+          <div className={styles.examImgBox}>
+            <img src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/codingwithme3.jpg" alt="Practice Midterm Cover" />
+          </div>
+          <div className={styles.examText}>
+            <h2>Practice Midterm</h2>
+            <p>期中模拟练习题，覆盖课程前半段核心知识点。</p>
+            <button 
+              onClick={() => openExam("https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/RClass/practiceMidterm.zip", "practiceMidtermPassword")} // 这里替换为实际的OSS压缩包链接和密码
+              className={styles.btnExam}
+            >
+              Download Exam
+            </button>
+          </div>
+        </div>
+
+        {/* 第二块：Practice Final */}
+        <div className={styles.examRow}>
+          <div className={styles.examText}>
+            <h2>Practice Final</h2>
+            <p>期末综合模拟套卷，整合全课程内容，适合考前整体复盘自测。</p>
+            <button 
+              onClick={() => openExam("https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/RClass/practiceFinal.zip", "practiceFinalPassword")} // 这里替换为实际的OSS压缩包链接和密码
+              className={styles.btnExam}
+            >
+              Download Exam
+            </button>
+          </div>
+          <div className={styles.examImgBox}>
+            <img src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/bridge2.png" alt="Practice Final Cover" />
           </div>
         </div>
       </div>

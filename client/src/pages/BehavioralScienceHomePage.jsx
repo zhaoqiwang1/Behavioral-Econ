@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { useAuth } from '../contexts/AuthContext.jsx';  // 新增导入
 import Navbar from '../components/Navbar.jsx';  // 导入 Navbar
+import BackToTop from '../components/BackToTop.jsx';
 import styles from './BehavioralScienceHomePage.module.css';  
 
 const BehavioralScienceHomePage = () => {
@@ -223,6 +224,7 @@ const BehavioralScienceHomePage = () => {
   return (
     <div className={styles.homepageContainer}>
       <Navbar />
+      <BackToTop />
       <div className={styles.homepageContent}>
         <div className={styles.welcomeMessage}>
           <h1 className={styles.welcomeMessageTitle}>BEYOND ECONOMIC MAN</h1>

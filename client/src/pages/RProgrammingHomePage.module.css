@@ -289,3 +289,79 @@
   .homeworkCardsWrap { grid-template-columns: 1fr; }
 }
 /* #endregion */
+
+
+/* #region exams container div */
+/* 外层容器整体间距 */
+.examsSection {
+  width: 100%;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin-bottom: 100px;
+}
+
+/* 单行：图片左、文字右 横向并排 */
+.examRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* 图片盒子自适应高度 */
+.examImgBox img {
+  width: 100%;
+  display: block;
+}
+
+/* 文字区域排版 */
+.examText h2 {
+  font-size: 32px;
+  margin: 0 0 16px;
+  color: #111;
+}
+.examText p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+
+/* 黑色实心下载按钮，匹配截图下方Read more样式 */
+.btnExam {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  padding: 18px 36px;
+  font-size: 17px;
+  text-decoration: none;
+  transition: 0.2s;
+  border-radius: 10px;
+  /* 新增两行修复按钮样式失效 */
+  border: none;
+  cursor: pointer;
+}
+.btnExam:hover {
+  background: #333;
+}
+
+/* 移动端自动变成上下堆叠 */
+@media (max-width: 900px) {
+  .examRow {
+    grid-template-columns: 1fr;
+  }
+  /* 移动端交换图片文字顺序，上下结构更美观 */
+  .examRow:nth-child(2) {
+    direction: rtl;
+  }
+  .examRow:nth-child(2) > * {
+    direction: ltr;
+  }
+}
+
+/* #endregion */
