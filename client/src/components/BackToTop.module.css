@@ -1,0 +1,25 @@
+.btn {
+  position: fixed;
+  right: 32px;
+  bottom: 40px;
+  z-index: 9999;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  /* 改动1：白底+深色箭头 */
+  background-color: #ffffff;
+  color: #222222;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  /* hover轻微变浅灰，增加层次感 */
+  background-color: #f5f5f5;
+  transform: translateY(-4px);
+  /* hover阴影放大，科技悬浮感 */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}

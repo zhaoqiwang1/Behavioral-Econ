@@ -1,6 +1,7 @@
 // RProgrammingHomePage.jsx
 import React from 'react';
 import Navbar from '../components/Navbar.jsx';
+import BackToTop from '../components/BackToTop.jsx';
 import styles from './RProgrammingHomePage.module.css';
 import toast from 'react-hot-toast';
 
@@ -23,6 +24,7 @@ const RProgrammingHomePage = () => {
   return (
     <div>
        <Navbar />
+       <BackToTop />
       {/* 欢迎界面 */}
       {/* <header className={styles.welcomeMessage}>
       </header> */}
