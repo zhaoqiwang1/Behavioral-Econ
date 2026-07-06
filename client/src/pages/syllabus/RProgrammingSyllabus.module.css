@@ -45,7 +45,8 @@
   letter-spacing: -0.04em;
   /* 从极深的科技黑（#111111）渐变到高级的钢灰色（#6e6e73） */
   background: linear-gradient(180deg, #111111 20%, #b7b6b6 100%);
-  -webkit-background-clip: text;
+  -webkit-background-clip: text; /* 👈 保留这行，供大部分浏览器使用 */
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 0 0 1rem 0;
 }
