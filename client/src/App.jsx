@@ -23,8 +23,11 @@ import PVQSurvey from './pages/games/PVQSurvey.jsx';
 import Register from './pages/auth/Register.jsx';
 import Login from './pages/auth/Login.jsx';
 import UserSettings from './pages/auth/UserSettings.jsx';
-// import game results pags
+// import game results pages
 import ShowRiskAtti from './pages/gameresults/ShowRiskAtti.jsx';
+// import syllabus pages
+import RProgrammingSyllabus from './pages/syllabus/RProgrammingSyllabus.jsx';
+import BehavScienceSyllabus from './pages/syllabus/BehavScienceSyllabus.jsx';
 // import other things
 import { AuthProvider } from './contexts/AuthContext.jsx';  
 import ProtectedRoute from './components/ProtectedRoute.jsx';
@@ -47,6 +50,10 @@ function App() {
               <Route path="/courses/behavioral-science" element={<BehavioralScienceHomePage />} />
               <Route path="/courses/r-programming" element={<RProgrammingHomePage />} />
               <Route path="/courses/logic" element={<LogicHomePage />} />
+
+              {/* Syllabus Page path */}
+              <Route path="/courses/r-programming/syllabus" element={<RProgrammingSyllabus />} />
+              <Route path="/courses/behavioral-science/syllabus" element={<BehavScienceSyllabus />} />
               {/* Auth Page path */}
               <Route path="/auth/login" element={<Login />} />
               <Route path="/auth/register" element={<Register />} />

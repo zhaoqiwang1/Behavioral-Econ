@@ -233,6 +233,15 @@ const BehavioralScienceHomePage = () => {
             <span id={styles.welcomeMessageHightlight}> cognitive biases </span>
             that shape real-world economic behavior.
           </p>
+          <button 
+            className={styles.syllabusBtn}
+            onClick={() => {
+            navigate('/courses/behavioral-science/syllabus');
+            window.scrollTo(0, 0); 
+          }}
+          >
+            Syllabus
+          </button>
         </div>
         <div className={styles.gameSectionTitle}>
           <h1>行为科学实验</h1>

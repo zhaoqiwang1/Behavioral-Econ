@@ -1,0 +1,217 @@
+/* ==================== 1. 主题变量与容器定义 ==================== */
+.container {
+  --bg-color: #f6f8fa;                       /* 现代科技感浅灰背景 */
+  --card-bg: #ffffff;                        /* 纯白卡片，突出层次 */
+  --border-color: rgba(0, 0, 0, 0.06);       /* 极细微的浅色半透明边框 */
+  --text-main: #111111;                      /* 深色近乎黑的主文字颜色 */
+  --text-muted: #62626a;                     /* 优雅的灰色辅助文字 */
+  --accent-color: #0066cc;                   /* 科技蓝（调深了一点，方便在白底上阅读） */
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.2rem;
+  min-height: 100vh;
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ==================== 2. 顶栏头部 (Header) ==================== */
+.header {
+  text-align: center;
+  max-width: 760px;
+  margin-bottom: 4rem;
+}
+
+/* 顶部精致的小标签 */
+.headerBadge {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+  padding: 4px 14px;
+  border-radius: 100px;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* 渐变色大标题 */
+.header h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  /* 从极深的科技黑（#111111）渐变到高级的钢灰色（#6e6e73） */
+  background: linear-gradient(180deg, #111111 20%, #b7b6b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 1rem 0;
+}
+
+.teacher, .dept {
+  font-size: 1.05rem;
+  margin: 0.3rem 0;
+}
+
+.email {
+  font-family: monospace;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.subtitle {
+  font-style: italic;
+  color: var(--text-muted);
+  margin-top: 1.5rem;
+}
+
+/* ==================== 3. 主体内容卡片阵列 ==================== */
+.content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* 增大间距，制造“呼吸感” */
+}
+
+/* 科技公司最常用的微光卡片 */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2.2rem;
+  transition: border-color 0.25s ease;
+  text-align: left;
+}
+
+.card:hover {
+  border-color: rgba(255, 255, 255, 0.15); /* 鼠标悬浮时边缘微亮 */
+}
+
+.card h2 {
+  font-size: 2.0rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #1d1d1f;
+  text-align: left;
+}
+
+.card p {
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0 0 1rem 0;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==================== 4. 列表与细节排版 ==================== */
+.cardImgBox {
+  text-align: center;
+  margin: 1.2rem 0;
+}
+
+.list {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.list li {
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.list li:last-child {
+  margin-bottom: 0;
+}
+
+/* 强调说明部分加一条精致的左边线 */
+.note {
+  font-size: 0.9rem;
+  border-left: 2px solid var(--accent-color);
+  padding-left: 0.8rem;
+  color: var(--text-main) !important;
+  margin-top: 1rem;
+}
+
+/* 高亮代码块风格 */
+.highlightText {
+  font-family: monospace;
+  font-weight: 700;
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.8rem;
+  border-radius: 6px;
+  border-left: 2px solid #fff;
+}
+
+/* 成绩计算公式框 */
+.formula {
+  background: rgba(47, 128, 237, 0.04);
+  border: 1px solid rgba(47, 128, 237, 0.15);
+  padding: 1rem;
+  border-radius: 8px;
+  color: var(--text-main) !important;
+}
+
+/* 精致的链接 */
+.link {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  word-break: break-all;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* ==================== 5. 现代干净的响应式表格 ==================== */
+.tableWrapper {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+.table th {
+  background: rgba(255, 255, 255, 0.02);
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.table td {
+  padding: 14px 16px;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+/* 鼠标划过表格行的高亮反馈 */
+.table tr:hover td {
+  background: rgba(255, 255, 255, 0.01);
+  color: #090909;
+}
+
+.downloadLink {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}

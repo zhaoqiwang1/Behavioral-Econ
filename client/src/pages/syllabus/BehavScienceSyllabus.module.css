@@ -1,0 +1,61 @@
+.container {
+  --bg-color: #050505;                       /* 极黑科技感背景 */
+  --border-color: rgba(255, 255, 255, 0.07); /* 极细微半透明边框 */
+  --text-main: #f5f5f7;                      /* 主文字颜色 */
+  --text-muted: #8e8e93;                     /* 辅助文字颜色 */
+  
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  text-align: center;
+  max-width: 1000px; /* 延续加宽后的现代大屏风格 */
+  width: 100%;
+}
+
+.headerBadge {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+  padding: 4px 14px;
+  border-radius: 100px;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.header h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  background: linear-gradient(180deg, #ffffff 0%, #a1a1a6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 1rem 0;
+}
+
+.teacher, .dept {
+  font-size: 1.05rem;
+  margin: 0.3rem 0;
+}
+
+.email {
+  font-family: monospace;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.subtitle {
+  font-style: italic;
+  color: var(--text-muted);
+  margin-top: 1.5rem;
+}

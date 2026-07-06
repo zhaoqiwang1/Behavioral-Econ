@@ -1,5 +1,6 @@
 // RProgrammingHomePage.jsx
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar.jsx';
 import BackToTop from '../components/BackToTop.jsx';
 import styles from './RProgrammingHomePage.module.css';
@@ -9,6 +10,7 @@ import toast from 'react-hot-toast';
 
 const RProgrammingHomePage = () => {
 
+  const navigate = useNavigate();
 
   const openHomeworkPdf = (pdfUrl, cardPwd) => {
     const inputPwd = prompt('请输入查看密码:');
@@ -43,6 +45,21 @@ const RProgrammingHomePage = () => {
           <span id={styles.welcomeMessageHightlight}> data analysis in R, </span>
           from cleaning and modeling to creating compelling visual reports.
         </p>
+        <button 
+          className={styles.syllabusBtn}
+          onClick={() => {
+            navigate('/courses/r-programming/syllabus');
+            window.scrollTo(0, 0); 
+          }}
+        >
+          Syllabus
+        </button>
+        <button 
+          className={styles.dataBtn}
+          onClick={() => openExam("https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/RClass/Data.zip", "dataPassword")} // 这里替换为实际的OSS压缩包链接和密码
+        >
+          Data
+        </button>
       </div>
       <div className={styles.mainContent}>
         {/* R Basics 内容详解 */}
