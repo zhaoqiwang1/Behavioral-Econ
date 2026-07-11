@@ -222,15 +222,9 @@ const BehavioralScienceHomePage = () => {
   }
 
 
-  const openHomeworkPdf = (pdfUrl, cardPwd) => {
-    const inputPwd = prompt('请输入查看密码:');
-    if (inputPwd === cardPwd) {
-      // 密码正确，直接访问OSS压缩包链接触发下载
-      window.location.href = pdfUrl;
-    } else if (inputPwd !== null) {
-      toast.error('密码错误');
-    }
-  };
+  // const openHomework = () => {
+  //   toast.info('该功能还在开发中，敬请期待！');
+  // };
 
   return (
     <div className={styles.homepageContainer}>
@@ -544,10 +538,12 @@ const BehavioralScienceHomePage = () => {
           <div className={styles.homeworkCardsWrap}>
             {/* Part 1 卡片 */}
             <div  className={styles.homeworkCard}
-                  onClick={() => openHomeworkPdf(
-                    "https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/RClass/Homework1.zip",
-                    "hw1password" // 这张卡片独立密码，每张卡自己改
-                  )}>
+                  onClick={() => toast.error('功能开发中...')}
+                  // onClick={() => openHomework(
+                  //   "https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/RClass/Homework1.zip",
+                  //   "hw1password"
+                  // )}
+                  >
               <div className={styles.HwCardImgBox}>
                 <img 
                   src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/hwCard.png" 
@@ -561,10 +557,12 @@ const BehavioralScienceHomePage = () => {
             </div>
             {/* Part 2 卡片 */}
             <div  className={styles.homeworkCard}
-                  onClick={() => openHomeworkPdf(
-                    "https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/RClass/Homework2.zip",
-                    "hw2password" // 这张卡片独立密码，每张卡自己改
-                  )}>
+                  onClick={() => toast.error('功能开发中...')}
+                  // onClick={() => openHomework(
+                  //   "https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/RClass/Homework2.zip",
+                  //   "hw2password" 
+                  // )}
+                  >
               <div className={styles.HwCardImgBox}>
                 <img 
                   src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/hwCard.png" 
@@ -578,10 +576,12 @@ const BehavioralScienceHomePage = () => {
             </div>
             {/* Part 3 卡片 */}
             <div  className={styles.homeworkCard}
-                  onClick={() => openHomeworkPdf(
-                    "https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/RClass/Homework3.zip",
-                    "hw3password" // 这张卡片独立密码，每张卡自己改
-                  )}>
+                  onClick={() => toast.error('功能开发中...')}
+                  // onClick={() => openHomework(
+                  //   "https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/RClass/Homework3.zip",
+                  //   "hw3password" 
+                  // )}
+                  >
               <div className={styles.HwCardImgBox}>
                 <img 
                   src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/hwCard.png" 
@@ -595,10 +595,12 @@ const BehavioralScienceHomePage = () => {
             </div>
             {/* Part 4 卡片 */}
             <div  className={styles.homeworkCard}
-                  onClick={() => openHomeworkPdf(
-                    "https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/RClass/Homework4.zip",
-                    "hw4password" // 这张卡片独立密码，每张卡自己改
-                  )}>
+                  onClick={() => toast.error('功能开发中...')}
+                  // onClick={() => openHomework(
+                  //   "https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/RClass/Homework4.zip",
+                  //   "hw4password" // 这张卡片独立密码，每张卡自己改
+                  // )}
+                  >
               <div className={styles.HwCardImgBox}>
                 <img 
                   src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/hwCard.png" 

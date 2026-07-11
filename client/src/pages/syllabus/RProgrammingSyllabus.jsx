@@ -169,22 +169,22 @@ export default function RProgrammingSyllabus() {
                 </tr>
               </thead>
               <tbody>
-                <tr><td>Week 1.</td><td>Course Introduction + R Programming Basics. Part 1</td><td>NA</td></tr>
-                <tr><td>Week 2.</td><td>R Programming Basics. Part 2 + Homework Assignment 1</td><td>NA</td></tr>
+                <tr><td>Week 1.</td><td>Course Introduction + R Programming Basics. Part 1</td><td>--</td></tr>
+                <tr><td>Week 2.</td><td>R Programming Basics. Part 2 + Homework Assignment 1</td><td>--</td></tr>
                 <tr><td>Week 3.</td><td>R Data Visualization. Part 1</td><td>cars.csv</td></tr>
                 <tr><td>Week 4.</td><td>R Data Visualization. Part 2</td><td>cars.csv</td></tr>
                 <tr><td>Week 5.</td><td>R Data Visualization. Part 3 + Homework Assignment 2</td><td>mpg and economics in ggplot2</td></tr>
                 <tr><td>Week 6.</td><td>R Data Cleaning. Part 1</td><td>cars.csv, state_water_phdi.csv</td></tr>
                 <tr><td>Week 7.</td><td>R Data Cleaning. Part 2</td><td>starwars in dplyr</td></tr>
                 <tr><td>Week 8.</td><td>R Data Cleaning. Part 3 + Homework Assignment 3</td><td>time_data.csv</td></tr>
-                <tr><td>Week 9.</td><td>Midterm In-class Practice</td><td></td></tr>
+                <tr><td>Week 9.</td><td>Midterm In-class Practice</td><td>--</td></tr>
                 <tr><td>Week 10.</td><td>Regression in R. Part 1</td><td>Prestige, unions.csv</td></tr>
                 <tr><td>Week 11.</td><td>Regression in R. Part 2</td><td>mpg, starwars, apple_data.csv</td></tr>
                 <tr><td>Week 12.</td><td>Regression in R. Part 3 + Homework Assignment 4</td><td>Prestige, unions.csv</td></tr>
-                <tr><td>Week 13.</td><td>R markdown. Part 1</td><td>NA</td></tr>
+                <tr><td>Week 13.</td><td>R markdown. Part 1</td><td>--</td></tr>
                 <tr><td>Week 14.</td><td>R markdown. Part 2 + Homework Assignment 5</td><td>Prestige</td></tr>
                 <tr><td>Week 15.</td><td>R markdown. Part 3</td><td>Prestige, apple.csv, tesla.csv</td></tr>
-                <tr><td>Week 16.</td><td>Final In-class Practice</td><td></td></tr>
+                <tr><td>Week 16.</td><td>Final In-class Practice</td><td>--</td></tr>
               </tbody>
             </table>
           </div>
