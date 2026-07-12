@@ -6,8 +6,10 @@ Page({
     resultScrollLeft: 0,
     itemWidth: 510, 
     totalItem: 16,
-    currentIndex: 0,
-    gameIndicators: [0,1,2,3]
+    gameCurrentIndex: 0,
+    resultCurrentIndex: 0,
+    gameIndicators: [0,1,2,3],
+    resultIndicators: [0,1,2,3]
   },
 
   onLoad() {
@@ -78,8 +80,22 @@ Page({
         const maxIndex = this.data.gameIndicators.length - 1
         const newIndex = Math.min(Math.max(index, 0), maxIndex)
         // 更新高亮索引（只有变化时才 setData，提高性能）
-        if (newIndex !== this.data.currentIndex) {
-          this.setData({ currentIndex: newIndex })
+        if (newIndex !== this.data.gameCurrentIndex) {
+          this.setData({ gameCurrentIndex: newIndex })
+        }
+      },
+
+      onResultScroll(e) {
+        const scrollLeft = e.detail.scrollLeft
+        const itemWidth = 510  // 480(按钮宽) + 30(间距)
+        // 计算当前滚动到哪个按钮
+        const index = Math.round(scrollLeft / itemWidth)
+        // 限制范围
+        const maxIndex = this.data.resultIndicators.length - 1
+        const newIndex = Math.min(Math.max(index, 0), maxIndex)
+        // 更新高亮索引（只有变化时才 setData，提高性能）
+        if (newIndex !== this.data.resultCurrentIndex) {
+          this.setData({ resultCurrentIndex: newIndex })
         }
       },
 
