@@ -28,51 +28,84 @@
       <text class="desc">点击下方按钮参与不同的行为科学实验</text>
     </view>
     <view class="gameSection">
-      <view class="gameGridContainer">
-        <button class="scrollButton left" bindtap="scrollGameLeft">‹</button>
-        <scroll-view class="gameGrid" scroll-x enable-flex>
-          <button class="gameBtn" bindtap="handlePublicGoodsGame" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/public_goods_game.png)">
+        <scroll-view 
+            class="gameGrid" 
+            scroll-x 
+            enable-flex
+            scroll-left="{{gameScrollLeft}}"
+            bindscroll="onGameScroll"
+            >
+          <view class="gameCardWrapper">
+            <button class="gameBtn" bindtap="handlePublicGoodsGame" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/public_goods_game.png)">
             <text>实验1</text>
-          </button>
-          <button class="gameBtn" bindtap="handleRiskAttiGame" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/risk_assessment.jpg)">
-            <text>实验2</text>
-          </button>
-          <button class="gameBtn" bindtap="handleAmbiguityAttiGame" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/ambiguity_assessment.png)">
+            </button>
+          </view>
+          <view class="gameCardWrapper">
+            <button class="gameBtn" bindtap="handleRiskAttiGame" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/risk_assessment.jpg)">
+                <text>实验2</text>
+            </button>
+         </view>
+         <view class="gameCardWrapper">
+            <button class="gameBtn" bindtap="handleAmbiguityAttiGame" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/ambiguity_assessment.png)">
             <text>实验3</text>
-          </button>
-          <button class="gameBtn" bindtap="handleOverconfidenceGame" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/overconfidence_assessment.png)">
-            <text>实验4</text>
-          </button>
-          <button class="gameBtn" bindtap="handleGameUnderAmbig" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/game_under_ambiguity.png)">
-            <text>实验5</text>
-          </button>
-          <button class="gameBtn" bindtap="handleMBTIElicit" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/mbti_game.png)">
-            <text>实验6</text>
-          </button>
-          <button class="gameBtn" bindtap="handleConfirmationBiasGame" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/confirmation_bias_game.png)">
-            <text>实验7</text>
-          </button>
-          <button class="gameBtn" bindtap="handleOUSSurvey" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/ous_survey.png)">
-            <text>实验8</text>
-          </button>
-          <button class="gameBtn" bindtap="handleMFQSurvey" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/mfq_survey.jpg)">
-            <text>实验9</text>
-          </button>
-          <button class="gameBtn" bindtap="handleSVOSurvey" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/svo_survey.jpg)">
-            <text>实验10</text>
-          </button>
-          <button class="gameBtn" bindtap="handlePVQSurvey" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/pvq_survey.png)">
-            <text>实验11</text>
-          </button>
-          <button class="gameBtn comingSoon" bindtap="showDevTip" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/question_dice.jpg)">
-            <text>更多实验</text>
-            <view class="resultBadge">即将开放</view>
-          </button>
+            </button>
+         </view>
+         <view class="gameCardWrapper">
+            <button class="gameBtn" bindtap="handleOverconfidenceGame" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/overconfidence_assessment.png)">
+                <text>实验4</text>
+            </button>
+         </view>
+         <view class="gameCardWrapper">
+            <button class="gameBtn" bindtap="handleGameUnderAmbig" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/game_under_ambiguity.png)">
+                <text>实验5</text>
+            </button>
+         </view>
+         <view class="gameCardWrapper">
+            <button class="gameBtn" bindtap="handleMBTIElicit" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/mbti_game.png)">
+                <text>实验6</text>
+            </button>
+         </view>
+         <view class="gameCardWrapper">
+            <button class="gameBtn" bindtap="handleConfirmationBiasGame" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/confirmation_bias_game.png)">
+                <text>实验7</text>
+            </button>
+         </view>
+         <view class="gameCardWrapper">
+            <button class="gameBtn" bindtap="handleOUSSurvey" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/ous_survey.png)">
+                <text>实验8</text>
+            </button>
+         </view>
+         <view class="gameCardWrapper">
+            <button class="gameBtn" bindtap="handleMFQSurvey" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/mfq_survey.jpg)">
+                <text>实验9</text>
+            </button>
+         </view>
+         <view class="gameCardWrapper">
+            <button class="gameBtn" bindtap="handleSVOSurvey" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/svo_survey.jpg)">
+                <text>实验10</text>
+            </button>
+         </view>
+         <view class="gameCardWrapper">
+            <button class="gameBtn" bindtap="handlePVQSurvey" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/pvq_survey.png)">
+                <text>实验11</text>
+            </button>
+         </view>
+         <view class="gameCardWrapper">
+            <button class="gameBtn comingSoon" bindtap="showDevTip" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/question_dice.jpg)">
+                <text>更多实验</text>
+                <view class="resultBadge">即将开放</view>
+            </button>
+         </view>
         </scroll-view>
-        <button class="scrollButton right" bindtap="scrollGameRight">›</button>
-      </view>
     </view>
-
+    <!-- 指示器容器 -->
+    <view class="indicator-container">
+    <view 
+        wx:for="{{gameIndicators}}" 
+        wx:key="index"
+        class="indicator-dot {{currentIndex === index ? 'active' : ''}}"
+    ></view>
+    </view>
     <!-- 统计结果区域 -->
     <view class="resultSectionTitle">
       <text class="title">统计结果</text>

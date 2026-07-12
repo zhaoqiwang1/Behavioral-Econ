@@ -3,7 +3,11 @@ Page({
   data: {
     isLoading: false,
     gameScrollLeft: 0,
-    resultScrollLeft: 0
+    resultScrollLeft: 0,
+    itemWidth: 510, 
+    totalItem: 16,
+    currentIndex: 0,
+    gameIndicators: [0,1,2,3]
   },
 
   onLoad() {
@@ -50,6 +54,7 @@ Page({
   },
 
   // ========== 横向滚动逻辑 ==========
+  
   scrollGameLeft() {
     this.setData({ gameScrollLeft: this.data.gameScrollLeft - 300 })
   },
@@ -62,6 +67,21 @@ Page({
   scrollResultRight() {
     this.setData({ resultScrollLeft: this.data.resultScrollLeft + 300 })
   },
+
+    // ========== 新增滚动监听 ==========
+    onGameScroll(e) {
+        const scrollLeft = e.detail.scrollLeft
+        const itemWidth = 510  // 480(按钮宽) + 30(间距)
+        // 计算当前滚动到哪个按钮
+        const index = Math.round(scrollLeft / itemWidth)
+        // 限制范围
+        const maxIndex = this.data.gameIndicators.length - 1
+        const newIndex = Math.min(Math.max(index, 0), maxIndex)
+        // 更新高亮索引（只有变化时才 setData，提高性能）
+        if (newIndex !== this.data.currentIndex) {
+          this.setData({ currentIndex: newIndex })
+        }
+      },
 
   // ========== 各实验密码弹窗跳转 ==========
   // 公共物品游戏
@@ -246,3 +266,4 @@ Page({
     this.checkLogin('/gameresults/show-risk-attitudes', '你需要先登录哦')
   }
 })
+

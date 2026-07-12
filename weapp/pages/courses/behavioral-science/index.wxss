@@ -6,6 +6,7 @@
   }
   .homepageContent {
     flex: 1;
+    margin-top: 60rpx;
     width: 100%;
   }
   
@@ -105,8 +106,8 @@
   max-width: 200rpx;
   left: 4%;
   bottom: 50rpx;
-  padding: 10rpx 16rpx;
-  font-size: 20rpx;
+  padding: 14rpx 16rpx;
+  font-size: 25rpx;
   background: #fff;
   color: #111;
   border: 1rpx solid #ddd;
@@ -120,6 +121,7 @@
     margin: 0 auto 32rpx;
     padding: 0 20rpx;
   }
+
   .gameSectionTitle .title, .resultSectionTitle .title {
     display: block;
     font-size: 40rpx;
@@ -132,22 +134,30 @@
   }
   
   /* 横向滚动容器 */
-  .gameSection {
-    width: 90%;
-    margin: 0 auto 80rpx;
-    padding: 40rpx;
+  /* .gameSection {
+    width: 100%;
+    margin: 0 auto 10rpx;
+    padding: 10rpx;
     background: #fff;
-    border-radius: 32rpx;
-  }
+    border-radius: 0rpx;
+  } */
+
   .gameGridContainer {
     position: relative;
     width: 100%;
   }
   .gameGrid {
     display: flex;
+    flex-wrap: nowrap;
+    padding: 32rpx;
+    box-sizing: border-box;
+    width: 100%;
     overflow-x: auto;
-    gap: 32rpx;
-    padding: 32rpx 0;
+    -webkit-overflow-scrolling: touch;
+  }
+  .gameCardWrapper {
+    flex-shrink: 0;        /* 防止卡片被压缩 */
+    margin-right: 15rpx;   /* 在这里控制卡片之间的完美间隙 */
   }
   /* 隐藏滚动条 */
   .gameGrid::-webkit-scrollbar {
@@ -157,51 +167,36 @@
     flex-shrink: 0;
   }
   
-  /* 左右滚动箭头按钮 */
-  .scrollButton {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(200, 199, 199, 0.9);
-    color: #333;
-    border: none;
-    width: 100rpx;
-    height: 100rpx;
-    border-radius: 50%;
-    z-index: 10;
-    font-size: 40rpx;
-    font-weight: bold;
-    opacity: 0.8;
-  }
-  .scrollButton.left {
-    left: -130rpx;
-  }
-  .scrollButton.right {
-    right: -130rpx;
-  }
-  
   /* 实验卡片按钮 */
   .gameBtn {
-    width: 860rpx;
-    height: 800rpx;
+    flex-shrink: 0; 
+    margin-right: 30rpx;
+    width: 480rpx;
+    height: 380rpx;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border: none;
-    border-radius: 8rpx;
+    border-radius: 15rpx;
     position: relative;
     overflow: hidden;
     box-shadow: 0 12rpx 40rpx rgba(0,0,0,0.15);
   }
   .gameBtn text {
     position: absolute;
-    bottom: 32rpx;
+    bottom: 40rpx;
     left: 32rpx;
     color: #fff;
     font-size: 28rpx;
     font-weight: 600;
     text-shadow: 4rpx 4rpx 16rpx rgba(0,0,0,0.5);
   }
+
+  .gameBtn:last-child {
+    margin-right: 0;
+  }
+
+
   .resultBadge {
     position: absolute;
     top: 32rpx;
@@ -224,6 +219,24 @@
     background: linear-gradient(135deg, rgba(120,127,128,0.8) 0%, rgba(189,195,199,0.3) 100%);
   }
   
+  .indicator-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20rpx 0;
+    gap: 16rpx;
+  }
+  .indicator-dot {
+    width: 40rpx;
+    height: 6rpx;
+    border-radius: 6rpx;
+    background: #ddd;           /* 灰色 */
+    transition: all 0.3s;
+  }
+  .indicator-dot.active {
+    background: #333;           /* 黑色 */
+    width: 60rpx;               /* 可稍宽一点 */
+  }
   /* 统计结果项 */
   .resultsItem {
     width: 460rpx;
