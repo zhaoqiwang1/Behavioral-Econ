@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",       
+    "pages/courses/behavioral-science/index",
     "pages/course/course",     
     "pages/mine/mine",         
     "pages/login/login"       

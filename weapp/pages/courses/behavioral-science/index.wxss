@@ -1,0 +1,315 @@
+/* 全局容器 */
+.homepageContainer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .homepageContent {
+    flex: 1;
+    width: 100%;
+  }
+  
+  /* 顶部欢迎横幅 */
+  .welcomeContainer {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  /* 背景图：铺满、无空白 */
+  .welcomeBg {
+    width: 100%;
+    height: 45vh;  /* vh = 屏幕高度百分比，所有手机自动适配 */
+    min-height: 320rpx;
+    max-height: 500rpx;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    padding: 0; 
+    border-radius: 0 !important;
+  }
+  
+  /* 文字层 */
+  .welcomeContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: center;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+  }
+  
+  .welcomeMessageTitle {
+    font-size: 44rpx;
+    color: #f5f5f5;
+    font-weight: 500;
+  }
+  
+  .welcomeMessageDescription {
+    font-size: 28rpx;
+    color: #81da76;
+    line-height: 1.6;
+  }
+  
+  .welcomeMessageHightlight {
+    color: #dbfbe0;
+  }
+
+  .welcomeMessage {
+    background-image: url('https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/hangzhou1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0,0,0,0.1);
+    background-blend-mode: overlay;
+    margin-bottom: 200rpx;
+    text-align: center;
+    position: relative;
+    min-height: 1840rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32rpx;
+    color: #fff;
+    padding: 0 40rpx;
+  }
+  .welcomeMessageTitle {
+    font-weight: 500;
+    font-size: 44rpx;
+    color: #ffffff;
+  }
+  .welcomeMessageDescription {
+    font-weight: 500;
+    font-size: 24rpx;
+    color: #25ff08;
+    line-height: 1.8;
+  }
+  .welcomeMessageHightlight {
+    color: #fafafa;
+  }
+
+
+ .syllabusBtn {
+  position: absolute;
+  max-width: 200rpx;
+  left: 4%;
+  bottom: 50rpx;
+  padding: 10rpx 16rpx;
+  font-size: 20rpx;
+  background: #fff;
+  color: #111;
+  border: 1rpx solid #ddd;
+  border-radius: 30rpx;
+  font-weight: 500;
+}
+  
+  /* 分区标题 */
+  .gameSectionTitle, .resultSectionTitle {
+    width: 90%;
+    margin: 0 auto 32rpx;
+    padding: 0 20rpx;
+  }
+  .gameSectionTitle .title, .resultSectionTitle .title {
+    display: block;
+    font-size: 40rpx;
+    font-weight: bold;
+    margin-bottom: 16rpx;
+  }
+  .gameSectionTitle .desc, .resultSectionTitle .desc {
+    font-size: 26rpx;
+    color: #666;
+  }
+  
+  /* 横向滚动容器 */
+  .gameSection {
+    width: 90%;
+    margin: 0 auto 80rpx;
+    padding: 40rpx;
+    background: #fff;
+    border-radius: 32rpx;
+  }
+  .gameGridContainer {
+    position: relative;
+    width: 100%;
+  }
+  .gameGrid {
+    display: flex;
+    overflow-x: auto;
+    gap: 32rpx;
+    padding: 32rpx 0;
+  }
+  /* 隐藏滚动条 */
+  .gameGrid::-webkit-scrollbar {
+    display: none;
+  }
+  .gameGrid > button, .gameGrid > view {
+    flex-shrink: 0;
+  }
+  
+  /* 左右滚动箭头按钮 */
+  .scrollButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(200, 199, 199, 0.9);
+    color: #333;
+    border: none;
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    z-index: 10;
+    font-size: 40rpx;
+    font-weight: bold;
+    opacity: 0.8;
+  }
+  .scrollButton.left {
+    left: -130rpx;
+  }
+  .scrollButton.right {
+    right: -130rpx;
+  }
+  
+  /* 实验卡片按钮 */
+  .gameBtn {
+    width: 860rpx;
+    height: 800rpx;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 8rpx;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12rpx 40rpx rgba(0,0,0,0.15);
+  }
+  .gameBtn text {
+    position: absolute;
+    bottom: 32rpx;
+    left: 32rpx;
+    color: #fff;
+    font-size: 28rpx;
+    font-weight: 600;
+    text-shadow: 4rpx 4rpx 16rpx rgba(0,0,0,0.5);
+  }
+  .resultBadge {
+    position: absolute;
+    top: 32rpx;
+    right: 32rpx;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10rpx);
+    padding: 16rpx 32rpx;
+    border-radius: 40rpx;
+    color: #fff;
+    font-size: 18rpx;
+    border: 1rpx solid rgba(255,255,255,0.3);
+  }
+  .comingSoon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(120,127,128,0.8) 0%, rgba(189,195,199,0.3) 100%);
+  }
+  
+  /* 统计结果项 */
+  .resultsItem {
+    width: 460rpx;
+    height: 800rpx;
+    border-radius: 8rpx;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12rpx 40rpx rgba(0,0,0,0.15);
+  }
+  .resultsItem image {
+    width: 100%;
+    height: 100%;
+  }
+  .resultButton {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30rpx 40rpx;
+    background: #fff;
+    border: none;
+    border-radius: 100rpx;
+    font-size: 24rpx;
+  }
+  
+  /* 作业区域 */
+  .homeworkSection {
+    margin-top: 80rpx;
+  }
+  .welcomeHW {
+    background-image: url('https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/hwWelcome2.png');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0,0,0,0.1);
+    background-blend-mode: overlay;
+    margin: 200rpx auto 20rpx;
+    min-height: 1840rpx;
+  }
+  .homeworkCardsWrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48rpx;
+    width: 90%;
+    margin: 0 auto;
+    padding: 160rpx 200rpx;
+  }
+  .homeworkCard {
+    width: calc((100% - 144rpx) / 4);
+    background: #fff;
+    border-radius: 20rpx;
+    padding: 32rpx;
+    box-shadow: 0 4rpx 24rpx rgba(0,0,0,0.2);
+  }
+  .HwCardImgBox {
+    width: 100%;
+    height: 440rpx;
+    margin-bottom: 28rpx;
+  }
+  .HwCardImgBox image {
+    width: 100%;
+    height: 100%;
+    border-radius: 60rpx;
+  }
+  .HwCardText {
+    display: flex;
+    flex-direction: column;
+    gap: 16rpx;
+  }
+  .HwCardText text {
+    font-size: 30rpx;
+    font-weight: 500;
+  }
+  
+  /* 移动端适配 */
+  @media screen and (max-width:750rpx) {
+    .homeworkCardsWrap {
+      padding: 40rpx;
+    }
+    .homeworkCard {
+      width: calc((100% - 48rpx) / 2);
+    }
+    .gameBtn {
+      width: 400rpx;
+      height: 320rpx;
+    }
+    .scrollButton.left { left: -40rpx; }
+    .scrollButton.right { right: -40rpx; }
+  }
+  
