@@ -129,57 +129,57 @@
             bindscroll="onResultScroll"
             >
           <view class="resultCardWrapper">
-            <button class="resultBtn" bindtap="handlePublicGoodsGame" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/public_goods_game.png)">
+            <button class="resultBtn" bindtap="showDevTip" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/public_goods_game.png)">
             <text>实验1</text>
             </button>
           </view>
           <view class="resultCardWrapper">
-            <button class="resultBtn" bindtap="handleRiskAttiGame" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/risk_assessment.jpg)">
+            <button class="resultBtn" bindtap="showDevTip" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/risk_assessment.jpg)">
                 <text>实验2</text>
             </button>
          </view>
          <view class="resultCardWrapper">
-            <button class="resultBtn" bindtap="handleAmbiguityAttiGame" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/ambiguity_assessment.png)">
+            <button class="resultBtn" bindtap="showDevTip" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/ambiguity_assessment.png)">
             <text>实验3</text>
             </button>
          </view>
          <view class="resultCardWrapper">
-            <button class="resultBtn" bindtap="handleOverconfidenceGame" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/overconfidence_assessment.png)">
+            <button class="resultBtn" bindtap="showDevTip" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/overconfidence_assessment.png)">
                 <text>实验4</text>
             </button>
          </view>
          <view class="resultCardWrapper">
-            <button class="resultBtn" bindtap="handleGameUnderAmbig" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/game_under_ambiguity.png)">
+            <button class="resultBtn" bindtap="showDevTip" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/game_under_ambiguity.png)">
                 <text>实验5</text>
             </button>
          </view>
          <view class="resultCardWrapper">
-            <button class="resultBtn" bindtap="handleMBTIElicit" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/mbti_game.png)">
+            <button class="resultBtn" bindtap="showDevTip" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/mbti_game.png)">
                 <text>实验6</text>
             </button>
          </view>
          <view class="resultCardWrapper">
-            <button class="resultBtn" bindtap="handleConfirmationBiasGame" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/confirmation_bias_game.png)">
+            <button class="resultBtn" bindtap="showDevTip" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/confirmation_bias_game.png)">
                 <text>实验7</text>
             </button>
          </view>
          <view class="resultCardWrapper">
-            <button class="resultBtn" bindtap="handleOUSSurvey" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/ous_survey.png)">
+            <button class="resultBtn" bindtap="showDevTip" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/ous_survey.png)">
                 <text>实验8</text>
             </button>
          </view>
          <view class="resultCardWrapper">
-            <button class="resultBtn" bindtap="handleMFQSurvey" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/mfq_survey.jpg)">
+            <button class="resultBtn" bindtap="showDevTip" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/mfq_survey.jpg)">
                 <text>实验9</text>
             </button>
          </view>
          <view class="resultCardWrapper">
-            <button class="resultBtn" bindtap="handleSVOSurvey" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/svo_survey.jpg)">
+            <button class="resultBtn" bindtap="showDevTip" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/svo_survey.jpg)">
                 <text>实验10</text>
             </button>
          </view>
          <view class="resultCardWrapper">
-            <button class="resultBtn" bindtap="handlePVQSurvey" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/pvq_survey.png)">
+            <button class="resultBtn" bindtap="showDevTip" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/pvq_survey.png)">
                 <text>实验11</text>
             </button>
          </view>
@@ -209,45 +209,43 @@
         ></image>
     </view>
     <!-- 作业区域 -->
-    <view class="homeworkSection">
-      <view class="homeworkCardsWrap">
-        <view class="homeworkCard" bindtap="showDevTip">
-          <view class="HwCardImgBox">
-            <image src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/hwCard.png" mode="contain"></image>
-          </view>
-          <view class="HwCardText">
+    <view class="hwSection">
+        <scroll-view 
+            class="hwGrid" 
+            scroll-x 
+            enable-flex
+            scroll-left="{{hwScrollLeft}}"
+            bindscroll="onHwScroll"
+            >
+            <view class="hwCardWrapper">
+            <button class="hwBtn" bindtap="showDevTip" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/hwCard.png)">
             <text>作业 1</text>
-            <text>Homework 1</text>
-          </view>
-        </view>
-        <view class="homeworkCard" bindtap="showDevTip">
-          <view class="HwCardImgBox">
-            <image src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/hwCard.png" mode="contain"></image>
-          </view>
-          <view class="HwCardText">
+            </button>
+            </view>
+            <view class="hwCardWrapper">
+            <button class="hwBtn" bindtap="showDevTip" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/hwCard.png)">
             <text>作业 2</text>
-            <text>Homework 2</text>
-          </view>
-        </view>
-        <view class="homeworkCard" bindtap="showDevTip">
-          <view class="HwCardImgBox">
-            <image src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/hwCard.png" mode="contain"></image>
-          </view>
-          <view class="HwCardText">
+            </button>
+            </view>
+            <view class="hwCardWrapper">
+            <button class="hwBtn" bindtap="showDevTip" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/hwCard.png)">
             <text>作业 3</text>
-            <text>Homework 3</text>
-          </view>
-        </view>
-        <view class="homeworkCard" bindtap="showDevTip">
-          <view class="HwCardImgBox">
-            <image src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/hwCard.png" mode="contain"></image>
-          </view>
-          <view class="HwCardText">
+            </button>
+            </view>
+            <view class="hwCardWrapper">
+            <button class="hwBtn" bindtap="showDevTip" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/hwCard.png)">
             <text>作业 4</text>
-            <text>Homework 4</text>
-          </view>
-        </view>
-      </view>
+            </button>
+            </view>
+        </scroll-view>
+    </view>
+        <!-- 指示器容器 -->
+    <view class="hw-indicator-container">
+    <view 
+        wx:for="{{hwIndicators}}" 
+        wx:key="index"
+        class="hw-indicator-dot {{hwCurrentIndex === index ? 'active' : ''}}"
+    ></view>
     </view>
   </view>
 </view>

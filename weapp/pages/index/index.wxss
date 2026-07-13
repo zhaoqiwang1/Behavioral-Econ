@@ -169,7 +169,8 @@
   /* 按钮 */
   .behavSciCourseBtnPosition {
     margin-top: 40rpx;
-    padding-left: 10%;
+    /* padding-left: 10%; */
+    justify-content: center;
   }
   
   .BtnBehavSci {

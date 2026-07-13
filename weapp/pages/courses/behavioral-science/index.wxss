@@ -307,46 +307,102 @@ width: 60rpx;               /* 可稍宽一点 */
 /* #endregion */
 
 
-  /* #region 作业区域 */
-  .homeworkSection {
-    margin-top: 80rpx;
+/* #region 作业区域 */
+.hwSectionTitle {
+    width: 90%;
+    margin: 40rpx auto 32rpx;
+    padding: 10rpx 20rpx;
+    margin-top: 100rpx;
   }
 
-  .homeworkCardsWrap {
+.hwSectionTitle .title {
+display: block;
+font-size: 40rpx;
+font-weight: bold;
+margin-bottom: 16rpx;
+}
+.hwSectionTitle .desc {
+font-size: 26rpx;
+color: #666;
+}
+
+
+.hwGridContainer {
+    position: relative;
+    width: 100%;
+}
+.hwGrid {
     display: flex;
-    flex-wrap: wrap;
-    gap: 48rpx;
-    width: 90%;
-    margin: 0 auto;
-    padding: 160rpx 200rpx;
-  }
-  .homeworkCard {
-    width: calc((100% - 144rpx) / 4);
-    background: #fff;
-    border-radius: 20rpx;
+    flex-wrap: nowrap;
     padding: 32rpx;
-    box-shadow: 0 4rpx 24rpx rgba(0,0,0,0.2);
-  }
-  .HwCardImgBox {
+    box-sizing: border-box;
     width: 100%;
-    height: 440rpx;
-    margin-bottom: 28rpx;
-  }
-  .HwCardImgBox image {
-    width: 100%;
-    height: 100%;
-    border-radius: 60rpx;
-  }
-  .HwCardText {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.hwGrid::-webkit-scrollbar {
+    display: none;
+}
+.hwGrid > button, .hwGrid > view {
+    flex-shrink: 0;
+}
+
+.hwCardWrapper {
+    flex-shrink: 0;        /* 防止卡片被压缩 */
+    margin-right: 15rpx;   /* 在这里控制卡片之间的完美间隙 */
+}
+
+.hwBtn {
+    flex-shrink: 0; 
+    margin-right: 30rpx;
+    width: 480rpx;
+    height: 380rpx;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 15rpx;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12rpx 40rpx rgba(0,0,0,0.15);
+}
+.hwBtn text {
+    position: absolute;
+    bottom: 40rpx;
+    left: 32rpx;
+    color: #ffffff;
+    font-size: 40rpx;
+    font-weight: 600;
+    text-shadow: 4rpx 4rpx 16rpx rgba(0,0,0,0.5);
+}
+
+.hwBtn:last-child {
+    margin-right: 0;
+}
+
+
+.hw-indicator-container {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20rpx 0;
     gap: 16rpx;
-  }
-  .HwCardText text {
-    font-size: 30rpx;
-    font-weight: 500;
-  }
-    /* #endregion */
+}
+.hw-indicator-dot {
+    width: 40rpx;
+    height: 6rpx;
+    border-radius: 6rpx;
+    background: #ddd;           /* 灰色 */
+    transition: all 0.3s;
+    margin-bottom: 50rpx;
+}
+.hw-indicator-dot.active {
+    background: #333;           /* 黑色 */
+    width: 60rpx;               /* 可稍宽一点 */
+}
+
+/* #endregion */
 
   /* #region 其他 */
 .resultBadge {
