@@ -19,10 +19,12 @@ const request = (url, method = 'GET', data = {}) => {
         'Authorization': wx.getStorageSync('token') ? `Bearer ${wx.getStorageSync('token')}` : '' 
       },
       success: (res) => {
-        if (res.statusCode === 200) {
-          resolve(res.data);
-        } 
-
+        // if (res.statusCode === 200) {
+        //   resolve(res.data);
+        // } 
+        if (res.statusCode >= 200 && res.statusCode < 300) {
+            resolve(res.data);
+          } 
         // 401 未登录 → 自动跳登录页
         else if (res.statusCode === 401) {
           wx.removeStorageSync('token');

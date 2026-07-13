@@ -4,7 +4,8 @@
     "pages/courses/behavioral-science/index",
     "pages/course/course",     
     "pages/mine/mine",         
-    "pages/login/login"       
+    "pages/login/login",
+    "pages/register/register"       
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,0 +1,82 @@
+<view class="container">
+  <view class="form-container">
+    <!-- 用户名 -->
+    <input 
+      class="input-field" 
+      placeholder="请输入用户名（至少3个字符）" 
+      value="{{ formData.username }}"
+      bindinput="onUsernameInput"
+    />
+    <!-- 邮箱 -->
+    <input 
+      class="input-field" 
+      type="text"
+      placeholder="请输入邮箱地址" 
+      value="{{ formData.email }}"
+      bindinput="onEmailInput"
+    />
+    <!-- 密码 -->
+    <input 
+      class="input-field" 
+      type="password"
+      placeholder="请输入密码（至少6个字符）" 
+      value="{{ formData.password }}"
+      bindinput="onPasswordInput"
+    />
+    <!-- 确认密码 -->
+    <input 
+      class="input-field" 
+      type="password"
+      placeholder="请再次输入密码" 
+      value="{{ formData.confirmPassword }}"
+      bindinput="onConfirmPasswordInput"
+    />
+
+    <!-- ====== 个人信息（Demographic） ====== -->
+    <view class="section-title">个人信息</view>
+
+    <!-- 学号 -->
+    <input 
+      class="input-field" 
+      type="number"
+      placeholder="请输入学号（纯数字）" 
+      value="{{ formData.studentid }}"
+      bindinput="onStudentidInput"
+    />
+    <!-- 年龄 -->
+    <input 
+      class="input-field" 
+      type="number"
+      placeholder="请输入年龄（15-100）" 
+      value="{{ formData.age }}"
+      bindinput="onAgeInput"
+    />
+    <!-- 性别（picker） -->
+    <picker 
+      mode="selector" 
+      range="{{ genderOptions }}" 
+      value="{{ genderIndex }}"
+      bindchange="onGenderChange"
+    >
+      <view class="picker-display">
+        {{ formData.gender || '请选择性别' }}
+      </view>
+    </picker>
+    <!-- 学历（picker） -->
+    <picker 
+      mode="selector" 
+      range="{{ educationOptions }}" 
+      value="{{ educationIndex }}"
+      bindchange="onEducationChange"
+    >
+      <view class="picker-display">
+        {{ formData.education || '请选择学历' }}
+      </view>
+    </picker>
+
+    <!-- 注册按钮 -->
+    <button class="register-btn" bindtap="handleRegister">注册</button>
+    <!-- 返回登录链接 -->
+    <view class="login-link" bindtap="goToLogin">已有账号？去登录</view>
+  </view>
+</view>

@@ -14,5 +14,7 @@
       bindinput="onPasswordInput"
     />
     <button class="login-btn" bindtap="handleLogin">登录</button>
+    <!-- 新增注册入口 -->
+    <view class="register-link" bindtap="goToRegister">没有账号？立即注册</view>
   </view>
 </view>

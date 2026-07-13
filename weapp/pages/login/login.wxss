@@ -28,3 +28,11 @@
     font-size: 32rpx;
     line-height: 80rpx;
   }
+
+  .register-link {
+    margin-top: 20rpx;
+    color: #007aff;
+    text-align: center;
+    font-size: 28rpx;
+    text-decoration: underline;
+  }

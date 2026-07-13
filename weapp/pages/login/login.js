@@ -84,5 +84,12 @@ Page({
         icon: 'none'
       });
     }
-  }
+  },
+
+  // 跳转到注册页
+    goToRegister() {
+        wx.navigateTo({
+        url: '/pages/register/register'
+        });
+    }
 })
