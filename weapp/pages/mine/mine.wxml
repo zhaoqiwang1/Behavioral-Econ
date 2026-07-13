@@ -8,5 +8,6 @@
   <view wx:else class="welcome-section">
     <text class="welcome-text">欢迎你，{{ userInfo.username }}</text>
     <button class="logout-btn" bindtap="handleLogout">退出登录</button>
+    <button class="settings-btn" bindtap="goToSettings">更改用户信息</button>
   </view>
 </view>

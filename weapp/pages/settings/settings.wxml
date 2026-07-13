@@ -1,0 +1,84 @@
+<view class="container">
+  <view class="settings-card">
+    <!-- 标题 -->
+    <view class="header">
+      <text class="title">账户信息</text>
+    </view>
+
+    <!-- 查看模式 -->
+    <view wx:if="{{ !isEditing }}" class="view-mode">
+      <view class="info-group">
+        <view class="info-row">
+          <text class="label">用户名：</text>
+          <text class="value">{{ displayUser.username || '未设置' }}</text>
+        </view>
+        <view class="info-row">
+          <text class="label">邮箱：</text>
+          <text class="value">{{ displayUser.email || '未设置' }}</text>
+        </view>
+      </view>
+      <view class="info-group">
+        <view class="info-row">
+          <text class="label">学号：</text>
+          <text class="value">{{ displayUser.studentid || '未设置' }}</text>
+        </view>
+        <view class="info-row">
+          <text class="label">年龄：</text>
+          <text class="value">{{ displayUser.age ? displayUser.age + '岁' : '未设置' }}</text>
+        </view>
+        <view class="info-row">
+          <text class="label">性别：</text>
+          <text class="value">{{ displayUser.gender || '未设置' }}</text>
+        </view>
+        <view class="info-row">
+          <text class="label">学历：</text>
+          <text class="value">{{ displayUser.education || '未设置' }}</text>
+        </view>
+      </view>
+      <view class="button-group">
+        <button class="btn btn-back" bindtap="goBack">返回</button>
+        <button class="btn btn-edit" bindtap="startEdit">开始编辑</button>
+      </view>
+    </view>
+
+    <!-- 编辑模式 -->
+    <view wx:else class="edit-mode">
+      <view class="edit-group">
+        <view class="edit-row">
+          <text class="edit-label">用户名：</text>
+          <input class="edit-input" value="{{ formData.username }}" bindinput="onInputChange" data-field="username" placeholder="请输入用户名" />
+        </view>
+        <view class="edit-row">
+          <text class="edit-label">邮箱：</text>
+          <input class="edit-input" value="{{ formData.email }}" bindinput="onInputChange" data-field="email" placeholder="请输入邮箱" />
+        </view>
+      </view>
+      <view class="edit-group">
+        <view class="edit-row">
+          <text class="edit-label">学号：</text>
+          <input class="edit-input" type="number" value="{{ formData.studentid }}" bindinput="onInputChange" data-field="studentid" placeholder="请输入学号" />
+        </view>
+        <view class="edit-row">
+          <text class="edit-label">年龄：</text>
+          <input class="edit-input" type="number" value="{{ formData.age }}" bindinput="onInputChange" data-field="age" placeholder="请输入年龄" />
+        </view>
+        <view class="edit-row">
+          <text class="edit-label">性别：</text>
+          <picker mode="selector" range="{{ genderOptions }}" value="{{ genderIndex }}" bindchange="onGenderChange">
+            <view class="picker-display">{{ formData.gender || '请选择性别' }}</view>
+          </picker>
+        </view>
+        <view class="edit-row">
+          <text class="edit-label">学历：</text>
+          <picker mode="selector" range="{{ educationOptions }}" value="{{ educationIndex }}" bindchange="onEducationChange">
+            <view class="picker-display">{{ formData.education || '请选择学历' }}</view>
+          </picker>
+        </view>
+      </view>
+      <view class="button-group">
+        <button class="btn btn-cancel" bindtap="cancelEdit">取消编辑</button>
+        <button class="btn btn-submit" bindtap="saveChanges" disabled="{{ loading }}">{{ loading ? '保存中...' : '保存更改' }}</button>
+      </view>
+    </view>
+  </view>
+</view>

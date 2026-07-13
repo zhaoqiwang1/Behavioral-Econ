@@ -57,6 +57,13 @@ Page({
       url: '../login/login'
     });
   },
+  
+  // 跳转到更新用户信息页面
+  goToSettings() {
+    wx.navigateTo({
+      url: '/pages/settings/settings'
+    });
+  },
 
   // 退出登录
   handleLogout: function() {

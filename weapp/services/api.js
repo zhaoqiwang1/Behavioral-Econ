@@ -16,7 +16,40 @@ const request = (url, method = 'GET', data = {}) => {
       data,
       header: {
         'Content-Type': 'application/json',
-        'Authorization': wx.getStorageSync('token') ? `Bearer ${wx.getStorageSync('token')}` : '' 
+        'Authorization': (() => {
+          let token = wx.getStorageSync('token');
+          console.log('🔑 原始 token:', token);
+      
+          // 如果 token 包含非 ASCII 字符，尝试从 user 修复
+          if (typeof token === 'string' && /[^\x00-\x7F]/.test(token)) {
+            console.warn('⚠️ token 包含非 ASCII 字符，尝试自动修复');
+            try {
+              const userStr = wx.getStorageSync('user');
+              if (userStr) {
+                const user = JSON.parse(userStr);
+                if (user && user._id) {
+                  const newToken = `token-${user._id}`;
+                  wx.setStorageSync('token', newToken);
+                  token = newToken;
+                  console.log('✅ token 已自动修复为:', token);
+                }
+              }
+            } catch (e) {
+              console.error('自动修复 token 失败:', e);
+            }
+          }
+      
+          // 清理空格并最终检查
+          if (token && typeof token === 'string') {
+            const cleanToken = token.trim();
+            if (/[^\x00-\x7F]/.test(cleanToken)) {
+              console.warn('⚠️ token 仍含非 ASCII，请重新登录');
+              return '';
+            }
+            return `Bearer ${cleanToken}`;
+          }
+          return '';
+        })()
       },
       success: (res) => {
         // if (res.statusCode === 200) {
@@ -52,12 +85,15 @@ const request = (url, method = 'GET', data = {}) => {
           reject(res.data);
         }
       },
-      fail: () => {
+      fail: (err) => {
+        console.error('❌ 请求失败详情:', err);
+        console.error('err.errMsg:', err.errMsg);
+        console.error('err.errno:', err.errno);
         wx.showToast({
           title: '网络异常，请稍后重试',
           icon: 'none'
         });
-        reject('网络异常');
+        reject('网络异常: ' + err.errMsg);
       },
       complete: () => {
         wx.hideNavigationBarLoading();

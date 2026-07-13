@@ -60,6 +60,7 @@ Page({
       const res = await userAPI.login({ username, password });
       console.log('2. 请求返回，res =', res);
       if (res.token && res.user) {
+        // const cleanToken = `token-${res.user._id}`;
         wx.setStorageSync('token', res.token);
         wx.setStorageSync('user', JSON.stringify(res.user));
 
