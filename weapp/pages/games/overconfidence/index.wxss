@@ -1,0 +1,119 @@
+.container {
+    padding: 20rpx;
+    background: #f5f7fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 20rpx;
+    width: 100%;
+  }
+  .title {
+    font-size: 44rpx;
+    font-weight: bold;
+    display: block;
+    color: #333;
+  }
+  .desc {
+    font-size: 28rpx;
+    color: #666;
+    margin-top: 10rpx;
+  }
+  
+  .instructions {
+    background: #fff8e1;
+    padding: 20rpx;
+    border-radius: 16rpx;
+    margin-bottom: 20rpx;
+    width: 100%;
+    font-size: 26rpx;
+    color: #555;
+    line-height: 1.8;
+  }
+  .instructions text {
+    display: block;
+  }
+  
+  .form-scroll {
+    width: 100%;
+    max-height: 1100rpx;
+    margin-bottom: 20rpx;
+  }
+  
+  .question-card {
+    background: #fff;
+    border-radius: 16rpx;
+    padding: 24rpx;
+    margin-bottom: 20rpx;
+    border: 1rpx solid #eee;
+  }
+  .question-header {
+    margin-bottom: 16rpx;
+  }
+  .q-number {
+    font-weight: bold;
+    color: #165DFF;
+    font-size: 28rpx;
+    display: inline-block;
+    margin-right: 12rpx;
+  }
+  .q-text {
+    font-size: 30rpx;
+    color: #333;
+    display: inline;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .input-field {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+  }
+  .label {
+    font-size: 26rpx;
+    color: #666;
+    margin-bottom: 6rpx;
+  }
+  .input-field input {
+    border: 1rpx solid #ddd;
+    border-radius: 8rpx;
+    padding: 12rpx 16rpx;
+    font-size: 30rpx;
+    background: #fafafa;
+  }
+  .input-field input:disabled {
+    background: #f0f0f0;
+  }
+  
+  .submit-btn {
+    width: 80%;
+    height: 80rpx;
+    line-height: 80rpx;
+    background: #165DFF;
+    color: #fff;
+    border-radius: 40rpx;
+    font-size: 32rpx;
+    margin: 10rpx 0 30rpx;
+  }
+  .submit-btn[disabled] {
+    background: #ccc;
+  }
+  
+  .completed {
+    margin-top: 40rpx;
+    padding: 30rpx;
+    background: #e8f5e9;
+    border-radius: 20rpx;
+    font-size: 36rpx;
+    color: #2e7d32;
+    text-align: center;
+    width: 80%;
+  }

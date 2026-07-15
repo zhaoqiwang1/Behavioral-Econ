@@ -1,0 +1,67 @@
+<view class="container">
+  <!-- 头部说明 -->
+  <view class="header">
+    <text class="title">🧠 过度自信测试</text>
+    <text class="desc">请为每个问题提供您认为的合理范围（最低值和最高值）</text>
+  </view>
+
+  <!-- 游戏说明 -->
+  <view class="instructions">
+    <text>📌 说明：</text>
+    <text>• 请给出高、低估计值，确保正确值有90%的机会落在范围内。</text>
+    <text>• 例如：上证指数上涨幅度，若您有90%信心认为在3%~10%，则下限填3，上限填10。</text>
+    <text>• 范围太宽则正确值落在其内的可能性超过90%，太窄则小于90%。</text>
+    <text>• 请根据真实认知作答，对错不重要，无需搜索。</text>
+    <text>• ⚠️ 只填数字（整数或小数），不要带单位（如%、个、年等）。</text>
+    <text>• 💡 百分比题可精确到小数点后两位，如 75.43。</text>
+  </view>
+
+  <!-- 表单 -->
+  <scroll-view class="form-scroll" scroll-y wx:if="{{!hasSubmitted}}">
+    <view wx:for="{{questions}}" wx:key="index" class="question-card">
+      <view class="question-header">
+        <text class="q-number">第 {{index + 1}} 题</text>
+        <text class="q-text">{{item}}</text>
+      </view>
+      <view class="input-group">
+        <view class="input-field">
+          <text class="label">最低值：</text>
+          <input 
+            type="text"
+            value="{{answers[index].lowerBound}}"
+            bindinput="onLowerInput"
+            data-index="{{index}}"
+            placeholder="输入最低值"
+            disabled="{{isSubmitting}}"
+          />
+        </view>
+        <view class="input-field">
+          <text class="label">最高值：</text>
+          <input 
+            type="text"
+            value="{{answers[index].upperBound}}"
+            bindinput="onUpperInput"
+            data-index="{{index}}"
+            placeholder="输入最高值"
+            disabled="{{isSubmitting}}"
+          />
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 提交按钮 -->
+  <button 
+    class="submit-btn" 
+    bindtap="onSubmit" 
+    disabled="{{isSubmitting || hasSubmitted}}"
+    wx:if="{{!hasSubmitted}}"
+  >
+    {{isSubmitting ? '提交中...' : '提交'}}
+  </button>
+
+  <!-- 已完成 -->
+  <view wx:if="{{hasSubmitted}}" class="completed">
+    <text>✅ 已完成评估，感谢参与！</text>
+  </view>
+</view>
