@@ -1,4 +1,5 @@
 import { userAPI } from '../../services/api.js';
+const auth = require('../../utils/auth.js');
 
 Page({
   data: {
@@ -25,6 +26,10 @@ Page({
     genderIndex: 0,
     educationIndex: 0,
     userId: null
+  },
+
+  onShow() {
+    auth.updateLastActivity(); 
   },
 
   onLoad() {

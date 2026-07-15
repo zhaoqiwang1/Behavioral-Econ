@@ -1,4 +1,5 @@
 const request = require('../../../utils/request.js');
+const auth = require('../../../utils/auth.js');
 
 Page({
   data: {
@@ -8,6 +9,10 @@ Page({
     loading: false,
     hasSubmitted: false,
     userId: ''
+  },
+
+  onShow() {
+    auth.updateLastActivity(); 
   },
 
   onLoad() {

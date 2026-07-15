@@ -7,7 +7,9 @@
 function checkLogin() {
     return new Promise((resolve) => {
       const token = wx.getStorageSync('token');
-      if (token) {
+      const userInfo = wx.getStorageSync('userInfo');
+      // 同时验证 token 和 userInfo._id
+      if (token && userInfo && userInfo._id) {
         resolve(true);
         return;
       }

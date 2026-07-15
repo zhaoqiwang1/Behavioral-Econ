@@ -1,6 +1,7 @@
 const { navigateToGame } = require('../../../utils/gameHelper');
+const auth = require('../../../utils/auth.js');
+const app = getApp();
 
-const app = getApp()
 Page({
   data: {
     isLoading: false,
@@ -19,6 +20,10 @@ Page({
   onLoad() {
     // 页面加载自动置顶
     wx.pageScrollTo({ scrollTop: 0, duration: 0 })
+  },
+
+  onShow() {
+    auth.updateLastActivity(); 
   },
 
   // 统一登录校验（复用首页逻辑）
@@ -127,8 +132,8 @@ Page({
   // 公共物品游戏
   handlePublicGoodsGame() {
     navigateToGame({
-        gameName: '公共物品',
-        password: 'PublicGoodsGame',   // 写死密码
+        gameName: 'PGG',
+        password: 'PGG',   // 写死密码
         url: '/pages/games/publicGoods/index'
       });
   },

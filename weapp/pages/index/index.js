@@ -1,8 +1,14 @@
+const auth = require('../../utils/auth.js');
+
 Page({
     // data: {
     //   isLoading: false // 新增：防重复点击锁
     // },
-  
+    onShow() {
+        auth.updateLastActivity(); // 👈 添加这一行
+        // ... 原有的 onShow 逻辑
+      },
+      
     // 去行为经济学
     goToBehavioralScience() {
     //   this.checkLogin('/pages/courses/behavioral-science/index')
