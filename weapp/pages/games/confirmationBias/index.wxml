@@ -1,0 +1,187 @@
+<view class="container">
+  <form bindsubmit="onSubmit">
+    
+    <!-- ============ 第一部分：立场选择 ============ -->
+    <view class="section phase1">
+      <view class="section-header">
+        <text class="phase-title">📌 第一部分</text>
+        <text class="phase-desc">请依次阅读下面两个话题，并表明你的观点立场。</text>
+      </view>
+
+      <!-- 话题1 -->
+      <view class="topic-card">
+        <text class="topic-label">话题一</text>
+        <view class="topic-content">
+          <text>{{textContent.techTopicContent}}</text>
+        </view>
+        <view class="question-row">
+          <text class="question-text">请问，你是否支持将基因编辑技术应用于人类生殖细胞？</text>
+          <radio-group bindchange="onStanceTechChange">
+            <label class="radio-label">
+              <radio value="support" checked="{{answers.stanceTech === 'support'}}" disabled="{{showSecondSection}}" />
+              支持
+            </label>
+            <label class="radio-label">
+              <radio value="oppose" checked="{{answers.stanceTech === 'oppose'}}" disabled="{{showSecondSection}}" />
+              反对
+            </label>
+          </radio-group>
+        </view>
+      </view>
+
+      <!-- 话题2 -->
+      <view class="topic-card">
+        <text class="topic-label">话题二</text>
+        <view class="topic-content">
+          <text>{{textContent.econTopicContent}}</text>
+        </view>
+        <view class="question-row">
+          <text class="question-text">请问，你是否支持有政府干预的市场？</text>
+          <radio-group bindchange="onStanceEconChange">
+            <label class="radio-label">
+              <radio value="support" checked="{{answers.stanceEcon === 'support'}}" disabled="{{showSecondSection}}" />
+              支持
+            </label>
+            <label class="radio-label">
+              <radio value="oppose" checked="{{answers.stanceEcon === 'oppose'}}" disabled="{{showSecondSection}}" />
+              反对
+            </label>
+          </radio-group>
+        </view>
+      </view>
+
+      <view class="tips-text">
+        <text>请认真对待，并如实回答每一个问题。</text>
+      </view>
+
+      <button 
+        class="confirm-btn" 
+        type="button" 
+        bindtap="goToPhase2" 
+        disabled="{{!firstSectionComplete}}"
+      >
+        确认并继续
+      </button>
+    </view>
+
+    <!-- ============ 第二部分 ============ -->
+    <view wx:if="{{showSecondSection}}" class="section phase2">
+      <view class="section-header">
+        <text class="phase-title">📌 第二部分</text>
+        <view class="phase2-desc">
+          <text>• 第二部分的阅读材料内容和第一部分一样。</text>
+          <text>• 对于每一个话题，我们向你提供了两个观点。请仔细阅读这两个观点，并回答后面的问题。</text>
+          <text>• 第一个问题要求你从以上两个观点中选择一个继续阅读。</text>
+          <text>• 第二个问题要求你对每个观点的内容质量进行评分，范围1星（非常差）到5星（非常好）。</text>
+        </view>
+      </view>
+
+      <!-- 话题1 -->
+      <view class="topic-card">
+        <text class="topic-label">话题一：基因编辑</text>
+        <view class="topic-content">
+          <text>{{textContent.techTopicContent}}</text>
+        </view>
+        <view class="divider"></view>
+        <text class="sub-label">请阅读下面两个观点，并回答后面的问题。</text>
+        <view class="opinion-box">
+          <text class="opinion-label">观点1：</text>
+          <text>{{textContent.techTopicSupportOpinion}}</text>
+        </view>
+        <view class="opinion-box">
+          <text class="opinion-label">观点2：</text>
+          <text>{{textContent.techTopicOpposeOpinion}}</text>
+        </view>
+
+        <!-- 选择观点 -->
+        <view class="question-row">
+          <text class="question-text">请选择一个观点继续阅读：</text>
+          <radio-group bindchange="onConfirmBiasTechChange">
+            <label class="radio-label">
+              <radio value="support" checked="{{answers.confirmBiasTech === 'support'}}" />
+              观点1
+            </label>
+            <label class="radio-label">
+              <radio value="oppose" checked="{{answers.confirmBiasTech === 'oppose'}}" />
+              观点2
+            </label>
+          </radio-group>
+        </view>
+
+        <!-- 打分 -->
+        <view class="rating-row">
+          <text>请给<text class="bold">观点1</text>打分：</text>
+          <picker mode="selector" range="{{ratingOptions}}" bindchange="onEvalTechSupportChange">
+            <view class="picker-display">{{answers.evalBiasTechSupport || '请选择'}}</view>
+          </picker>
+        </view>
+        <view class="rating-row">
+          <text>请给<text class="bold">观点2</text>打分：</text>
+          <picker mode="selector" range="{{ratingOptions}}" bindchange="onEvalTechOpposeChange">
+            <view class="picker-display">{{answers.evalBiasTechOppose || '请选择'}}</view>
+          </picker>
+        </view>
+      </view>
+
+      <!-- 话题2 -->
+      <view class="topic-card">
+        <text class="topic-label">话题二：自由市场</text>
+        <view class="topic-content">
+          <text>{{textContent.econTopicContent}}</text>
+        </view>
+        <view class="divider"></view>
+        <text class="sub-label">请阅读下面两个观点，并回答后面的问题。</text>
+        <view class="opinion-box">
+          <text class="opinion-label">观点1：</text>
+          <text>{{textContent.econTopicSupportOpinion}}</text>
+        </view>
+        <view class="opinion-box">
+          <text class="opinion-label">观点2：</text>
+          <text>{{textContent.econTopicOpposeOpinion}}</text>
+        </view>
+
+        <!-- 选择观点 -->
+        <view class="question-row">
+          <text class="question-text">请选择一个观点继续阅读：</text>
+          <radio-group bindchange="onConfirmBiasEconChange">
+            <label class="radio-label">
+              <radio value="support" checked="{{answers.confirmBiasEcon === 'support'}}" />
+              观点1
+            </label>
+            <label class="radio-label">
+              <radio value="oppose" checked="{{answers.confirmBiasEcon === 'oppose'}}" />
+              观点2
+            </label>
+          </radio-group>
+        </view>
+
+        <!-- 打分 -->
+        <view class="rating-row">
+          <text>请给<text class="bold">观点1</text>打分：</text>
+          <picker mode="selector" range="{{ratingOptions}}" bindchange="onEvalEconSupportChange">
+            <view class="picker-display">{{answers.evalBiasEconSupport || '请选择'}}</view>
+          </picker>
+        </view>
+        <view class="rating-row">
+          <text>请给<text class="bold">观点2</text>打分：</text>
+          <picker mode="selector" range="{{ratingOptions}}" bindchange="onEvalEconOpposeChange">
+            <view class="picker-display">{{answers.evalBiasEconOppose || '请选择'}}</view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="tips-text">
+        <text>请认真对待，并如实回答每一个问题。</text>
+      </view>
+
+      <button class="submit-btn" formType="submit" disabled="{{loading || hasSubmitted || !allAnswered}}">
+        {{loading ? '提交中...' : '提交'}}
+      </button>
+    </view>
+
+    <!-- 已完成 -->
+    <view wx:if="{{hasSubmitted}}" class="completed">
+      <text>✅ 已提交游戏答案，感谢参与！</text>
+    </view>
+  </form>
+</view>

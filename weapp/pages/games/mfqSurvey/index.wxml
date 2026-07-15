@@ -1,0 +1,64 @@
+<view class="container">
+  <view wx:if="{{loadingQuestions}}" class="loading">
+    <text>加载问卷中...</text>
+  </view>
+
+  <view wx:else>
+    <form bindsubmit="onSubmit">
+      <!-- 第一部分说明 -->
+      <view class="section-title">
+        <text class="title">第一部分</text>
+        <text>当你判断某件事是对是错时，以下各项考量对你的思考影响程度如何？</text>
+        <text>请使用以下量表评分：</text>
+        <text class="label">0-完全不相关  1-不太相关  2-略微相关  3-一定程度相关  4-非常相关  5-极度相关</text>
+      </view>
+
+      <!-- 第一部分问题 (1-16) -->
+      <view wx:for="{{questions}}" wx:key="questionNumber" wx:if="{{qIndex < 16}}" wx:for-item="qItem" wx:for-index="qIndex">
+        <view class="question">
+            <text>{{qItem.questionNumber}}. {{qItem.questionText}}</text>
+            <view class="radio-group">
+                <label wx:for="{{[0,1,2,3,4,5]}}" wx:key="*this" wx:for-item="opt"
+                    class="radio-label {{answers[qIndex] === opt ? 'active' : ''}}"
+                    bindtap="onOptionTap" data-q-index="{{qIndex}}" data-value="{{opt}}">
+                <radio value="{{opt}}" checked="{{answers[qIndex] === opt}}" />
+                <text>{{part1Labels[opt]}}</text>
+                </label>
+                            </view>
+        </view>
+        </view>
+
+      <!-- 第二部分说明 -->
+      <view class="section-title">
+        <text class="title">第二部分</text>
+        <text>请阅读以下内容，并表明你的同意或不同意程度。</text>
+        <text class="label">0-强烈不同意  1-中度不同意  2-轻微不同意  3-轻微同意  4-中度同意  5-强烈同意</text>
+      </view>
+
+      <!-- 第二部分问题 (17-32) -->
+      <view wx:for="{{questions}}" wx:key="questionNumber" wx:if="{{qIndex >= 16}}" wx:for-item="qItem" wx:for-index="qIndex">
+        <view class="question">
+            <text>{{qItem.questionNumber}}. {{qItem.questionText}}</text>
+            <view class="radio-group">
+                <label wx:for="{{[0,1,2,3,4,5]}}" wx:key="*this" wx:for-item="opt"
+                    class="radio-label {{answers[qIndex] === opt ? 'active' : ''}}"
+                    bindtap="onOptionTap" data-q-index="{{qIndex}}" data-value="{{opt}}">
+                <radio value="{{opt}}" checked="{{answers[qIndex] === opt}}" />
+                <text>{{part2Labels[opt]}}</text>
+                </label>
+            </view>
+        </view>
+        </view>
+
+      <!-- 提交按钮 -->
+      <button class="submit-btn" formType="submit" disabled="{{loading || hasSubmitted || !allAnswered}}">
+        {{loading ? '提交中...' : '提交'}}
+      </button>
+
+      <!-- 已完成 -->
+      <view wx:if="{{hasSubmitted}}" class="completed">
+        <text>✅ 已提交，感谢参与！</text>
+      </view>
+    </form>
+  </view>
+</view>

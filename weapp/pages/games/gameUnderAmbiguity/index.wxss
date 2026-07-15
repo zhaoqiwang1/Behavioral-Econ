@@ -1,0 +1,171 @@
+.container {
+    padding: 20rpx;
+    background: #f5f7fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .instructions {
+    background: #fff3cd;
+    padding: 20rpx;
+    border-radius: 16rpx;
+    margin-bottom: 20rpx;
+    width: 100%;
+    font-size: 26rpx;
+    color: #856404;
+    line-height: 1.8;
+  }
+  .instructions text {
+    display: block;
+  }
+  
+  .rounds-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20rpx;
+    width: 100%;
+  }
+  .nav-item {
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+    background: #e0e0e0;
+    margin: 8rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28rpx;
+    color: #333;
+    position: relative;
+  }
+  .nav-item.active {
+    background: #165DFF;
+    color: #fff;
+  }
+  .nav-item.done {
+    background: #4CAF50;
+    color: #fff;
+  }
+  .nav-item .check {
+    position: absolute;
+    top: -8rpx;
+    right: -8rpx;
+    font-size: 20rpx;
+    background: #fff;
+    color: #4CAF50;
+    border-radius: 50%;
+    width: 28rpx;
+    height: 28rpx;
+    text-align: center;
+    line-height: 28rpx;
+  }
+  
+  .round-card {
+    background: #fff;
+    border-radius: 16rpx;
+    padding: 30rpx;
+    width: 100%;
+    margin-bottom: 20rpx;
+    box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.1);
+  }
+  .round-title {
+    font-size: 34rpx;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    margin-bottom: 20rpx;
+  }
+  
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 20rpx;
+  }
+  .option {
+    border: 2rpx solid #ddd;
+    border-radius: 12rpx;
+    padding: 20rpx;
+    background: #fafafa;
+    transition: all 0.2s;
+  }
+  .option .label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10rpx;
+  }
+  .option.selected-temp {
+    border-color: #165DFF;
+    background: #e3f2fd;
+  }
+  .option.selected-confirmed {
+    border-color: #4CAF50;
+    background: #e8f5e9;
+  }
+  .option text {
+    font-size: 28rpx;
+    line-height: 1.6;
+  }
+  
+  .choice-status {
+    text-align: center;
+    margin: 20rpx 0;
+    font-size: 30rpx;
+  }
+  
+  .confirm-btn {
+    width: 100%;
+    background: #165DFF;
+    color: #fff;
+    border-radius: 40rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 32rpx;
+  }
+  .confirm-btn[disabled] {
+    background: #ccc;
+  }
+  
+  .progress {
+    width: 100%;
+    margin: 20rpx 0;
+    text-align: center;
+  }
+  .progress-bar {
+    height: 20rpx;
+    background: #4CAF50;
+    border-radius: 10rpx;
+    transition: width 0.3s;
+    margin-bottom: 10rpx;
+  }
+  .progress text {
+    font-size: 28rpx;
+    color: #666;
+  }
+  
+  .submit-btn {
+    width: 80%;
+    height: 80rpx;
+    line-height: 80rpx;
+    background: #165DFF;
+    color: #fff;
+    border-radius: 40rpx;
+    font-size: 32rpx;
+    margin: 20rpx 0;
+  }
+  .submit-btn[disabled] {
+    background: #ccc;
+  }
+  
+  .completed {
+    margin-top: 40rpx;
+    padding: 30rpx;
+    background: #e8f5e9;
+    border-radius: 20rpx;
+    font-size: 36rpx;
+    color: #2e7d32;
+    text-align: center;
+    width: 80%;
+  }

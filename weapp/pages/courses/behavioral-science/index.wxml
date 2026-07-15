@@ -71,7 +71,7 @@
             </button>
          </view>
          <view class="gameCardWrapper">
-            <button class="gameBtn" bindtap="handleOUSSurvey" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/ous_survey.png)">
+            <button class="gameBtn" bindtap="showDevTip" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/ous_survey.png)">
                 <text>实验8</text>
             </button>
          </view>
@@ -81,12 +81,12 @@
             </button>
          </view>
          <view class="gameCardWrapper">
-            <button class="gameBtn" bindtap="handleSVOSurvey" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/svo_survey.jpg)">
+            <button class="gameBtn" bindtap="showDevTip" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/svo_survey.jpg)">
                 <text>实验10</text>
             </button>
          </view>
          <view class="gameCardWrapper">
-            <button class="gameBtn" bindtap="handlePVQSurvey" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/pvq_survey.png)">
+            <button class="gameBtn" bindtap="showDevTip" style="background-image:url(https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/pvq_survey.png)">
                 <text>实验11</text>
             </button>
          </view>

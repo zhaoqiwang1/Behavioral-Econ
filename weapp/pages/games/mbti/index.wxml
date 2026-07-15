@@ -1,0 +1,29 @@
+<view class="container">
+  <view class="header">
+    <text class="title">🧠 MBTI 人格测试</text>
+    <text class="desc">请输入你的 MBTI 类型（如 INTJ、ENFP 等）</text>
+  </view>
+
+  <view class="input-area">
+    <input 
+      type="text"
+      value="{{mbtiResult}}"
+      bindinput="onInput"
+      placeholder="请输入大写英文，例如：INTJ、ENFP"
+      maxlength="4"
+      disabled="{{loading || hasSubmitted}}"
+    />
+  </view>
+
+  <button 
+    class="submit-btn" 
+    bindtap="onSubmit" 
+    disabled="{{loading || hasSubmitted || mbtiResult.length < 4}}"
+  >
+    {{loading ? '提交中...' : '提交'}}
+  </button>
+
+  <view wx:if="{{hasSubmitted}}" class="completed">
+    <text>✅ 已提交，感谢参与！</text>
+  </view>
+</view>

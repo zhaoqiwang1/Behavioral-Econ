@@ -12,7 +12,11 @@
     "pages/games/publicGoods/index",
     "pages/games/riskAtti/index",
     "pages/games/ambiguityAtti/index",
-    "pages/games/overconfidence/index"
+    "pages/games/overconfidence/index",
+    "pages/games/gameUnderAmbiguity/index",
+    "pages/games/mbti/index",
+    "pages/games/confirmationBias/index",
+    "pages/games/mfqSurvey/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

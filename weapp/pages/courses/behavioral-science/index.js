@@ -163,51 +163,27 @@ Page({
   },
   // 模糊环境博弈
   handleGameUnderAmbig() {
-    wx.showModal({
-      title: '输入密码',
-      editable: true,
-      placeholderText: '请输入实验密码',
-      success: res => {
-        if (!res.content) return
-        if (res.content === 'GameUnderAmbig') {
-          this.checkLogin('/games/game-under-ambiguity', '你需要先登录哦')
-        } else {
-          wx.showToast({ title: '密码错误', icon: 'error' })
-        }
-      }
-    })
+    navigateToGame({
+        gameName: '模糊环境博弈',
+        password: 'GameUnderAmbig',
+        url: '/pages/games/gameUnderAmbiguity/index'
+      });
   },
   // MBTI
   handleMBTIElicit() {
-    wx.showModal({
-      title: '输入密码',
-      editable: true,
-      placeholderText: '请输入实验密码',
-      success: res => {
-        if (!res.content) return
-        if (res.content === 'MBTIElicit') {
-          this.checkLogin('/games/mbti-elicit-game', '你需要先登录哦')
-        } else {
-          wx.showToast({ title: '密码错误', icon: 'error' })
-        }
-      }
-    })
+    navigateToGame({
+        gameName: 'MBTI',
+        password: 'MBTIElicit',
+        url: '/pages/games/mbti/index'
+      });
   },
   // 证实偏差
   handleConfirmationBiasGame() {
-    wx.showModal({
-      title: '输入密码',
-      editable: true,
-      placeholderText: '请输入实验密码',
-      success: res => {
-        if (!res.content) return
-        if (res.content === 'ConfirmationBiasGame') {
-          this.checkLogin('/games/confirmation-bias-game', '你需要先登录哦')
-        } else {
-          wx.showToast({ title: '密码错误', icon: 'error' })
-        }
-      }
-    })
+    navigateToGame({
+        gameName: '确认偏差',
+        password: 'ConfirmationBiasGame',
+        url: '/pages/games/confirmationBias/index'
+      });
   },
   // OUS问卷
   handleOUSSurvey() {
@@ -227,19 +203,11 @@ Page({
   },
   // MFQ问卷
   handleMFQSurvey() {
-    wx.showModal({
-      title: '输入密码',
-      editable: true,
-      placeholderText: '请输入实验密码',
-      success: res => {
-        if (!res.content) return
-        if (res.content === 'MFQSurvey') {
-          this.checkLogin('/games/mfq-survey', '你需要先登录哦')
-        } else {
-          wx.showToast({ title: '密码错误', icon: 'error' })
-        }
-      }
-    })
+    navigateToGame({
+        gameName: 'MFQ问卷',
+        password: 'MFQSurvey',
+        url: '/pages/games/mfqSurvey/index'
+      });
   },
   // SVO问卷
   handleSVOSurvey() {

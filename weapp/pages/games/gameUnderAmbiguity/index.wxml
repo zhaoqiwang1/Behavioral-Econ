@@ -1,0 +1,62 @@
+<view class="container">
+  <!-- 游戏说明 -->
+  <view class="instructions">
+    <text>📌 每回合从A/B中选择决策，完成后自动进入下一回合。</text>
+    <text>选项B中的概率可能是“50%”或“未知”，注意区分。</text>
+  </view>
+
+  <!-- 回合导航 -->
+  <view class="rounds-nav">
+    <view wx:for="{{rounds}}" wx:key="index" 
+      class="nav-item {{index === currentRound ? 'active' : ''}} {{answers[index] ? 'done' : ''}}"
+      bindtap="goToRound" data-index="{{index}}">
+      <text>{{index + 1}}</text>
+      <text wx:if="{{answers[index]}}" class="check">✓</text>
+    </view>
+  </view>
+
+  <!-- 当前回合卡片 -->
+  <view class="round-card" wx:if="{{currentRound < totalRounds}}">
+    <text class="round-title">第 {{currentRound + 1}} 回合</text>
+    <view class="options">
+      <view class="option {{tempChoice === 'A' ? 'selected-temp' : ''}} {{answers[currentRound] === 'A' ? 'selected-confirmed' : ''}}" 
+        bindtap="selectOption" data-choice="A">
+        <text class="label">选项 A</text>
+        <text>你得 {{rounds[currentRound].optionA.self}} 分；</text>
+        <text>另一位同学得 {{rounds[currentRound].optionA.other}} 分</text>
+      </view>
+      <view class="option {{tempChoice === 'B' ? 'selected-temp' : ''}} {{answers[currentRound] === 'B' ? 'selected-confirmed' : ''}}" 
+        bindtap="selectOption" data-choice="B">
+        <text class="label">选项 B</text>
+        <text>你得 {{rounds[currentRound].optionB.self}} 分；</text>
+        <text>另一位同学有 {{rounds[currentRound].optionB.probability}} 得 {{rounds[currentRound].optionB.other}} 分</text>
+      </view>
+    </view>
+
+    <view class="choice-status">
+      <text wx:if="{{answers[currentRound]}}">已确认：选项 {{answers[currentRound]}}</text>
+      <text wx:elif="{{tempChoice}}">临时选择：选项 {{tempChoice}}</text>
+      <text wx:else>请选择一个选项</text>
+    </view>
+
+    <button class="confirm-btn" bindtap="confirmChoice" disabled="{{!tempChoice || answers[currentRound]}}">
+      确认选择
+    </button>
+  </view>
+
+  <!-- 进度条 -->
+  <view class="progress">
+    <view class="progress-bar" style="width: {{ (doneCount / totalRounds * 100) + '%' }}"></view>
+    <text>已完成 {{doneCount}} / {{totalRounds}} 回合</text>
+  </view>
+
+  <!-- 提交按钮 -->
+  <button class="submit-btn" bindtap="submitAll" disabled="{{doneCount < totalRounds || submitting || hasSubmitted}}">
+    {{submitting ? '提交中...' : '提交全部答案'}}
+  </button>
+
+  <!-- 已完成 -->
+  <view wx:if="{{hasSubmitted}}" class="completed">
+    <text>✅ 已提交，感谢参与！</text>
+  </view>
+</view>
