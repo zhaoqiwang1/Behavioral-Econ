@@ -1,3 +1,5 @@
+const { navigateToGame } = require('../../../utils/gameHelper');
+
 const app = getApp()
 Page({
   data: {
@@ -124,19 +126,11 @@ Page({
   // ========== 各实验密码弹窗跳转 ==========
   // 公共物品游戏
   handlePublicGoodsGame() {
-    wx.showModal({
-      title: '输入密码',
-      editable: true,
-      placeholderText: '请输入实验密码',
-      success: res => {
-        if (!res.content) return
-        if (res.content === 'PublicGoodsGame') {
-          this.checkLogin('/games/public-goods', '你需要先登录哦')
-        } else {
-          wx.showToast({ title: '密码错误', icon: 'error' })
-        }
-      }
-    })
+    navigateToGame({
+        gameName: '公共物品',
+        password: 'PublicGoodsGame',   // 写死密码
+        url: '/pages/games/publicGoods/index'
+      });
   },
   // 风险评估
   handleRiskAttiGame() {

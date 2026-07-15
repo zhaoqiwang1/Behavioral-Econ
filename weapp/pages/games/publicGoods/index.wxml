@@ -1,0 +1,34 @@
+<view class="container">
+  <view class="header">
+    <text class="round">第 {{currentRound}} / {{totalRounds}} 回合</text>
+    <text class="progress" wx:if="{{!hasSubmitted}}">请投入分数 (0-20)</text>
+  </view>
+
+  <view class="input-area" wx:if="{{!hasSubmitted}}">
+    <input 
+      type="number" 
+      value="{{contribution}}"
+      bindinput="onInput"
+      placeholder="输入0-20"
+      maxlength="2"
+    />
+  </view>
+
+  <button 
+    class="submit-btn" 
+    bindtap="onSubmit" 
+    disabled="{{loading || hasSubmitted}}"
+    wx:if="{{!hasSubmitted}}"
+  >
+    {{loading ? '提交中...' : '提交'}}
+  </button>
+
+  <view wx:if="{{hasSubmitted}}" class="completed">
+    <text>✅ 已完成所有 {{totalRounds}} 个回合！感谢参与！</text>
+  </view>
+
+  <!-- 可选：显示当前总得分或提示 -->
+  <view class="tips">
+    <text>报酬 = 20 - 投入 + 0.4 × 所有人投入之和</text>
+  </view>
+</view>

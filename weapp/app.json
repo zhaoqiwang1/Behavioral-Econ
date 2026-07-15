@@ -1,11 +1,15 @@
 {
   "pages": [
     "pages/index/index",       
-    "pages/courses/behavioral-science/index",  
+    
     "pages/mine/mine",         
     "pages/login/login",
     "pages/register/register",
-    "pages/settings/settings"       
+    "pages/settings/settings",
+    
+    "pages/courses/behavioral-science/index",
+
+    "pages/games/publicGoods/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

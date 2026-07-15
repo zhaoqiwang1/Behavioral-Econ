@@ -60,9 +60,13 @@ Page({
       const res = await userAPI.login({ username, password });
       console.log('2. 请求返回，res =', res);
       if (res.token && res.user) {
+        console.log('登录返回的 user 对象:', res.user);
+        console.log('登录返回 token:', res.token);
         // const cleanToken = `token-${res.user._id}`;
-        wx.setStorageSync('token', res.token);
-        wx.setStorageSync('user', JSON.stringify(res.user));
+        // wx.setStorageSync('token', res.token);
+        const tokenToStore = res.user.token || `user-token-${res.user._id}`;
+        wx.setStorageSync('token', tokenToStore);
+        wx.setStorageSync('userInfo', res.user);
 
         wx.showToast({ title: '登录成功', icon: 'success' });
         console.log('准备跳转...');

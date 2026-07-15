@@ -34,66 +34,44 @@ Page({
   async fetchUserData() {
     const token = wx.getStorageSync('token');
     if (!token || typeof token !== 'string' || token.trim() === '') {
-        wx.showToast({ title: '请重新登录', icon: 'none' });
-        setTimeout(() => {
+      wx.showToast({ title: '请重新登录', icon: 'none' });
+      setTimeout(() => {
         wx.navigateTo({ url: '/pages/login/login' });
-        }, 1500);
-        return;
+      }, 1500);
+      return;
     }
-
-    // 1. 从本地缓存获取用户信息（包含 _id）
-    const userStr = wx.getStorageSync('user');
-    console.log('📦 本地 user 数据:', userStr);
-
-    if (!userStr) {
+  
+    // 1. 从本地缓存获取用户信息（直接存储的是对象，不是字符串）
+    const userInfo = wx.getStorageSync('userInfo');
+    console.log('📦 本地 userInfo 数据:', userInfo);
+  
+    if (!userInfo || !userInfo._id) {
       wx.showToast({ title: '请先登录', icon: 'none' });
       setTimeout(() => {
         wx.navigateTo({ url: '/pages/login/login' });
       }, 1500);
       return;
     }
-
-    let user;
-    try {
-      user = JSON.parse(userStr);
-    } catch (e) {
-      console.error('解析 user 失败:', e);
-      wx.showToast({ title: '用户数据异常，请重新登录', icon: 'none' });
-      return;
-    }
-
-    const userId = user._id;
+  
+    const userId = userInfo._id;
     console.log('🆔 当前用户 ID:', userId);
-
-    if (!userId) {
-      wx.showToast({ title: '用户 ID 缺失，请重新登录', icon: 'none' });
-      wx.removeStorageSync('user');
-      wx.removeStorageSync('token');
-      setTimeout(() => {
-        wx.navigateTo({ url: '/pages/login/login' });
-      }, 1500);
-      return;
-    }
-
+  
     this.setData({ userId });
-
+  
     wx.showLoading({ title: '加载中...' });
-
+  
     try {
       // 2. 调用后端接口获取最新用户信息
       const res = await userAPI.getUserProfile(userId);
       console.log('✅ 接口返回完整数据:', res);
-
-      // 3. 提取 user 对象（后端返回结构：{ message, user }）
+  
       const userData = res.user;
       if (!userData) {
         throw new Error('返回数据中没有 user 字段');
       }
-
-      // 4. 安全获取 demographic
+  
       const demo = userData.demographic || {};
-
-      // 5. 组装显示数据
+  
       const display = {
         username: userData.username || '',
         email: userData.email || '',
@@ -102,23 +80,21 @@ Page({
         gender: demo.gender || '',
         education: demo.education || ''
       };
-
+  
       console.log('📋 解析后的显示数据:', display);
-
-      // 6. 更新页面数据
+  
       this.setData({
         displayUser: display,
-        formData: { ...display } // 编辑模式初始值
+        formData: { ...display }
       });
-
-      // 7. 设置 picker 默认选中索引（用于显示当前值）
+  
       const genderIdx = this.data.genderOptions.indexOf(display.gender);
       const eduIdx = this.data.educationOptions.indexOf(display.education);
       this.setData({
         genderIndex: genderIdx >= 0 ? genderIdx : 0,
         educationIndex: eduIdx >= 0 ? eduIdx : 0
       });
-
+  
     } catch (error) {
       console.error('❌ 获取用户信息失败:', error);
       wx.showToast({
@@ -223,10 +199,9 @@ Page({
       }
 
       // 更新本地缓存
-      const oldUserStr = wx.getStorageSync('user');
-      const oldUser = oldUserStr ? JSON.parse(oldUserStr) : {};
-      const newUser = { ...oldUser, ...updatedUser };
-      wx.setStorageSync('user', JSON.stringify(newUser));
+      const oldUserInfo = wx.getStorageSync('userInfo') || {};
+      const newUserInfo = { ...oldUserInfo, ...updatedUser };
+      wx.setStorageSync('userInfo', newUserInfo);
 
       // 更新页面显示
       const demo = updatedUser.demographic || {};

@@ -24,7 +24,7 @@ const request = (url, method = 'GET', data = {}) => {
           if (typeof token === 'string' && /[^\x00-\x7F]/.test(token)) {
             console.warn('⚠️ token 包含非 ASCII 字符，尝试自动修复');
             try {
-              const userStr = wx.getStorageSync('user');
+              const userStr = wx.getStorageSync('userInfo');
               if (userStr) {
                 const user = JSON.parse(userStr);
                 if (user && user._id) {
