@@ -1,0 +1,118 @@
+.container {
+    padding: 20rpx;
+    background: #f5f7fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 20rpx;
+    width: 100%;
+  }
+  .title {
+    font-size: 44rpx;
+    font-weight: bold;
+    display: block;
+    color: #333;
+  }
+  .desc {
+    font-size: 28rpx;
+    color: #666;
+    margin-top: 10rpx;
+  }
+  
+  .instructions {
+    background: #e3f2fd;
+    padding: 20rpx;
+    border-radius: 16rpx;
+    margin-bottom: 20rpx;
+    width: 100%;
+    font-size: 26rpx;
+    color: #333;
+    line-height: 1.8;
+  }
+  .instructions text {
+    display: block;
+  }
+  
+  .options-scroll {
+    width: 100%;
+    max-height: 800rpx;
+    margin-bottom: 20rpx;
+  }
+  
+  .option-item {
+    background: #fff;
+    border-radius: 16rpx;
+    padding: 24rpx;
+    margin-bottom: 16rpx;
+    border: 2rpx solid #eee;
+    transition: all 0.2s;
+  }
+  .option-item.selected {
+    border-color: #165DFF;
+    background: #f0f7ff;
+  }
+  
+  .option-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12rpx;
+  }
+  .option-row radio {
+    margin-right: 20rpx;
+    transform: scale(0.8);
+  }
+  .order {
+    font-weight: bold;
+    font-size: 34rpx;
+    color: #333;
+  }
+  
+  .option-detail {
+    font-size: 28rpx;
+    color: #333;
+    margin-left: 40rpx;
+    margin-bottom: 8rpx;
+    line-height: 1.5;
+  }
+  .label {
+    font-weight: bold;
+    color: #165DFF;
+  }
+  
+  .selected-info {
+    text-align: center;
+    font-size: 30rpx;
+    margin: 16rpx 0;
+    color: #165DFF;
+    font-weight: bold;
+  }
+  
+  .submit-btn {
+    width: 80%;
+    height: 80rpx;
+    line-height: 80rpx;
+    background: #165DFF;
+    color: #fff;
+    border-radius: 40rpx;
+    font-size: 32rpx;
+    margin: 10rpx 0 30rpx;
+  }
+  .submit-btn[disabled] {
+    background: #ccc;
+  }
+  
+  .completed {
+    margin-top: 40rpx;
+    padding: 30rpx;
+    background: #e8f5e9;
+    border-radius: 20rpx;
+    font-size: 36rpx;
+    color: #2e7d32;
+    text-align: center;
+    width: 80%;
+  }

@@ -1,0 +1,61 @@
+<view class="container">
+  <!-- 头部 -->
+  <view class="header">
+    <text class="title">🎲 模糊偏好测试</text>
+    <text class="desc">请选择从哪个序号开始，盒子U比盒子K更有吸引力</text>
+  </view>
+
+  <!-- 游戏说明（可折叠，默认展开） -->
+  <view class="instructions">
+    <text>📌 说明：</text>
+    <text>• 两个盒子 K 和 U，各含100个黑/白球。</text>
+    <text>• 盒子K黑球数已知，盒子U黑球数未知。</text>
+    <text>• 随机从所选盒子抽一球，若为黑球得20元。</text>
+    <text>• 请选择从哪个序号开始，之后所有序号中盒子U都比盒子K更具吸引力。</text>
+  </view>
+
+  <!-- 选项列表 -->
+  <scroll-view class="options-scroll" scroll-y>
+    <view 
+      wx:for="{{options}}" 
+      wx:key="id"
+      class="option-item {{selectedIndex === index ? 'selected' : ''}}"
+      bindtap="selectOption"
+      data-index="{{index}}"
+    >
+      <view class="option-row">
+        <radio-group>
+          <radio value="{{index}}" checked="{{selectedIndex === index}}" />
+        </radio-group>
+        <text class="order">序号 {{item.id}}</text>
+      </view>
+      <view class="option-detail">
+        <text class="label">盒子K（黑球数）：</text>
+        <text>{{item.boxK}}</text>
+      </view>
+      <view class="option-detail">
+        <text class="label">盒子U（黑球数）：</text>
+        <text>{{item.boxU}}</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 当前选择 -->
+  <view class="selected-info" wx:if="{{selectedIndex !== null}}">
+    <text>你选择的序号：{{selectedIndex + 1}}（盒子K：{{options[selectedIndex].boxK}}个黑球，盒子U：未知）</text>
+  </view>
+
+  <!-- 提交按钮 -->
+  <button 
+    class="submit-btn" 
+    bindtap="onSubmit" 
+    disabled="{{loading || selectedIndex === null || hasSubmitted}}"
+  >
+    {{loading ? '提交中...' : '提交'}}
+  </button>
+
+  <!-- 已完成 -->
+  <view wx:if="{{hasSubmitted}}" class="completed">
+    <text>✅ 已提交评估，感谢参与！</text>
+  </view>
+</view>

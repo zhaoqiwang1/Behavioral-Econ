@@ -147,19 +147,11 @@ Page({
   },
   // 模糊偏好评估
   handleAmbiguityAttiGame() {
-    wx.showModal({
-      title: '输入密码',
-      editable: true,
-      placeholderText: '请输入实验密码',
-      success: res => {
-        if (!res.content) return
-        if (res.content === 'AmbiguityAttiGame') {
-          this.checkLogin('/games/ambiguity-attitude-elicit', '你需要先登录哦')
-        } else {
-          wx.showToast({ title: '密码错误', icon: 'error' })
-        }
-      }
-    })
+    navigateToGame({
+        gameName: '模糊偏好',
+        password: 'AmbiguityAttiGame',   // 与网页端密码一致
+        url: '/pages/games/ambiguityAtti/index'
+      });
   },
   // 过度自信
   handleOverconfidenceGame() {
