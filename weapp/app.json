@@ -9,7 +9,8 @@
     
     "pages/courses/behavioral-science/index",
 
-    "pages/games/publicGoods/index"
+    "pages/games/publicGoods/index",
+    "pages/games/riskAtti/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

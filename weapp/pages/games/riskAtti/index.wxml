@@ -1,0 +1,52 @@
+<view class="container">
+  <!-- 头部说明 -->
+  <view class="header">
+    <text class="title">🧠 风险评估</text>
+    <text class="desc">请选择从哪个序号开始，你会一直选择选项 B</text>
+  </view>
+
+  <!-- 选项列表（可滚动） -->
+  <scroll-view class="options-scroll" scroll-y>
+    <view 
+      wx:for="{{options}}" 
+      wx:key="index"
+      class="option-item {{selectedIndex === index ? 'selected' : ''}}"
+      bindtap="selectOption"
+      data-index="{{index}}"
+    >
+      <view class="option-row">
+        <radio-group>
+          <radio value="{{index}}" checked="{{selectedIndex === index}}" />
+        </radio-group>
+        <text class="order">序号 {{index + 1}}</text>
+      </view>
+      <view class="option-detail">
+        <text class="label">选项 A：</text>
+        <text>{{item.optionA}}</text>
+      </view>
+      <view class="option-detail">
+        <text class="label">选项 B：</text>
+        <text>{{item.optionB}}</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 当前选择 -->
+  <view class="selected-info" wx:if="{{selectedIndex !== null}}">
+    <text>你选择的序号：{{selectedIndex + 1}}</text>
+  </view>
+
+  <!-- 提交按钮 -->
+  <button 
+    class="submit-btn" 
+    bindtap="onSubmit" 
+    disabled="{{loading || selectedIndex === null || hasSubmitted}}"
+  >
+    {{loading ? '提交中...' : '提交'}}
+  </button>
+
+  <!-- 已完成 -->
+  <view wx:if="{{hasSubmitted}}" class="completed">
+    <text>✅ 已提交评估，感谢参与！</text>
+  </view>
+</view>

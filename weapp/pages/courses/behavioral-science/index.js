@@ -139,19 +139,11 @@ Page({
   },
   // 风险评估
   handleRiskAttiGame() {
-    wx.showModal({
-      title: '输入密码',
-      editable: true,
-      placeholderText: '请输入实验密码',
-      success: res => {
-        if (!res.content) return
-        if (res.content === 'RiskAttiGame') {
-          this.checkLogin('/games/risk-attitude-elicit', '你需要先登录哦')
-        } else {
-          wx.showToast({ title: '密码错误', icon: 'error' })
-        }
-      }
-    })
+    navigateToGame({
+        gameName: '风险评估',
+        password: 'RiskAttiGame',   // 与网页端密码一致
+        url: '/pages/games/riskAtti/index'
+      });
   },
   // 模糊偏好评估
   handleAmbiguityAttiGame() {
