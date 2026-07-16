@@ -56,7 +56,9 @@ Page({
 
   // 跳转课程大纲
   goToSyllabus() {
-    this.checkLogin('/pages/courses/behavioral-science/syllabus', '登录后查看课程大纲')
+    wx.navigateTo({
+        url: '/pages/courses/syllabus/behavioral-science/index'
+      });
   },
 
   // 功能开发中提示

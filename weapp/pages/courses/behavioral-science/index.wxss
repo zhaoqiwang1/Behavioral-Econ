@@ -164,8 +164,8 @@
   .gameBtn {
     flex-shrink: 0; 
     margin-right: 30rpx;
-    width: 480rpx;
-    height: 380rpx;
+    width: 450rpx !important;
+    height: 400rpx;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -180,7 +180,7 @@
     bottom: 40rpx;
     left: 32rpx;
     color: #fff;
-    font-size: 28rpx;
+    font-size: 40rpx;
     font-weight: 600;
     text-shadow: 4rpx 4rpx 16rpx rgba(0,0,0,0.5);
   }
@@ -259,8 +259,8 @@ overflow-x: auto;
 .resultBtn {
     flex-shrink: 0; 
     margin-right: 30rpx;
-    width: 480rpx;
-    height: 380rpx;
+    width: 450rpx !important;
+    height: 400rpx;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -275,7 +275,7 @@ overflow-x: auto;
     bottom: 40rpx;
     left: 32rpx;
     color: #fff;
-    font-size: 28rpx;
+    font-size: 40rpx;
     font-weight: 600;
     text-shadow: 4rpx 4rpx 16rpx rgba(0,0,0,0.5);
 }
@@ -356,8 +356,8 @@ color: #666;
 .hwBtn {
     flex-shrink: 0; 
     margin-right: 30rpx;
-    width: 480rpx;
-    height: 380rpx;
+    width: 450rpx !important;
+    height: 400rpx;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

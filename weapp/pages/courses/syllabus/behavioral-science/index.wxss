@@ -1,0 +1,251 @@
+/* pages/courses/syllabus/behavioral-science/index.wxss */
+
+.container {
+    --bg-color: #f6f8fa;
+    --card-bg: #ffffff;
+    --border-color: rgba(0, 0, 0, 0.06);
+    --text-main: #111111;
+    --text-muted: #62626a;
+    --accent-color: #0066cc;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 28rpx;    /* 相当于 14px 左右，移动端适中 */
+    min-height: 100vh;
+    padding: 40rpx 30rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* 头部 */
+  .header {
+    text-align: center;
+    max-width: 760px;
+    margin-bottom: 60rpx;
+    width: 100%;
+  }
+  
+  .headerBadge {
+    display: inline-block;
+    font-size: 24rpx;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    background: rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--border-color);
+    padding: 8rpx 28rpx;
+    border-radius: 100rpx;
+    color: var(--text-muted);
+    margin-bottom: 30rpx;
+  }
+  
+  .title {
+    display: block;
+    font-size: 70rpx;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    background: linear-gradient(180deg, #111111 20%, #b7b6b6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 0 20rpx 0;
+  }
+  
+  .teacher, .dept {
+    font-size: 30rpx;
+    margin: 6rpx 0;
+    display: block;
+    color: var(--text-main);
+  }
+  
+  .email {
+    font-family: monospace;
+    color: var(--text-muted);
+    font-size: 26rpx;
+    display: block;
+  }
+  
+  /* 主体内容 */
+  .content {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 40rpx;
+  }
+  
+  /* 卡片 */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 24rpx;
+    padding: 40rpx 36rpx;
+    transition: border-color 0.25s ease;
+    text-align: left;
+  }
+  
+  .cardTitle {
+    display: block;
+    font-size: 44rpx;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0 0 20rpx 0;
+    color: #1d1d1f;
+  }
+  
+  .desc {
+    display: block;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0 0 20rpx 0;
+  }
+  
+  .desc:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* 列表 */
+  .list {
+    padding-left: 20rpx;
+    margin: 0;
+  }
+  
+  .listItem {
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin-bottom: 12rpx;
+    font-size: 28rpx;
+  }
+  
+  .listItem:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* 有序列表（仅用于显示序号） */
+  .list.order .listItem {
+    list-style-type: decimal;
+    display: list-item;
+    margin-left: 30rpx;
+  }
+  
+  /* 强调说明 */
+  .note {
+    font-size: 26rpx;
+    border-left: 4rpx solid var(--accent-color);
+    padding-left: 16rpx;
+    color: var(--text-main) !important;
+    margin-top: 20rpx;
+    display: block;
+  }
+  
+  .bold {
+    font-weight: 700;
+    color: var(--text-main);
+  }
+  
+  /* 高亮公式 */
+  .highlightText {
+    font-family: monospace;
+    font-weight: 700;
+    color: #0066cc !important;
+    background: rgba(0, 102, 204, 0.06);
+    padding: 16rpx;
+    border-radius: 12rpx;
+    display: inline-block;
+    margin: 10rpx 0;
+    font-size: 30rpx;
+  }
+  
+  /* 公式框 */
+  .formula {
+    background: rgba(47, 128, 237, 0.04);
+    border: 1px solid rgba(47, 128, 237, 0.15);
+    padding: 20rpx;
+    border-radius: 16rpx;
+    color: var(--text-main) !important;
+    margin: 10rpx 0;
+  }
+  
+  /* 链接样式 */
+  .link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 26rpx;
+    word-break: break-all;
+    display: inline;
+  }
+  
+  /* 表格 */
+  .tableWrapper {
+    overflow-x: auto;
+    margin: 30rpx 0;
+    border: 1px solid var(--border-color);
+    border-radius: 16rpx;
+    width: 100%;
+  }
+  /* 自定义模拟表格样式 */
+.custom-table {
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 16rpx;
+    overflow: hidden;
+    margin: 30rpx 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* 行样式 */
+  .table-tr {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+  }
+  
+  /* 去掉最后一行的底边框 */
+  .custom-table .table-tr:last-child {
+    border-bottom: none;
+  }
+  
+  /* 表头特殊样式 */
+  .table-th {
+    background: rgba(0, 0, 0, 0.02);
+  }
+  
+  .table-th .table-td {
+    color: #090909;
+    font-weight: 600;
+  }
+  
+  /* 单元格基础样式 */
+  .table-td {
+    padding: 24rpx 24rpx;
+    color: var(--text-muted);
+    font-size: 28rpx;
+    line-height: 1.5;
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
+    box-sizing: border-box;
+  }
+  
+  /* 列宽比例控制：与你网页端 25% 和 75% 的比例保持一致 */
+  .td-col-1 {
+    width: 25%;
+    flex-shrink: 0; /* 防止被压缩 */
+    border-right: 1px solid rgba(0, 0, 0, 0.02); /* 可选：加一条淡淡的纵向分割线 */
+  }
+  
+  .td-col-2 {
+    width: 75%;
+    flex-shrink: 0;
+    word-break: break-all;
+  }
+  
+  .downloadLink {
+    margin-top: 20rpx;
+    font-size: 26rpx;
+  }
+  
+  .downloadLink text {
+    display: inline;
+  }

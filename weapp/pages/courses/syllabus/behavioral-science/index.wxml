@@ -1,0 +1,192 @@
+<!-- pages/courses/syllabus/behavioral-science/index.wxml -->
+<view class="container">
+  <!-- 头部课程信息 -->
+  <view class="header">
+    <text class="title">行为经济学</text>
+    <text class="teacher">授课教师：王兆祺</text>
+    <text class="dept">暨南大学，经济学院</text>
+    <text class="email">wzqteaching@gmail.com</text>
+  </view>
+
+  <!-- 主体内容 -->
+  <view class="content">
+    <!-- 1. 课程主旨 -->
+    <view class="card">
+      <text class="cardTitle">课程主旨</text>
+      <text class="desc">本课程将带领大家在实验室场景下研究经济、金融相关问题。完成本课程学习后，你将掌握三大核心内容：</text>
+      <view class="list">
+        <view class="listItem">• 全面了解行为与实验经济金融领域，熟悉主流研究方向、经典实验设计以及代表性研究结论。</view>
+        <view class="listItem">• 设计严谨的实验室实验，用于探究个体经济决策行为，并以标准化、科学的方式采集实验数据。</view>
+        <view class="listItem">• 使用R语言分析实验数据，得出可靠的经济学结论（实践是最好的学习方式，在实操中掌握数据分析）。</view>
+      </view>
+    </view>
+
+    <!-- 2. 教材说明 -->
+    <view class="card">
+      <text class="cardTitle">教材</text>
+      <text class="desc">本课程无指定教材，全部核心知识点都会在老师提供的PPT课件中讲解。</text>
+      <text class="note">课余可自行阅读、购买行为金融学、行为经济学、实验金融学、实验经济学相关书籍拓展学习。</text>
+    </view>
+
+    <!-- 3. 课程内容整体安排 -->
+    <view class="card">
+      <text class="cardTitle">课程内容整体安排</text>
+      <text class="desc">课程由三大模块组成：行为与实验经济学文献研读、课堂互动实验、R语言数据分析实操。</text>
+      <view class="list">
+        <view class="listItem">• 单数周：理论知识、学术文献阅读 + 课堂实验。</view>
+        <view class="listItem">• 双数周：R编程与实验数据分析。<text class="bold">上课务必携带笔记本电脑，跟随课堂同步实操代码。</text></view>
+      </view>
+    </view>
+
+    <!-- 4. 上课签到规则 -->
+    <view class="card">
+      <text class="cardTitle">上课签到规则</text>
+      <text class="desc">日常课程不强制点名，课程尊重大家的个人时间安排。</text>
+      <text class="desc">签到分数将由随机抽取一次课堂实验的表现来判定。</text>
+    </view>
+
+    <!-- 5. 作业安排 -->
+    <view class="card">
+      <text class="cardTitle">作业安排</text>
+      <view class="list">
+        <view class="listItem">• 本学期共布置4次课程作业。</view>
+        <view class="listItem">• 作业评分重点看完成态度，不会因答案错误扣分，认真完成即可拿到高分。</view>
+        <view class="listItem">• 作业内容与课堂论文紧密结合：使用R分析课堂实验游戏中的决策数据，挖掘原始数据背后隐藏的行为规律。</view>
+        <view class="listItem">• <text class="bold">任何原因导致的迟交作业，一律不予接收。</text></view>
+      </view>
+    </view>
+
+    <!-- 6. 期末考核：小组课程论文 -->
+    <view class="card">
+      <text class="cardTitle">期末考核：小组课程论文</text>
+      <text class="desc">全体同学以小组形式完成课程论文，分组要求：</text>
+      <view class="list">
+        <view class="listItem">• 每组4–5人，自行推选一名组长。</view>
+        <view class="listItem">• 研究课题必须与行为经济学、行为金融学相关，选题无关会大幅扣分。</view>
+        <view class="listItem">• 可用数据来源：自主设计问卷、线下实验、网络爬虫数据或公开现有数据集。</view>
+      </view>
+      <text class="desc">所有小组需要将选定课题登记在共享Excel文档中，先到先得，避免选题重复。</text>
+      <text class="desc">完整论文必须包含以下板块，全文总字数不少于4000字：</text>
+      <view class="list order">
+        <view class="listItem">1. 具体研究问题</view>
+        <view class="listItem">2. 选题背景</view>
+        <view class="listItem">3. 选题意义</view>
+        <view class="listItem">4. 相关文献（至少30篇参考文献）</view>
+        <view class="listItem">5. 研究假设</view>
+        <view class="listItem">6. 实验/问卷设计</view>
+        <view class="listItem">7. 数据分析</view>
+        <view class="listItem">8. 研究结论</view>
+      </view>
+      <text class="note">论文截止提交时间、格式规范后续统一通知。</text>
+      <text class="desc">小组计分规则：</text>
+      <view class="list">
+        <view class="listItem">• 每组提交成员贡献占比表，每位同学最终分数会根据贡献比例上下浮动。</view>
+        <view class="listItem">• 无特殊说明时，默认全体组员贡献均等。</view>
+        <view class="listItem">• 可向指定邮箱提交组员匿名互评，互评结果将作为最终打分参考依据。</view>
+      </view>
+    </view>
+
+    <!-- 7. 总成绩计分规则 -->
+    <view class="card">
+      <view><text class="cardTitle">总成绩计分规则</text></view>
+      <view><text class="cardTitle"> 满分100分</text></view>
+      <view class="formula">
+        <view class="list">
+          <view class="listItem">• 期末小组论文：60分（占比60%）</view>
+          <view class="listItem">• 4次作业：每次7.5分，合计30分（占比30%）</view>
+          <view class="listItem">• 课堂实验表现分：10分（占比10%）</view>
+        </view>
+      </view>
+      <text class="desc">10分实验表现分计算规则：</text>
+      <text class="desc">本学期共开展6次课堂实验，老师将随机抽取其中一次实验计算你的得分：</text>
+      <text class="highlightText">实验得分 = 10 ×（个人游戏得分 ÷ 100）</text>
+      <text class="note">每一次课堂实验都需要认真参与；无提前请假缺课，本次实验直接记0分，仅提前报备请假有效。</text>
+    </view>
+
+    <!-- 8. 每周课程安排表 -->
+    <view class="card">
+      <text class="cardTitle">每周课程安排表</text>
+      
+      <!-- 用 view 模拟的表格容器 -->
+      <view class="custom-table">
+        <!-- 表头 -->
+        <view class="table-tr table-th">
+          <view class="table-td td-col-1">周序</view>
+          <view class="table-td td-col-2">主要教学内容</view>
+        </view>
+        
+        <!-- 表格主体数据行 -->
+        <view class="table-tr">
+          <view class="table-td td-col-1">第1周</view>
+          <view class="table-td td-col-2">课程大纲介绍 + 实验经济学发展简史</view>
+        </view>
+        <view class="table-tr">
+          <view class="table-td td-col-1">第2周</view>
+          <view class="table-td td-col-2">R语言数据分析（一）</view>
+        </view>
+        <view class="table-tr">
+          <view class="table-td td-col-1">第3周</view>
+          <view class="table-td td-col-2">实验研究方法入门</view>
+        </view>
+        <view class="table-tr">
+          <view class="table-td td-col-1">第4周</view>
+          <view class="table-td td-col-2">R语言数据分析（二）</view>
+        </view>
+        <view class="table-tr">
+          <view class="table-td td-col-1">第5周</view>
+          <view class="table-td td-col-2">信念更新的实验室测量</view>
+        </view>
+        <view class="table-tr">
+          <view class="table-td td-col-1">第6周</view>
+          <view class="table-td td-col-2">R语言数据分析（三）</view>
+        </view>
+        <view class="table-tr">
+          <view class="table-td td-col-1">第7周</view>
+          <view class="table-td td-col-2">风险偏好、模糊偏好、过度自信</view>
+        </view>
+        <view class="table-tr">
+          <view class="table-td td-col-1">第8周</view>
+          <view class="table-td td-col-2">R语言数据分析（四）</view>
+        </view>
+        <view class="table-tr">
+          <view class="table-td td-col-1">第9周</view>
+          <view class="table-td td-col-2">非贝叶斯决策理论（一）</view>
+        </view>
+        <view class="table-tr">
+          <view class="table-td td-col-1">第10周</view>
+          <view class="table-td td-col-2">R语言数据分析（五）</view>
+        </view>
+        <view class="table-tr">
+          <view class="table-td td-col-1">第11周</view>
+          <view class="table-td td-col-2">非贝叶斯决策理论（二）</view>
+        </view>
+        <view class="table-tr">
+          <view class="table-td td-col-1">第12周</view>
+          <view class="table-td td-col-2">R语言数据分析（六）</view>
+        </view>
+        <view class="table-tr">
+          <view class="table-td td-col-1">第13周</view>
+          <view class="table-td td-col-2">情绪与个体决策行为</view>
+        </view>
+        <view class="table-tr">
+          <view class="table-td td-col-1">第14周</view>
+          <view class="table-td td-col-2">R语言数据分析（七）</view>
+        </view>
+        <view class="table-tr">
+          <view class="table-td td-col-1">第15周</view>
+          <view class="table-td td-col-2">身份认同与社会规范</view>
+        </view>
+        <view class="table-tr">
+          <view class="table-td td-col-1">第16周</view>
+          <view class="table-td td-col-2">R语言数据分析（八）</view>
+        </view>
+      </view>
+
+      <view class="downloadLink">
+            <view><text>R与RStudio下载地址：</text></view> 
+            <view><text class="link">https://posit.co/download/rstudio-desktop/</text></view>
+        </view>
+      <text class="note">请同学们课前提前在笔记本电脑安装好R和RStudio软件。</text>
+    </view>
+  </view>
+</view>
