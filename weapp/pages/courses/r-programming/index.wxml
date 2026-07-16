@@ -1,0 +1,60 @@
+<!-- 欢迎横幅 -->
+<view class="welcome">
+  <text class="title">FROM RAW DATA TO INSIGHTS</text>
+  <text class="desc">Master the complete workflow of <text class="highlight">data analysis in R,</text> from cleaning and modeling to creating compelling visual reports.</text>
+  <view class="btn-group">
+    <view><button class="btn syllabus" bindtap="downloadSyllabus">Syllabus</button></view>
+    <view><button class="btn data" bindtap="downloadData">Data</button></view>
+  </view>
+</view>
+
+<!-- ===== 5 个横向滑动模块 ===== -->
+<view class="module-slider" wx:for="{{modules}}" wx:key="id">
+  <!-- 模块标题 -->
+  <view class="module-header">
+    <text class="module-title">{{item.name}}</text>
+    <text class="module-sub">{{item.sub}}</text>
+  </view>
+
+  <!-- 横向滚动容器 -->
+  <scroll-view class="module-scroll" scroll-x enable-flex show-scrollbar="{{false}}">
+    <view class="part-card" wx:for="{{item.parts}}" wx:key="title">
+      <image src="{{item.img}}" mode="aspectFill" />
+      <view class="part-info">
+        <text class="part-title">{{item.title}}</text>
+        <text class="part-desc">{{item.desc}}</text>
+        <button class="pdf-btn" bindtap="downloadPDF" data-url="{{item.pdfUrl}}">PDF 课件</button>
+      </view>
+    </view>
+    <!-- 占位空白，保证右侧留白 -->
+  </scroll-view>
+</view>
+
+<!-- ===== 分割区域图形 ===== -->
+
+<view class="welcomeHW">
+</view>
+
+<!-- ===== 作业区域（改为横向滑动） ===== -->
+<view class="hw-section">
+  <text class="section-title">Homeworks</text>
+  <scroll-view class="hw-scroll" scroll-x enable-flex show-scrollbar="{{false}}">
+    <view class="hw-item" wx:for="{{homework}}" wx:key="id" bindtap="downloadHomework" data-item="{{item}}">
+      <image src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/hwCard.png" mode="aspectFit" />
+      <text>{{item.title}}</text>
+    </view>
+  </scroll-view>
+</view>
+
+<!-- ===== 考试区域 ===== -->
+<view class="exam-section">
+  <text class="section-title">Practice Exams</text>
+  <view class="exam-item" wx:for="{{exams}}" wx:key="id">
+    <image src="{{item.cover}}" mode="aspectFill" />
+    <view class="exam-info">
+      <text class="exam-title">{{item.title}}</text>
+      <text class="exam-desc">{{item.desc}}</text>
+      <button class="exam-btn" bindtap="downloadExam" data-item="{{item}}">Download Exam</button>
+    </view>
+  </view>
+</view>
