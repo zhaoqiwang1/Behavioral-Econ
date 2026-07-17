@@ -18,7 +18,7 @@ Page({
     // 去逻辑学
     goToLogic() {
     //   this.checkLogin('/pages/courses/logic/index')
-    wx.navigateTo({ url: '/pages/courses/logic/index' });
+    wx.navigateTo({ url: '/pages/courses/logic-class/index' });
     },
   
     // 去R语言

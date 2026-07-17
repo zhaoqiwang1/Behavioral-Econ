@@ -66,7 +66,7 @@ Page({
           },
           {
             title: 'Part 3',
-            desc: 'lubridate时间处理、stringr字符串清洗',
+            desc: '时间处理, 以及字符串清洗',
             img: 'https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/cleaning1.png',
             pdfUrl: 'https://oss.zhaoqiwangteaching.com/RClass/Data_Cleaning_Part3.pdf'
           }

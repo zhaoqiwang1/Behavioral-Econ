@@ -1,0 +1,4 @@
+<!-- pages/courses/syllabus/logic/index.wxml -->
+<view class="container">
+  <text class="title">《逻辑学》正在筹备中...</text>
+</view>

@@ -135,6 +135,7 @@
 <!-- R语言 -->
 <!-- R语言课程概览 -->
 <view class="rSection">
+  <view class="courseRTitle">R语言</view>
   <!-- 背景图容器 -->
   <view class="rHero">
     <!-- 内容层（半透明叠加效果由背景混合模式实现，但这里为了文字清晰，额外包裹一层） -->
