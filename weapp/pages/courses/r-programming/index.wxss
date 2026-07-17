@@ -7,7 +7,8 @@ page {
 /* ---------- 欢迎横幅（不变） ---------- */
 .welcome {
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/hongkong1.jpg') center/cover no-repeat;
-  padding: 80rpx 40rpx 120rpx;
+  height: 50vh;
+  padding: 80rpx 40rpx 30rpx;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -29,7 +30,7 @@ page {
 }
 
 .btn-group {
-  margin-top: 100rpx;
+  margin-top: 120rpx;
   display: flex;
   flex-direction: column;   /* 改为纵向排列 */
   align-items: flex-start;  /* 左对齐，如需居中可改为 center */
@@ -37,22 +38,33 @@ page {
 }
 
 .btn {
-  padding: 20rpx 30rpx;
-  border-radius: 40rpx;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx 0; 
+  border-radius: 20rpx;
   font-size: 28rpx;
   border: none;
   background: #111;
   color: #fff;
 }
+
 .btn.data {
   background: #fff;
   color: #111;
+  width: 240rpx; 
 }
-
+.btn.syllabus {
+  width: 240rpx; 
+}
 /* ---------- 横向滑动模块（新增） ---------- */
 .module-slider {
-  margin: 20rpx 0 40rpx;
-  padding: 0 20rpx;
+  margin: 20rpx 0rpx 40rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  padding: 20rpx 20rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
 }
 .module-header {
   padding: 10rpx 20rpx 20rpx;
@@ -71,7 +83,7 @@ page {
 /* 横向滚动容器 */
 .module-scroll {
   white-space: nowrap;
-  padding: 10rpx 0 20rpx 20rpx;
+  /* padding: 10rpx 20rpx 20rpx 20rpx;   */
   /* 隐藏滚动条 */
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -83,8 +95,9 @@ page {
 /* 每张 Part 卡片（横向排列，宽度固定，高度自适应） */
 .part-card {
   display: inline-block;
-  width: 420rpx;
-  margin-right: 24rpx;
+  width: 500rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
   background: #fff;
   border-radius: 20rpx;
   overflow: hidden;
@@ -94,11 +107,14 @@ page {
 }
 .part-card image {
   width: 100%;
-  height: 200rpx;
+  height: 240rpx;
 }
 .part-info {
   padding: 40rpx;
   overflow: hidden;   /* 防止内容溢出 */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .part-title {
   font-size: 30rpx;
@@ -107,34 +123,38 @@ page {
   margin-bottom: 8rpx;
 }
 .part-desc {
-  font-size: 24rpx;
+  font-size: 26rpx;
   color: #555;
   line-height: 1.5;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin-bottom: 16rpx;
 }
 
 .pdf-btn {
+  align-self: center;
   display: inline-block;
   padding: 16rpx 20rpx; 
   background: #fff;
   color: #111;
   border: 1rpx solid #ddd;
   border-radius: 20rpx;
-  font-size: 24rpx;         /* 字号稍微缩小 */
+  font-size: 28rpx;         /* 字号稍微缩小 */
   max-width: 100%;
   box-sizing: border-box;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 /* #region ---------- 作业区域（分割图形） ---------- */
 .welcomeHW {
   background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/hwWelcome.jpg') center/cover no-repeat;
-  padding: 380rpx 40rpx 120rpx;
+  height: 50vh;
+  padding: 80rpx 40rpx 30rpx;
   color: #fff;
   display: flex;
   flex-direction: column;

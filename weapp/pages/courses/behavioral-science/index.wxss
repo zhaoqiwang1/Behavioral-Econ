@@ -23,9 +23,9 @@
   /* 背景图：铺满、无空白 */
   .welcomeBg {
     width: 100%;
-    height: 45vh;  /* vh = 屏幕高度百分比，所有手机自动适配 */
-    min-height: 320rpx;
-    max-height: 500rpx;
+    height: 50vh;          /* 改为 50vh，即屏幕高度的一半 */
+    min-height: unset;     /* 去掉最小高度限制 */
+    max-height: unset;     /* 去掉最大高度限制 */
     object-fit: cover;
     display: block;
     margin: 0;
@@ -76,7 +76,7 @@
     margin-bottom: 200rpx;
     text-align: center;
     position: relative;
-    min-height: 1840rpx;
+    min-height: 2000rpx;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -332,6 +332,7 @@ color: #666;
     width: 100%;
 }
 .hwGrid {
+    margin-top: 70rpx;
     display: flex;
     flex-wrap: nowrap;
     padding: 32rpx;
