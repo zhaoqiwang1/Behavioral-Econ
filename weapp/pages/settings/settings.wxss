@@ -109,21 +109,25 @@
   .btn-back {
     background: #f0f0f0;
     color: #666;
+    border-radius: 20rpx;
   }
   
   .btn-edit {
-    background: #007aff;
+    background: #000;
+    border-radius: 20rpx;
     color: white;
   }
   
   .btn-cancel {
     background: #f0f0f0;
     color: #666;
+    border-radius: 20rpx;
   }
   
   .btn-submit {
-    background: #007aff;
+    background: #000;
     color: white;
+    border-radius: 20rpx;
   }
   
   .btn-submit[disabled] {
