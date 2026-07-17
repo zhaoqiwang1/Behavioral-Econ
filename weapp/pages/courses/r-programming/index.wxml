@@ -5,7 +5,7 @@
   <view class="btn-group">
     <!-- <view><button class="btn syllabus" bindtap="downloadSyllabus">Syllabus</button></view>
     <view><button class="btn data" bindtap="downloadData">Data</button></view> -->
-    <button class="btn syllabus" bindtap="downloadSyllabus">Syllabus</button>
+    <button class="btn syllabus" bindtap="goToSyllabus">Syllabus</button>
     <button class="btn data" bindtap="downloadData">Data</button>
   </view>
 </view>

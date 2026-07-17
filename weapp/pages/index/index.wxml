@@ -122,17 +122,59 @@
   </view>
 </view>
 
+<view class="welcomeContainer">
+  <!-- 1. 背景图层 -->
+  <image 
+    src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/resultSectionBackground.png"
+    mode="aspectFill"
+    class="welcomeBg"
+    lazy-load
+  ></image>
+</view>
+
 <!-- R语言 -->
-<view class="section rlang">
-  <button class="btn rbtn" bindtap="goR">
-    <text class="rTitle">R语言课程</text>
-  </button>
+<!-- R语言课程概览 -->
+<view class="rSection">
+  <!-- 背景图容器 -->
+  <view class="rHero">
+    <!-- 内容层（半透明叠加效果由背景混合模式实现，但这里为了文字清晰，额外包裹一层） -->
+    <view class="rContent">
+      <!-- 5个模块卡片 -->
+      <view class="rCardGrid">
+        <view class="rCard">
+          <text class="rCardTitle">Basics</text>
+          <text class="rCardDesc">R基础操作与语法入门；聚焦核心数据结构操作及数据导入导出。</text>
+        </view>
+        <view class="rCard">
+          <text class="rCardTitle">Plot</text>
+          <text class="rCardDesc">聚焦 R 语言绘图知识，从基础绘图到 ggplot2 应用逐步深入。</text>
+        </view>
+        <view class="rCard">
+          <text class="rCardTitle">Data Cleaning</text>
+          <text class="rCardDesc">聚焦 R 语言数据清洗，从基础操作到 dplyr 包应用，再到时间与字符串处理逐步深入。</text>
+        </view>
+        <view class="rCard">
+          <text class="rCardTitle">Regression</text>
+          <text class="rCardDesc">聚焦 R 语言回归分析，从线性模型到非线性建模，再到结果输出与排版逐步深入。</text>
+        </view>
+        <view class="rCard">
+          <text class="rCardTitle">R Markdown</text>
+          <text class="rCardDesc">聚焦 R Markdown 应用，从基础语法与排版到学术表格与公式，再到交互式可视化。</text>
+        </view>
+      </view>
+
+      <!-- 进入课程按钮 -->
+      <view class="rBtnWrapper">
+        <button class="rEnterBtn" bindtap="goR">进入课程</button>
+      </view>
+    </view>
+  </view>
 </view>
 
 <!-- ====================== 底部结束界面 ====================== -->
 <view class="endContainer">
   <image 
-    src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/gangzhuaobridge2.jpg"
+    src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/bridge.jpg"
     mode="aspectFill"
     class="endBg"
   ></image>

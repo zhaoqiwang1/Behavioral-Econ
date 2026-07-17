@@ -1,0 +1,228 @@
+/* pages/courses/syllabus/r-programming/index.wxss */
+
+.container {
+  --bg-color: #f6f8fa;
+  --card-bg: #ffffff;
+  --border-color: rgba(0, 0, 0, 0.06);
+  --text-main: #111111;
+  --text-muted: #62626a;
+  --accent-color: #0066cc;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 28rpx;
+  min-height: 100vh;
+  padding: 40rpx 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 头部 */
+.header {
+  text-align: center;
+  max-width: 760px;
+  margin-bottom: 60rpx;
+  width: 100%;
+}
+
+.title {
+  display: block;
+  font-size: 70rpx;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  background: linear-gradient(180deg, #111111 20%, #b7b6b6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 20rpx 0;
+}
+
+.teacher, .dept {
+  font-size: 30rpx;
+  margin: 6rpx 0;
+  display: block;
+  color: var(--text-main);
+}
+
+.email {
+  font-family: monospace;
+  color: var(--text-muted);
+  font-size: 26rpx;
+  display: block;
+}
+
+/* 主体内容 */
+.content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 40rpx;
+}
+
+/* 卡片 */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 24rpx;
+  padding: 40rpx 36rpx;
+  transition: border-color 0.25s ease;
+  text-align: left;
+}
+
+.cardTitle {
+  display: block;
+  font-size: 44rpx;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 20rpx 0;
+  color: #1d1d1f;
+}
+
+.desc {
+  display: block;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0 0 20rpx 0;
+  text-align: justify;
+  -webkit-hyphens: auto; 
+  hyphens: auto;
+  word-break: break-word; 
+}
+
+.desc:last-child {
+  margin-bottom: 0;
+}
+
+
+/* 列表 */
+.list {
+  padding-left: 20rpx;
+  margin: 0;
+}
+
+.listItem {
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 12rpx;
+  font-size: 28rpx;
+  text-align: justify; 
+}
+
+.listItem:last-child {
+  margin-bottom: 0;
+}
+
+/* 强调 */
+.bold {
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* 公式框 */
+.formula {
+  background: rgba(47, 128, 237, 0.04);
+  border: 1px solid rgba(47, 128, 237, 0.15);
+  padding: 20rpx;
+  border-radius: 16rpx;
+  color: var(--text-main) !important;
+  margin: 10rpx 0;
+  line-height: 1.8;
+}
+
+.formula text {
+  display: block;
+}
+
+/* 链接 */
+.link {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-size: 26rpx;
+  word-break: break-all;
+  display: inline;
+}
+
+/* 卡片内图片 */
+.cardImgBox {
+  margin: 20rpx 0;
+  text-align: center;
+}
+
+.cardImg {
+  width: 100%;
+  max-width: 600rpx;
+  border-radius: 16rpx;
+  border: 1px solid var(--border-color);
+}
+
+/* 下载链接行 */
+.downloadLink {
+  margin-top: 30rpx;
+  font-size: 26rpx;
+}
+
+.downloadLink text {
+  display: inline;
+}
+
+/* ----- 自定义表格（三列） ----- */
+.custom-table {
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 16rpx;
+  overflow: hidden;
+  margin: 30rpx 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-tr {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--card-bg);
+}
+
+.custom-table .table-tr:last-child {
+  border-bottom: none;
+}
+
+.table-th {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.table-th .table-td {
+  color: #090909;
+  font-weight: 600;
+}
+
+.table-td {
+  padding: 24rpx 20rpx;
+  color: var(--text-muted);
+  font-size: 26rpx;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  word-break: break-word;
+}
+
+/* 三列宽度比例（可根据内容微调） */
+.td-col-1 {
+  width: 18%;
+  flex-shrink: 0;
+  border-right: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.td-col-2 {
+  width: 52%;
+  flex-shrink: 0;
+  border-right: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.td-col-3 {
+  width: 30%;
+  flex-shrink: 0;
+}

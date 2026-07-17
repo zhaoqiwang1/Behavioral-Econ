@@ -85,8 +85,8 @@
   /* #endregion */
 
 
-  /* #region 行为经济学 */
-  /* 图片渐变透明效果（小程序适配版） */
+/* #region 行为经济学 */
+/* 图片渐变透明效果（小程序适配版） */
 .behavSciCourseImage .course-img {
     width: 100%;
     height: auto;
@@ -184,25 +184,9 @@
   }
 /* #endregion */
 
-  /* #region R语言 */
-  .rlang {
-    text-align: center;
-  }
-  
-  .rbtn {
-    background: #f5f5f5;
-    border: 2rpx solid #1677ff;
-    padding: 30rpx;
-  }
-  
-  .rTitle {
-    font-size: 36rpx;
-    color: #1677ff;
-    font-weight: bold;
-  }
-  /* #endregion */
 
-   /* #region 逻辑学 */
+
+/* #region 逻辑学 */
 .logicCourseSection {
     background-color: #000000;
     display: flex;
@@ -292,6 +276,109 @@
   }
     /* #endregion */
 
+/* #region R语言 */
+/* R 语言课程概览区域 */
+.rSection {
+  width: 100%;
+}
+
+.rHero {
+  background-size: cover;
+  background-position: center;
+  background-color: #fff; /* 叠加半透明深色，类似 overlay */
+  background-blend-mode: overlay;
+  padding: 60rpx 30rpx;  /* 内边距 */
+  min-height: 800rpx;    /* 最小高度，根据需要调整 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.rContent {
+  width: 100%;
+  max-width: 1500rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 卡片网格 - 使用 flex 换行实现多列 */
+.rCardGrid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24rpx;
+  margin-bottom: 60rpx;
+}
+
+/* 每个卡片占据约 1/3 宽度（在移动端自动换行） */
+.rCard {
+  flex: 0 0 100%;
+  background: rgba(204, 197, 197, 0.28);
+  border-radius: 24rpx;
+  padding: 40rpx 28rpx;
+  box-sizing: border-box;
+  backdrop-filter: blur(4rpx);
+  border: 1rpx solid rgba(255,255,255,0.1);
+}
+
+.rCardTitle {
+  display: block;
+  font-size: 38rpx;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 20rpx;
+  text-align: left;
+}
+
+.rCardDesc {
+  display: block;
+  font-size: 28rpx;
+  line-height: 1.7;
+  color: #585858;
+  text-align: left;
+}
+
+/* 进入课程按钮 */
+.rBtnWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.rEnterBtn {
+    width: 220rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    background: #000;
+    color: #fff;
+    border-radius: 8rpx;
+    font-size: 28rpx;
+}
+
+.rEnterBtn::after {
+  border: none; /* 去除小程序按钮默认边框 */
+}
+
+/* 响应式适配：屏幕较窄时改为两列 */
+@media (max-width: 750rpx) {
+  .rCard {
+    flex: 0 0 calc(50% - 24rpx);
+  }
+}
+
+/* 再窄时改为一列 */
+@media (max-width: 500rpx) {
+  .rCard {
+    flex: 0 0 100%;
+  }
+}
+/* #endregion */
+
+
 /* #region 结束图片 */
 /* ===================== 底部结束界面 ===================== */
 .endContainer {
@@ -309,13 +396,11 @@
   
   .endBg {
     width: 100%;
-    height: 70vh;
-    min-height: 600rpx;
-    max-height: 900rpx;
+    height: 60vh;
     object-fit: cover;
     display: block;
     margin: 0;
     padding: 0;
-    border-radius: 0 !important;
+    border-radius: 0;
   }
 /* #endregion */

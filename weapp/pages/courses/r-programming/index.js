@@ -66,7 +66,7 @@ Page({
           },
           {
             title: 'Part 3',
-            desc: 'lubridate 时间处理、stringr 字符串清洗',
+            desc: 'lubridate时间处理、stringr字符串清洗',
             img: 'https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/cleaning1.png',
             pdfUrl: 'https://oss.zhaoqiwangteaching.com/RClass/Data_Cleaning_Part3.pdf'
           }
@@ -110,7 +110,7 @@ Page({
           },
           {
             title: 'Part 2',
-            desc: 'LaTeX 公式、表格、BibTeX 文献引用',
+            desc: 'LaTeX 数学公式、表格、BibTeX 文献引用',
             img: 'https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/rmarkdown2.png',
             pdfUrl: 'https://oss.zhaoqiwangteaching.com/RClass/Markdown_Part2.pdf'
           },
@@ -148,15 +148,22 @@ Page({
     ]
   },
 
+    // 跳转课程大纲
+    goToSyllabus() {
+      wx.navigateTo({
+          url: '/pages/courses/syllabus/r-programming/index'
+        });
+    },
+
   // 下载 PDF
   downloadPDF(e) {
     const url = e.currentTarget.dataset.url;
     downloadAndShare(url, 'document.pdf');
   },
 
-  downloadSyllabus() {
-    downloadAndShare('https://oss.zhaoqiwangteaching.com/RClass/Syllabus.pdf', 'Syllabus.pdf');
-  },
+  // downloadSyllabus() {
+  //   downloadAndShare('https://oss.zhaoqiwangteaching.com/RClass/Syllabus.pdf', 'Syllabus.pdf');
+  // },
 
   downloadData() {
     downloadAndShare('https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/RClass/Data.zip', 'Data.zip');

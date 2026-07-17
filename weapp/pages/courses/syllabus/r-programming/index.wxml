@@ -1,0 +1,178 @@
+<!-- pages/courses/syllabus/r-programming/index.wxml -->
+<view class="container">
+  <view class="header">
+    <text class="title">R Data Analysis</text>
+    <text class="teacher">Instructor：王兆祺 - Zhaoqi Wang</text>
+    <text class="dept">School of Economics, Jinan University</text>
+    <text class="email">wzqteaching@gmail.com</text>
+  </view>
+
+  <!-- 主体内容 -->
+  <view class="content">
+    <!-- 1. What is R -->
+    <view class="card">
+      <text class="cardTitle">What is R?</text>
+      <text class="desc" lang="en">R is a powerful and open-source programming language and software environment specifically designed for statistical computing, data analysis, and graphical visualization. Widely used by statisticians, data scientists, and researchers, it offers a vast repository of packages (such as those in CRAN) that extend its functionality for specialized tasks like machine learning, bioinformatics, and financial modeling.</text>
+    </view>
+
+    <!-- 2. The Advantages of R -->
+    <view class="card">
+      <text class="cardTitle">The Advantages of R</text>
+      <view class="list">
+        <view class="listItem">• Powerful statistical modeling and analysis packages (regression, time series, factor analysis, testing).</view>
+        <view class="listItem">• High-quality visualization: ggplot2, plotly, echarts4r, suitable for publication-ready charts.</view>
+        <view class="listItem">• Rapid prototyping and report automation: R Markdown / Quarto / Shiny.</view>
+        <view class="listItem">• Rich ecosystem of academic and industry packages (biostatistics, econometrics, financial risk management, etc.).</view>
+      </view>
+    </view>
+
+    <!-- 3. Typical Roles and Scenarios in Enterprises -->
+    <view class="card">
+      <text class="cardTitle">Typical Roles and Scenarios in Enterprises</text>
+      <view class="list">
+        <view class="listItem">• Internal analysts / data scientists: Metric definition, A/B testing analysis, model building.</view>
+        <view class="listItem">• Business Intelligence (BI) and reporting: Automated weekly/monthly reports, KPI dashboards (for internal use).</view>
+        <view class="listItem">• Risk management/Finance/Pharmaceutical industries: Statistical testing, clinical trial analysis, risk models.</view>
+        <view class="listItem">• R output → Front-end/Product: Providing data via JSON/CSV or APIs (Plumber).</view>
+        <view class="listItem">• Of Course, R is also extensively used in Academia.</view>
+      </view>
+    </view>
+
+    <!-- 4. What Can R bring to Your Career? -->
+    <view class="card">
+      <text class="cardTitle">What Can R Bring to Your Career?</text>
+      <text class="desc">Data analysis & amp; R skills are highly demanded in medicine, finance, internet industry. Job openings include data analyst, visualization engineer, BI developer etc.</text>
+    </view>
+
+    <!-- 5. What Will We Learn From This Class? -->
+    <view class="card">
+      <text class="cardTitle">What Will We Learn From This Class?</text>
+      <view class="cardImgBox">
+        <image src="https://zhaoqiwangteaching-images.oss-cn-guangzhou.aliyuncs.com/rsyllabus1.png" mode="widthFix" class="cardImg" />
+      </view>
+      <text class="desc">See An R Markdown Example:</text>
+      <text class="link">https://ilias.uni-marburg.de/data/UNIMR/lm_data/lm_2978812/unit01/unit01-08_Rmd_html.html#this-is-a-header</text>
+    </view>
+
+    <!-- 6. Why Learn R in the Era of AI? -->
+    <view class="card">
+      <text class="cardTitle">Why Learn R in the Era of AI?</text>
+      <view class="list">
+        <view class="listItem">• AI can generate R code, but it cannot replace basic programming understanding. If you know nothing about programming, you may not even know what to ask the AI or how to describe your problem clearly.</view>
+        <view class="listItem">• When something goes wrong, beginners often paste hundreds or thousands of lines of code into AI and ask it to “fix the bug.” In contrast, someone who understands R can quickly identify which function or step is causing the problem and ask the AI for a targeted solution. This makes the workflow much faster and more reliable.</view>
+        <view class="listItem">• Understanding R also allows you to judge whether AI-generated code is correct. AI sometimes produces code that runs but gives the wrong result. Without programming knowledge, it is difficult to detect such mistakes.</view>
+        <view class="listItem">• Programming literacy also helps you communicate with collaborators. In many research or industry projects, you will work with colleagues who write code. If you understand the basics, you can discuss data structures, models, and analysis pipelines more effectively.</view>
+        <view class="listItem">• Most powerful data tools and software are still built by people who understand programming. AI helps accelerate development, but human users still design the analysis and guide the process.</view>
+        <view class="listItem">• Learning R therefore is not just about writing code manually—it is about understanding how data analysis works so that you can use AI as a powerful assistant rather than relying on it blindly.</view>
+      </view>
+    </view>
+
+    <!-- 7. Main Purpose of This Course -->
+    <view class="card">
+      <text class="cardTitle">Main Purpose of This Course</text>
+      <text class="desc">This course will teach students how to use R for data analysis. By using R, students will be able to uncover the truths behind the data. The course content mainly covers:</text>
+      <view class="list">
+        <view class="listItem">• Basic R programming,</view>
+        <view class="listItem">• R data cleaning,</view>
+        <view class="listItem">• R data visualization,</view>
+        <view class="listItem">• R regression analysis, and</view>
+        <view class="listItem">• R Markdown.</view>
+      </view>
+      <text class="desc">It includes common syntax required for completing data analysis tasks.</text>
+    </view>
+
+    <!-- 8. Textbook -->
+    <view class="card">
+      <text class="cardTitle">Textbook</text>
+      <text class="desc">There is no specific textbook for this course; please refer to the PDF materials provided.</text>
+    </view>
+
+    <!-- 9. Class Attendance -->
+    <view class="card">
+      <text class="cardTitle">Class Attendance</text>
+      <text class="desc">I will randomly select one class session to record your attendance. Therefore, it is highly recommended that you attend all classes.</text>
+    </view>
+
+    <!-- 10. Homework Assignments -->
+    <view class="card">
+      <text class="cardTitle">Homework Assignments</text>
+      <view class="list">
+        <view class="listItem">• The best way to learn is to apply it in practice.</view>
+        <view class="listItem">• Currently, there are a total of five homework assignments for this course.</view>
+        <view class="listItem">• The grading of homework will primarily be based on your attitude towards completing the assignments rather than the correctness of your answers. Thus, no points will be deducted for incorrect answers.</view>
+        <view class="listItem">• As long as you complete the homework carefully, you will usually receive a high score.</view>
+        <view class="listItem">• The purpose of these homework assignments is to help you learn how to apply the knowledge you have acquired to conduct data analysis using R.</view>
+        <view class="listItem">• Learning through summarizing and correcting mistakes is one of the fastest ways to make progress.</view>
+      </view>
+    </view>
+
+    <!-- 11. Exams -->
+    <view class="card">
+      <text class="cardTitle">Exams</text>
+      <text class="desc">Midterm exam: There will be no formal midterm exam. However, we will have a midterm in-class practice session.</text>
+      <text class="desc"><text class="bold">Final exam:</text></text>
+      <view class="list">
+        <view class="listItem">• The final exam must be completed using R.</view>
+        <view class="listItem">• It will be an open-book exam, and the questions will mainly test your ability to apply the knowledge you have learned.</view>
+        <view class="listItem">• You can use any method to complete the exam tasks, including reviewing PPT/PDF slides, referring to homework answers, or searching online.</view>
+        <view class="listItem">• However, plagiarism and asking classmates for answers are strictly prohibited, and you are not allowed to use AI during the exam.</view>
+        <view class="listItem">• The exam time will be sufficient but not excessive; therefore, your proficiency in R gained through regular homework completion will determine whether you can finish the exam within the specified time.</view>
+        <view class="listItem">• Specific exam content: I will provide a dataset in advance, and you need to answer a number of questions related to this dataset.</view>
+      </view>
+    </view>
+
+    <!-- 12. Grades -->
+    <view class="card">
+      <text class="cardTitle">Grades for This Course</text>
+      <text class="desc">The total score for this course is 100 points, which is composed of the following parts:</text>
+      <view class="list">
+        <view class="listItem">• Final Exam: 60%</view>
+        <view class="listItem">• Five Homework Assignments: 35% (Each assignment is worth 20 points, totaling 100 points for all five assignments)</view>
+        <view class="listItem">• Attendance Score: 5%.</view>
+      </view>
+      <view class="formula">
+        <text><text class="bold">Course Score Calculation Formula:</text></text>
+        <text>Score = 0.6 × Final Exam Score (out of 100 points) + 0.35 × Total Score of Five Homework Assignments (5 × 20 points = 100 points) + Attendance Score</text>
+      </view>
+      <view class="list">
+        <view class="listItem">• Bonus Points: Active participation in asking and answering questions in our WeChat group can earn you additional points. The specific number of additional points has not been determined yet. Therefore, please make sure to note your full name and student ID in the WeChat group.</view>
+      </view>
+    </view>
+
+    <!-- 13. Class Schedules Table -->
+    <view class="card">
+      <text class="cardTitle">Class Schedules</text>
+      <!-- 用 flex 模拟三列表格 -->
+      <view class="custom-table">
+        <!-- 表头 -->
+        <view class="table-tr table-th">
+          <view class="table-td td-col-1">Weeks</view>
+          <view class="table-td td-col-2">Materials</view>
+          <view class="table-td td-col-3">Data Used</view>
+        </view>
+        <!-- 数据行 -->
+        <view class="table-tr"><view class="table-td td-col-1">Week 1.</view><view class="table-td td-col-2">Course Introduction + R Programming Basics. Part 1</view><view class="table-td td-col-3">--</view></view>
+        <view class="table-tr"><view class="table-td td-col-1">Week 2.</view><view class="table-td td-col-2">R Programming Basics. Part 2 + Homework Assignment 1</view><view class="table-td td-col-3">--</view></view>
+        <view class="table-tr"><view class="table-td td-col-1">Week 3.</view><view class="table-td td-col-2">R Data Visualization. Part 1</view><view class="table-td td-col-3">cars.csv</view></view>
+        <view class="table-tr"><view class="table-td td-col-1">Week 4.</view><view class="table-td td-col-2">R Data Visualization. Part 2</view><view class="table-td td-col-3">cars.csv</view></view>
+        <view class="table-tr"><view class="table-td td-col-1">Week 5.</view><view class="table-td td-col-2">R Data Visualization. Part 3 + Homework Assignment 2</view><view class="table-td td-col-3">mpg and economics in ggplot2</view></view>
+        <view class="table-tr"><view class="table-td td-col-1">Week 6.</view><view class="table-td td-col-2">R Data Cleaning. Part 1</view><view class="table-td td-col-3">cars.csv, state_water_phdi.csv</view></view>
+        <view class="table-tr"><view class="table-td td-col-1">Week 7.</view><view class="table-td td-col-2">R Data Cleaning. Part 2</view><view class="table-td td-col-3">starwars in dplyr</view></view>
+        <view class="table-tr"><view class="table-td td-col-1">Week 8.</view><view class="table-td td-col-2">R Data Cleaning. Part 3 + Homework Assignment 3</view><view class="table-td td-col-3">time_data.csv</view></view>
+        <view class="table-tr"><view class="table-td td-col-1">Week 9.</view><view class="table-td td-col-2">Midterm In-class Practice</view><view class="table-td td-col-3">--</view></view>
+        <view class="table-tr"><view class="table-td td-col-1">Week 10.</view><view class="table-td td-col-2">Regression in R. Part 1</view><view class="table-td td-col-3">Prestige, unions.csv</view></view>
+        <view class="table-tr"><view class="table-td td-col-1">Week 11.</view><view class="table-td td-col-2">Regression in R. Part 2</view><view class="table-td td-col-3">mpg, starwars, apple_data.csv</view></view>
+        <view class="table-tr"><view class="table-td td-col-1">Week 12.</view><view class="table-td td-col-2">Regression in R. Part 3 + Homework Assignment 4</view><view class="table-td td-col-3">Prestige, unions.csv</view></view>
+        <view class="table-tr"><view class="table-td td-col-1">Week 13.</view><view class="table-td td-col-2">R markdown. Part 1</view><view class="table-td td-col-3">--</view></view>
+        <view class="table-tr"><view class="table-td td-col-1">Week 14.</view><view class="table-td td-col-2">R markdown. Part 2 + Homework Assignment 5</view><view class="table-td td-col-3">Prestige</view></view>
+        <view class="table-tr"><view class="table-td td-col-1">Week 15.</view><view class="table-td td-col-2">R markdown. Part 3</view><view class="table-td td-col-3">Prestige, apple.csv, tesla.csv</view></view>
+        <view class="table-tr"><view class="table-td td-col-1">Week 16.</view><view class="table-td td-col-2">Final In-class Practice</view><view class="table-td td-col-3">--</view></view>
+      </view>
+
+      <view class="downloadLink">
+        <text>R download：</text>
+        <text class="link">https://posit.co/download/rstudio-desktop/</text>
+      </view>
+    </view>
+  </view>
+</view>
