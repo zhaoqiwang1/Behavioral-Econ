@@ -48,9 +48,9 @@ function checkLogin() {
     // 弹窗输入密码
     const pwdResult = await new Promise((resolve) => {
       wx.showModal({
-        title: `输入“${gameName}”实验密码`,
+        title: `输入“${gameName}”的密码`,
         editable: true,
-        placeholderText: '请输入实验密码',
+        placeholderText: '请输入密码',
         success: (res) => {
           if (res.confirm) {
             resolve(res.content || '');

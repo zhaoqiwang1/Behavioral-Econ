@@ -134,7 +134,7 @@ Page({
   // 公共物品游戏
   handlePublicGoodsGame() {
     navigateToGame({
-        gameName: 'PGG',
+        gameName: '实验1',
         password: 'PGG',   // 写死密码
         url: '/pages/games/publicGoods/index'
       });
@@ -142,48 +142,48 @@ Page({
   // 风险评估
   handleRiskAttiGame() {
     navigateToGame({
-        gameName: '风险评估',
-        password: 'RiskAttiGame',   // 与网页端密码一致
+        gameName: '实验2',
+        password: 'RAG',   // 与网页端密码一致
         url: '/pages/games/riskAtti/index'
       });
   },
   // 模糊偏好评估
   handleAmbiguityAttiGame() {
     navigateToGame({
-        gameName: '模糊偏好',
-        password: 'AmbiguityAttiGame',   // 与网页端密码一致
+        gameName: '实验3',
+        password: 'AAG',   // 与网页端密码一致
         url: '/pages/games/ambiguityAtti/index'
       });
   },
   // 过度自信
   handleOverconfidenceGame() {
     navigateToGame({
-        gameName: '过度自信',
-        password: 'OverconfidenceGame',   // 与网页端密码一致
+        gameName: '实验4',
+        password: 'OG',   // 与网页端密码一致
         url: '/pages/games/overconfidence/index'
       });
   },
   // 模糊环境博弈
   handleGameUnderAmbig() {
     navigateToGame({
-        gameName: '模糊环境博弈',
-        password: 'GameUnderAmbig',
+        gameName: '实验5',
+        password: 'GUA',
         url: '/pages/games/gameUnderAmbiguity/index'
       });
   },
   // MBTI
   handleMBTIElicit() {
     navigateToGame({
-        gameName: 'MBTI',
-        password: 'MBTIElicit',
+        gameName: '实验6',
+        password: 'MBTI',
         url: '/pages/games/mbti/index'
       });
   },
   // 证实偏差
   handleConfirmationBiasGame() {
     navigateToGame({
-        gameName: '确认偏差',
-        password: 'ConfirmationBiasGame',
+        gameName: '实验7',
+        password: 'CBG',
         url: '/pages/games/confirmationBias/index'
       });
   },
@@ -206,8 +206,8 @@ Page({
   // MFQ问卷
   handleMFQSurvey() {
     navigateToGame({
-        gameName: 'MFQ问卷',
-        password: 'MFQSurvey',
+        gameName: '实验9',
+        password: 'MS',
         url: '/pages/games/mfqSurvey/index'
       });
   },

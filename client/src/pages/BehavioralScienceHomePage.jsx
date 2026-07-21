@@ -62,7 +62,7 @@ const BehavioralScienceHomePage = () => {
   // 专门用于公共物品游戏的函数
   const handlePublicGoodsGame = () => {
     const password = prompt('请输入密码:');
-    if (password === 'PublicGoodsGame') {
+    if (password === 'PGG') {
       checkAuthAndNavigate(
         '/games/public-goods',
         '你需要先登录哦'
@@ -75,7 +75,7 @@ const BehavioralScienceHomePage = () => {
     // 专门用于风险评估的函数
   const handleRiskAttiGame = () => {
     const password = prompt('请输入密码:');
-    if (password === 'RiskAttiGame') {
+    if (password === 'RAG') {
       checkAuthAndNavigate(
         '/games/risk-attitude-elicit',
         '你需要先登录哦'
@@ -88,7 +88,7 @@ const BehavioralScienceHomePage = () => {
   // 专门用于模糊偏好评估的函数
   const handleAmbiguityAttiGame = () => {
     const password = prompt('请输入密码:');
-    if (password === 'AmbiguityAttiGame') {
+    if (password === 'AAG') {
       checkAuthAndNavigate(
         '/games/ambiguity-attitude-elicit',
         '你需要先登录哦'
@@ -101,7 +101,7 @@ const BehavioralScienceHomePage = () => {
   // 专门用于过度自信的函数
   const handleOverconfidenceGame = () => {
     const password = prompt('请输入密码:');
-    if (password === 'OverconfidenceGame') {
+    if (password === 'OG') {
       checkAuthAndNavigate(
         '/games/overconfidence-game',
         '你需要先登录哦'
@@ -114,7 +114,7 @@ const BehavioralScienceHomePage = () => {
   // 专门用于game under ambiguity 的函数
   const handleGameUnderAmbig = () => {
     const password = prompt('请输入密码:');
-    if (password === 'GameUnderAmbig') {
+    if (password === 'GUA') {
       checkAuthAndNavigate(
         '/games/game-under-ambiguity',
         '你需要先登录哦'
@@ -127,7 +127,7 @@ const BehavioralScienceHomePage = () => {
   // 专门用于 MBTI Elicit 的函数
   const handleMBTIElicit = () => {
     const password = prompt('请输入密码:');
-    if (password === 'MBTIElicit') {
+    if (password === 'MBTI') {
       checkAuthAndNavigate(
         '/games/mbti-elicit-game',
         '你需要先登录哦'
@@ -140,7 +140,7 @@ const BehavioralScienceHomePage = () => {
   // 专门用于 Confirmation Bias Game 的函数
   const handleConfirmationBiasGame = () => {
     const password = prompt('请输入密码:');
-    if (password === 'ConfirmationBiasGame') {
+    if (password === 'CBG') {
       checkAuthAndNavigate(
         '/games/confirmation-bias-game',
         '你需要先登录哦'
@@ -154,7 +154,7 @@ const BehavioralScienceHomePage = () => {
   // 专门用于 OUS Survey 的函数
   const handleOUSSurvey = () => {
     const password = prompt('请输入密码:');
-    if (password === 'OUSSurvey') {
+    if (password === 'OS') {
       checkAuthAndNavigate(
         '/games/ous-survey',
         '你需要先登录哦'
@@ -168,7 +168,7 @@ const BehavioralScienceHomePage = () => {
   // 专门用于 MFQ Survey 的函数
   const handleMFQSurvey = () => {
     const password = prompt('请输入密码:');
-    if (password === 'MFQSurvey') {
+    if (password === 'MS') {
       checkAuthAndNavigate(
         '/games/mfq-survey',
         '你需要先登录哦'
@@ -181,7 +181,7 @@ const BehavioralScienceHomePage = () => {
   // 专门用于 SVO Survey 的函数
   const handleSVOSurvey = () => {
     const password = prompt('请输入密码:');
-    if (password === 'SVOSurvey') {
+    if (password === 'SS') {
       checkAuthAndNavigate(
         '/games/svo-survey',
         '你需要先登录哦'
@@ -194,7 +194,7 @@ const BehavioralScienceHomePage = () => {
   // 专门用于 PVQ Survey 的函数
   const handlePVQSurvey = () => {
     const password = prompt('请输入密码:');
-    if (password === 'PVQSurvey') {
+    if (password === 'PS') {
       checkAuthAndNavigate(
         '/games/pvq-survey',
         '你需要先登录哦'
